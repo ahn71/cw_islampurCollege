@@ -1,0 +1,208 @@
+﻿.search-box {
+    height:auto;
+    width:350px;
+    border: 1px solid #D5D5D5;
+    margin:0 auto;
+    padding-bottom:05px;
+    padding-top:05px;
+}
+
+.search-box tbody tr td {
+    width:40px;
+    padding:03px;
+    font-size:11px;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 3px 3px 3px 24px;
+}
+
+.search-box tbody tr td select{
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #D5D5D5;
+    padding: 3px;
+    width:200px;
+}
+.search-box tbody tr td input[type='text'] {
+    background: url("/Images/action/search-white.png") no-repeat scroll right center #FCFCFC;
+    border: 1px solid  #D5D5D5;
+    border-radius: 2px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.15) inset;
+    color: black;
+    font: normal 12px Arial,Helvetica,Sans-serif;
+    padding: 3px 15px 3px 6px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.7s ease 0s;
+    width:201px;
+}
+
+.search-box tbody tr td input[type='submit'] {
+    border: medium none;
+    height: 36px;
+    right: 0;
+    top: 0;
+    width: 36px;
+    margin-left: -5px;
+    background:url('/Images/action/searchSmall.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+
+}
+
+.student-details {
+    margin-top:20px;
+    height:auto;
+}
+
+.gridview{
+   background-color:#fff;
+   padding:2px; 
+  
+}
+.gridview td {
+    height:auto;
+    padding-left:05px;
+
+}
+
+.gridview th {
+    height:30px;
+    text-align:left;
+}
+
+.gridview th {
+
+    background:url('/Images/datatables/grd_head.png');
+}
+
+#gvAdmissionDetails {
+    margin-right:10px;
+}
+ 
+
+#gvAdmissionDetails td {
+     font-size:11px;
+     padding-left:5px;
+     padding-top:05px;
+     padding-bottom:5px;
+}
+
+#gvAdmissionDetails th {
+    color: #fff;   
+    height:30px;
+    padding-left:5px;
+    font-size:11px;
+    border: 1px solid #D5D5D5;
+    /*background: #424242  url('/Images/datatables/grd_head.png') repeat top;*/ 
+    background: #424242 url(grd_head.png) repeat-x top;   
+}
+
+
+.gridview a{
+  margin:auto 1%;
+    border-radius:50%;
+      background-color:#444;
+      padding:5px 10px 5px 10px;
+      color:#fff;
+      text-decoration:none;
+      -o-box-shadow:1px 1px 1px #111;
+      -moz-box-shadow:1px 1px 1px #111;
+      -webkit-box-shadow:1px 1px 1px #111;
+      box-shadow:1px 1px 1px #111;
+     
+}
+.gridview a:hover{
+    background-color:#1e8d12;
+    color:#fff;
+}
+.gridview span{
+    background-color:#ae2676;
+    color:#fff;
+     -o-box-shadow:1px 1px 1px #111;
+      -moz-box-shadow:1px 1px 1px #111;
+      -webkit-box-shadow:1px 1px 1px #111;
+      box-shadow:1px 1px 1px #111;
+
+    border-radius:50%;
+    padding:5px 10px 5px 10px;
+}
+
+
+
+.showimg {
+    background:url('/Images/datatables/view.png');
+}
+
+.display {
+    text-align: left;
+    width: 577px;
+}
+.display thead {
+  border-bottom: 0 none;
+  border-left: 2px solid #424242;
+  border-top: 0 none;
+  padding: 24px 0;
+}
+.display thead th {
+        background: url("/Images/grd_head.png") repeat-x scroll center top #424242;
+        outline: 0.5px solid;
+        color: #FFFFFF;
+        font-size: 12px;
+        height: 29px;
+        padding: 5px;
+}
+
+.display tbody tr td {
+    padding:05px;
+    font-size:12px;
+    outline: 0.5px solid;
+  
+
+}
+
+.display thead numeric control {
+    height:20px;
+    width:20px;
+}
+
+.editImg {
+    height:20px;
+    width:20px;
+}
+
+.editImg:hover {
+   cursor:pointer;
+}
+.numeric_control {
+    width:25px;
+}
+
+.ddlBox {
+    height:26px;
+    width:261px;
+}
+
+/*.display tbody tr td:nth-child(8) { 
+    width:35px;
+}
+
+.display tbody tr td:nth-child(9) { 
+    width:35px;
+}
+
+.display tbody tr td:nth-child(8) input[type="submit"] {
+  background: url("/Images/datatables/view.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: medium none;
+  color: #FFFFFF;
+  text-indent: -9999px;
+  width: 35px;
+}
+
+.display tbody tr td:nth-child(9) input[type="submit"] {
+  background: url("/Images/datatables/edit.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: medium none;
+  color: #FFFFFF;
+  text-indent: -9999px;
+  width: 30px;
+}*/
+

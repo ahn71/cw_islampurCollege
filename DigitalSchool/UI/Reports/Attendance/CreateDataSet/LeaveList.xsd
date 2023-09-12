@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LeaveList" targetNamespace="http://tempuri.org/LeaveList.xsd" xmlns:mstns="http://tempuri.org/LeaveList.xsd" xmlns="http://tempuri.org/LeaveList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LeaveList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LeaveList" msprop:Generator_UserDSName="LeaveList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ECardNo" msprop:Generator_ColumnVarNameInTable="columnECardNo" msprop:Generator_ColumnPropNameInRow="ECardNo" msprop:Generator_ColumnPropNameInTable="ECardNoColumn" msprop:Generator_UserColumnName="ECardNo" type="xs:long" minOccurs="0" />
+              <xs:element name="EName" msprop:Generator_ColumnVarNameInTable="columnEName" msprop:Generator_ColumnPropNameInRow="EName" msprop:Generator_ColumnPropNameInTable="ENameColumn" msprop:Generator_UserColumnName="EName" type="xs:string" minOccurs="0" />
+              <xs:element name="DName" msprop:Generator_ColumnVarNameInTable="columnDName" msprop:Generator_ColumnPropNameInRow="DName" msprop:Generator_ColumnPropNameInTable="DNameColumn" msprop:Generator_UserColumnName="DName" type="xs:string" minOccurs="0" />
+              <xs:element name="DesName" msprop:Generator_ColumnVarNameInTable="columnDesName" msprop:Generator_ColumnPropNameInRow="DesName" msprop:Generator_ColumnPropNameInTable="DesNameColumn" msprop:Generator_UserColumnName="DesName" type="xs:string" minOccurs="0" />
+              <xs:element name="ShiftName" msprop:Generator_ColumnVarNameInTable="columnShiftName" msprop:Generator_ColumnPropNameInRow="ShiftName" msprop:Generator_ColumnPropNameInTable="ShiftNameColumn" msprop:Generator_UserColumnName="ShiftName" type="xs:string" minOccurs="0" />
+              <xs:element name="LeaveName" msprop:Generator_ColumnVarNameInTable="columnLeaveName" msprop:Generator_ColumnPropNameInRow="LeaveName" msprop:Generator_ColumnPropNameInTable="LeaveNameColumn" msprop:Generator_UserColumnName="LeaveName" type="xs:string" minOccurs="0" />
+              <xs:element name="FromDate" msprop:Generator_ColumnVarNameInTable="columnFromDate" msprop:Generator_ColumnPropNameInRow="FromDate" msprop:Generator_ColumnPropNameInTable="FromDateColumn" msprop:Generator_UserColumnName="FromDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ToDate" msprop:Generator_ColumnVarNameInTable="columnToDate" msprop:Generator_ColumnPropNameInRow="ToDate" msprop:Generator_ColumnPropNameInTable="ToDateColumn" msprop:Generator_UserColumnName="ToDate" type="xs:string" minOccurs="0" />
+              <xs:element name="EID" msprop:Generator_ColumnVarNameInTable="columnEID" msprop:Generator_ColumnPropNameInRow="EID" msprop:Generator_ColumnPropNameInTable="EIDColumn" msprop:Generator_UserColumnName="EID" type="xs:string" minOccurs="0" />
+              <xs:element name="LACode" msprop:Generator_ColumnVarNameInTable="columnLACode" msprop:Generator_ColumnPropNameInRow="LACode" msprop:Generator_ColumnPropNameInTable="LACodeColumn" msprop:Generator_UserColumnName="LACode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

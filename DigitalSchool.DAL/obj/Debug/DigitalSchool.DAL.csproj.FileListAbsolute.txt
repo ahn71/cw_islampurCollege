@@ -1,0 +1,127 @@
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+E:\OptimalITltd\1. DigitalSchool\12.11.14\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+K:\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\DigitalSchoolHome(13.11.14)\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+E:\WorkingOnModificationDigitalSchool\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+C:\Users\arana\Desktop\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(19.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll.config
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(20.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDigitalSchool(22.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationCodeDigitalSchool(29.11.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ModificationDashboardDS(01.12.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\bin\Debug\DigitalSchool.PropertyEntities.pdb
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.csprojResolveAssemblyReference.cache
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.dll
+D:\RanaProjectFiles\1. DigitalSchool\Presentation\ReportErrorCheckingDS(11.12.14)\DigitalSchool.DAL\obj\Debug\DigitalSchool.DAL.pdb

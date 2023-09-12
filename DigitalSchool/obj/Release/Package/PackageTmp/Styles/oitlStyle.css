@@ -1,0 +1,301 @@
+﻿
+.logo {
+    text-decoration:none;
+}
+
+.logo img {
+    height: 160px;
+    width: 160px;
+}
+
+
+.tgPanel
+{
+    width:96%;
+    height:auto;
+    background-color:white;
+    -moz-box-shadow:5px rgba(35, 35, 35,0.6);
+    border:1px solid #DDD9D9;
+}
+
+.tgPanelHead
+{
+    padding:8px 10px;
+    color:white;
+    font-size:14px;
+    font-family:anson,sans-serif,Arial;
+}
+
+
+
+.tgInput input[type='text'],input[type='password'],textarea, .text
+{  
+    height:25px; 
+    width: 100%;     
+	border: solid 1px #D6D6D6; 
+	outline: 0;
+    color:#424242;
+    padding-left:5px;
+	font: normal 13px/100% Arial, Verdana, Tahoma, sans-serif; 
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF)); 
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px); 
+} 
+
+
+.tgInput select
+{  
+    height:25px;     
+    width: 100%;
+    color:#424242; 
+	border: solid 1px #D2D2D2; 
+	outline: 0; 
+	font: normal 13px/100% Arial,Verdana, Tahoma, sans-serif; 
+	background: -moz-linear-gradient(top, #FFF, #EAEAEA); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #EAEAEA)); 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+} 
+ 
+.tgInput input[type='text']:focus,input[type='password']:focus,textarea:focus, .text:hover {  
+    border-color: #C9C9C9;
+    border:1px solid rgba(25, 23, 23,0.7);
+}
+
+.tgInput textarea {
+    width:100%;
+    height:60px;
+    padding:5px;
+}
+
+
+.tgInput
+{
+
+    font-family: sans-serif,Arial;
+    height: auto;
+    padding: 15px 30px 15px 54px;
+    text-align: left;
+    border:1px solid #DDD9D9;
+}
+
+.tgInput table
+{
+    border:none;
+}
+
+.tgInput tr
+{
+    border-bottom:1px solid #E8E8E8;
+}
+
+.tgInput tr:last-child
+{
+    border-bottom:none;
+}
+
+.tgInput td
+{
+    padding:2px 0px;
+    font-size: 12px;
+}
+
+.tgInput td:first-child, .tgInput td:nth-child(3)
+{
+    width:105px;
+    font-size: 12px;
+}
+
+
+.tgInput td:nth-child(5) {
+     padding-left: 25px;
+    padding-right: 15px;
+}
+
+.tgInput td:nth-child(4) {
+    width:140px;
+    font-size: 12px;
+}
+
+.tgInput td:nth-child(3)
+{
+    padding-left:25px;
+}
+
+span.required {
+    color:red;
+}
+
+.Tag-Box {
+}
+
+.Tag-Box {
+    border: 1px solid #DDD9D9;
+    font-family: sans-serif,Arial;
+    height: auto;
+    padding: 15px 30px 15px 54px;
+    text-align: left;
+}
+.Tag-Box table {
+    border: medium none;
+}
+.Tag-Box tr {
+    border-bottom: 1px solid #E8E8E8;
+}
+.Tag-Box tr:last-child {
+    border-bottom: medium none;
+}
+.Tag-Box td {
+    font-size: 12px;
+    padding: 2px 0;
+}
+.Tag-Box td:first-child, .Tag-Box td:nth-child(3) {
+    font-size: 12px;
+    width: 47px;
+}
+.Tag-Box td:nth-child(5) {
+    padding-left: 15px;
+    width: 95px;
+}
+.Tag-Box td:nth-child(4) {
+    font-size: 12px;
+    width: 140px;
+}
+.Tag-Box td:nth-child(3) {
+    padding-left: 25px;
+}
+
+
+.Tag-Box input[type="text"], input[type="password"], textarea, .text {
+    background: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE 1px, #FFFFFF 25px) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #D6D6D6;
+    color: #424242;
+    font: 13px/100% Arial,Verdana,Tahoma,sans-serif;
+    height: 25px;
+    outline: 0 none;
+    padding-left: 5px;
+    width: 100%;
+}
+
+.Tag-Box select {
+    -moz-appearance: none;
+    background: -moz-linear-gradient(center top , #FFFFFF, #EAEAEA) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #D2D2D2;
+    color: #424242;
+    font: 13px/100% Arial,Verdana,Tahoma,sans-serif;
+    height: 25px;
+    outline: 0 none;
+    width: 100%;
+}
+.Tag-Box input[type="text"]:focus, input[type="password"]:focus, textarea:focus, .text:hover {
+    border: 1px solid rgba(25, 23, 23, 0.7);
+}
+.Tag-Box textarea {
+    height: 60px;
+    padding: 5px;
+    width: 100%;
+}
+
+
+.EmPanel
+{
+    width:96%;
+    height:auto;
+    background-color:white;
+    -moz-box-shadow:5px rgba(35, 35, 35,0.6);
+    border:1px solid #DDD9D9;
+}
+
+
+.EmPanelRight
+{
+    width:20%;
+    float:right;
+    margin-top: 5px;
+}
+
+
+.EmInput {
+   float: left;
+    font-family: sans-serif,Arial;
+    height: auto;
+    padding: 15px 1px 15px 18px;
+    width: 75%;
+}
+
+.EmPanelHead
+{
+    padding:8px 10px;
+    color:white;
+    font-size:14px;
+    font-family:anson,sans-serif,Arial;
+}
+
+.EmInput input[type="text"], input[type="password"], textarea, .text {
+    background: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE 1px, #FFFFFF 25px) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #D6D6D6;
+    color: #424242;
+    font: 13px/100% Arial,Verdana,Tahoma,sans-serif;
+    height: 25px;
+    outline: 0 none;
+    padding-left: 5px;
+    width: 100%;
+}
+
+.EmInput select {
+    -moz-appearance: none;
+    background: -moz-linear-gradient(center top , #FFFFFF, #EAEAEA) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #D2D2D2;
+    color: #424242;
+    font: 13px/100% Arial,Verdana,Tahoma,sans-serif;
+    height: 25px;
+    outline: 0 none;
+    width: 100%;
+}
+
+.EmInput input[type="text"]:focus, input[type="password"]:focus, textarea:focus, .text:hover {
+    border: 1px solid rgba(25, 23, 23, 0.7);
+}
+
+.EmInput textarea {
+    height: 60px;
+    padding: 5px;
+    width: 100%;
+}
+
+.EmInput table {
+    border: medium none;
+}
+
+.EmInput tr {
+    border-bottom: 1px solid #E8E8E8;
+    line-height: 30px;
+}
+
+.EmInput tr:last-child {
+    border-bottom: medium none;
+}
+
+.EmInput td {
+    font-size: 12px;
+    padding: 2px 0;
+}
+
+/*.EmInput td:first-child, .EmInput td:nth-child(3) {
+    font-size: 12px;
+    width: 105px;
+}*/
+
+.EmInput td:nth-child(5) {
+    padding-left: 25px;
+    padding-right: 15px;
+}
+
+.EmInput td:nth-child(4) {
+    font-size: 12px;
+    width: 225px;
+}
+
+.EmInput td:nth-child(3) {
+    padding-left: 25px;
+    width:120px;
+}

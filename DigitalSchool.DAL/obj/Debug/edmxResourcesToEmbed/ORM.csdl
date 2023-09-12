@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cw_islampurCollegeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="WSQuickLink">
+    <Key>
+      <PropertyRef Name="SL" />
+    </Key>
+    <Property Name="SL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ordering" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="cw_islampurCollegeDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="WSQuickLinks" EntityType="Self.WSQuickLink" />
+    <EntitySet Name="WSNoticeAttaches" EntityType="cw_islampurCollegeModel.WSNoticeAttach" />
+    <EntitySet Name="WSSliders" EntityType="cw_islampurCollegeModel.WSSlider" />
+  </EntityContainer>
+  <EntityType Name="WSNoticeAttach">
+    <Key>
+      <PropertyRef Name="NSL" />
+    </Key>
+    <Property Name="NSL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="PublishdDate" Type="DateTime" Precision="0" />
+    <Property Name="NDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NEntryDate" Type="DateTime" Precision="3" />
+    <Property Name="pinTop" Type="Boolean" />
+    <Property Name="IsImportantNews" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="WSSlider">
+    <Key>
+      <PropertyRef Name="SL" />
+    </Key>
+    <Property Name="SL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Chosen" Type="Boolean" />
+    <Property Name="Ordering" Type="Int32" />
+  </EntityType>
+</Schema>

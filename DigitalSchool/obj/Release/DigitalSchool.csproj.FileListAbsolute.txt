@@ -1,0 +1,10 @@
+D:\Developing Project\Digital School\DigitalSchool\bin\DigitalSchool.dll
+D:\Developing Project\Digital School\DigitalSchool\bin\DigitalSchool.pdb
+D:\Developing Project\Digital School\DigitalSchool\obj\Release\DigitalSchool.csprojResolveAssemblyReference.cache
+D:\Developing Project\Digital School\DigitalSchool\obj\Release\DigitalSchool.dll
+D:\Developing Project\Digital School\DigitalSchool\obj\Release\DigitalSchool.pdb
+\\SERVER-PC\Web Project\Digital School\DigitalSchool\bin\DigitalSchool.dll
+\\SERVER-PC\Web Project\Digital School\DigitalSchool\bin\DigitalSchool.pdb
+\\SERVER-PC\Web Project\Digital School\DigitalSchool\obj\Release\DigitalSchool.csprojResolveAssemblyReference.cache
+\\SERVER-PC\Web Project\Digital School\DigitalSchool\obj\Release\DigitalSchool.dll
+\\SERVER-PC\Web Project\Digital School\DigitalSchool\obj\Release\DigitalSchool.pdb

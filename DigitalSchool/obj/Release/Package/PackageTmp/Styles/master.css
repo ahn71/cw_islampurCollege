@@ -1,0 +1,535 @@
+﻿
+*
+{
+    padding:0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+body {
+    background: url("/Images/bodyBg.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #424242;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.mainHeader {
+    /*background-color: #303030;*/
+    width: 100%;
+    background: url("/Images/topNav.jpg") repeat;
+     height:33px;
+    padding:2px;
+}
+
+#MastContent {
+    width:100%;
+    overflow:hidden;
+}
+
+#divMenu {
+    float:left;
+    background:#333333;
+    margin-bottom: 20px;
+    min-height:600px;
+}
+
+.page {
+    width: 90%;
+    height:auto;
+    background-color: #fff;
+    margin: 56px auto 0px auto;
+    border: 0px solid #496077;
+    color: #424242;
+    overflow:hidden;
+}
+
+/*.fixed {
+    position: fixed;
+    background: url("/Images/topNav.jpg") repeat;
+    width: 100%; 
+    color: #eeeeee;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    bottom: 458px;
+    height:33px;
+    padding:2px;
+}*/
+
+.header {
+    height: 109px;
+    margin-top:50px;
+    width:90%;
+    margin-left:5%;
+    text-align:right;
+}
+
+.lblheade-menuS {
+    padding-left:64px;
+    padding-right:30px;
+    width: 100%;
+    font-size:12px;
+    color:White;
+    padding-top: 5px;
+}
+
+#menu {
+    list-style: none outside none;
+    margin: 0;
+    padding: 05px;
+    width: 223px;
+    display:inline;
+}
+
+.home {
+    height:auto;
+}
+
+.main {
+    margin: 0px 2px 8px 5px;
+    min-height: 420px;
+    float:right;
+    width:77%;
+    height: auto;
+}
+
+.leftCol {
+    float: left;
+    margin-bottom: 22px;
+    margin-right: 18px;
+    margin-top: -1px;
+    width: 20%;
+    height: auto;
+}
+
+.leftCol ul li a {
+    background: url("../Images/leftNavBg.png") repeat-x scroll 0 0 #EFEFEF;
+    border: 1px solid #D5D5D5;
+    color: #494949;
+    display: block;
+    font-size: 15px;
+    margin-top: 1px;
+    text-decoration:none;
+    height:20px;    
+    padding: 10px; 
+}
+
+.leftCol ul li a:hover {
+    background: url("../Images/darkBg.jpg") repeat-x scroll 0 0 #EFEFEF;
+    border: 1px solid #D5D5D5;
+    color:white;
+    display: block;
+    font-size: 15px;
+    margin-top: 1px;
+    text-decoration:none;
+}
+
+.headerRightside ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 10px 0 0;
+    height: 81px;
+    width: auto;
+}
+
+.headerRightside ul li {
+    border: 1px solid;
+    display: block;
+    float: right;
+    line-height: 32px;
+    margin: 0 0 0 10px;
+    padding: 10px;
+}
+
+.headerRightside a {
+    text-decoration: none;
+}
+
+.active {
+    background: url("../Images/darkBg.jpg") repeat-x scroll 0 0 #EFEFEF;
+}
+
+.footer {
+    background: url("../Images/topNav.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 0;
+    clear: both;
+    color: #EEEEEE;
+    margin-top: 42px;
+    width: 100%;
+    height:35px;
+    margin-bottom: -15px;
+    position:absolute;
+}
+
+.fleft {
+    float:left;
+    width:30%;
+    padding:05px;
+    color:White;
+}
+
+.fright {
+    float:right;
+    text-align:right;
+    width:40%;
+    padding-top:07px;
+    padding-right:100px;
+    color:White;
+}
+
+.title {
+    background: url("../Images/darkBg.jpg") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 1px 0 #FFFFFF;
+    height: auto;
+    margin-top:0px;
+    padding-top:0px;
+    color:White;
+    padding:09px;
+}
+
+.leftCol .title {
+    box-shadow: 0 1px 0 #FFFFFF;
+    height: auto;
+    width:92%;
+    color:White;
+    padding:09px;
+}
+
+.iMes {
+   height: 35px !important;
+    text-align: center;
+    width: 93px !important;   
+}
+
+.header li {
+    display: inline;
+}
+
+.logo {
+    height:104px;
+    width:104px;
+}
+
+.headerLogo {
+    float:left;
+    width:36%;
+    height: 102px;
+    text-align: left;
+    padding:1px;
+}
+
+.headerRightside {
+    float:right;
+    width:63%;
+    height: 102px;
+    padding:1px;
+}
+
+.headerItem a {
+    color:White;
+    text-decoration:none;
+}
+
+.headerItem:hover {
+    cursor:pointer;
+    color:Green;
+}
+
+.logoDiv {
+    float:left;
+    height:auto;
+    width:auto;
+}
+
+.schoolInfo {
+    float:right;
+    height:48px;
+    width:307px;
+    font-size: 20px;
+    padding-top:30px;
+}
+
+.headerItem {
+    width: 85px;
+}
+
+.td-profile {
+    width: 1749px;
+}
+
+.logout-td {
+    width: 164px;
+}
+
+.setting-td {
+    width: 42px;
+}
+
+.message-td {
+    width:54px;
+}
+
+.imageWc {
+    float:left;
+    width:auto;
+}
+
+.wc-text {
+    text-align:left;
+    float:right;
+    width:96%;
+    padding-top:2px;
+}
+
+.imgheader {
+    padding-right:05px;
+}
+.lblUsern {
+    margin-top:05px;
+}
+.message {
+    position:fixed;
+    top:-45px;
+    left:-45px;
+    z-index:999999999;
+}
+
+/*menu-css*/
+.userNav {
+    float: right;
+    font-size: 11px;
+    position: relative;
+    margin-right: 69px;
+}
+.userNav .lastNav {
+    background: url("../images/navSep.png") repeat-y scroll 0 0 rgba(0, 0, 0, 0);
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+}
+.userNav ul {
+    margin-right: 2px;
+}
+.userNav ul li {
+    border-right: 1px solid #2F2F2F;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    position: relative;
+    height: 35px;
+}
+.userNav ul li:first-child {
+    border-left: 1px solid #2F2F2F;
+    height: 35px;
+}
+.userNav ul li a {
+    color: #EEEEEE;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.userNav ul li:hover, .selected {
+    background: none repeat scroll 0 0 #212121;
+}
+.userNav ul li span {
+    display: block;
+    float: left;
+    padding: 8px 14px 8px 8px;
+}
+.userNav ul li img {
+    display: block;
+    float: left;
+    padding: 13px 2px 11px 14px;
+}
+.userNav ul li ul {
+    background: none repeat scroll 0 0 #2F2F2F;
+    border: 1px solid #1D1D1D;
+    display: none;
+    left: -1px;
+    margin-top: 0;
+    padding: 0 1px 1px;
+    position: absolute;
+    top: 35px;
+    z-index: 100;
+}
+.userNav ul li ul li {
+    background: none repeat scroll 0 0 #212121;
+    border-bottom: 1px solid #141414;
+    border-right: medium none;
+    border-top: 1px solid #2F2F2F;
+    display: block;
+    float: none;
+}
+.userNav ul li ul li:first-child {
+    border-left: medium none !important;
+}
+.userNav ul li ul li a {
+    color: #C5C5C5;
+    float: none;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 6px 10px 7px 36px;
+    text-transform: none;
+    width: 100px;
+}
+.userNav ul li ul li a:hover {
+    color: #A4A4A4;
+    font-weight: normal;
+}
+.userNav ul li ul li:hover {
+    background: none repeat scroll 0 0 #1D1D1D !important;
+}
+.sAdd {
+    background: url("Images/master/subAdd.png") no-repeat scroll 15px 13px rgba(0, 0, 0, 0);
+}
+.sInbox {
+    background: url("Images/master/subInbox.png") no-repeat scroll 14px 12px rgba(0, 0, 0, 0);
+}
+.sOutbox {
+    background: url("Images/master/subOutbox.png") no-repeat scroll 14px 11px rgba(0, 0, 0, 0);
+}
+.sTrash {
+    background: url("Images/master/subTrash.png") no-repeat scroll 14px 12px rgba(0, 0, 0, 0);
+}
+
+element.style {
+    display: block;
+}
+.userNav ul li ul {
+    background: none repeat scroll 0 0 #2F2F2F;
+    border: 1px solid #1D1D1D;
+    display: none;
+    left: -1px;
+    margin-top: 0;
+    padding: 0 1px 1px;
+    position: absolute;
+    top: 35px;
+    z-index: 100;
+}
+.userNav ul {
+    margin-right: 2px;
+}
+.menu_body {
+    display: none;
+    padding: 12px 14px;
+}
+.welcome {
+    float: left;
+    margin-left: 65px;
+}
+.welcome a {
+    color: #2B6893;
+    text-decoration: none;
+}
+.welcome img {
+    float: left;
+    margin: 8px 8px 8px 0;
+}
+
+.welcome span {
+    display: block;
+    float: left;
+    font-size: 11px;
+    padding: 8px 5px;
+    white-space: nowrap;
+}
+.dd {
+    
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.profileImage {
+    height:118px;
+    width:130px;
+    float: left;
+}
+
+.noData
+{
+    padding:30px;
+    text-align:center;
+    font-weight:bold;
+    text-transform:uppercase;
+    font-family:'Cuprum',sans-serif,Arial;
+    color:#161716;
+    font-size:26px;
+}
+
+.control
+{
+    max-width:30px;
+    padding:0px !important;    
+    text-align:center!important;
+    
+}
+
+.control img
+{
+    margin:0px;
+    margin-left:-8px;
+    height:22px;
+    width:22px;
+    cursor:pointer;
+}
+
+/*-----------------Admit Card-----------------*/
+.leftSideAdmitDiv {
+    width:50%;
+    float:left;
+}
+
+.rightSideAdmitDiv {
+    width:50%;
+    float:right;
+}
+
+.admitCardBox {
+    border:1px solid black;
+    height:253px;
+    width:326px;
+}
+
+.borderAdmit {
+    border:3px solid #1a0f67;
+    margin:08px;
+    height:231px;
+    width:304px;
+}
+
+.borderAdmit2 {
+    border:2px solid #1a0f67;
+    margin:03px;
+    height:221px;
+    width:294px;
+}
+
+.headerAdmit {
+    text-align:center;
+}
+.headerAdmit span {
+    font-size:17px;
+    font-weight:bold;
+}
+
+.leftVerticalDiv {
+    float:left;
+    width:30px;
+}
+.rightBodyDiv {
+    float:right;
+    width:260px;
+    height:auto;
+}

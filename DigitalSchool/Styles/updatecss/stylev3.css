@@ -1,0 +1,21 @@
+﻿.gride-view-list {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    background-color: white;
+    -moz-box-shadow: 5px rgba(35, 35, 35,0.6);
+    border: 1px solid #DDD9D9;
+}
+/*=====Student Enrty====== */
+section.page-section {
+    background: #fff;
+}
+.admission-form {
+    background: #fff;
+    padding: 30px 20px;
+}
+
+.form-control {
+    color: #000
+}
+
