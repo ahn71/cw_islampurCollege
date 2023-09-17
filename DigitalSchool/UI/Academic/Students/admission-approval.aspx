@@ -108,8 +108,8 @@
             </Triggers>
             <ContentTemplate>
     <div class="gride-view-list">
-                 <asp:GridView ID="gvStudentList" runat="server" AutoGenerateColumns="false" DataKeyNames="SL" 
-                     CssClass="table table-bordered" BackColor="White" HeaderStyle-BackColor="Black" HeaderStyle-ForeColor="White" OnRowCommand="gvStudentList_RowCommand">
+                 <asp:GridView ID="gvStudentList" runat="server" AutoGenerateColumns="false" DataKeyNames="SL,ManSubId,OpSubId" 
+                     CssClass="table table-bordered" BackColor="White" HeaderStyle-BackColor="Black" HeaderStyle-ForeColor="White" OnRowCommand="gvStudentList_RowCommand" OnRowDataBound="gvStudentList_RowDataBound">
                      <%--<PagerStyle CssClass="gridview" />--%>
             <Columns>
                   <asp:TemplateField HeaderText="SL"> 
@@ -137,7 +137,21 @@
                 <asp:BoundField DataField="GroupName" HeaderText="Group" />                
                 <asp:BoundField DataField="SectionName" HeaderText="Section" />
                 <asp:BoundField DataField="ShiftName" HeaderText="Shift" />               
-                <asp:BoundField DataField="BatchName" HeaderText="Batch" />               
+                <asp:BoundField DataField="BatchName" HeaderText="Batch" />  
+                <asp:BoundField DataField="Optinalsubject" HeaderText="OptinalSubject" />  
+
+
+            <asp:TemplateField HeaderStyle-HorizontalAlign="Center">
+                    <HeaderTemplate >
+                       Mandetory Subject
+                    </HeaderTemplate>
+                    <ItemTemplate>    
+                        <asp:Label runat="server" ClientIDMode="Static" ID="lblMansubid"></asp:Label>                        
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+
+
                 <asp:TemplateField HeaderStyle-HorizontalAlign="Center">
                     <HeaderTemplate >
                        Batch

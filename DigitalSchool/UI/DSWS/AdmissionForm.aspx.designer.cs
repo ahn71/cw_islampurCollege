@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DS.UI.DSWS {
-    
-    
-    public partial class AdmissionForm {
-        
+namespace DS.UI.DSWS
+{
+
+
+    public partial class AdmissionForm
+    {
+
         /// <summary>
         /// uplMessage control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel uplMessage;
-        
+
         /// <summary>
         /// lblMessage control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMessage;
-        
+
         /// <summary>
         /// divContainer control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divContainer;
-        
+
         /// <summary>
         /// txtMoneyReceiptNo control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMoneyReceiptNo;
-        
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// imgProfile control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgProfile;
-        
+
         /// <summary>
         /// FileUpload1 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
+
         /// <summary>
         /// upPanel control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upPanel;
-        
+
         /// <summary>
         /// txtStudentName control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentName;
-        
+
         /// <summary>
         /// txtStudentNameBn control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentNameBn;
-        
+
         /// <summary>
         /// ddlGender control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGender;
-        
+
         /// <summary>
         /// txtDateOfBirth control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDateOfBirth;
-        
+
         /// <summary>
         /// ddlReligion control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlReligion;
-        
+
         /// <summary>
         /// ddlBloodGroup control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlBloodGroup;
-        
+
         /// <summary>
         /// txtStudentMobile control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentMobile;
-        
+
         /// <summary>
         /// ddlShift control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlShift;
-        
+
         /// <summary>
         /// ddlClass control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlClass;
-        
+
         /// <summary>
         /// ddlGroup control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGroup;
-        
+
         /// <summary>
         /// ddlSection control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSection;
-        
+
         /// <summary>
         /// divNUAdmissionRoll control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNUAdmissionRoll;
-        
+
         /// <summary>
         /// txtNUAdmissionRoll control.
         /// </summary>
@@ -200,7 +202,43 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNUAdmissionRoll;
-        
+
+        /// <summary>
+        /// checkboxDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl checkboxDiv;
+
+        /// <summary>
+        /// lblHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeading;
+
+        /// <summary>
+        /// chkSubjectchoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chkSubjectchoice;
+
+        /// <summary>
+        /// btnRadio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList btnRadio;
+
         /// <summary>
         /// txtFatherName control.
         /// </summary>
@@ -209,7 +247,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFatherName;
-        
+
         /// <summary>
         /// txtFatherNameBn control.
         /// </summary>
@@ -218,7 +256,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFatherNameBn;
-        
+
         /// <summary>
         /// txtFatherMobile control.
         /// </summary>
@@ -227,7 +265,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFatherMobile;
-        
+
         /// <summary>
         /// txtFatherOccupation control.
         /// </summary>
@@ -236,7 +274,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFatherOccupation;
-        
+
         /// <summary>
         /// txtFatherOccupationBn control.
         /// </summary>
@@ -245,7 +283,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFatherOccupationBn;
-        
+
         /// <summary>
         /// txtMotherName control.
         /// </summary>
@@ -254,7 +292,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMotherName;
-        
+
         /// <summary>
         /// txtMotherNameBn control.
         /// </summary>
@@ -263,7 +301,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMotherNameBn;
-        
+
         /// <summary>
         /// txtMotherMobile control.
         /// </summary>
@@ -272,7 +310,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMotherMobile;
-        
+
         /// <summary>
         /// txtMotherOccupation control.
         /// </summary>
@@ -281,7 +319,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMotherOccupation;
-        
+
         /// <summary>
         /// txtMotherOccupationBn control.
         /// </summary>
@@ -290,7 +328,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMotherOccupationBn;
-        
+
         /// <summary>
         /// ddlParentsDistrict control.
         /// </summary>
@@ -299,7 +337,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlParentsDistrict;
-        
+
         /// <summary>
         /// ddlParentsUpazila control.
         /// </summary>
@@ -308,7 +346,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlParentsUpazila;
-        
+
         /// <summary>
         /// ddlParentsPostOffice control.
         /// </summary>
@@ -317,7 +355,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlParentsPostOffice;
-        
+
         /// <summary>
         /// txtParentsVillage control.
         /// </summary>
@@ -326,7 +364,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentsVillage;
-        
+
         /// <summary>
         /// txtParentsVillageBn control.
         /// </summary>
@@ -335,7 +373,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentsVillageBn;
-        
+
         /// <summary>
         /// chkFather control.
         /// </summary>
@@ -344,7 +382,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkFather;
-        
+
         /// <summary>
         /// chkMother control.
         /// </summary>
@@ -353,7 +391,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkMother;
-        
+
         /// <summary>
         /// chkOther control.
         /// </summary>
@@ -362,7 +400,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkOther;
-        
+
         /// <summary>
         /// txtGuardianName control.
         /// </summary>
@@ -371,7 +409,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGuardianName;
-        
+
         /// <summary>
         /// txtGuardianRelation control.
         /// </summary>
@@ -380,7 +418,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGuardianRelation;
-        
+
         /// <summary>
         /// txtGuardianMobile control.
         /// </summary>
@@ -389,7 +427,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGuardianMobile;
-        
+
         /// <summary>
         /// txtGuardianAddress control.
         /// </summary>
@@ -398,7 +436,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGuardianAddress;
-        
+
         /// <summary>
         /// ddlPermanentDistrict control.
         /// </summary>
@@ -407,7 +445,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPermanentDistrict;
-        
+
         /// <summary>
         /// ddlPermanentUpazila control.
         /// </summary>
@@ -416,7 +454,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPermanentUpazila;
-        
+
         /// <summary>
         /// ddlPermanentPostOffice control.
         /// </summary>
@@ -425,7 +463,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPermanentPostOffice;
-        
+
         /// <summary>
         /// txtPermanentVillage control.
         /// </summary>
@@ -434,7 +472,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPermanentVillage;
-        
+
         /// <summary>
         /// txtPermanentVillageBn control.
         /// </summary>
@@ -443,7 +481,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPermanentVillageBn;
-        
+
         /// <summary>
         /// ckbSameAsPermanentAddress control.
         /// </summary>
@@ -452,7 +490,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox ckbSameAsPermanentAddress;
-        
+
         /// <summary>
         /// ddlPresentDistrict control.
         /// </summary>
@@ -461,7 +499,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPresentDistrict;
-        
+
         /// <summary>
         /// ddlPresentUpazila control.
         /// </summary>
@@ -470,7 +508,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPresentUpazila;
-        
+
         /// <summary>
         /// ddlPresentPostOffice control.
         /// </summary>
@@ -479,7 +517,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPresentPostOffice;
-        
+
         /// <summary>
         /// txtPresentVillage control.
         /// </summary>
@@ -488,7 +526,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPresentVillage;
-        
+
         /// <summary>
         /// txtPresentVillageBn control.
         /// </summary>
@@ -497,7 +535,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPresentVillageBn;
-        
+
         /// <summary>
         /// txtPreviousExamSchoolName control.
         /// </summary>
@@ -506,7 +544,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamSchoolName;
-        
+
         /// <summary>
         /// ddlPreviousExamBoard control.
         /// </summary>
@@ -515,7 +553,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPreviousExamBoard;
-        
+
         /// <summary>
         /// ddlPreviousExamPassingYear control.
         /// </summary>
@@ -524,7 +562,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPreviousExamPassingYear;
-        
+
         /// <summary>
         /// txtPreviousExamRegistrationNo control.
         /// </summary>
@@ -533,7 +571,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamRegistrationNo;
-        
+
         /// <summary>
         /// txtPreviousExamRollNo control.
         /// </summary>
@@ -542,7 +580,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamRollNo;
-        
+
         /// <summary>
         /// txtPreviousExamGPA control.
         /// </summary>
@@ -551,7 +589,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamGPA;
-        
+
         /// <summary>
         /// divHSCInfo control.
         /// </summary>
@@ -560,7 +598,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHSCInfo;
-        
+
         /// <summary>
         /// txtPreviousExamSchoolNameHSC control.
         /// </summary>
@@ -569,7 +607,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamSchoolNameHSC;
-        
+
         /// <summary>
         /// ddlPreviousExamBoardHSC control.
         /// </summary>
@@ -578,7 +616,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPreviousExamBoardHSC;
-        
+
         /// <summary>
         /// ddlPreviousExamPassingYearHSC control.
         /// </summary>
@@ -587,7 +625,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPreviousExamPassingYearHSC;
-        
+
         /// <summary>
         /// txtPreviousExamRegistrationNoHSC control.
         /// </summary>
@@ -596,7 +634,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamRegistrationNoHSC;
-        
+
         /// <summary>
         /// txtPreviousExamRollNoHSC control.
         /// </summary>
@@ -605,7 +643,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamRollNoHSC;
-        
+
         /// <summary>
         /// txtPreviousExamGPAHSC control.
         /// </summary>
@@ -614,7 +652,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamGPAHSC;
-        
+
         /// <summary>
         /// divHonoursInfo control.
         /// </summary>
@@ -623,7 +661,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHonoursInfo;
-        
+
         /// <summary>
         /// txtPreviousExamSchoolNameHonours control.
         /// </summary>
@@ -632,7 +670,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamSchoolNameHonours;
-        
+
         /// <summary>
         /// ddlPreviousExamBoardHonours control.
         /// </summary>
@@ -641,7 +679,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPreviousExamBoardHonours;
-        
+
         /// <summary>
         /// ddlPreviousExamPassingYearHonours control.
         /// </summary>
@@ -650,7 +688,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPreviousExamPassingYearHonours;
-        
+
         /// <summary>
         /// txtPreviousExamRegistrationNoHonours control.
         /// </summary>
@@ -659,7 +697,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamRegistrationNoHonours;
-        
+
         /// <summary>
         /// txtPreviousExamRollNoHonours control.
         /// </summary>
@@ -668,7 +706,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamRollNoHonours;
-        
+
         /// <summary>
         /// txtPreviousExamGPAHonours control.
         /// </summary>
@@ -677,7 +715,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreviousExamGPAHonours;
-        
+
         /// <summary>
         /// txtTCCollegeName control.
         /// </summary>
@@ -686,7 +724,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTCCollegeName;
-        
+
         /// <summary>
         /// txtTCDate control.
         /// </summary>
@@ -695,7 +733,7 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTCDate;
-        
+
         /// <summary>
         /// btnSubmit control.
         /// </summary>
@@ -704,5 +742,14 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

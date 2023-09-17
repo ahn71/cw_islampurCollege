@@ -4,6 +4,7 @@ using DS.BLL.Admission;
 using DS.BLL.GeneralSettings;
 using DS.BLL.ManagedClass;
 using DS.Classes;
+using DS.DAL;
 using DS.PropertyEntities.Model.Admission;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace DS.UI.DSWS
 {
@@ -112,11 +114,18 @@ namespace DS.UI.DSWS
             clsgrpEntry.GetDropDownListClsGrpId(int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup);
             if(ddlGroup.SelectedValue!="0")
             ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
+
+        
+
+
         }
 
         protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
+            string groupid = ddlGroup.SelectedValue;
+            GetMandetorySubeject(groupid);
+            GetOptionalSubject(groupid);
         }
 
         protected void ddlPermanentDistrict_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,6 +180,10 @@ namespace DS.UI.DSWS
                 txtTCDate.Focus();
                 return;
             }
+            if (!ValidatationForSubject()) 
+             {
+                return;
+             }
             saveStudentAdmission();
         }
         private Boolean saveStudentAdmission()
@@ -320,6 +333,11 @@ namespace DS.UI.DSWS
                     entities.NUAdmissionRoll = txtNUAdmissionRoll.Text.Trim();
                 else
                     entities.NUAdmissionRoll = "";
+                entities.ManSubIds = Session["__ManSubIds__"].ToString();
+                entities.OptSubId = ViewState["__OptinalId__"].ToString();
+
+
+
                 return entities;
             }
             catch (Exception ex) { lblMessage.InnerText = "error->ln:236, GetFormData() | "+ex.Message; return entities = null; }
@@ -431,6 +449,92 @@ namespace DS.UI.DSWS
         {
             Response.Redirect("/UI/DSWS/admission-form.aspx?SL=" + sl);
         }
-      
+
+
+
+
+
+        private string GetMandetorySubeject(string groupSecId)
+        {
+            DataTable dt = new DataTable();
+            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName,CAST(CASE WHEN IsOptional = 0 AND BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from v_ClassSubjectList where ClassID='221' and GroupId IN (SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '"+ groupSecId + "') and (IsOptional=0 or BothType=1)");
+
+    
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListItem item = new ListItem();
+                    item.Text = row["SubName"].ToString();
+                    item.Value = row["SubId"].ToString();
+                    item.Selected = Convert.ToBoolean(row["MustTaken"]);
+
+                    chkSubjectchoice.Items.Add(item);
+                }
+            }
+            checkboxDiv.Style["display"] = "block";
+           return dt.ToString();
+
+        }
+
+        private string GetOptionalSubject(string groupSecId) 
+        {
+            DataTable dt = new DataTable();
+            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and GroupId IN (SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '" + groupSecId + "')  and (IsOptional=1 or BothType=1)");
+
+            btnRadio.Items.Clear();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListItem item = new ListItem();
+                    item.Text = row["SubName"].ToString();
+                    item.Value = row["SubId"].ToString();
+
+                    btnRadio.Items.Add(item);
+                }
+            }
+            checkboxDiv.Style["display"] = "block";
+            return dt.ToString();
+
+        }
+
+
+        private bool ValidatationForSubject() 
+        {
+            string Optionalvalus= btnRadio.SelectedValue.ToString();
+            List<string> Mansubject = new List<string>();
+           
+            int ManSubscount = 0;
+            foreach (ListItem item in chkSubjectchoice.Items)
+            {
+                if (item.Selected)
+                {
+                    Mansubject.Add(item.Value);
+                    ManSubscount++;
+                }
+            }
+            string MansubIds = string.Join(",", Mansubject.ToArray());
+            if (ManSubscount!=3 && ManSubscount==0)
+             {
+                lblMessage.InnerText = "Error>>Please Select at lest 3 Subject";
+                return false;
+             }
+            else if (Mansubject.Contains(Optionalvalus)) 
+             {
+                lblMessage.InnerText = "Error>> You dont select same subject mandetori and optional";
+                return false;
+            }
+            ViewState["__OptinalId__"] = Optionalvalus;
+            Session["__ManSubIds__"] = MansubIds;
+
+            return true;
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            ValidatationForSubject();
+        }
     }
 }

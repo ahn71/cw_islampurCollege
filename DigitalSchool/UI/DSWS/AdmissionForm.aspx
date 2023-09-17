@@ -379,6 +379,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="row form-group">
                                 <div class="col-md-4">
                                     <div class="row">
@@ -406,6 +408,33 @@
                                 </div>
 
                             </div>
+
+
+
+
+                           <%-- rokibul work--%>
+
+                            <div runat="server" id="checkboxDiv">
+                                <asp:Label runat="server" ID="lblHeading" Text="Choese Subject"></asp:Label>
+
+                                  <div class="checboxSubject">
+                                      <asp:CheckBoxList runat="server" ID="chkSubjectchoice">
+                                      </asp:CheckBoxList>
+                                   </div>
+
+                                <div runat="server" class="radiobtnList">
+                                      <asp:RadioButtonList runat="server" ID="btnRadio">
+
+                                    </asp:RadioButtonList>
+
+                                </div>
+                            </div>
+                          
+
+
+
+
+
 
                         </div>
                         <br />
@@ -987,6 +1016,13 @@
                         </div>
                     </div>
                 </div>
+
+
+             <%-- Testing Purpose--%>
+
+                <asp:Button  runat="server" ID="btnSave" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
+
+
             </div>
         </div>
     </section>
