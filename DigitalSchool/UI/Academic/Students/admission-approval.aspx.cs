@@ -322,7 +322,7 @@ namespace DS.UI.Academic.Students
             }
         }
 
-
+        //Get Subject Name
        private string getSubsName(string manSubIds)
         {
         DataTable dt=new DataTable();
@@ -331,7 +331,7 @@ namespace DS.UI.Academic.Students
             return dt.Rows[0]["subname"].ToString();
         }
 
-
+        //Save Data GroupSubjectSetup table and GroupSubjectSetupDetails Table
         private void SaveGroupSubjects(int StudentId,int BatchId, string manSubIds,string OpSubId) 
         {
            

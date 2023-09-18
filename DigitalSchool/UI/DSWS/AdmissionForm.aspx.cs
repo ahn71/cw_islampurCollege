@@ -32,7 +32,7 @@ namespace DS.UI.DSWS
                 
                 if (!StdAdmFormEntry.isAdmissionOpen())
                    Response.Redirect("UI/DSWS/adm-msg.aspx");
-                
+                pnlGroupSubjects.Visible = false;
                 ClassEntry.GetAdmissionClasses(ddlClass);
                 DropDownList[] ddlDistrict = { ddlPermanentDistrict, ddlPresentDistrict,ddlParentsDistrict };
                 DistrictEntry.GetDropDownList(ddlDistrict);                
@@ -123,9 +123,17 @@ namespace DS.UI.DSWS
         protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
-            string groupid = ddlGroup.SelectedValue;
-            GetMandetorySubeject(groupid);
-            GetOptionalSubject(groupid);
+            if (ddlGroup.SelectedIndex > 0)
+            {
+                
+                string groupid = ddlGroup.SelectedValue;
+                GetMandetorySubeject(groupid);
+                GetOptionalSubject(groupid);
+                pnlGroupSubjects.Visible = true;
+            }
+            else
+                pnlGroupSubjects.Visible = false;
+            
         }
 
         protected void ddlPermanentDistrict_SelectedIndexChanged(object sender, EventArgs e)
@@ -458,8 +466,9 @@ namespace DS.UI.DSWS
         {
             DataTable dt = new DataTable();
             dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName,CAST(CASE WHEN IsOptional = 0 AND BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from v_ClassSubjectList where ClassID='221' and GroupId IN (SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '"+ groupSecId + "') and (IsOptional=0 or BothType=1)");
+            chkSubjectchoice.Items.Clear();
 
-    
+
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
@@ -469,10 +478,20 @@ namespace DS.UI.DSWS
                     item.Value = row["SubId"].ToString();
                     item.Selected = Convert.ToBoolean(row["MustTaken"]);
 
+
+                    if(item.Selected == true) 
+                    {
+                        if (ddlGroup.SelectedItem.Text == "Science" || ddlGroup.SelectedItem.Text == "Business Studies")
+                        {
+                            item.Enabled = false;
+                        }
+                        
+                    }
                     chkSubjectchoice.Items.Add(item);
                 }
             }
-            checkboxDiv.Style["display"] = "block";
+
+            divGroupSubjects.Style["display"] = "block";
            return dt.ToString();
 
         }
@@ -495,7 +514,7 @@ namespace DS.UI.DSWS
                     btnRadio.Items.Add(item);
                 }
             }
-            checkboxDiv.Style["display"] = "block";
+            divGroupSubjects.Style["display"] = "block";
             return dt.ToString();
 
         }
@@ -517,7 +536,7 @@ namespace DS.UI.DSWS
                 }
             }
             string MansubIds = string.Join(",", Mansubject.ToArray());
-            if (ManSubscount!=3 && ManSubscount==0)
+            if (ManSubscount!=3)
              {
                 lblMessage.InnerText = "Error>>Please Select at lest 3 Subject";
                 return false;
@@ -534,9 +553,6 @@ namespace DS.UI.DSWS
 
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            ValidatationForSubject();
-        }
+   
     }
 }
