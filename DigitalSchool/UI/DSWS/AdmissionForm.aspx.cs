@@ -453,7 +453,7 @@ namespace DS.UI.DSWS
 
 
 
-
+        //Get Mandetory Subject
         private string GetMandetorySubeject(string groupSecId)
         {
             DataTable dt = new DataTable();
@@ -477,6 +477,7 @@ namespace DS.UI.DSWS
 
         }
 
+        //Get Optinal Subject
         private string GetOptionalSubject(string groupSecId) 
         {
             DataTable dt = new DataTable();
@@ -499,7 +500,8 @@ namespace DS.UI.DSWS
 
         }
 
-
+        
+        //Give Validation for Student for choesen SUbejct
         private bool ValidatationForSubject() 
         {
             string Optionalvalus= btnRadio.SelectedValue.ToString();

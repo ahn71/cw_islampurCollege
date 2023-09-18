@@ -82,6 +82,8 @@ namespace DS.UI.Academic.Students
             {
                 int rIndex = int.Parse(e.CommandArgument.ToString());
                 string sl= gvStudentList.DataKeys[rIndex].Values[0].ToString();
+                string manSubIds= gvStudentList.DataKeys[rIndex].Values[1].ToString();
+                string opSubId= gvStudentList.DataKeys[rIndex].Values[2].ToString();
                 TextBox txtRollNo = (TextBox)gvStudentList.Rows[rIndex].FindControl("txtRollNo");
                 Label lblBatchName = (Label)gvStudentList.Rows[rIndex].FindControl("lblBatchName");
                 int roll;
@@ -95,7 +97,7 @@ namespace DS.UI.Academic.Students
                     return;
                 }
                 TextBox txtNote = (TextBox)gvStudentList.Rows[rIndex].FindControl("txtNote");
-                if (save_into_currentstudent(sl, roll))
+                if (save_into_currentstudent(sl, roll, manSubIds, opSubId))
                 {
                     if (stdAdmFormEntry == null)
                         stdAdmFormEntry = new StdAdmFormEntry();
@@ -333,7 +335,7 @@ namespace DS.UI.Academic.Students
         private void SaveGroupSubjects(int StudentId,int BatchId, string manSubIds,string OpSubId) 
         {
            
-            int SgSubId = CRUD.GetMaxID("INSERT INTO [dbo].[StudentGroupSubSetup] ([StudentId] [BatchId])VALUES ("+ StudentId + ","+ BatchId + ");SELECT SCOPE_IDENTITY()");
+            int SgSubId = CRUD.GetMaxID("INSERT INTO [dbo].[StudentGroupSubSetup] ([StudentId], [BatchId])VALUES ("+ StudentId + ","+ BatchId + ");SELECT SCOPE_IDENTITY()");
 
             if (SgSubId > 0)
             {
