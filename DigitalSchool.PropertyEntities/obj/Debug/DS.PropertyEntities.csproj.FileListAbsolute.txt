@@ -691,3 +691,5 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\o
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.pdb

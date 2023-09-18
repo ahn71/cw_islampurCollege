@@ -1251,3 +1251,5 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.D
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb

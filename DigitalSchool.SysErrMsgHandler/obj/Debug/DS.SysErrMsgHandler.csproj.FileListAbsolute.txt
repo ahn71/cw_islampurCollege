@@ -930,3 +930,5 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\o
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.pdb

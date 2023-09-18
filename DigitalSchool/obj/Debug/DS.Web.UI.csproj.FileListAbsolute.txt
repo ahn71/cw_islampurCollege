@@ -3053,3 +3053,5 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.U
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool\obj\Debug\DS.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool\obj\Debug\DS.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.pdb

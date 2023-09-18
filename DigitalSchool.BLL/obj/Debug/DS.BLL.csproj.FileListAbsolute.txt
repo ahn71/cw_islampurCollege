@@ -1663,3 +1663,5 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.B
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.pdb
