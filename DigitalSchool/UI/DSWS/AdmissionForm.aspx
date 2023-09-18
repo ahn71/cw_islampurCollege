@@ -60,6 +60,45 @@
         .input-group-addon {
             border: 1px solid #6d86e5;
         }
+        .SubjectManagement {
+            display: flex;
+            gap: 45px;
+        }
+
+        .Headin {
+            font-weight: 900;
+             font-size: 18px;
+             margin-top: 12px;
+            display: block;
+            color:black;
+        }
+        .OpSubject
+        {
+              font-weight: 900;
+              font-size: 15px;
+              margin-top: 12px;
+               display: block;
+               color:black;
+        }
+
+         span#MainContent_lblManSub
+           {
+             font-weight: 900;
+             font-size: 15px;
+             margin-top: 12px;
+            display: block;
+            color:black;
+            }
+         table#MainContent_chkSubjectchoice 
+         {
+           margin-top: 6px;
+         }
+
+         table#MainContent_btnRadio
+         {
+             margin-top: 6px;
+         }
+
     </style>
     <script type="text/javascript">
         function previewFile() {
@@ -413,22 +452,29 @@
 
 
                            <%-- rokibul work--%>
+                            <asp:Panel runat="server" id="pnlGroupSubjects">
+                            <div runat="server" id="divGroupSubjects">
+                                <asp:Label runat="server" ID="lblHeading" CssClass="Headin" Text="Choese Subject"></asp:Label>
+                                 
+                                <div class="SubjectManagement">
+                                    
+                                      <div class="checboxSubject">
+                                         <asp:Label runat="server" ID="lblManSub" CssClass="'Man_subject" Text="Mandetory Subject"></asp:Label>
+                                          <asp:CheckBoxList runat="server" ID="chkSubjectchoice">
+                                          </asp:CheckBoxList>
+                                       </div>
 
-                            <div runat="server" id="checkboxDiv">
-                                <asp:Label runat="server" ID="lblHeading" Text="Choese Subject"></asp:Label>
+                                      <div runat="server" class="radiobtnList">
+                                         <asp:Label runat="server" ID="lblOpSub" CssClass="OpSubject" Text="Optional Subject"></asp:Label>
 
-                                  <div class="checboxSubject">
-                                      <asp:CheckBoxList runat="server" ID="chkSubjectchoice">
-                                      </asp:CheckBoxList>
-                                   </div>
+                                          <asp:RadioButtonList runat="server" ID="btnRadio">
 
-                                <div runat="server" class="radiobtnList">
-                                      <asp:RadioButtonList runat="server" ID="btnRadio">
+                                        </asp:RadioButtonList>
 
-                                    </asp:RadioButtonList>
-
+                                       </div>
                                 </div>
-                            </div>
+                           </div>
+                                </asp:Panel>
                           
 
 
@@ -1018,9 +1064,8 @@
                 </div>
 
 
-             <%-- Testing Purpose--%>
-
-                <asp:Button  runat="server" ID="btnSave" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
+       
+              
 
 
             </div>
