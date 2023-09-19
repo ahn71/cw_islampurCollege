@@ -541,6 +541,11 @@ namespace DS.UI.DSWS
                 lblMessage.InnerText = "warning->You are required to choose three mandatory subjects.";
                 return false;
              }
+            else if (Optionalvalus == "") 
+            {
+                lblMessage.InnerText = "warning-> You Must be select 1 Optional Subject";
+                return false;
+            }
             else if (Mansubject.Contains(Optionalvalus)) 
              {
                 lblMessage.InnerText = "warning-> It's impossible to consider a subject as optional and mandatory simultaneously";

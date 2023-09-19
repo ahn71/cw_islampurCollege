@@ -9,6 +9,7 @@ using DS.Classes;
 using DS.DAL;
 using DS.PropertyEntities.Model.Admission;
 using DS.PropertyEntities.Model.SMS;
+using DS.PropertyEntities.Model.DSWS;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -314,7 +315,8 @@ namespace DS.UI.Academic.Students
                 if (manSubIds != "")
                 {
                     Label lblMansubid = (Label)e.Row.FindControl("lblMansubid");
-                    lblMansubid.Text = getSubsName(manSubIds); 
+                  
+                    lblMansubid.Text = GroupSubject.getSubsName(manSubIds); 
                 }
 
 
@@ -322,14 +324,7 @@ namespace DS.UI.Academic.Students
             }
         }
 
-        //Get Subject Name
-       private string getSubsName(string manSubIds)
-        {
-        DataTable dt=new DataTable();
-            dt = CRUD.ReturnTableNull("SELECT STRING_AGG(subname ,',') as subname FROM NewSubject WHERE SubId IN(" + manSubIds + ")");
-        
-            return dt.Rows[0]["subname"].ToString();
-        }
+    
 
         //Save Data GroupSubjectSetup table and GroupSubjectSetupDetails Table
         private void SaveGroupSubjects(int StudentId,int BatchId, string manSubIds,string OpSubId) 
