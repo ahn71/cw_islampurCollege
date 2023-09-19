@@ -558,7 +558,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">01</td>
-                                        <td>Bangla(101)</td>
+                                        <td>Bangla (101)</td>
                                         <td style="text-align: center;">02</td>
                                         <td>English (106)</td>
                                         <td style="text-align: center;">03</td>
@@ -568,10 +568,12 @@
                                         <td style="text-align: center;">04</td>
                                         <td>
                                             <asp:Label runat="server" ID="lblManSub1"></asp:Label>
+                                            
                                         </td>
                                         <td style="text-align: center;">05</td>
                                         <td>
                                              <asp:Label runat="server" ID="lblManSub2"></asp:Label>
+                                           
                                         </td>
                                         <td style="text-align: center;">06</td>
                                         <td>
@@ -580,7 +582,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">07</td>
-                                        <td colspan="5">4<sub>th</sub> Subject :
+                                        <td colspan="5">4<sup>th</sup> Subject :
                                             <asp:Label runat="server" ID="lblOptSubject"></asp:Label>
                                         </td>
                                     </tr>
@@ -1021,10 +1023,12 @@
                                         <td style="text-align: center;">04</td>
                                         <td>
                                             <asp:Label runat="server" ID="lblManSub1_1"></asp:Label>
+                                           
                                         </td>
                                         <td style="text-align: center;">05</td>
                                         <td>
                                             <asp:Label runat="server" ID="lblManSub2_1"></asp:Label>
+                                           
                                         </td>
                                         <td style="text-align: center;">06</td>
                                         <td>
@@ -1033,8 +1037,9 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">07</td>
-                                        <td colspan="5">4<sub>th</sub> Subject :
-                                            <asp:Label runat="server" ID="lblOptSubject1"></asp:Label>
+                                        <td colspan="5">4<sup>th</sup> Subject :
+                                            <asp:Label runat="server" ID="lblOptSubject1" ></asp:Label>
+                                           
                                         </td>
 
                                     </tr>
