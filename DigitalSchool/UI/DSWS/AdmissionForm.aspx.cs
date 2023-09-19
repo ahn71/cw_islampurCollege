@@ -543,12 +543,12 @@ namespace DS.UI.DSWS
              }
             else if (Optionalvalus == "") 
             {
-                lblMessage.InnerText = "warning-> You Must be select 1 Optional Subject";
+                lblMessage.InnerText = "warning-> You are required to choose one optional subjects.";
                 return false;
             }
             else if (Mansubject.Contains(Optionalvalus)) 
              {
-                lblMessage.InnerText = "warning-> It's impossible to consider a subject as optional and mandatory simultaneously";
+                lblMessage.InnerText = "warning-> You cannot select the same subjects for both mandatory and optional courses";
                 return false;
             }
             ViewState["__OptinalId__"] = Optionalvalus;

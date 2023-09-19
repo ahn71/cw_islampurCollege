@@ -454,12 +454,12 @@
                            <%-- rokibul work--%>
                             <asp:Panel ClientIDMode="Static" runat="server" id="pnlGroupSubjects">
                             <div runat="server" id="divGroupSubjects">
-                                <asp:Label runat="server" ID="lblHeading" CssClass="Headin" Text="Choese Subject"></asp:Label>
+                                <asp:Label runat="server" ID="lblHeading" CssClass="Headin" Text="Choose Subject"></asp:Label>
                                  
                                 <div class="SubjectManagement">
                                     
                                       <div class="checboxSubject">
-                                         <asp:Label runat="server" ID="lblManSub" CssClass="'Man_subject" Text="Mandetory Subject"></asp:Label>
+                                         <asp:Label runat="server" ID="lblManSub" CssClass="'Man_subject" Text="Mandatory Subject"></asp:Label>
                                           <asp:CheckBoxList runat="server" ID="chkSubjectchoice">
                                           </asp:CheckBoxList>
                                        </div>
@@ -474,7 +474,7 @@
                                        </div>
                                 </div>
                            </div>
-                                </asp:Panel>
+               </asp:Panel>
                           
 
 
