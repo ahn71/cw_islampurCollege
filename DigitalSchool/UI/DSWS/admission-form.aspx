@@ -558,11 +558,11 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">01</td>
-                                        <td>বাংলা (১০১)</td>
+                                        <td>Bangla(101)</td>
                                         <td style="text-align: center;">02</td>
-                                        <td>ইংরেজি (১০৬)</td>
+                                        <td>English (106)</td>
                                         <td style="text-align: center;">03</td>
-                                        <td>তথ্য ও যোগাযোগ প্রযুক্তি (২৭৫)</td>
+                                        <td>ICT (275)</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">04</td>
@@ -580,7 +580,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">07</td>
-                                        <td colspan="5">চতুর্থ বিষয় :
+                                        <td colspan="5">4<sub>th</sub> Subject :
                                             <asp:Label runat="server" ID="lblOptSubject"></asp:Label>
                                         </td>
                                     </tr>
@@ -1011,11 +1011,11 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">01</td>
-                                        <td>বাংলা (১০১)</td>
+                                        <td>Bangla (101)</td>
                                         <td style="text-align: center;">02</td>
-                                        <td>ইংরেজি (১০৬)</td>
+                                        <td>English (106)</td>
                                         <td style="text-align: center;">03</td>
-                                        <td>তথ্য ও যোগাযোগ প্রযুক্তি (২৭৫)</td>
+                                        <td>ICT (275)</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">04</td>
@@ -1033,7 +1033,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">07</td>
-                                        <td colspan="5">চতুর্থ বিষয় :
+                                        <td colspan="5">4<sub>th</sub> Subject :
                                             <asp:Label runat="server" ID="lblOptSubject1"></asp:Label>
                                         </td>
 
