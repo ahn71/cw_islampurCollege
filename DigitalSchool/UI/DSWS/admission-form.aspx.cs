@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -172,7 +171,7 @@ namespace DS.UI.DSWS
             DataTable dt = new DataTable();
 
            
-            dt = CRUD.ReturnTableNull("SELECT STRING_AGG(subname + ' ' +'(' + CAST(SubCode AS NVARCHAR(10)) + ')', ',') as subname FROM NewSubject ns inner JOIN ClassSubject cs ON ns.SubId = cs.SubId WHERE ns.SubId IN(" + manSubIds + ")");
+            dt = CRUD.ReturnTableNull("SELECT STRING_AGG(subname ,',') as subname FROM NewSubject WHERE SubId IN(" + manSubIds + ")");
             String subname = dt.Rows[0]["subname"].ToString();
             List<string> _manSub = subname.Split(',').ToList();
             if( _manSub.Count > 0 )
