@@ -166,7 +166,7 @@ namespace DS.UI.DSWS
             
         }
 
-
+        //Show GetMandatorySubject 
         private void ShowManSubjectName(string manSubIds) 
         {
             DataTable dt = new DataTable();
