@@ -1601,37 +1601,6 @@ D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.BLL\obj\Debug\DS.BLL.c
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll.config
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.SqlServer.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.dll.config
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.dll.config
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.SqlServer.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.resources.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csprojResolveAssemblyReference.cache
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreCompileInputs.cache
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll.config
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.pdb
@@ -1663,3 +1632,34 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.B
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.resources.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csprojResolveAssemblyReference.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreCompileInputs.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb

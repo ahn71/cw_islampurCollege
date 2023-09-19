@@ -452,7 +452,7 @@
 
 
                            <%-- rokibul work--%>
-                            <asp:Panel runat="server" id="pnlGroupSubjects">
+                            <asp:Panel ClientIDMode="Static" runat="server" id="pnlGroupSubjects">
                             <div runat="server" id="divGroupSubjects">
                                 <asp:Label runat="server" ID="lblHeading" CssClass="Headin" Text="Choese Subject"></asp:Label>
                                  

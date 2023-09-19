@@ -538,12 +538,12 @@ namespace DS.UI.DSWS
             string MansubIds = string.Join(",", Mansubject.ToArray());
             if (ManSubscount!=3)
              {
-                lblMessage.InnerText = "Error>>Please Select at lest 3 Subject";
+                lblMessage.InnerText = "warning->You are required to choose three mandatory subjects.";
                 return false;
              }
             else if (Mansubject.Contains(Optionalvalus)) 
              {
-                lblMessage.InnerText = "Error>> You dont select same subject mandetori and optional";
+                lblMessage.InnerText = "warning-> It's impossible to consider a subject as optional and mandatory simultaneously";
                 return false;
             }
             ViewState["__OptinalId__"] = Optionalvalus;

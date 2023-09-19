@@ -647,28 +647,6 @@ D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\D
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
@@ -691,3 +669,25 @@ D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\o
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
