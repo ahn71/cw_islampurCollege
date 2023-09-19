@@ -543,7 +543,7 @@ namespace DS.UI.DSWS
              }
             else if (Optionalvalus == "") 
             {
-                lblMessage.InnerText = "warning-> You are required to choose one optinal subjects.";
+                lblMessage.InnerText = "warning-> You are required to choose one optional subjects.";
                 return false;
             }
             else if (Mansubject.Contains(Optionalvalus)) 

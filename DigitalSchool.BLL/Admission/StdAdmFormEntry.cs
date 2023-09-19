@@ -85,7 +85,7 @@ namespace DS.BLL.Admission
 
             dt_list = new DataTable();
             dt_list = CRUD.ReturnTableNull(@"select SL,AdmissionYear,AdmissionFormNo,convert(varchar(10),AdmissionDate,105) as AdmissionDate,FullName,FullNameBn,adm.ClassId,c.ClassName,adm.ClsGrpID,cgs.GroupName,adm.ClsSecID,cgs.SectionName,Gender,Religion,adm.ShiftId,sft.ShiftName,convert(varchar(10),DateOfBirth,105) as DateOfBirth,Mobile,case when BloodGroup='0' then '' else BloodGroup end as BloodGroup,FathersName,FathersNameBn,FathersProfession,FathersProfessionBn,FathersMobile,MothersName,MothersNameBn,MothersProfession,MothersProfessionBn,MothersMobile,ParentsAddress,ParentsAddressBn,GuardianName,GuardianRelation,GuardianMobileNo,GuardianAddress,PermanentAddress,PermanentAddressBn,PermanentPostOfficeId,PermanentThanaId,PermanentDistrictId,PresentAddress,PresentAddressBn,PresentPostOfficeId,PresentThanaId,PresentDistrictId,b.BoardName,PreSCPassingYear,PreSCRegistration,PreSCRollNo,PreSCGPA,PreSchoolName,TCCollege,case when convert(varchar(10),TCDate,120)='1900-01-01' then '' else convert(varchar(10),TCDate,105) end as TCDate ,pPO.PostOfficeName as ParentsPostOffice,pPO.PostOfficeNameBn as ParentsPostOfficeBn,pT.ThanaName as ParentsThana,pT.ThanaNameBn as ParentsThanaBn,pD.DistrictName as  ParentsDistrict,pD.DistrictNameBn as  ParentsDistrictBn,
-              adm.ManSubId,ns.Subname
+              adm.ManSubId,ns.Subname + ' ' + '(' + CAST(cs.SubCode AS NVARCHAR(10)) + ')' as Subname
 
              , pePO.PostOfficeName as PermanentPostOffice, pePO.PostOfficeNameBn as PermanentPostOfficeBn, peT.ThanaName as PermanentThana, peT.ThanaNameBn as PermanentThanaBn, peD.DistrictName as PermanentDistrict, peD.DistrictNameBn as PermanentDistrictBn
 
@@ -98,6 +98,8 @@ namespace DS.BLL.Admission
                left join Post_Office prPO on adm.PresentPostOfficeId = prPO.PostOfficeID left join Thanas prT on adm.PresentThanaId = prT.ThanaId left join Distritcts prD on adm.PresentDistrictId = prD.DistrictId
                left join Boards b on adm.PreSCBoard = b.BoardId left join Boards bHSC on adm.PreSCBoardHSC = bHSC.BoardId left join Boards bHnr on adm.PreSCBoardHonours = bHnr.BoardId 
                  left join NewSubject ns on adm.OpSubId=ns.SubId
+                 left join ClassSubject  cs on ns.SubId=cs.SubId
+
                where adm.SL =" + SL);
             return dt_list;
         }
