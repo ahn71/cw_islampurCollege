@@ -1234,6 +1234,7 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSh
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.xml
@@ -1244,6 +1245,7 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSh
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csprojResolveAssemblyReference.cache

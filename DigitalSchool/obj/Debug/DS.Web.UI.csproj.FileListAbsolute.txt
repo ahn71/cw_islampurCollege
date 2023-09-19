@@ -3015,6 +3015,7 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\PdfSharp.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\System.Net.Http.Formatting.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.WebHost.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
@@ -3046,6 +3047,7 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\PdfSharp.Charti
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\System.Net.Http.Formatting.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.WebHost.xml
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\de\PdfSharp.resources.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\de\PdfSharp.Charting.resources.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csprojResolveAssemblyReference.cache
