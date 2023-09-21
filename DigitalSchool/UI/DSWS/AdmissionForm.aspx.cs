@@ -552,6 +552,7 @@ namespace DS.UI.DSWS
                     }
                     else
                     {
+                        subjectDictionary.Add(item.Value, item.Text);
                         Mansubject.Add(item.Value);
                     }                    
                     ManSubscount++;
@@ -562,41 +563,44 @@ namespace DS.UI.DSWS
             
            if (ManSubscount != 3)
             {
-                lblMessage.InnerText = "warning->You are required to choose three mandatory subjects.";
+                lblMessage.InnerText = "error->You are required to choose three mandatory subjects.";
                 return false;
             }
             else if (Optionalvalus == "")
             {
-                lblMessage.InnerText = "warning-> You are required to choose one optional subjects.";
+                lblMessage.InnerText = "error-> You are required to choose one optional subjects.";
                 return false;
             }
             else 
             {
 
 
-                if (Mansubject.Contains(Optionalvalus) || MansubjectRelated.Contains(Optionalvalus))
+                if (Mansubject.Contains(Optionalvalus))
                 {
-                    lblMessage.InnerText = "warning-> You cannot select the same ro realated subjects for both mandatory and optional courses";
+                    
+                    lblMessage.InnerText = "error-> You cannot select the same subject('" + subjectDictionary[Optionalvalus] + "')for both mandatory and optional courses";
                     return false;
                 }
-                else { 
-                List<string> commonList=Mansubject.Intersect(MansubjectRelated).ToList();
+                else if (MansubjectRelated.Contains(Optionalvalus))
+                {
+
+                    lblMessage.InnerText = "error-> You cannot select the same or related subject('" + btnRadio .SelectedItem.Text+ "')for both mandatory and optional courses";
+                    return false;
+                }
+                else {
+                    List<string> commonList = Mansubject.Intersect(MansubjectRelated).ToList();
                     if (commonList.Any())
                     {
                         string subjects = "";
                         foreach (string s in commonList)
                         {
-                            subjects +=","+ subjectDictionary[s];
+                            subjects += ",'" + subjectDictionary[s]+"'";
                         }
-                        
-
-
-                        lblMessage.InnerText = "warning-> You can not select both "+ subjects.Remove(0, 1)+ "  in a same time" ;
+                        lblMessage.InnerText = "error-> You can not select both " + subjects.Remove(0, 1) + "  in a same time";
                         return false;
                     }
                 }
             }
-
             string MansubIds = string.Join(",", Mansubject.ToArray());
             ViewState["__OptinalId__"] = Optionalvalus;
             Session["__ManSubIds__"] = MansubIds;
