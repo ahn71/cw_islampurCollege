@@ -6,11 +6,13 @@ using DS.BLL.ManagedClass;
 using DS.Classes;
 using DS.DAL;
 using DS.PropertyEntities.Model.Admission;
+using DS.PropertyEntities.Model.ManagedClass;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -29,13 +31,13 @@ namespace DS.UI.DSWS
             lblMessage.InnerText = "";
             if (!IsPostBack)
             {
-                
+
                 if (!StdAdmFormEntry.isAdmissionOpen())
-                   Response.Redirect("UI/DSWS/adm-msg.aspx");
+                    Response.Redirect("UI/DSWS/adm-msg.aspx");
                 pnlGroupSubjects.Visible = false;
                 ClassEntry.GetAdmissionClasses(ddlClass);
-                DropDownList[] ddlDistrict = { ddlPermanentDistrict, ddlPresentDistrict,ddlParentsDistrict };
-                DistrictEntry.GetDropDownList(ddlDistrict);                
+                DropDownList[] ddlDistrict = { ddlPermanentDistrict, ddlPresentDistrict, ddlParentsDistrict };
+                DistrictEntry.GetDropDownList(ddlDistrict);
                 ShiftEntry.GetShiftList(ddlShift);
                 while (true)
                 {
@@ -51,8 +53,9 @@ namespace DS.UI.DSWS
                 }
                 //commonTask.loadPassingYearForAdmission(ddlPreviousExamPassingYear);
                 // commonTask.loadPassingYearForAdmission(ddlPreviousExamPassingYearHSC);
-               
-                while (true) {
+
+                while (true)
+                {
                     DropDownList[] ddlBoards = { ddlPreviousExamBoard, ddlPreviousExamBoardHSC, ddlPreviousExamBoardHonours };
                     commonTask.loadBoard(ddlBoards);
                     if (ddlPreviousExamBoard == null || ddlPreviousExamBoard.Items.Count == 0)
@@ -64,41 +67,41 @@ namespace DS.UI.DSWS
 
                     //DropDownList[] ddlPassingYear = { ddlPreviousExamPassingYear, ddlPreviousExamPassingYearHSC };
                     //commonTask.loadPassingYearForAdmission(ddlPassingYear);
-                    
 
-                    
+
+
                 }
 
 
-                
-                
+
+
             }
         }
 
         protected void ddlClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (ddlClass.SelectedItem.Text.Trim().ToLower().Contains("honours"))
             {
-               // divNUAdmissionRoll.Visible = true;
+                // divNUAdmissionRoll.Visible = true;
                 divHSCInfo.Visible = true;
                 divHonoursInfo.Visible = false;
             }
             else if (ddlClass.SelectedItem.Text.Trim().ToLower().Contains("degree"))
             {
-              //  divNUAdmissionRoll.Visible = false;
+                //  divNUAdmissionRoll.Visible = false;
                 divHSCInfo.Visible = true;
                 divHonoursInfo.Visible = false;
             }
             else if (ddlClass.SelectedItem.Text.Trim().ToLower().Contains("masters"))
             {
-              //  divNUAdmissionRoll.Visible = true;
-                divHSCInfo.Visible = true;                
+                //  divNUAdmissionRoll.Visible = true;
+                divHSCInfo.Visible = true;
                 divHonoursInfo.Visible = true;
             }
             else
             {
-             //   divNUAdmissionRoll.Visible = false;
+                //   divNUAdmissionRoll.Visible = false;
                 divHSCInfo.Visible = false;
                 divHonoursInfo.Visible = false;
             }
@@ -112,10 +115,10 @@ namespace DS.UI.DSWS
                 clsgrpEntry = new ClassGroupEntry();
             }
             clsgrpEntry.GetDropDownListClsGrpId(int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup);
-            if(ddlGroup.SelectedValue!="0")
-            ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
+            if (ddlGroup.SelectedValue != "0")
+                ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
 
-        
+
 
 
         }
@@ -125,7 +128,7 @@ namespace DS.UI.DSWS
             ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
             if (ddlGroup.SelectedIndex > 0)
             {
-                
+
                 string groupid = ddlGroup.SelectedValue;
                 GetMandetorySubeject(groupid);
                 GetOptionalSubject(groupid);
@@ -133,7 +136,7 @@ namespace DS.UI.DSWS
             }
             else
                 pnlGroupSubjects.Visible = false;
-            
+
         }
 
         protected void ddlPermanentDistrict_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,7 +146,7 @@ namespace DS.UI.DSWS
 
         protected void ddlPermanentUpazila_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Classes.commonTask.loadPostoffice(ddlPermanentPostOffice ,ddlPermanentDistrict.SelectedValue, ddlPermanentUpazila.SelectedValue);
+            Classes.commonTask.loadPostoffice(ddlPermanentPostOffice, ddlPermanentDistrict.SelectedValue, ddlPermanentUpazila.SelectedValue);
         }
 
         protected void ddlPresentDistrict_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,16 +156,16 @@ namespace DS.UI.DSWS
 
         protected void ddlPresentUpazila_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Classes.commonTask.loadPostoffice(ddlPresentPostOffice , ddlPresentDistrict.SelectedValue, ddlPresentUpazila.SelectedValue);
+            Classes.commonTask.loadPostoffice(ddlPresentPostOffice, ddlPresentDistrict.SelectedValue, ddlPresentUpazila.SelectedValue);
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
-                ViewState["__dateOfBirth__"]= dateOfBirth.ToString("yyyy-MM-dd");
+                ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
             }
             catch (Exception ex)
             {
@@ -188,17 +191,17 @@ namespace DS.UI.DSWS
                 txtTCDate.Focus();
                 return;
             }
-            if (!ValidatationForSubject()) 
-             {
+            if (!ValidatationForSubject())
+            {
                 return;
-             }
+            }
             saveStudentAdmission();
         }
         private Boolean saveStudentAdmission()
         {
             try
             {
-                
+
                 using (AdmStdFormInfoEntities entities = GetFormData())
                 {
                     if (entities == null)
@@ -208,7 +211,7 @@ namespace DS.UI.DSWS
                         stdAdmFormEntry = new StdAdmFormEntry();
                     }
                     stdAdmFormEntry.AddEntities = entities;
-                    int sl = stdAdmFormEntry.Insert(divHSCInfo.Visible,divHonoursInfo.Visible);
+                    int sl = stdAdmFormEntry.Insert(divHSCInfo.Visible, divHonoursInfo.Visible);
                     if (sl > 0)
                     {
                         if (FileUpload1.HasFile)
@@ -226,30 +229,31 @@ namespace DS.UI.DSWS
                     }
                 }
 
-                
+
             }
             catch (Exception ex)
-            {            
+            {
                 return false;
             }
         }
-        
+
         private AdmStdFormInfoEntities GetFormData()
         {
-            try {
-                
+            try
+            {
+
 
 
                 entities = new AdmStdFormInfoEntities();
                 entities.AdmissionDate = TimeZoneBD.getCurrentTimeBD();
 
                 int AdmissionFormNo = StdAdmFormEntry.getAdmissionFormNo(entities.AdmissionDate.Year);
-                if(AdmissionFormNo == 0)
-                    return entities = null;                
+                if (AdmissionFormNo == 0)
+                    return entities = null;
                 entities.MoneyReceiptNo = txtMoneyReceiptNo.Text.Trim();
                 entities.AdmissionFormNo = AdmissionFormNo;
-                entities.FullName = commonTask.Replase(txtStudentName.Text.Trim(), '\'', "\''"); 
-                entities.FullNameBn = commonTask.Replase(txtStudentNameBn.Text.Trim(), '\'', "\''"); 
+                entities.FullName = commonTask.Replase(txtStudentName.Text.Trim(), '\'', "\''");
+                entities.FullNameBn = commonTask.Replase(txtStudentNameBn.Text.Trim(), '\'', "\''");
                 entities.Gender = ddlGender.SelectedValue;
                 entities.DateOfBirth = DateTime.Parse(ViewState["__dateOfBirth__"].ToString());
                 entities.Religion = ddlReligion.SelectedValue;
@@ -260,46 +264,46 @@ namespace DS.UI.DSWS
                 entities.Mobile = "+88" + txtStudentMobile.Text.Trim();
                 entities.BloodGroup = ddlBloodGroup.SelectedValue;
 
-                entities.FathersName = commonTask.Replase(txtFatherName.Text.Trim(), '\'', "\''"); 
-                entities.FathersNameBn = commonTask.Replase(txtFatherNameBn.Text.Trim(), '\'', "\''"); 
-                entities.FathersMobile=   "+88" +txtFatherMobile.Text.Trim();
-                entities.FathersProfession = commonTask.Replase(txtFatherOccupation.Text.Trim(), '\'', "\''"); 
-                entities.FathersProfessionBn = commonTask.Replase(txtFatherOccupationBn.Text.Trim(), '\'', "\''"); 
+                entities.FathersName = commonTask.Replase(txtFatherName.Text.Trim(), '\'', "\''");
+                entities.FathersNameBn = commonTask.Replase(txtFatherNameBn.Text.Trim(), '\'', "\''");
+                entities.FathersMobile = "+88" + txtFatherMobile.Text.Trim();
+                entities.FathersProfession = commonTask.Replase(txtFatherOccupation.Text.Trim(), '\'', "\''");
+                entities.FathersProfessionBn = commonTask.Replase(txtFatherOccupationBn.Text.Trim(), '\'', "\''");
 
-                entities.MothersName = commonTask.Replase(txtMotherName.Text.Trim(), '\'', "\''"); 
-                entities.MothersNameBn = commonTask.Replase(txtMotherNameBn.Text.Trim(), '\'', "\''"); 
+                entities.MothersName = commonTask.Replase(txtMotherName.Text.Trim(), '\'', "\''");
+                entities.MothersNameBn = commonTask.Replase(txtMotherNameBn.Text.Trim(), '\'', "\''");
                 entities.MothersMobile = (!txtMotherMobile.Text.Trim().Equals("") ? "+88" + txtMotherMobile.Text.Trim() : "");
-                entities.MothersProfession = commonTask.Replase(txtMotherOccupation.Text.Trim(), '\'', "\''"); 
-                entities.MothersProfessionBn = commonTask.Replase(txtMotherOccupationBn.Text.Trim(), '\'', "\''"); 
+                entities.MothersProfession = commonTask.Replase(txtMotherOccupation.Text.Trim(), '\'', "\''");
+                entities.MothersProfessionBn = commonTask.Replase(txtMotherOccupationBn.Text.Trim(), '\'', "\''");
 
-                entities.ParentsAddress = commonTask.Replase(txtParentsVillage.Text.Trim(), '\'', "\''"); 
-                entities.ParentsAddressBn = commonTask.Replase(txtParentsVillageBn.Text.Trim(), '\'', "\''"); 
-                entities.ParentsPostOfficeId =int.Parse(ddlParentsPostOffice.SelectedValue);
-                entities.ParentsThanaId =int.Parse(ddlParentsUpazila.SelectedValue);
-                entities.ParentsDistrictId =int.Parse(ddlParentsDistrict.SelectedValue);
-                
-                entities.GuardianName = commonTask.Replase(txtGuardianName.Text.Trim(), '\'', "\''"); 
-                entities.GuardianRelation = commonTask.Replase(txtGuardianRelation.Text.Trim(), '\'', "\''"); 
+                entities.ParentsAddress = commonTask.Replase(txtParentsVillage.Text.Trim(), '\'', "\''");
+                entities.ParentsAddressBn = commonTask.Replase(txtParentsVillageBn.Text.Trim(), '\'', "\''");
+                entities.ParentsPostOfficeId = int.Parse(ddlParentsPostOffice.SelectedValue);
+                entities.ParentsThanaId = int.Parse(ddlParentsUpazila.SelectedValue);
+                entities.ParentsDistrictId = int.Parse(ddlParentsDistrict.SelectedValue);
+
+                entities.GuardianName = commonTask.Replase(txtGuardianName.Text.Trim(), '\'', "\''");
+                entities.GuardianRelation = commonTask.Replase(txtGuardianRelation.Text.Trim(), '\'', "\''");
                 entities.GuardianMobileNo = "+88" + txtGuardianMobile.Text.Trim();
-                entities.GuardianAddress = commonTask.Replase(txtGuardianAddress.Text.Trim(), '\'', "\''"); 
+                entities.GuardianAddress = commonTask.Replase(txtGuardianAddress.Text.Trim(), '\'', "\''");
 
-                entities.PermanentAddress = commonTask.Replase(txtPermanentVillage.Text.Trim(), '\'', "\''"); 
-                entities.PermanentAddressBn = commonTask.Replase(txtPermanentVillageBn.Text.Trim(), '\'', "\''"); 
-                entities.PermanentDistrictId =int.Parse(ddlPermanentDistrict.SelectedValue);
-                entities.PermanentThanaId =int.Parse(ddlPermanentUpazila.SelectedValue);
-                entities.PermanentPostOfficeId =int.Parse(ddlPermanentPostOffice.SelectedValue);
+                entities.PermanentAddress = commonTask.Replase(txtPermanentVillage.Text.Trim(), '\'', "\''");
+                entities.PermanentAddressBn = commonTask.Replase(txtPermanentVillageBn.Text.Trim(), '\'', "\''");
+                entities.PermanentDistrictId = int.Parse(ddlPermanentDistrict.SelectedValue);
+                entities.PermanentThanaId = int.Parse(ddlPermanentUpazila.SelectedValue);
+                entities.PermanentPostOfficeId = int.Parse(ddlPermanentPostOffice.SelectedValue);
 
-                entities.PresentAddress = commonTask.Replase(txtPresentVillage.Text.Trim(), '\'', "\''"); 
-                entities.PresentAddressBn = commonTask.Replase(txtPresentVillageBn.Text.Trim(), '\'', "\''"); 
+                entities.PresentAddress = commonTask.Replase(txtPresentVillage.Text.Trim(), '\'', "\''");
+                entities.PresentAddressBn = commonTask.Replase(txtPresentVillageBn.Text.Trim(), '\'', "\''");
                 entities.PresentDistrictId = int.Parse(ddlPresentDistrict.SelectedValue);
                 entities.PresentThanaId = int.Parse(ddlPresentUpazila.SelectedValue);
                 entities.PresentPostOfficeId = int.Parse(ddlPresentPostOffice.SelectedValue);
 
-                
+
                 entities.PreSchoolName = commonTask.Replase(txtPreviousExamSchoolName.Text.Trim(), '\'', "\''");
                 entities.PreSCBoard = ddlPreviousExamBoard.SelectedValue;
                 entities.PreSCPassingYear = int.Parse(ddlPreviousExamPassingYear.SelectedValue);
-                entities.PreSCRegistration =long.Parse(txtPreviousExamRegistrationNo.Text.Trim());
+                entities.PreSCRegistration = long.Parse(txtPreviousExamRegistrationNo.Text.Trim());
                 entities.PreSCRollNo = long.Parse(txtPreviousExamRollNo.Text.Trim());
                 entities.PreSCGPA = float.Parse(txtPreviousExamGPA.Text.Trim());
 
@@ -331,12 +335,12 @@ namespace DS.UI.DSWS
                 //    entities.PreSCRollNoHSC = long.Parse(txtPreviousExamRollNoHSC.Text.Trim());
                 //    entities.PreSCGPAHSC = float.Parse(txtPreviousExamGPAHSC.Text.Trim());
                 //}
-                entities.TCCollege = commonTask.Replase(txtTCCollegeName.Text.Trim(), '\'', "\''"); 
+                entities.TCCollege = commonTask.Replase(txtTCCollegeName.Text.Trim(), '\'', "\''");
                 entities.TCDate = ViewState["__tcDate__"].ToString();
 
                 entities.IsActive = true;
                 //entities.AdmissionYear = 2022;
-                entities.AdmissionYear =int.Parse( ViewState["__AdmissionYear__"].ToString());
+                entities.AdmissionYear = int.Parse(ViewState["__AdmissionYear__"].ToString());
                 if (divNUAdmissionRoll.Visible)
                     entities.NUAdmissionRoll = txtNUAdmissionRoll.Text.Trim();
                 else
@@ -348,24 +352,24 @@ namespace DS.UI.DSWS
 
                 return entities;
             }
-            catch (Exception ex) { lblMessage.InnerText = "error->ln:236, GetFormData() | "+ex.Message; return entities = null; }
-            
+            catch (Exception ex) { lblMessage.InnerText = "error->ln:236, GetFormData() | " + ex.Message; return entities = null; }
+
 
         }
 
         protected void ddlParentsDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ThanaEntry.GetDropDownList(int.Parse(ddlParentsDistrict.SelectedValue),ddlParentsUpazila);
+            ThanaEntry.GetDropDownList(int.Parse(ddlParentsDistrict.SelectedValue), ddlParentsUpazila);
         }
 
         protected void ddlParentsUpazila_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Classes.commonTask.loadPostoffice(ddlParentsPostOffice, ddlParentsDistrict.SelectedValue,ddlParentsUpazila.SelectedValue);
+            Classes.commonTask.loadPostoffice(ddlParentsPostOffice, ddlParentsDistrict.SelectedValue, ddlParentsUpazila.SelectedValue);
         }
         private void saveImg(string sl)
         {
             try
-            {               
+            {
                 //Save images into Images folder
                 System.Drawing.Image image = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
                 // image.Save(Server.MapPath("/Images/studentAdmissionImages/" + sl+".Jpeg"));
@@ -375,10 +379,10 @@ namespace DS.UI.DSWS
                 {
                     using (MemoryStream memoryStream = new MemoryStream())
                     {
-                        thumbnail.Save(Server.MapPath("/Images/studentAdmissionImages/" + sl+".Jpeg"));
+                        thumbnail.Save(Server.MapPath("/Images/studentAdmissionImages/" + sl + ".Jpeg"));
                         if (stdAdmFormEntry == null)
                             stdAdmFormEntry = new StdAdmFormEntry();
-                        stdAdmFormEntry.updateImageName(sl,sl+ ".Jpeg");
+                        stdAdmFormEntry.updateImageName(sl, sl + ".Jpeg");
                     }
                 }
 
@@ -403,9 +407,11 @@ namespace DS.UI.DSWS
         }
         private void set_guardian_address()
         {
-            try {
-                 txtGuardianAddress.Text = txtParentsVillage.Text.Trim()  +((!ddlParentsPostOffice.SelectedValue.Equals("0"))? ","+ddlParentsPostOffice.SelectedItem.Text.Trim() :"") + ((!ddlParentsUpazila.SelectedValue.Equals("0")) ? ","+ddlParentsUpazila.SelectedItem.Text.Trim()  : "") + ((!ddlParentsDistrict.SelectedValue.Equals("0")) ? "," + ddlParentsDistrict.SelectedItem.Text.Trim(): "");
-            } catch(Exception ex) { }
+            try
+            {
+                txtGuardianAddress.Text = txtParentsVillage.Text.Trim() + ((!ddlParentsPostOffice.SelectedValue.Equals("0")) ? "," + ddlParentsPostOffice.SelectedItem.Text.Trim() : "") + ((!ddlParentsUpazila.SelectedValue.Equals("0")) ? "," + ddlParentsUpazila.SelectedItem.Text.Trim() : "") + ((!ddlParentsDistrict.SelectedValue.Equals("0")) ? "," + ddlParentsDistrict.SelectedItem.Text.Trim() : "");
+            }
+            catch (Exception ex) { }
         }
 
         protected void chkMother_CheckedChanged(object sender, EventArgs e)
@@ -439,15 +445,15 @@ namespace DS.UI.DSWS
                     ddlPresentDistrict.SelectedValue = ddlPermanentDistrict.SelectedValue;
                     ThanaEntry.GetDropDownList(int.Parse(ddlPresentDistrict.SelectedValue), ddlPresentUpazila);
                     ddlPresentUpazila.SelectedValue = ddlPermanentUpazila.SelectedValue;
-                    commonTask.loadPostoffice(ddlPresentPostOffice, ddlPresentDistrict.SelectedValue,ddlPresentUpazila.SelectedValue);
+                    commonTask.loadPostoffice(ddlPresentPostOffice, ddlPresentDistrict.SelectedValue, ddlPresentUpazila.SelectedValue);
                     ddlPresentPostOffice.SelectedValue = ddlPermanentPostOffice.SelectedValue;
                 }
                 else
                 {
                     txtPresentVillage.Text = txtPermanentVillage.Text.Trim();
                     txtPresentVillageBn.Text = txtPermanentVillageBn.Text.Trim();
-                    ddlPresentDistrict.SelectedValue = ddlPermanentDistrict.SelectedValue;                    
-                    ddlPresentUpazila.SelectedValue = ddlPermanentUpazila.SelectedValue;                    
+                    ddlPresentDistrict.SelectedValue = ddlPermanentDistrict.SelectedValue;
+                    ddlPresentUpazila.SelectedValue = ddlPermanentUpazila.SelectedValue;
                     ddlPresentPostOffice.SelectedValue = ddlPermanentPostOffice.SelectedValue;
                 }
             }
@@ -465,7 +471,7 @@ namespace DS.UI.DSWS
         private string GetMandetorySubeject(string groupSecId)
         {
             DataTable dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName,CAST(CASE WHEN IsOptional = 0 AND BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from v_ClassSubjectList where ClassID='221' and GroupId IN (SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '"+ groupSecId + "') and (IsOptional=0 or BothType=1)");
+            dt = CRUD.ReturnTableNull("select (case when cs.RelatedSubId is null then convert(varchar, cs.SubId) else convert(varchar, cs.SubId) + '_' + convert(varchar, cs.RelatedSubId) end )as SubId,vcs.SubName+'('+cs.SubCode+')' as SubName,CAST(CASE WHEN cs.IsOptional = 0 AND cs.BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '221' and cs.GroupId IN(SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '"+ groupSecId + "') and (cs.IsOptional = 0 or cs.BothType = 1)");
             chkSubjectchoice.Items.Clear();
 
 
@@ -479,28 +485,28 @@ namespace DS.UI.DSWS
                     item.Selected = Convert.ToBoolean(row["MustTaken"]);
 
 
-                    if(item.Selected == true) 
+                    if (item.Selected == true)
                     {
                         if (ddlGroup.SelectedItem.Text == "Science" || ddlGroup.SelectedItem.Text == "Business Studies")
                         {
                             item.Enabled = false;
                         }
-                        
+
                     }
                     chkSubjectchoice.Items.Add(item);
                 }
             }
 
             divGroupSubjects.Style["display"] = "block";
-           return dt.ToString();
+            return dt.ToString();
 
         }
 
         //Get Optinal Subject
-        private string GetOptionalSubject(string groupSecId) 
+        private string GetOptionalSubject(string groupSecId)
         {
             DataTable dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and GroupId IN (SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '" + groupSecId + "')  and (IsOptional=1 or BothType=1)");
+            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and (GroupId = (SELECT  MAX(GroupId)  FROM v_Class_Group_Section WHERE ClsGrpID = '" + groupSecId + "') or IsCommon=1)  and (IsOptional=1 or BothType=1)");
 
             btnRadio.Items.Clear();
             if (dt.Rows.Count > 0)
@@ -519,45 +525,89 @@ namespace DS.UI.DSWS
 
         }
 
-        
+
         //Give Validation for Student for choesen SUbejct
-        private bool ValidatationForSubject() 
+        private bool ValidatationForSubject()
         {
-            string Optionalvalus= btnRadio.SelectedValue.ToString();
+            string Optionalvalus = btnRadio.SelectedValue.ToString();
             List<string> Mansubject = new List<string>();
-           
+            List<string> MansubjectRelated = new List<string>();
+            Dictionary<string, string> subjectDictionary = new Dictionary<string, string>();
+
+
+
             int ManSubscount = 0;
             foreach (ListItem item in chkSubjectchoice.Items)
             {
                 if (item.Selected)
                 {
-                    Mansubject.Add(item.Value);
+                    
+
+                    if (item.Value.Contains('_'))
+                    {
+                        string[] values = item.Value.Split('_');
+                        Mansubject.Add(values[0]);
+                        MansubjectRelated.Add(values[1]);
+                        subjectDictionary.Add(values[0], item.Text);
+                    }
+                    else
+                    {
+                        Mansubject.Add(item.Value);
+                    }                    
                     ManSubscount++;
                 }
             }
-            string MansubIds = string.Join(",", Mansubject.ToArray());
-            if (ManSubscount!=3)
-             {
+            
+            
+            
+           if (ManSubscount != 3)
+            {
                 lblMessage.InnerText = "warning->You are required to choose three mandatory subjects.";
                 return false;
-             }
-            else if (Optionalvalus == "") 
+            }
+            else if (Optionalvalus == "")
             {
                 lblMessage.InnerText = "warning-> You are required to choose one optional subjects.";
                 return false;
             }
-            else if (Mansubject.Contains(Optionalvalus)) 
-             {
-                lblMessage.InnerText = "warning-> You cannot select the same subjects for both mandatory and optional courses";
-                return false;
+            else 
+            {
+
+
+                if (Mansubject.Contains(Optionalvalus) || MansubjectRelated.Contains(Optionalvalus))
+                {
+                    lblMessage.InnerText = "warning-> You cannot select the same ro realated subjects for both mandatory and optional courses";
+                    return false;
+                }
+                else { 
+                List<string> commonList=Mansubject.Intersect(MansubjectRelated).ToList();
+                    if (commonList.Any())
+                    {
+                        string subjects = "";
+                        foreach (string s in commonList)
+                        {
+                            subjects +=","+ subjectDictionary[s];
+                        }
+                        
+
+
+                        lblMessage.InnerText = "warning-> You can not select both "+ subjects.Remove(0, 1)+ "  in a same time" ;
+                        return false;
+                    }
+                }
             }
+
+            string MansubIds = string.Join(",", Mansubject.ToArray());
             ViewState["__OptinalId__"] = Optionalvalus;
             Session["__ManSubIds__"] = MansubIds;
 
             return true;
 
         }
+       
+      
 
-   
+
     }
-}
+
+ }
