@@ -223,6 +223,21 @@
                                                                                                                                                
                                                 </td>
                                             </tr>
+
+                                           <%-- Related Subject--%>
+
+                                             <tr>
+                                                <td>Related Subject</td>
+                                                <td>
+                                                    <asp:DropDownList ID="ddlRelatedSubject" runat="server" CssClass="input controlLength form-control" ClientIDMode="Static">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+
+
+                                           <%-- Related Subject dropown end--%>
+
+
                                             <tr>
                                                 <td></td>
                                                 <td><asp:CheckBoxList runat="server" ID="chkSubjectType"  ClientIDMode="Static" RepeatDirection="Horizontal"  OnSelectedIndexChanged="chkSubjectType_SelectedIndexChanged">
@@ -357,6 +372,7 @@
         }
             function load() {
                 $("#ddlSubject").select2();
+                $("#ddlRelatedSubject").select2();
             }
             function goToNewTab(url) {
                 window.open(url);

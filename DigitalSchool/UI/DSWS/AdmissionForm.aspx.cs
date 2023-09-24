@@ -118,7 +118,7 @@ namespace DS.UI.DSWS
             if (ddlGroup.SelectedValue != "0")
                 ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
 
-
+            pnlGroupSubjects.Visible = false;
 
 
         }
@@ -129,10 +129,21 @@ namespace DS.UI.DSWS
             if (ddlGroup.SelectedIndex > 0)
             {
 
-                string groupid = ddlGroup.SelectedValue;
-                GetMandetorySubeject(groupid);
-                GetOptionalSubject(groupid);
-                pnlGroupSubjects.Visible = true;
+                string[]clasID= ddlClass.SelectedValue.Split('_');
+                //check class id is eleven or not
+                if (clasID[0] == "221") 
+                 {
+                    string groupid = ddlGroup.SelectedValue;
+                    GetMandetorySubeject(groupid);
+                    GetOptionalSubject(groupid);
+                    pnlGroupSubjects.Visible = true;
+
+                }
+                else 
+                 {
+                    pnlGroupSubjects.Visible =false;
+
+                }
             }
             else
                 pnlGroupSubjects.Visible = false;
@@ -164,8 +175,9 @@ namespace DS.UI.DSWS
 
             try
             {
-                DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
-                ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
+                //DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
+                //ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
+                ViewState["__dateOfBirth__"] = txtDateOfBirth.Text;
             }
             catch (Exception ex)
             {
@@ -191,11 +203,19 @@ namespace DS.UI.DSWS
                 txtTCDate.Focus();
                 return;
             }
-            if (!ValidatationForSubject())
+            if (pnlGroupSubjects.Visible) 
             {
-                return;
+                if (!ValidatationForSubject())
+                {
+                    return;
+                }
             }
-            saveStudentAdmission();
+            else
+            {
+                saveStudentAdmission();
+            }
+
+            
         }
         private Boolean saveStudentAdmission()
         {
@@ -241,10 +261,18 @@ namespace DS.UI.DSWS
         {
             try
             {
-
-
-
-                entities = new AdmStdFormInfoEntities();
+                List<string> Mansubject = new List<string>();
+               
+                foreach (ListItem item in chkSubjectchoice.Items)
+                {
+                    if (item.Selected)
+                    {
+                        string[] values = item.Value.Split('_');
+                        Mansubject.Add(values[0]);
+                    }
+                }
+                 string MansubIds = string.Join(",", Mansubject.ToArray());
+                        entities = new AdmStdFormInfoEntities();
                 entities.AdmissionDate = TimeZoneBD.getCurrentTimeBD();
 
                 int AdmissionFormNo = StdAdmFormEntry.getAdmissionFormNo(entities.AdmissionDate.Year);
@@ -345,8 +373,10 @@ namespace DS.UI.DSWS
                     entities.NUAdmissionRoll = txtNUAdmissionRoll.Text.Trim();
                 else
                     entities.NUAdmissionRoll = "";
-                entities.ManSubIds = Session["__ManSubIds__"].ToString();
-                entities.OptSubId = ViewState["__OptinalId__"].ToString();
+                
+               
+                entities.ManSubIds = MansubIds;
+                entities.OptSubId = btnRadio.SelectedValue.ToString();
 
 
 
@@ -541,7 +571,7 @@ namespace DS.UI.DSWS
             {
                 if (item.Selected)
                 {
-                    
+
 
                     if (item.Value.Contains('_'))
                     {
@@ -554,14 +584,14 @@ namespace DS.UI.DSWS
                     {
                         subjectDictionary.Add(item.Value, item.Text);
                         Mansubject.Add(item.Value);
-                    }                    
+                    }
                     ManSubscount++;
                 }
             }
-            
-            
-            
-           if (ManSubscount != 3)
+
+
+
+            if (ManSubscount != 3)
             {
                 lblMessage.InnerText = "error->You are required to choose three mandatory subjects.";
                 return false;
@@ -571,30 +601,31 @@ namespace DS.UI.DSWS
                 lblMessage.InnerText = "error-> You are required to choose one optional subjects.";
                 return false;
             }
-            else 
+            else
             {
 
 
                 if (Mansubject.Contains(Optionalvalus))
                 {
-                    
+
                     lblMessage.InnerText = "error-> You cannot select the same subject('" + subjectDictionary[Optionalvalus] + "')for both mandatory and optional courses";
                     return false;
                 }
                 else if (MansubjectRelated.Contains(Optionalvalus))
                 {
 
-                    lblMessage.InnerText = "error-> You cannot select the same or related subject('" + btnRadio .SelectedItem.Text+ "')for both mandatory and optional courses";
+                    lblMessage.InnerText = "error-> You cannot select the same or related subject('" + btnRadio.SelectedItem.Text + "')for both mandatory and optional courses";
                     return false;
                 }
-                else {
+                else
+                {
                     List<string> commonList = Mansubject.Intersect(MansubjectRelated).ToList();
                     if (commonList.Any())
                     {
                         string subjects = "";
                         foreach (string s in commonList)
                         {
-                            subjects += ",'" + subjectDictionary[s]+"'";
+                            subjects += ",'" + subjectDictionary[s] + "'";
                         }
                         lblMessage.InnerText = "error-> You can not select both " + subjects.Remove(0, 1) + "  in a same time";
                         return false;
@@ -602,16 +633,26 @@ namespace DS.UI.DSWS
                 }
             }
             string MansubIds = string.Join(",", Mansubject.ToArray());
-            ViewState["__OptinalId__"] = Optionalvalus;
-            Session["__ManSubIds__"] = MansubIds;
+            ViewState["OptinalId"] = Optionalvalus;
+            Session["ManSubIds"] = MansubIds;
 
             return true;
 
         }
-       
-      
 
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string hjk = txtDateOfBirth.Text;
+              if (!string.IsNullOrEmpty(hjk)) 
+               { }
+        }
 
+        //protected void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    string hjk = txtDateOfBirth.Text;
+        //    if (!string.IsNullOrEmpty(hjk)) 
+        //    { }
+        //}
     }
 
  }

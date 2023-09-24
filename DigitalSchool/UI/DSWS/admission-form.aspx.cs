@@ -132,6 +132,7 @@ namespace DS.UI.DSWS
                     lblTCCollege1.Text = lblTCCollege.Text= dt.Rows[0]["TCCollege"].ToString().Trim();
                     lblTCDate1.Text = lblTCDate.Text= dt.Rows[0]["TCDate"].ToString().Trim();
                     lblOptSubject1.Text = lblOptSubject.Text = dt.Rows[0]["Subname"].ToString().Trim();
+
                     string mansubsId = dt.Rows[0]["ManSubId"].ToString().Trim();
                     ShowManSubjectName(mansubsId);
                     
