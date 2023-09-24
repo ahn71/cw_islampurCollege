@@ -130,7 +130,7 @@ namespace DS.UI.DSWS
             {
 
                 string[]clasID= ddlClass.SelectedValue.Split('_');
-                
+                //check class id is eleven or not
                 if (clasID[0] == "221") 
                  {
                     string groupid = ddlGroup.SelectedValue;
@@ -139,20 +139,6 @@ namespace DS.UI.DSWS
                     pnlGroupSubjects.Visible = true;
 
                 }
-               
-
-                //if (ddlGroup.SelectedItem.Text == "Science" || ddlGroup.SelectedItem.Text == "Humanaties" || ddlGroup.SelectedItem.Text == "Business Studies") 
-                //{
-                   
-
-                //    pnlGroupSubjects.Visible = true;
-
-                //}
-                //else 
-                //{
-                //    pnlGroupSubjects.Visible = false;
-                //}
-                
                
             }
             else

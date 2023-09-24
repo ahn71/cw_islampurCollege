@@ -441,6 +441,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
 
 
                 ddlClassName.SelectedValue = gvClassSubject.DataKeys[rIndex].Values[1].ToString();
+                SubjectEntry.GetSujectList(ddlRelatedSubject, ddlClassName.SelectedValue.ToString());
                 DataTable dt = new DataTable();
                 dt = ClassSubjectEntry.getSubjectIdByClassSubject(gvClassSubject.DataKeys[rIndex].Values[0].ToString());
 
@@ -505,6 +506,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
             txtMarks.Text = "";
             ddlCourse.SelectedValue = "0";
             btnSave.Text = "Save";
+            ddlRelatedSubject.SelectedValue = "0";
             // chkIsOptional.Checked=false;
 
         }
