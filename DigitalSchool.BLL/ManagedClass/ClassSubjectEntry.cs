@@ -24,22 +24,63 @@ namespace DS.BLL.ManagedClass
             }
         }
 
+        public bool Insert_()
+        {
+
+           
+                sql = string.Format("INSERT INTO [dbo].[ClassSubject] " +
+               "([ClassID], [SubId],[CourseId],[Marks],[SubCode],[Ordering],[IsOptional],[BothType],[GroupId],[IsCommon][RelatedSubId]) VALUES (" +
+               "'" + _Entities.ClassId + "'," +
+               "'" + _Entities.Subject.SubjectId + "'," +
+               "'" + _Entities.CourseID + "'," +
+               "'" + _Entities.SubMarks + "'," +
+               "'" + _Entities.SubjectCode + "'," +
+               "'" + _Entities.OrderBy + "'," +
+               "'" + _Entities.IsOptional + "'," +
+                "'" + _Entities.BothType + "'," +
+               "'" + _Entities.GroupId + "'," +
+               "'" + _Entities.IsCommon + "','"+_Entities.RelatedSubId+"')");
+
+              return result = CRUD.ExecuteQuery(sql);
+
+
+        }
+
         public bool Insert()
         {
+
+
             sql = string.Format("INSERT INTO [dbo].[ClassSubject] " +
-                "([ClassID], [SubId],[CourseId],[Marks],[SubCode],[Ordering],[IsOptional],[BothType],[GroupId],[IsCommon]) VALUES (" +
-                "'" + _Entities.ClassId+ "'," +
-                "'" + _Entities.Subject.SubjectId + "'," +
-                "'" + _Entities.CourseID + "'," +
-                "'" + _Entities.SubMarks + "'," +
-                "'" + _Entities.SubjectCode + "'," +
-                "'" + _Entities.OrderBy + "'," +
-                "'" + _Entities.IsOptional + "'," +
-                 "'" + _Entities.BothType + "'," +
-                "'" + _Entities.GroupId + "',"+
-                "'"+_Entities.IsCommon+"')");
-            return result = CRUD.ExecuteQuery(sql);
+           "([ClassID], [SubId],[CourseId],[Marks],[SubCode],[Ordering],[IsOptional],[BothType],[GroupId],[IsCommon][RelatedSubId]) VALUES (" +
+           "'" + _Entities.ClassId + "'," +
+           "'" + _Entities.Subject.SubjectId + "'," +
+           "'" + _Entities.CourseID + "'," +
+           "'" + _Entities.SubMarks + "'," +
+           "'" + _Entities.SubjectCode + "'," +
+           "'" + _Entities.OrderBy + "'," +
+           "'" + _Entities.IsOptional + "'," +
+            "'" + _Entities.BothType + "'," +
+           "'" + _Entities.GroupId + "'," +
+           "'" + _Entities.IsCommon + "','" + _Entities.RelatedSubId + "');SELECT SCOPE_IDENTITY()");
+
+            int ClsSubId=  CRUD.GetMaxID(sql);
+            if (ClsSubId > 0)
+            {
+                if(_Entities.RelatedSubId_CSID=="0")
+                {
+                    return true;
+                }
+                else
+                   return RelatedSubIdUpdated(_Entities.RelatedSubId_CSID, _Entities.Subject.SubjectId.ToString());
+            }
+            return false;
+
+
         }
+
+
+
+
         public bool Update()
         {
             sql = string.Format("UPDATE [dbo].[ClassSubject] SET " +
@@ -52,10 +93,36 @@ namespace DS.BLL.ManagedClass
                 "[IsOptional] = '" + _Entities.IsOptional + "', " +
                 "[BothType] = '" + _Entities.BothType + "', " +
                 "[GroupId] = '" + _Entities.GroupId + "', " +
-                "[IsCommon] = '" + _Entities.IsCommon + "'" +
+                "[IsCommon] = '" + _Entities.IsCommon + "'," +
+                 "[RelatedSubId] = '" + _Entities.RelatedSubId + "'" +
                 "WHERE [CSId] = " + _Entities.ClassSubjectId + "");
-            return result = CRUD.ExecuteQuery(sql);
+            if (CRUD.ExecuteQuery(sql))
+            {
+                if (_Entities.RelatedSubId_CSID == "0")
+                {
+                    if (_Entities.RelatedSubId_CSID_Old != "0")
+                        RelatedSubIdUpdated(_Entities.RelatedSubId_CSID_Old, "0");
+                    
+                }
+                else
+                     RelatedSubIdUpdated(_Entities.RelatedSubId_CSID, _Entities.Subject.SubjectId.ToString());
+                return true;
+            }
+            else
+                return false;
         }
+        public bool RelatedSubIdUpdated(string CSID, string RelatedSubId)
+        {
+            sql = string.Format("UPDATE [dbo].[ClassSubject] SET " +
+                 "[RelatedSubId] = '" + RelatedSubId + "'" +
+                "WHERE [CSId] = " + CSID + "");
+            return  CRUD.ExecuteQuery(sql);
+        }
+
+
+
+
+
 
         public List<ClassSubject> GetEntitiesData
         {
@@ -230,8 +297,18 @@ namespace DS.BLL.ManagedClass
             try
             {
                 DataTable dt = new DataTable();
-                dt = CRUD.ReturnTableNull("select SubId,CourseId from ClassSubject where CSId="+CSId+"");
+                dt = CRUD.ReturnTableNull("select SubId,CourseId,Isnull(RelatedSubId,0) as RelatedSubId from ClassSubject where CSId=" + CSId+"");
                 return dt;
+            }
+            catch { return null; }
+        }
+        public static string  getCSIdByClassSubject(string ClassId,string SubId)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = CRUD.ReturnTableNull("select CSID from ClassSubject where classId="+ ClassId + " and subid="+ SubId);
+                return dt.Rows[0]["CSID"].ToString();
             }
             catch { return null; }
         }
@@ -269,6 +346,16 @@ namespace DS.BLL.ManagedClass
             if (disposed)
                 return;
             disposed = true;
+        }
+
+
+        public string checkSubId() 
+        {
+            DataTable dt = new DataTable();
+            dt = CRUD.ReturnTableNull("select SubId from ClassSubject where classId='221' and subid='" + _Entities.Subject.SubjectId + "'");
+
+            return dt.Rows[0]["SubId"].ToString();
+        
         }
     }
 }
