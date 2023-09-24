@@ -348,7 +348,7 @@
                                     <div class="row">
                                         <label for="name" class="col-sm-4 control-label">Date of Birth<strong class="required">*</strong></label>
                                         <div class="col-sm-8">
-                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy"></asp:TextBox>
+                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy" TextMode="Date"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -1065,7 +1065,9 @@
 
               
        
-              
+          
+                  <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
+                  
 
 
             </div>

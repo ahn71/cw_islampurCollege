@@ -118,7 +118,7 @@ namespace DS.UI.DSWS
             if (ddlGroup.SelectedValue != "0")
                 ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
 
-
+            pnlGroupSubjects.Visible = false;
 
 
         }
@@ -139,7 +139,11 @@ namespace DS.UI.DSWS
                     pnlGroupSubjects.Visible = true;
 
                 }
-               
+                else 
+                 {
+                    pnlGroupSubjects.Visible =false;
+
+                }
             }
             else
                 pnlGroupSubjects.Visible = false;
@@ -171,8 +175,9 @@ namespace DS.UI.DSWS
 
             try
             {
-                DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
-                ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
+                //DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
+                //ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
+                ViewState["__dateOfBirth__"] = txtDateOfBirth.Text;
             }
             catch (Exception ex)
             {
@@ -198,11 +203,19 @@ namespace DS.UI.DSWS
                 txtTCDate.Focus();
                 return;
             }
-            if (!ValidatationForSubject())
+            if (pnlGroupSubjects.Visible) 
             {
-                return;
+                if (!ValidatationForSubject())
+                {
+                    return;
+                }
             }
-            saveStudentAdmission();
+            else
+            {
+                saveStudentAdmission();
+            }
+
+            
         }
         private Boolean saveStudentAdmission()
         {
@@ -248,10 +261,18 @@ namespace DS.UI.DSWS
         {
             try
             {
-
-
-
-                entities = new AdmStdFormInfoEntities();
+                List<string> Mansubject = new List<string>();
+               
+                foreach (ListItem item in chkSubjectchoice.Items)
+                {
+                    if (item.Selected)
+                    {
+                        string[] values = item.Value.Split('_');
+                        Mansubject.Add(values[0]);
+                    }
+                }
+                 string MansubIds = string.Join(",", Mansubject.ToArray());
+                        entities = new AdmStdFormInfoEntities();
                 entities.AdmissionDate = TimeZoneBD.getCurrentTimeBD();
 
                 int AdmissionFormNo = StdAdmFormEntry.getAdmissionFormNo(entities.AdmissionDate.Year);
@@ -352,8 +373,10 @@ namespace DS.UI.DSWS
                     entities.NUAdmissionRoll = txtNUAdmissionRoll.Text.Trim();
                 else
                     entities.NUAdmissionRoll = "";
-                entities.ManSubIds = Session["__ManSubIds__"].ToString();
-                entities.OptSubId = ViewState["__OptinalId__"].ToString();
+                
+               
+                entities.ManSubIds = MansubIds;
+                entities.OptSubId = btnRadio.SelectedValue.ToString();
 
 
 
@@ -617,6 +640,19 @@ namespace DS.UI.DSWS
 
         }
 
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string hjk = txtDateOfBirth.Text;
+              if (!string.IsNullOrEmpty(hjk)) 
+               { }
+        }
+
+        //protected void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    string hjk = txtDateOfBirth.Text;
+        //    if (!string.IsNullOrEmpty(hjk)) 
+        //    { }
+        //}
     }
 
  }
