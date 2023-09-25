@@ -1134,7 +1134,7 @@
               
        
           
-                  <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
+                  <asp:Button ID="btnSave" Visible="false" runat="server" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
                   
 
 
