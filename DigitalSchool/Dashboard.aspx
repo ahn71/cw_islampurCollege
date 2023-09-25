@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="DS.Dashboard" %>
+﻿                   <%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="DS.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -91,7 +91,7 @@
                         </div>
             </a>
         </div>
-        <div class="col-md-3" runat="server" id="AdministrationModuleDB" >
+        <div class="col-md-3" runat="server" id="AdministrationModuleDB"  <!---Administration start---->
             <a runat="server" id="aAdministrationHome">
                 <div class="mini-stat mini_stat_sub_icon clearfix">
                     <span class="mini-stat-icon tar">
@@ -158,7 +158,7 @@
             </a>
 
         </div>
-        <div class="col-md-3" runat="server" id="ReportsModuleDB">
+        <div class="col-md-3" runat="server" id="ReportsModuleDB"> <!----Report strt--->
             <a runat="server" href="~/UI/Reports/ReportHome.aspx">
                 <div class="mini-stat mini_stat_sub_icon clearfix">
                     <span class="mini-stat-icon pink">

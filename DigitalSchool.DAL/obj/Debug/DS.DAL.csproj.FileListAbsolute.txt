@@ -1222,3 +1222,32 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DA
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll.config
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.pdb
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.xml
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.pdb
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.xml
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.xml
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.pdb
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll.config
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csprojResolveAssemblyReference.cache
+D:\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
+D:\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
+D:\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
+D:\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb

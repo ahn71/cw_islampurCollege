@@ -669,3 +669,25 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\ob
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.xml
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
+D:\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
