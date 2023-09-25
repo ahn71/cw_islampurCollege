@@ -89,7 +89,7 @@
             display: block;
             color:black;
             }
-         table#MainContent_chkSubjectchoice 
+         table#chkSubjectchoice 
          {
            margin-top: 6px;
          }
@@ -127,10 +127,76 @@
             setTimeout(function () { newWin.close(); }, 10);
 
         }
+        function validateGroupSubjects() {
+           
+            var checked_radio = $("[id*=btnRadio] input:checked");
+            var Optionalvalus = checked_radio.val();
+            var OptionalSubText="";
+            if (Optionalvalus == undefined)
+                Optionalvalus = "";
+            else
+                 OptionalSubText = checked_radio.closest("td").find("label").html();
+            
+            var checkboxes = document.querySelectorAll("input[type='checkbox'][id*='chkSubjectchoice']"); 
+
+            var Mansubject = [];
+            var MansubjectRelated = [];
+            var subjectDictionary = {};
+
+            var ManSubscount = 0;
+
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    if (checkbox.value.includes('_')) {
+                        var values = checkbox.value.split('_');
+                        Mansubject.push(values[0]);
+                        MansubjectRelated.push(values[1]);
+                        subjectDictionary[values[0]] = checkbox.nextElementSibling.textContent;
+                    } else {
+                        subjectDictionary[checkbox.value] = checkbox.nextElementSibling.textContent;
+                        Mansubject.push(checkbox.value);
+                    }
+                    ManSubscount++;
+                }
+            });
+            if (ManSubscount !== 3) {
+                showMessage('You are required to choose 3 mandatory subjects. but you have selected ' + ManSubscount + ' subject(s)', 'error');
+                return false;
+            }
+            else {
+                    var commonList = Mansubject.filter(function (s) {
+                        return MansubjectRelated.includes(s);
+                    });
+
+                    if (commonList.length > 0) {
+                        var subjects = commonList.map(function (s) {
+                            return "'" + subjectDictionary[s] + "'";
+                        }).join(", ");
+                        showMessage("You cannot select both " + subjects + " in the same time",'error');
+                        return false;
+                    }
+                }
+             if (Optionalvalus === "") {                
+                showMessage('You are required to choose one optional subject.', 'error');
+                return false;
+            }
+            else {
+                if (Mansubject.includes(Optionalvalus)) {
+                    showMessage("You cannot select the same subject ('" + subjectDictionary[Optionalvalus] + "') for both mandatory and optional courses",'error');
+                    return false;
+                } else if (MansubjectRelated.includes(Optionalvalus)) {
+                    showMessage("You cannot select the same or related subject ('" + OptionalSubText + "') for both mandatory and optional courses",'error');
+                    return false;
+                }
+               
+            }
+            return true;
+        }
+
         function validateInputs() {
             try {
-               
-                // if (validateText('txtMoneyReceiptNo', 1, 50, 'Enter valid Money Receipt No') == false) return false;
+
+                              
                 if (document.getElementById("FileUpload1").files.length == 0) {
                     showMessage('Select Student Photo', 'error'); return false;
                 }
@@ -149,7 +215,10 @@
 
                     if (validateText('txtNUAdmissionRoll', 1, 50, 'Enter valid Board Admission Roll') == false) return false;
                 //}
-                
+                 if ($('#pnlGroupSubjects').is(':visible')) {
+
+                    if (validateGroupSubjects() === false) return false;
+                }
 
                 if (validateText('txtFatherName', 1, 100, 'Enter Father\'s Name') == false) return false;
                 if (validateText('txtFatherNameBn', 1, 100, 'Enter Father\'s Name in Bengali') == false) return false;
@@ -348,7 +417,8 @@
                                     <div class="row">
                                         <label for="name" class="col-sm-4 control-label">Date of Birth<strong class="required">*</strong></label>
                                         <div class="col-sm-8">
-                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy" TextMode="Date"></asp:TextBox>
+                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control"  TextMode="Date" placeholder="dd-mm-yyyy" value=""
+        min="1990-01-01" max="2030-12-31"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -460,7 +530,7 @@
                                     
                                       <div class="checboxSubject">
                                          <asp:Label runat="server" ID="lblManSub" CssClass="'Man_subject" Text="Mandatory Subject"></asp:Label>
-                                          <asp:CheckBoxList runat="server" ID="chkSubjectchoice">
+                                          <asp:CheckBoxList ClientIDMode="Static" runat="server" ID="chkSubjectchoice">
                                           </asp:CheckBoxList>
                                        </div>
 

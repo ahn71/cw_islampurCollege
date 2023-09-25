@@ -373,10 +373,18 @@ namespace DS.UI.DSWS
                     entities.NUAdmissionRoll = txtNUAdmissionRoll.Text.Trim();
                 else
                     entities.NUAdmissionRoll = "";
+
+                if (pnlGroupSubjects.Visible)// Eleven
+                {
+                    entities.ManSubIds = MansubIds;
+                    entities.OptSubId = btnRadio.SelectedValue.ToString();
+                }
+                else
+                {
+                    entities.ManSubIds = "";
+                    entities.OptSubId = "";
+                }
                 
-               
-                entities.ManSubIds = MansubIds;
-                entities.OptSubId = btnRadio.SelectedValue.ToString();
 
 
 
@@ -632,6 +640,7 @@ namespace DS.UI.DSWS
                     }
                 }
             }
+
             string MansubIds = string.Join(",", Mansubject.ToArray());
             ViewState["OptinalId"] = Optionalvalus;
             Session["ManSubIds"] = MansubIds;

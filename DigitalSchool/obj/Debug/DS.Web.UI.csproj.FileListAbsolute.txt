@@ -3116,3 +3116,5 @@ D:\New folder (4)\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csproj.Co
 D:\New folder (4)\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csproj.CopyComplete
 D:\New folder (4)\cw_islampurCollege\DigitalSchool\obj\Debug\DS.dll
 D:\New folder (4)\cw_islampurCollege\DigitalSchool\obj\Debug\DS.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.pdb

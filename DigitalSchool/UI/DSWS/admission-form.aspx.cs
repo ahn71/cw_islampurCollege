@@ -144,7 +144,7 @@ namespace DS.UI.DSWS
                         pnlSubjectList.Visible = false;
                         pnlSubjectList1.Visible = false;
                     }
-                    if (ClassName1== "Eleven") 
+                    if (ClassName1.Contains("Eleven")) 
                     {
                         divHsc_and_HonorsInfo.Visible = false;
                         divHsc_and_HonorsInfos.Visible= false;  

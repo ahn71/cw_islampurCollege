@@ -1284,3 +1284,5 @@ D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.C
 D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
 D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
 D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
