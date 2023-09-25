@@ -60,6 +60,45 @@
         .input-group-addon {
             border: 1px solid #6d86e5;
         }
+        .SubjectManagement {
+            display: flex;
+            gap: 45px;
+        }
+
+        .Headin {
+            font-weight: 900;
+             font-size: 18px;
+             margin-top: 12px;
+            display: block;
+            color:black;
+        }
+        .OpSubject
+        {
+              font-weight: 900;
+              font-size: 15px;
+              margin-top: 12px;
+               display: block;
+               color:black;
+        }
+
+         span#MainContent_lblManSub
+           {
+             font-weight: 900;
+             font-size: 15px;
+             margin-top: 12px;
+            display: block;
+            color:black;
+            }
+         table#MainContent_chkSubjectchoice 
+         {
+           margin-top: 6px;
+         }
+
+         table#MainContent_btnRadio
+         {
+             margin-top: 6px;
+         }
+
     </style>
     <script type="text/javascript">
         function previewFile() {
@@ -309,7 +348,7 @@
                                     <div class="row">
                                         <label for="name" class="col-sm-4 control-label">Date of Birth<strong class="required">*</strong></label>
                                         <div class="col-sm-8">
-                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy"></asp:TextBox>
+                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy" TextMode="Date"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -379,6 +418,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="row form-group">
                                 <div class="col-md-4">
                                     <div class="row">
@@ -406,6 +447,40 @@
                                 </div>
 
                             </div>
+
+
+
+
+                           <%-- rokibul work--%>
+                            <asp:Panel ClientIDMode="Static" runat="server" id="pnlGroupSubjects">
+                            <div runat="server" id="divGroupSubjects">
+                                <asp:Label runat="server" ID="lblHeading" CssClass="Headin" Text="Choose Subject"></asp:Label>
+                                 
+                                <div class="SubjectManagement">
+                                    
+                                      <div class="checboxSubject">
+                                         <asp:Label runat="server" ID="lblManSub" CssClass="'Man_subject" Text="Mandatory Subject"></asp:Label>
+                                          <asp:CheckBoxList runat="server" ID="chkSubjectchoice">
+                                          </asp:CheckBoxList>
+                                       </div>
+
+                                      <div runat="server" class="radiobtnList">
+                                         <asp:Label runat="server" ID="lblOpSub" CssClass="OpSubject" Text="Optional Subject"></asp:Label>
+
+                                          <asp:RadioButtonList runat="server" ID="btnRadio">
+
+                                        </asp:RadioButtonList>
+
+                                       </div>
+                                </div>
+                           </div>
+               </asp:Panel>
+                          
+
+
+
+
+
 
                         </div>
                         <br />
@@ -987,6 +1062,14 @@
                         </div>
                     </div>
                 </div>
+
+              
+       
+          
+                  <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
+                  
+
+
             </div>
         </div>
     </section>

@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -453,6 +455,8 @@
                             </table>
                         </div>
                         
+
+                         <div runat="server" id="divHsc_and_HonorsInfos">
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">HSC Information (এইচএসসি তথ্য)</h4>
                         </div>
@@ -521,7 +525,7 @@
                                 </tr>
                             </table>
                         </div>
-                        
+                        </div>
 
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">TC Information </h4>
@@ -554,23 +558,33 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">01</td>
-                                        <td>বাংলা (১০১)</td>
+                                        <td>Bangla (101)</td>
                                         <td style="text-align: center;">02</td>
-                                        <td>ইংরেজি (১০৬)</td>
+                                        <td>English (106)</td>
                                         <td style="text-align: center;">03</td>
-                                        <td>তথ্য ও যোগাযোগ প্রযুক্তি (২৭৫)</td>
+                                        <td>ICT (275)</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">04</td>
-                                        <td></td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblManSub1"></asp:Label>
+                                            
+                                        </td>
                                         <td style="text-align: center;">05</td>
-                                        <td></td>
+                                        <td>
+                                             <asp:Label runat="server" ID="lblManSub2"></asp:Label>
+                                           
+                                        </td>
                                         <td style="text-align: center;">06</td>
-                                        <td></td>
+                                        <td>
+                                             <asp:Label runat="server" ID="lblManSub3"></asp:Label>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">07</td>
-                                        <td colspan="5">চতুর্থ বিষয় :</td>
+                                        <td colspan="5">4<sup>th</sup> Subject :
+                                            <asp:Label runat="server" ID="lblOptSubject"></asp:Label>
+                                        </td>
                                     </tr>
 
                                 </table>
@@ -895,6 +909,7 @@
                                 </tr>
                             </table>
                         </div>
+                       <div runat="server" id="divHsc_and_HonorsInfo">
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">HSC Information (এইচএসসি তথ্য)</h4>
                         </div>
@@ -964,6 +979,7 @@
                                 </tr>
                             </table>
                         </div>
+                     </div>
 
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">TC Information </h4>
@@ -997,23 +1013,34 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">01</td>
-                                        <td>বাংলা (১০১)</td>
+                                        <td>Bangla (101)</td>
                                         <td style="text-align: center;">02</td>
-                                        <td>ইংরেজি (১০৬)</td>
+                                        <td>English (106)</td>
                                         <td style="text-align: center;">03</td>
-                                        <td>তথ্য ও যোগাযোগ প্রযুক্তি (২৭৫)</td>
+                                        <td>ICT (275)</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">04</td>
-                                        <td></td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblManSub1_1"></asp:Label>
+                                           
+                                        </td>
                                         <td style="text-align: center;">05</td>
-                                        <td></td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblManSub2_1"></asp:Label>
+                                           
+                                        </td>
                                         <td style="text-align: center;">06</td>
-                                        <td></td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblManSub3_1"></asp:Label>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">07</td>
-                                        <td colspan="5">চতুর্থ বিষয় :</td>
+                                        <td colspan="5">4<sup>th</sup> Subject :
+                                            <asp:Label runat="server" ID="lblOptSubject1" ></asp:Label>
+                                           
+                                        </td>
 
                                     </tr>
 
@@ -1048,6 +1075,9 @@
             <asp:Button runat="server" ClientIDMode="Static" Visible="false" ID="btnDowloadAsp" Text="download" OnClick="btnDowloadAsp_Click" />
         </div>
     </div>
+
+   
+
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ForLeftSideMenuList" runat="server">

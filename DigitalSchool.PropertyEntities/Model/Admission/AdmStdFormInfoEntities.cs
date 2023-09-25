@@ -88,6 +88,9 @@ namespace DS.PropertyEntities.Model.Admission
         public DateTime UpdateOn { get; set; }
         public string MoneyReceiptNo { get; set; }
 
+        public string ManSubIds { get; set; }
+        public string OptSubId { get; set; }
+
 
 
         bool disposed = false;

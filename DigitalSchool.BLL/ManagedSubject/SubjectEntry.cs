@@ -124,6 +124,28 @@ namespace DS.BLL.ManagedSubject
         }
 
 
+
+        //Get Related Subject
+        public static void GetSujectList(DropDownList ddl,string ClassID)
+        {
+            try
+            {
+                sql = string.Format("SELECT  convert(varchar,cs.CSID)+'_'+ convert(varchar,cs.SubId)  as SubId,ns.SubName as SubName FROM ClassSubject cs INNER JOIN NewSubject ns ON cs.SubId=ns.SubId LEFT OUTER JOIN Class_DependencyPassMarks cdp ON cs.ClassId=cdp.ClassId WHERE cs.ClassID=" + ClassID + " ");
+                DataTable dt = new DataTable();
+                dt = CRUD.ReturnTableNull(sql);
+                ddl.DataTextField = "SubName";
+                ddl.DataValueField = "SubId";
+                ddl.DataSource = dt;
+                ddl.DataBind();
+                ddl.Items.Insert(0, new ListItem("...Select...", "0"));
+
+            }
+            catch { }
+
+        }
+
+
+
         bool disposed = false;
         public void Dispose()
         {

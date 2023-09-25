@@ -1,14 +1,18 @@
 ﻿using ComplexScriptingSystem;
 using DS.BLL.Admission;
+using DS.DAL;
+using DS.PropertyEntities.Model.ManagedClass;
 using PdfSharp;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace DS.UI.DSWS
@@ -17,6 +21,8 @@ namespace DS.UI.DSWS
     {
         StdAdmFormEntry stdAdmFormEntry;
         DataTable dt;
+       
+        string ClassName1;
         protected void Page_Load(object sender, EventArgs e)
         {
             try {
@@ -47,6 +53,10 @@ namespace DS.UI.DSWS
                     lblAdmissionFormNo1.Text = lblAdmissionFormNo.Text = dt.Rows[0]["AdmissionFormNo"].ToString().Trim();
                     lblAdmissionDate1.Text = lblAdmissionDate.Text = dt.Rows[0]["AdmissionDate"].ToString().Trim();
                     lblClass1.Text = lblClass.Text= dt.Rows[0]["ClassName"].ToString().Trim();
+
+                    ClassName1= lblClass1.Text.ToString();    
+                       
+
                     lblStudentsName1.Text = lblStudentsName.Text= dt.Rows[0]["FullName"].ToString().Trim();
                     lblStudentsNameBn1.Text = lblStudentsNameBn.Text= dt.Rows[0]["FullNameBn"].ToString().Trim();
                     lblGroup1.Text = lblGroup.Text= dt.Rows[0]["GroupName"].ToString().Trim();
@@ -121,12 +131,23 @@ namespace DS.UI.DSWS
 
                     lblTCCollege1.Text = lblTCCollege.Text= dt.Rows[0]["TCCollege"].ToString().Trim();
                     lblTCDate1.Text = lblTCDate.Text= dt.Rows[0]["TCDate"].ToString().Trim();
+                    lblOptSubject1.Text = lblOptSubject.Text = dt.Rows[0]["Subname"].ToString().Trim();
+
+                    string mansubsId = dt.Rows[0]["ManSubId"].ToString().Trim();
+                    ShowManSubjectName(mansubsId);
+                    
+
 
                     lblNuAdmissionRoll1.Text= lblNuAdmissionRoll.Text= dt.Rows[0]["NuAdmissionRoll"].ToString().Trim();
                     if (!lblClass.Text.Trim().Equals("Eleven"))
                     {
                         pnlSubjectList.Visible = false;
                         pnlSubjectList1.Visible = false;
+                    }
+                    if (ClassName1== "Eleven") 
+                    {
+                        divHsc_and_HonorsInfo.Visible = false;
+                        divHsc_and_HonorsInfos.Visible= false;  
                     }
                         
 
@@ -145,5 +166,50 @@ namespace DS.UI.DSWS
             } catch(Exception ex) { }
             
         }
+
+        //Show GetMandatorySubject 
+        private void ShowManSubjectName(string manSubIds) 
+        {
+            DataTable dt = new DataTable();
+
+           
+            dt = CRUD.ReturnTableNull("SELECT STRING_AGG(subname + ' ' +'(' + CAST(SubCode AS NVARCHAR(10)) + ')', ',') as subname FROM NewSubject ns inner JOIN ClassSubject cs ON ns.SubId = cs.SubId WHERE ns.SubId IN(" + manSubIds + ")");
+            String subname = dt.Rows[0]["subname"].ToString();
+            List<string> _manSub = subname.Split(',').ToList();
+            if( _manSub.Count > 0 )
+            {
+                try
+                {
+                    lblManSub1_1.Text = lblManSub1.Text = _manSub[0];
+                }
+                catch (Exception ex) { }
+
+
+                try
+                {
+                    lblManSub2_1.Text = lblManSub2.Text = _manSub[1];
+                }
+                catch (Exception ex) { }
+
+
+                try
+                {
+                    lblManSub3_1.Text = lblManSub3.Text = _manSub[2];
+                }
+                catch (Exception ex) { }
+
+            }
+           
+
+
+
+
+
+
+
+        }
+
+
+      
     }
 }
