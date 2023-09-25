@@ -210,10 +210,9 @@ namespace DS.UI.DSWS
                     return;
                 }
             }
-            else
-            {
-                saveStudentAdmission();
-            }
+           
+            saveStudentAdmission();
+            
 
             
         }
@@ -374,6 +373,7 @@ namespace DS.UI.DSWS
                 else
                     entities.NUAdmissionRoll = "";
 
+
                 if (pnlGroupSubjects.Visible)// Eleven
                 {
                     entities.ManSubIds = MansubIds;
@@ -384,7 +384,6 @@ namespace DS.UI.DSWS
                     entities.ManSubIds = "";
                     entities.OptSubId = "";
                 }
-                
 
 
 
@@ -520,16 +519,23 @@ namespace DS.UI.DSWS
                     ListItem item = new ListItem();
                     item.Text = row["SubName"].ToString();
                     item.Value = row["SubId"].ToString();
+                  
                     item.Selected = Convert.ToBoolean(row["MustTaken"]);
+                    
+                    
 
 
                     if (item.Selected == true)
                     {
-                        if (ddlGroup.SelectedItem.Text == "Science" || ddlGroup.SelectedItem.Text == "Business Studies")
+                        if (ddlGroup.SelectedValue=="113" || ddlGroup.SelectedValue == "115")
                         {
                             item.Enabled = false;
+                           
                         }
-
+                        else 
+                        {
+                            item.Selected= false;
+                        }
                     }
                     chkSubjectchoice.Items.Add(item);
                 }
@@ -601,10 +607,24 @@ namespace DS.UI.DSWS
 
             if (ManSubscount != 3)
             {
-                lblMessage.InnerText = "error->You are required to choose three mandatory subjects.";
+                lblMessage.InnerText = "error->You are required to choose 3 mandatory subjects.but you have selected "+Mansubject+" subject(s)";
                 return false;
             }
-            else if (Optionalvalus == "")
+            else
+            {
+                List<string> commonList = Mansubject.Intersect(MansubjectRelated).ToList();
+                if (commonList.Any())
+                {
+                    string subjects = "";
+                    foreach (string s in commonList)
+                    {
+                        subjects += ",'" + subjectDictionary[s] + "'";
+                    }
+                    lblMessage.InnerText = "error-> You can not select both " + subjects.Remove(0, 1) + "  in a same time";
+                    return false;
+                }
+            }
+            if (Optionalvalus == "")
             {
                 lblMessage.InnerText = "error-> You are required to choose one optional subjects.";
                 return false;
@@ -625,22 +645,8 @@ namespace DS.UI.DSWS
                     lblMessage.InnerText = "error-> You cannot select the same or related subject('" + btnRadio.SelectedItem.Text + "')for both mandatory and optional courses";
                     return false;
                 }
-                else
-                {
-                    List<string> commonList = Mansubject.Intersect(MansubjectRelated).ToList();
-                    if (commonList.Any())
-                    {
-                        string subjects = "";
-                        foreach (string s in commonList)
-                        {
-                            subjects += ",'" + subjectDictionary[s] + "'";
-                        }
-                        lblMessage.InnerText = "error-> You can not select both " + subjects.Remove(0, 1) + "  in a same time";
-                        return false;
-                    }
-                }
+               
             }
-
             string MansubIds = string.Join(",", Mansubject.ToArray());
             ViewState["OptinalId"] = Optionalvalus;
             Session["ManSubIds"] = MansubIds;

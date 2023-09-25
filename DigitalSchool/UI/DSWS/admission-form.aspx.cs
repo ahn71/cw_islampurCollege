@@ -131,15 +131,24 @@ namespace DS.UI.DSWS
 
                     lblTCCollege1.Text = lblTCCollege.Text= dt.Rows[0]["TCCollege"].ToString().Trim();
                     lblTCDate1.Text = lblTCDate.Text= dt.Rows[0]["TCDate"].ToString().Trim();
-                    lblOptSubject1.Text = lblOptSubject.Text = dt.Rows[0]["Subname"].ToString().Trim();
+                   
 
                     string mansubsId = dt.Rows[0]["ManSubId"].ToString().Trim();
-                    ShowManSubjectName(mansubsId);
-                    
+
+
+                   
 
 
                     lblNuAdmissionRoll1.Text= lblNuAdmissionRoll.Text= dt.Rows[0]["NuAdmissionRoll"].ToString().Trim();
-                    if (!lblClass.Text.Trim().Equals("Eleven"))
+                    if (lblClass.Text.Trim().Equals("Eleven"))
+                    {
+                        lblOptSubject1.Text = lblOptSubject.Text = dt.Rows[0]["Subname"].ToString().Trim();
+                        if (mansubsId != "")
+                        {
+                            ShowManSubjectName(mansubsId);
+                        }
+                    }
+                    else
                     {
                         pnlSubjectList.Visible = false;
                         pnlSubjectList1.Visible = false;
