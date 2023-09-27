@@ -145,7 +145,7 @@ namespace DS.UI.DSWS
                         lblOptSubject1.Text = lblOptSubject.Text = dt.Rows[0]["Subname"].ToString().Trim();
                         if (mansubsId != "")
                         {
-                            ShowManSubjectName(mansubsId);
+                            ShowManSubjectName(mansubsId, dt.Rows[0]["ClassId"].ToString().Trim());
                         }
                     }
                     else
@@ -177,33 +177,32 @@ namespace DS.UI.DSWS
         }
 
         //Show GetMandatorySubject 
-        private void ShowManSubjectName(string manSubIds) 
+        private void ShowManSubjectName(string manSubIds,string ClassId) 
         {
             DataTable dt = new DataTable();
 
            
-            dt = CRUD.ReturnTableNull("SELECT STRING_AGG(subname + ' ' +'(' + CAST(SubCode AS NVARCHAR(10)) + ')', ',') as subname FROM NewSubject ns inner JOIN ClassSubject cs ON ns.SubId = cs.SubId WHERE ns.SubId IN(" + manSubIds + ")");
-            String subname = dt.Rows[0]["subname"].ToString();
-            List<string> _manSub = subname.Split(',').ToList();
-            if( _manSub.Count > 0 )
+            dt = CRUD.ReturnTableNull("select ns.SubName+' ('+cs.SubCode+')' as SubName from ClassSubject cs inner join NewSubject ns ON ns.SubId = cs.SubId  where ClassId="+ ClassId + " and cs.SubId IN("+ manSubIds + ")");
+            
+            if( dt!=null && dt.Rows.Count > 0 )
             {
                 try
                 {
-                    lblManSub1_1.Text = lblManSub1.Text = _manSub[0];
+                    lblManSub1_1.Text = lblManSub1.Text = dt.Rows[0]["SubName"].ToString();
                 }
                 catch (Exception ex) { }
 
 
                 try
                 {
-                    lblManSub2_1.Text = lblManSub2.Text = _manSub[1];
+                    lblManSub2_1.Text = lblManSub2.Text = dt.Rows[1]["SubName"].ToString();
                 }
                 catch (Exception ex) { }
 
 
                 try
                 {
-                    lblManSub3_1.Text = lblManSub3.Text = _manSub[2];
+                    lblManSub3_1.Text = lblManSub3.Text = dt.Rows[2]["SubName"].ToString();
                 }
                 catch (Exception ex) { }
 

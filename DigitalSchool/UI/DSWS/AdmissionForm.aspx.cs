@@ -505,10 +505,10 @@ namespace DS.UI.DSWS
 
 
         //Get Mandetory Subject
-        private string GetMandetorySubeject(string groupSecId)
+        private string GetMandetorySubeject(string ClsGrpID)
         {
             DataTable dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select (case when cs.RelatedSubId is null then convert(varchar, cs.SubId) else convert(varchar, cs.SubId) + '_' + convert(varchar, cs.RelatedSubId) end )as SubId,vcs.SubName+'('+cs.SubCode+')' as SubName,CAST(CASE WHEN cs.IsOptional = 0 AND cs.BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '221' and cs.GroupId IN(SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '"+ groupSecId + "') and (cs.IsOptional = 0 or cs.BothType = 1)");
+            dt = CRUD.ReturnTableNull("select (case when isnull(cs.RelatedSubId,0) =0 then convert(varchar, cs.SubId) else convert(varchar, cs.SubId) + '_' + convert(varchar, cs.RelatedSubId) end )as SubId,vcs.SubName+'('+cs.SubCode+')' as SubName,CAST(CASE WHEN cs.IsOptional = 0 AND cs.BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '221' and ( cs.GroupId IN(SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '" + ClsGrpID + "') or(  IsCommon=1 and cs.BothType = 1)) and (cs.IsOptional = 0 or cs.BothType = 1)");
             chkSubjectchoice.Items.Clear();
 
 
@@ -516,6 +516,8 @@ namespace DS.UI.DSWS
             {
                 foreach (DataRow row in dt.Rows)
                 {
+                    if ((ClsGrpID == "113" || ClsGrpID == "115") && row["SubName"].ToString().Contains("Economics"))// Economics is not for Science/Business Studies
+                        continue;
                     ListItem item = new ListItem();
                     item.Text = row["SubName"].ToString();
                     item.Value = row["SubId"].ToString();
@@ -547,16 +549,18 @@ namespace DS.UI.DSWS
         }
 
         //Get Optinal Subject
-        private string GetOptionalSubject(string groupSecId)
+        private string GetOptionalSubject(string ClsGrpID)
         {
             DataTable dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and (GroupId = (SELECT  MAX(GroupId)  FROM v_Class_Group_Section WHERE ClsGrpID = '" + groupSecId + "') or IsCommon=1)  and (IsOptional=1 or BothType=1)");
+            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and (GroupId = (SELECT  MAX(GroupId)  FROM v_Class_Group_Section WHERE ClsGrpID = '" + ClsGrpID + "') or IsCommon=1)  and (IsOptional=1 or BothType=1)");
 
             btnRadio.Items.Clear();
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
                 {
+                    if (ClsGrpID == "113" && row["SubName"].ToString().Contains("Economics"))// Economics is not for Science
+                        continue;
                     ListItem item = new ListItem();
                     item.Text = row["SubName"].ToString();
                     item.Value = row["SubId"].ToString();
