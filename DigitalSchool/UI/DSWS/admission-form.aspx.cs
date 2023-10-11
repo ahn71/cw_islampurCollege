@@ -153,12 +153,20 @@ namespace DS.UI.DSWS
                         pnlSubjectList.Visible = false;
                         pnlSubjectList1.Visible = false;
                     }
-                    if (ClassName1.Contains("Eleven")) 
+                    if (ClassName1.Contains("Eleven"))
                     {
-                        divHsc_and_HonorsInfo.Visible = false;
-                        divHsc_and_HonorsInfos.Visible= false;  
+                        divHscInfo.Visible = false;
+                        divHonorsInfo.Visible = false;
+                        divHscInfo1.Visible = false;
+                        divHonorsInfo1.Visible = false;
                     }
-                        
+                    else if (ClassName1.Contains("Degree") || ClassName1.Contains("Honours"))
+                    {
+                        divHonorsInfo.Visible = false;
+                        divHonorsInfo1.Visible = false;
+                    }
+
+
 
                 }
                 return true;

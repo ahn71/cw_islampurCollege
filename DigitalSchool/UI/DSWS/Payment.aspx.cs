@@ -587,6 +587,14 @@ namespace DS.UI.DSWS
 
                     //Response.Redirect("https://app.idesk360.live/securepayment/?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
 
+                    //if (ckbOwnIntegration.Checked)
+                    //{
+                    //    string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/";
+                    //    Response.Redirect(baseUrl+ "UI/PaymentMethod/Default.aspx?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
+                    //}
+                        
+                    //else
+
                     Response.Redirect("https://www.kazigroup.net/securepayment/?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
 
                 }

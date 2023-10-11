@@ -717,3 +717,5 @@ D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS
 D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.pdb

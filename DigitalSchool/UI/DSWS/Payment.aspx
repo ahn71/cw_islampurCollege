@@ -137,7 +137,7 @@
                             <div class="panel panel-default cform-panel">
 
                                 <div class="panel-heading">
-                                    <h4>Please provide your fee corresponding Info </h4>
+                                    <h4>Please provide your fee corresponding Info <asp:CheckBox runat="server" ClientIDMode="Static" ID="ckbOwnIntegration" Checked="true" /> </h4>
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-10 col-md-offset-1">
