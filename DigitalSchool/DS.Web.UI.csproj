@@ -2151,6 +2151,7 @@
     <Content Include="UI\DSWS\YearlyLeaveList.aspx" />
     <Content Include="UI\Notification\SendSMS.aspx" />
     <Content Include="UI\PaymentMethod\SSLCommerzInfos\Default.aspx" />
+    <Content Include="UI\PaymentMethod\SSLCommerzInfos\Success.aspx" />
     <Content Include="UI\Reports\Attendance\AttendanceSlider\AttendanceStatusBoard.aspx" />
     <Content Include="UI\Reports\Attendance\AttendanceSlider\bg.jpg" />
     <Content Include="UI\Reports\Attendance\AttendanceSlider\css\bootstrap.css" />
@@ -5294,6 +5295,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\PaymentMethod\SSLCommerzInfos\SSLCommerz.cs" />
+    <Compile Include="UI\PaymentMethod\SSLCommerzInfos\Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PaymentMethod\SSLCommerzInfos\Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reports\Attendance\AttendanceSlider\AttendanceStatusBoard.aspx.cs">
       <DependentUpon>AttendanceStatusBoard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -7,6 +7,7 @@ using System.Text;
 using System.IO;
 using System.Collections.Specialized;
 using System.Web.Script.Serialization;
+using DS.DAL;
 
 /// <summary>
 /// SSLCommerz SDK
@@ -75,7 +76,7 @@ public class SSLCommerz
 
         return response;
     }
-    public bool OrderValidate(string MerchantTrxID, string MerchantTrxAmount, string MerchantTrxCurrency, HttpRequest req) 
+    public bool OrderValidate(int logID, string MerchantTrxID, string MerchantTrxAmount, string MerchantTrxCurrency, HttpRequest req) 
     {
         bool hash_verified = this.ipn_hash_verify(req);
         if (hash_verified)
@@ -104,21 +105,26 @@ public class SSLCommerz
                 {
                     if(MerchantTrxCurrency == "BDT"){
                         if(MerchantTrxID == resp.tran_id && (Math.Abs(Convert.ToDecimal(MerchantTrxAmount) - Convert.ToDecimal(resp.amount)) < 1) && MerchantTrxCurrency == "BDT"){
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "' Where SL=" + logID);
                             return true;
                         }
                         else{
                             this.error = "Amount not matching";
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "',ErrorMsg='Amount not matching' Where SL=" + logID);
                             return false;
                         }
                     }
                     else{
                         if (MerchantTrxID == resp.tran_id && (Math.Abs(Convert.ToDecimal(MerchantTrxAmount) - Convert.ToDecimal(resp.currency_amount)) < 1) && MerchantTrxCurrency == resp.currency_type)
                         {
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "' Where SL=" + logID);
                             return true;
+
                         }
                         else
                         {
                             this.error = "Currency Amount not matching";
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "',ErrorMsg='Currency Amount not matching' Where SL=" + logID);
                             return false;
                         }
 
