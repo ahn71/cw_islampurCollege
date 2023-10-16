@@ -29,9 +29,25 @@ namespace DS.UI.DSWS
             lblMessage.InnerText = "";
             if (!IsPostBack)
             {
+                hIsTest.Visible = false;
+                ViewState["__IsLivePayment__"] = "True";
+                try
+                {
+                    string qs = Request.QueryString["for"].ToString();
+                    if (qs == "test")
+                    {
+                        hIsTest.Visible = true;
+                        ViewState["__IsLivePayment__"] = "False";
+                    }
+                       
+                }
+                catch (Exception ex){ }
+
+
                 string[] path = HttpContext.Current.Request.Url.AbsolutePath.ToString().Split('/');
                 ViewState["__OpenPayment__"] = "False";
                 hIsOpenPayment.Visible = false;
+                
                 if (path[path.Length - 1] == "open-payment")
                 {
                     hIsOpenPayment.Visible = true;
@@ -587,13 +603,18 @@ namespace DS.UI.DSWS
 
                     //Response.Redirect("https://app.idesk360.live/securepayment/?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
 
-                    if (ckbOwnIntegration.Checked)
+                    if (ViewState["__IsLivePayment__"].ToString() == "True")
+                    {
+                        Response.Redirect("https://www.kazigroup.net/securepayment/?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
+
+                    }
+                    else if (ViewState["__IsLivePayment__"].ToString() == "False")
                     {
                         string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/";
                         Response.Redirect(baseUrl + "UI/PaymentMethod/SSLCommerzInfos/Default.aspx?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
                     }
-                    else
-                        Response.Redirect("https://www.kazigroup.net/securepayment/?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
+                      
+                    
 
                 }
             }

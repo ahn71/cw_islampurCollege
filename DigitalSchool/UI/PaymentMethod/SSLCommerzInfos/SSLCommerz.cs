@@ -153,8 +153,10 @@ public class SSLCommerz
         this.Store_Test_Mode = mode;
         if (mode) 
         {
-            this.Store_ID = "testbox";
-            this.Store_Pass = "qwerty";
+            //this.Store_ID = "testbox";
+            //this.Store_Pass = "qwerty";
+            this.Store_ID = "codew652cbfc82018f";
+            this.Store_Pass = "codew652cbfc82018f@ssl";
             this.SSLCz_URL = "https://sandbox.sslcommerz.com/";
         }
     }

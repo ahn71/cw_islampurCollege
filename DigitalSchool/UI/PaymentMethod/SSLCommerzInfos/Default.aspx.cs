@@ -31,7 +31,7 @@ namespace DS.UI.PaymentMethod.SSLCommerzInfos
             PostData.Add("success_url", baseUrl + "/UI/PaymentMethod/SSLCommerzInfos/Success.aspx");
             PostData.Add("fail_url", baseUrl + "/UI/DSWS/PaymentFailed.aspx"); // "Fail.aspx" page needs to be created
             PostData.Add("cancel_url", baseUrl + "/UI/DSWS/PaymentFailed.aspx");
-           // PostData.Add("ipn_url", baseUrl+"IPN.aspx"); // If IPN is implemented, provide the url;
+            PostData.Add("ipn_url","https://islampurcollege.edu.bd/api/IPN"); // If IPN is implemented, provide the url;
 
             PostData.Add("cus_name", student_name);
             PostData.Add("cus_email", student_email);

@@ -2151,6 +2151,7 @@
     <Content Include="UI\DSWS\YearlyLeaveList.aspx" />
     <Content Include="UI\Notification\SendSMS.aspx" />
     <Content Include="UI\PaymentMethod\SSLCommerzInfos\Default.aspx" />
+    <Content Include="UI\PaymentMethod\SSLCommerzInfos\IPN.aspx" />
     <Content Include="UI\PaymentMethod\SSLCommerzInfos\Success.aspx" />
     <Content Include="UI\Reports\Attendance\AttendanceSlider\AttendanceStatusBoard.aspx" />
     <Content Include="UI\Reports\Attendance\AttendanceSlider\bg.jpg" />
@@ -2643,6 +2644,7 @@
     <Compile Include="ajax.aspx.designer.cs">
       <DependentUpon>ajax.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controller\IPNController.cs" />
     <Compile Include="Controller\PaymentConfirmationController.cs" />
     <Compile Include="Classes\commonTask.cs" />
     <Compile Include="Classes\Exam.cs" />
@@ -5293,6 +5295,13 @@
     </Compile>
     <Compile Include="UI\PaymentMethod\SSLCommerzInfos\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PaymentMethod\SSLCommerzInfos\IPN.aspx.cs">
+      <DependentUpon>IPN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PaymentMethod\SSLCommerzInfos\IPN.aspx.designer.cs">
+      <DependentUpon>IPN.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\PaymentMethod\SSLCommerzInfos\SSLCommerz.cs" />
     <Compile Include="UI\PaymentMethod\SSLCommerzInfos\Success.aspx.cs">
