@@ -32,20 +32,52 @@ namespace DS.UI.PaymentMethod.SSLCommerzInfos
                 string amount = "15";
                 string currency = "BDT";
                 DataTable dt = new DataTable();
-                dt = CRUD.ReturnTableNull("select TotalAmount,StoreNameKey from PaymentInfo Where  OrderNo='" + TrxID + "' ");
+                dt = CRUD.ReturnTableNull("select TotalAmount,StoreNameKey,IsPaid from PaymentInfo Where  OrderNo='" + TrxID + "' ");
                 if (dt != null && dt.Rows.Count > 0)
-                    amount = dt.Rows[0]["TotalAmount"].ToString();
-
-                SSLCommerz sslcz = new SSLCommerz("codew652cbfc82018f", "codew652cbfc82018f@ssl", true);
-                //Response.Write("Validation Response: " + sslcz.OrderValidate(TrxID, amount, currency, Request));
-                if (sslcz.OrderValidate(SL, TrxID, amount, currency, Request))
                 {
-                    Post(SL, Request);
+                    if (dt.Rows[0]["IsPaid"].ToString() == "True")
+                    {
+                        try { Response.Redirect("http://islampurcollege.edu.bd//payment/success/" + TrxID, false); } catch (Exception ex) { }
+                    }
+                    else
+                    {
+                        amount = dt.Rows[0]["TotalAmount"].ToString();
+
+                        Store store = new Store();
+                        try { store = SSLCommerz.stores.FirstOrDefault(s => s.StoreName == dt.Rows[0]["StoreNameKey"].ToString()); }
+                        catch
+                        {
+
+                            Response.Write("the store name '" + dt.Rows[0]["StoreNameKey"].ToString() + "' is invalid!");
+                            return;
+                        };
+                        if (store == null)
+                        {
+                            Response.Write("the store name '" + dt.Rows[0]["StoreNameKey"].ToString() + "' is invalid!");
+                            return;
+                        }
+
+                        SSLCommerz sslcz = new SSLCommerz(store.StoreID, store.StorePassword, false);// Use true for sandbox, false for live.
+                        //Response.Write("Validation Response: " + sslcz.OrderValidate(TrxID, amount, currency, Request));
+                        if (sslcz.OrderValidate(SL, TrxID, amount, currency, Request))
+                        {
+                            Post(SL, TrxID, Request);
+                        }
+                        else
+                        {
+                            try { Response.Redirect("http://islampurcollege.edu.bd//payment/failed/", false); } catch (Exception ex) { }
+                        }
+                    }
+                    
                 }
                 else
                 {
-                    try { Response.Redirect("http://islampurcollege.edu.bd//payment/failed/", false); } catch (Exception ex) { }
+                    Response.Write("the orderno not found in db");
+
                 }
+
+
+
             }
             else
             {
@@ -53,29 +85,31 @@ namespace DS.UI.PaymentMethod.SSLCommerzInfos
                 
             }
         }
-        public void Post(int logID, HttpRequest request)
+        public void Post(int logID, string OrderNo, HttpRequest request)
         {
             try
             {
 
                 string response = Request.Form.ToString();
-                string OrderNo = "";
+              
                 string missingFields = "";
                 string PaymentMedia = "";
                 string PaidAmount = "0";
                 string clientMobileNo = "";
                 string issuerPaymentDateTime = "2001-01-01 00:00:00";
                 string updateStoreNameKey = "";
-                try
-                {
-                    OrderNo = Request.Form["tran_id"];
+               
+                   
                     try
                     {
                         DataTable dt = new DataTable();
-                        dt = CRUD.ReturnTableNull("select OrderID from PaymentInfo Where  OrderNo='" + OrderNo + "'and IsPaid=1");
-                        if (dt.Rows.Count == 0)
+                        dt = CRUD.ReturnTableNull("select OrderID,IsPaid from PaymentInfo Where  OrderNo='" + OrderNo + "'");
+                        if (dt != null && dt.Rows.Count > 0 && dt.Rows[0]["IsPaid"].ToString() == "True")
                         {
-
+                            try { Response.Redirect("http://islampurcollege.edu.bd//payment/success/" + OrderNo, false); } catch (Exception ex) { }
+                        }
+                        else
+                        {
                             try
                             {
                                 updateStoreNameKey = request.Form["value_a"];// store_name;
@@ -117,21 +151,14 @@ namespace DS.UI.PaymentMethod.SSLCommerzInfos
                                 try { Response.Redirect("http://islampurcollege.edu.bd//payment/failed/", false); } catch (Exception ex) { }
                             }
                         }
-                        else
-                        {
-                            try { Response.Redirect("http://islampurcollege.edu.bd//payment/success/" + OrderNo, false); } catch (Exception ex) { }
-                        }
+                       
 
                     }
                     catch (Exception ex)
                     {
                         missingFields += ",status";
                     }
-                }
-                catch (Exception ex)
-                {
-                    missingFields += ",tran_id";
-                }                       
+                                     
                     
                 
                     

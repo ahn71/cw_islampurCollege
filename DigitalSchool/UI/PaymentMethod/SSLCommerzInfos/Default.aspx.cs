@@ -52,11 +52,23 @@ namespace DS.UI.PaymentMethod.SSLCommerzInfos
             PostData.Add("product_name", "Demo");
             PostData.Add("product_profile", "general");
             PostData.Add("product_category", "Demo");
-              
+
 
             // Add more parameters as needed. Parameter reference page - https://developer.sslcommerz.com/doc/v4/#initiate-payment
 
-            SSLCommerz sslcz = new SSLCommerz("<your store id>", "<your store password>", true); // Use true for sandbox, false for live.
+            Store store = new Store();
+            try {store= SSLCommerz.stores.FirstOrDefault(s => s.StoreName == store_name); }
+            catch {
+
+                Response.Write("the store name '" + store_name + "' is invalid!");
+                return;
+            };
+            if (store == null)
+            {
+                Response.Write("the store name '"+ store_name + "' is invalid!");
+                return;
+            }               
+            SSLCommerz sslcz = new SSLCommerz(store.StoreID, store.StorePassword, false); // Use true for sandbox, false for live.
             String response = sslcz.InitiateTransaction(PostData);
             Response.Redirect(response);
         }

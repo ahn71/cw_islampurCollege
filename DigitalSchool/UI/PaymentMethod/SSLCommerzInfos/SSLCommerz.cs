@@ -8,6 +8,7 @@ using System.IO;
 using System.Collections.Specialized;
 using System.Web.Script.Serialization;
 using DS.DAL;
+using DS.UI.PaymentMethod.SSLCommerzInfos;
 
 /// <summary>
 /// SSLCommerz SDK
@@ -28,7 +29,36 @@ public class SSLCommerz
     protected string Submit_URL = "gwprocess/v4/api.php";
     protected string Validation_URL = "validator/api/validationserverAPI.php";
     protected string Checking_URL = "validator/api/merchantTransIDvalidationAPI.php";
+    public static List<Store> stores = new List<Store> {
+        new Store{
+            StoreName="islampurcollegeopencollection",
+            StoreID ="islampurcollegeopencollectionlive ",
+            StorePassword="63171929B2D8A30008"
+        },
+        new Store{
+            StoreName="islampurcollegedegreepass",
+            StoreID ="islampurcollegedegreepasslive",
+            StorePassword="631718A0D0C2269445"
+        },
+        new Store{
+            StoreName="islampurcollegehonours",
+            StoreID ="islampurcollegehonourslive",
+            StorePassword="631717E546F1282793"
+        },
+        new Store{
+            StoreName="islampurcollegehsc",
+            StoreID ="islampurcollegehsclive",
+            StorePassword="631716901DF1E97131"
+        }
+        ,
+        new Store{
+            StoreName="islampurcollegeedubd",
+            StoreID ="islampurcollegeedubdlive",
+            StorePassword="62B4545CA772895427"
+        },
 
+      
+    };
     public SSLCommerz(string Store_ID, string Store_Pass, bool Store_Test_Mode = false)
 	{
         

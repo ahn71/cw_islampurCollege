@@ -84,7 +84,7 @@ namespace DS.Controller
                                 try
                                 {
                                     PaidAmount = model.amount.ToString();
-                                    if (double.Parse(PaidAmount) != double.Parse(dt.Rows[0]["TotalAmount"].ToString()))
+                                    if (double.Parse(PaidAmount) < double.Parse(dt.Rows[0]["TotalAmount"].ToString()))
                                     {
 
                                         missingFields += ",amount not match";
@@ -124,8 +124,11 @@ namespace DS.Controller
                                     clientMobileNo = model.value_d;// mobile no
                                 }
                                 catch (Exception ex) { missingFields += ",clientMobileNo"; }
+
                                 if (IsPaid == "1")
                                 {
+                                    CRUD.ExecuteQuery(@"Update [dbo].[PaymentInfo] Set IsPaid=" + IsPaid + ",Response='" + _response + "',PaidAmount=" + PaidAmount + ",clientMobileNo='" + clientMobileNo + "',issuerPaymentDateTime='" + tran_date + "',status='" + status + "',UpdatedAt='" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:ss:mm") + "',PaymentMedia='" + PaymentMedia + "',missingFields='" + missingFields + "',updateStoreNameKey='" + updateStoreNameKey + "' Where OrderNo='" + tran_id + "'");
+
                                     // Send SMS
                                     try
                                     {
@@ -182,7 +185,8 @@ namespace DS.Controller
                                         catch { CRUD.ExecuteQuery("Update [PaymentInfo_IPN_log] set [SMSResponse]=N'ex2-> ex insert failed!' Where SL=" + SL.ToString()); }
                                     }
                                 }
-                                CRUD.ExecuteQuery(@"Update [dbo].[PaymentInfo] Set IsPaid=" + IsPaid + ",Response='" + _response + "',PaidAmount=" + PaidAmount + ",clientMobileNo='" + clientMobileNo + "',issuerPaymentDateTime='" + tran_date + "',status='" + status + "',UpdatedAt='" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:ss:mm") + "',PaymentMedia='" + PaymentMedia + "',missingFields='" + missingFields + "',updateStoreNameKey='" + updateStoreNameKey + "' Where OrderNo='" + tran_id + "'");
+                                else
+                                   CRUD.ExecuteQuery(@"Update [dbo].[PaymentInfo] Set IsPaid=" + IsPaid + ",Response='" + _response + "',PaidAmount=" + PaidAmount + ",clientMobileNo='" + clientMobileNo + "',issuerPaymentDateTime='" + tran_date + "',status='" + status + "',UpdatedAt='" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:ss:mm") + "',PaymentMedia='" + PaymentMedia + "',missingFields='" + missingFields + "',updateStoreNameKey='" + updateStoreNameKey + "' Where OrderNo='" + tran_id + "'");
                             }
                         }
                         
