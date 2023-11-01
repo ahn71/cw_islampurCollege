@@ -169,6 +169,12 @@ namespace DS.UI.Administration.Settings.AcademicSettings
 
         private void loadClassList(string sqlcmd)
         {
+
+            using (var context = new EduDbContext())
+            {
+                var products = context.Classes.ToList();
+                // Use the retrieved data as needed
+            }
             if (string.IsNullOrEmpty(sqlcmd)) sqlcmd = "Select ClassID, ClassName,ClassOrder from Classes  Order by ClassOrder ";
             DataTable dt = new DataTable();
             sqlDB.fillDataTable(sqlcmd, dt);

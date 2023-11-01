@@ -100,6 +100,7 @@
     <Compile Include="CRUD.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DBConnectionStatic.cs" />
+    <Compile Include="EduDbContext.cs" />
     <Compile Include="ORM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +128,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DigitalSchool.PropertyEntities\DS.PropertyEntities.csproj">
+      <Project>{54BF2941-B8E2-40A2-930B-5684F2EF1FBD}</Project>
+      <Name>DS.PropertyEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DigitalSchool.SysErrMsgHandler\DS.SysErrMsgHandler.csproj">
       <Project>{4d67612a-c02a-458d-9a71-c72f47153ec4}</Project>
       <Name>DS.SysErrMsgHandler</Name>

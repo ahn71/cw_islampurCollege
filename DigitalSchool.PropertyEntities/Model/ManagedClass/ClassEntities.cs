@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
@@ -7,6 +8,7 @@ namespace DS.PropertyEntities.Model.ManagedClass
 {
     public class ClassEntities : IDisposable
     {
+        [Key]
         public int ClassID { get; set; }
         public string ClassName { get; set; }
         public int ClassOrder { get; set; }
