@@ -101,6 +101,11 @@
     <Compile Include="DBConnection.cs" />
     <Compile Include="DBConnectionStatic.cs" />
     <Compile Include="EduDbContext.cs" />
+    <Compile Include="Migrations\202311021012391_create module as UserModules.cs" />
+    <Compile Include="Migrations\202311021012391_create module as UserModules.designer.cs">
+      <DependentUpon>202311021012391_create module as UserModules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,6 +169,11 @@
       <DependentUpon>ORM.edmx</DependentUpon>
       <LastGenOutput>ORM.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202311021012391_create module as UserModules.resx">
+      <DependentUpon>202311021012391_create module as UserModules.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
