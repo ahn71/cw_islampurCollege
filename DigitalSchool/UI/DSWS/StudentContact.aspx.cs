@@ -81,10 +81,10 @@ namespace DS.UI.DSWS
         <h4 class='title'><strong>Name of Student :</strong><span style = 'color: #000;'>" + dt.Rows[0]["FullName"].ToString() + @"</span></h4>
         <div class='tblDiv'><table class='tblStudentInfo'><tbody>
 <tr>
-<td style = 'width: 19%'>Father's Name</td><td style ='width: 1%'>:</td><td style = 'width: 30%'><h5>" + dt.Rows[0]["FullName"].ToString() + @"</h5></td>
-<td style = 'width: 19%'>Mother's Name</td><td style = 'width: 1%'>:</td><td style = 'width: 30%'><h5>" + dt.Rows[0]["FullName"].ToString() + @"</h5></td>
+<td style = 'width: 19%'>Father's Name</td><td style ='width: 1%'>:</td><td style = 'width: 30%'><h5>" + dt.Rows[0]["FathersName"].ToString() + @"</h5></td>
+<td style = 'width: 19%'>Mother's Name</td><td style = 'width: 1%'>:</td><td style = 'width: 30%'><h5>" + dt.Rows[0]["MothersName"].ToString() + @"</h5></td>
 </tr>
-<tr><td>Session</td><td>:</td><td>" + dt.Rows[0]["FullName"].ToString() + @"</td><td>Class Roll</td><td>:</td><td>" + dt.Rows[0]["RollNo"].ToString() + @"</td></tr>
+<tr><td>Session</td><td>:</td><td>" + dt.Rows[0]["Session"].ToString() + @"</td><td>Class Roll</td><td>:</td><td>" + dt.Rows[0]["RollNo"].ToString() + @"</td></tr>
 <tr><td>Class</td><td>:</td><td>" + dt.Rows[0]["ClassName"].ToString() + @"</td><td>Group</td><td>:</td><td>" + dt.Rows[0]["GroupName"].ToString() + @"</td></tr>
 <tr><td>Shift</td><td>:</td><td>" + dt.Rows[0]["ShiftName"].ToString() + @"</td><td>Section</td><td>:</td><td>" + dt.Rows[0]["SectionName"].ToString() + @"</td></tr>
 <tr><td>Date of Birth</td><td>:</td><td>" + dt.Rows[0]["DateOfBirth"].ToString() + @"</td><td>Religion</td><td>:</td><td>" + dt.Rows[0]["Religion"].ToString() + @"</td></tr>

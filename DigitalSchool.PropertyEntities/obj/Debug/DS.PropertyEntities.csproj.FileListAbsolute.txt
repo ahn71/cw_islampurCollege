@@ -718,3 +718,4 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\ob
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
