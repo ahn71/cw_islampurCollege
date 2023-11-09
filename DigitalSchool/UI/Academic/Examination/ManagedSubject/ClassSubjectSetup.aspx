@@ -189,6 +189,7 @@
                                                     </asp:DropDownList>
                                                 </td>
                                             </tr>
+                                       
                                              <tr>
                                                 <td>Course</td>
                                                 <td>
@@ -223,6 +224,23 @@
                                                                                                                                                
                                                 </td>
                                             </tr>
+
+
+                                             <%--for related subject start--%>
+
+                                      <%--    <tr>
+                                                <td>Subject</td>
+                                                <td>
+                                                   <asp:DropDownList ID="ddlRealatedSub" runat="server" CssClass="input controlLength form-control" ClientIDMode="Static">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>--%>
+
+                                       <%--for related subject start--%>
+
+
+
+
                                             <tr>
                                                 <td></td>
                                                 <td><asp:CheckBoxList runat="server" ID="chkSubjectType"  ClientIDMode="Static" RepeatDirection="Horizontal"  OnSelectedIndexChanged="chkSubjectType_SelectedIndexChanged">

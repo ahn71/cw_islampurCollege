@@ -22,6 +22,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         ClassDepedencySubPassMarksEntry subEntry;
         List<ClassDependencySubPassMarksEntities> DependencyList;
         ClassDepedencySubPassMarksEntry clsdeppassEntry;
+
         bool result;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -35,9 +36,10 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                     ClassEntry.GetEntitiesData(ddlClassName);                 
                     SubjectEntry.GetSujectList(ddlSubject);
                     ClassEntry.GetEntitiesData(ddlClassList);
-                    ClassEntry.GetEntitiesData(ddlMarksClass); 
-                   // LoadClassList();
-                    DataBindForView();
+                    ClassEntry.GetEntitiesData(ddlMarksClass);
+                   
+                // LoadClassList();
+                DataBindForView();
                     
                 }
         }
@@ -246,6 +248,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
             lblMessage.InnerText = "";
            // LoadDependencySub();
           CourseEntry.GetCourseListBySubject(ddlCourse, ddlSubject.SelectedValue.ToString());
+           
         }
         private void LoadDependencySub()
         {
@@ -272,8 +275,10 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         {
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "load();", true);            
             ClassSubjectEntry.GetClassSubjectListByFiltering(int.Parse(ddlClassList.SelectedValue.ToString()));
+           
             DataBindForView();
-            
+           
+
         }
 
         protected void ddlClassName_SelectedIndexChanged(object sender, EventArgs e)
@@ -283,7 +288,8 @@ namespace DS.UI.Academic.Examination.ManagedSubject
             ddlClassList.SelectedValue = ddlClassName.SelectedValue.ToString();      
             DataBindForView();
             GroupEntry.GetGroupByClass(rblGroupList, ddlClassList.SelectedValue.ToString());
-          
+            
+
         }
 
         public int CourseId { get; set; }
@@ -477,5 +483,20 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 chkSubjectType.Items[0].Selected = false;
                 
         }
+
+
+
+        //public void getRelatedSubject() 
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt = CRUD.ReturnTableNull("select CS.SubId,vcs.SubName+'('+cs.SubCode+')' as SubName from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '"+ ddlClassName.SelectedValue+ "'  and (cs.IsOptional = 0 or cs.BothType = 1)");
+        //    ddlRealatedSub.DataTextField = "SubName";
+        //    ddlRealatedSub.DataValueField = "SubId";
+        //    ddlRealatedSub.DataSource = dt;
+        //    ddlRealatedSub.DataBind();
+        //    ddlRealatedSub.Items.Insert(0, new ListItem("...Select...", "0"));
+
+        //}
     }
+    
 }

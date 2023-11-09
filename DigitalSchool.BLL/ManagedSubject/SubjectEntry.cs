@@ -123,6 +123,25 @@ namespace DS.BLL.ManagedSubject
         
         }
 
+        //Related Subject
+        //public static void GetRelSujectList(DropDownList ddl, string classId)
+        //{
+        //    try
+        //    {
+        //        sql = string.Format("SELECT  cs.SubId,ns.SubName FROM ClassSubject cs INNER JOIN NewSubject ns ON cs.SubId=           ns.SubId LEFT OUTER JOIN Class_DependencyPassMarks cdp ON cs.ClassId=cdp.ClassId WHERE cs.ClassID='221' GROUP BY cs.ClassID,cs.SubId,ns.SubName,cdp.PassMarks");
+        //        DataTable dt = new DataTable();
+        //        dt = CRUD.ReturnTableNull(sql);
+        //        ddl.DataTextField = "SubName";
+        //        ddl.DataValueField = "SubId";
+        //        ddl.DataSource = dt;
+        //        ddl.DataBind();
+        //        ddl.Items.Insert(0, new ListItem("...Select...", "0"));
+
+        //    }
+        //    catch { }
+
+        //}
+
 
         bool disposed = false;
         public void Dispose()
