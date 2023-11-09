@@ -1,3 +1,10 @@
 
 /.vs
-
+/DigitalSchool/bin
+/DigitalSchool.BLL/bin
+/DigitalSchool.DAL/bin
+/DigitalSchool.PropertyEntities/bin
+/DigitalSchool.SysErrMsgHandler/bin
+/DigitalSchool/bin/CrystalDecisions.CrystalReports.Engine.dll
+/DigitalSchool/bin/CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+/DigitalSchool/bin/CrystalDecisions.ReportAppServer.Controllers.dll

@@ -22,26 +22,26 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         ClassDepedencySubPassMarksEntry subEntry;
         List<ClassDependencySubPassMarksEntities> DependencyList;
         ClassDepedencySubPassMarksEntry clsdeppassEntry;
-
         bool result;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblMessage.InnerText = "";            
-                if (!IsPostBack)
-                {
-                    if (!PrivilegeOperation.SetPrivilegeControl(float.Parse(Session["__UserTypeId__"].ToString()), "ClassSubjectSetup.aspx", btnSave, btnPrint)) Response.Redirect(Request.UrlReferrer.ToString() + "?hasperm=no");
-                    btnPrint.Enabled = false;
-                    btnPrint.CssClass = "";                  
-                    ClassEntry.GetEntitiesData(ddlClassName);                 
-                    SubjectEntry.GetSujectList(ddlSubject);
-                    ClassEntry.GetEntitiesData(ddlClassList);
-                    ClassEntry.GetEntitiesData(ddlMarksClass);
-                   
+            lblMessage.InnerText = "";
+            if (!IsPostBack)
+            {
+                if (!PrivilegeOperation.SetPrivilegeControl(float.Parse(Session["__UserTypeId__"].ToString()), "ClassSubjectSetup.aspx", btnSave, btnPrint)) Response.Redirect(Request.UrlReferrer.ToString() + "?hasperm=no");
+                btnPrint.Enabled = false;
+                btnPrint.CssClass = "";
+                ClassEntry.GetEntitiesData(ddlClassName);
+                SubjectEntry.GetSujectList(ddlSubject);
+
+
+                ClassEntry.GetEntitiesData(ddlClassList);
+                ClassEntry.GetEntitiesData(ddlMarksClass);
                 // LoadClassList();
                 DataBindForView();
-                    
-                }
+
+            }
         }
 
         protected ClassSubject GetData()
@@ -49,21 +49,26 @@ namespace DS.UI.Academic.Examination.ManagedSubject
             try
             {
                 ClassSubject cs = new ClassSubject();
-                if (btnSave.Text == "Save") cs.ClassSubjectId =  0;
-                else cs.ClassSubjectId = int.Parse(ViewState["__CSID__"].ToString());
+                if (btnSave.Text == "Save") cs.ClassSubjectId = 0;
+                else
+                {
+                    cs.ClassSubjectId = int.Parse(ViewState["__CSID__"].ToString());
+                    cs.RelatedSubId_CSID_Old = ViewState["__relatedSubject_CSID__"].ToString();
+                }
+                    
 
                 cs.Subject = new SubjectEntities()
                 {
                     SubjectId = int.Parse(ddlSubject.SelectedValue.ToString())
                 };
 
-                cs.Course =new CourseEntity();
+                cs.Course = new CourseEntity();
                 {
                     CourseId = int.Parse(ddlCourse.SelectedItem.Value.ToString());
                 };
 
-               
-               
+
+
                 cs.CourseID = int.Parse(ddlCourse.SelectedItem.Value.ToString());
 
                 cs.ClassId = int.Parse(ddlClassName.SelectedValue.ToString());
@@ -78,6 +83,21 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 cs.IsCommon = (rblGroupList.SelectedValue == "0") ? true : false;
                 cs.SubjectCode = txtSubCode.Text.Trim();
                 cs.GroupId = int.Parse(rblGroupList.SelectedItem.Value);
+
+                if (ddlRelatedSubject.SelectedIndex > 0)
+                {
+                    string[] s = ddlRelatedSubject.SelectedValue.ToString().Split('_');
+                    cs.RelatedSubId_CSID = s[0];
+                    cs.RelatedSubId = s[1];
+                    
+                }
+                else
+                {
+                    cs.RelatedSubId = "0";
+                    cs.RelatedSubId_CSID = "0";
+                }
+                
+
                 return cs;
             }
             catch { return null; }
@@ -89,10 +109,10 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         {
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "load();", true);
 
-            if (btnSave.Text == "Save") 
+            if (btnSave.Text == "Save")
             {
                 if (Session["__Save__"].ToString().Equals("false")) { lblMessage.InnerText = "warning-> You don't have permission to save!"; return; }
-                saveClassSubject(); 
+                saveClassSubject();
             }
 
             else
@@ -118,7 +138,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         }
         private void LoadClassList()
         {
-            DataTable dt = new DataTable();            
+            DataTable dt = new DataTable();
             sqlDB.fillDataTable("Select ClassID,ClassName From Classes where (IsActive is null or IsActive=1) ORDER BY ClassOrder ASC", dt);
             ddlClassList.DataSource = dt;
             ddlClassList.DataTextField = "ClassName";
@@ -133,21 +153,21 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 {
                     if (class_subjectEntry == null) class_subjectEntry = new ClassSubjectEntry();
                     class_subjectEntry.AddEntities = cs;
-                    result = class_subjectEntry.Insert();
-                    if (result)
+                    if (class_subjectEntry.Insert())
                     {
+
                         ddlClassList.SelectedValue = ddlClassName.SelectedValue;
                         DataBindForView();
                         lblMessage.InnerText = "success->Successuflly save";
                         Clear();
                         //ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "clearText();", true);
-                        
+
                     }
                     else
                     {
                         DataBindForView();
                         lblMessage.InnerText = "error->Unable to save";
-                      
+
                     }
 
                 }
@@ -189,7 +209,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
             catch (Exception ex)
             {
                 lblMessage.InnerText = "error->" + ex.Message;
-                
+
             }
         }
 
@@ -198,7 +218,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
             try
             {
                 List<ClassSubject> GetEntitiesData;
-                if (class_subjectEntry==null)  class_subjectEntry=new ClassSubjectEntry();
+                if (class_subjectEntry == null) class_subjectEntry = new ClassSubjectEntry();
                 if (ddlClassList.SelectedValue.ToString() == "0")
                 {
                     GetEntitiesData = class_subjectEntry.GetEntitiesData;
@@ -210,7 +230,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                     else divSub.Visible = false;
                     btnPrint.Enabled = false;
                     btnPrint.CssClass = "";
-                    
+
                 }
                 else
                 {
@@ -221,7 +241,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                         divSub.InnerText = "Subject is not available in this Class";
                         btnPrint.Enabled = false;
                         btnPrint.CssClass = "";
-                        
+
                     }
                     else
                     {
@@ -235,9 +255,9 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 }
                 gvClassSubject.DataSource = GetEntitiesData.ToList();
                 gvClassSubject.DataBind();
-                if(Session["__Update__"].ToString().Equals("false"))
-                gvClassSubject.Columns[7].Visible = false;
-                           
+                if (Session["__Update__"].ToString().Equals("false"))
+                    gvClassSubject.Columns[7].Visible = false;
+
             }
             catch { }
         }
@@ -246,9 +266,8 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         {
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "loadStudentInfo();", true);
             lblMessage.InnerText = "";
-           // LoadDependencySub();
-          CourseEntry.GetCourseListBySubject(ddlCourse, ddlSubject.SelectedValue.ToString());
-           
+            // LoadDependencySub();
+            CourseEntry.GetCourseListBySubject(ddlCourse, ddlSubject.SelectedValue.ToString());
         }
         private void LoadDependencySub()
         {
@@ -258,37 +277,39 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 sqlDB.fillDataTable("Select Dependency From NewSubject where SubId=" + ddlSubject.SelectedValue + "", dt);
                 if (dt.Rows[0]["Dependency"].ToString() == "True")
                 {
-                  //  trDependencysub.Visible = true;
+                    //  trDependencysub.Visible = true;
                     sqlDB.fillDataTable("Select SubId,SubName From NewSubject where Dependency='False'", dt = new DataTable());
-                   // ddldependencysub.DataSource = dt;
-                   // ddldependencysub.DataValueField = "SubId";
-                   // ddldependencysub.DataTextField = "SubName";
-                   // ddldependencysub.DataBind();
+                    // ddldependencysub.DataSource = dt;
+                    // ddldependencysub.DataValueField = "SubId";
+                    // ddldependencysub.DataTextField = "SubName";
+                    // ddldependencysub.DataBind();
 
                 }
-               // else trDependencysub.Visible = false;
+                // else trDependencysub.Visible = false;
             }
             catch { }
         }
 
         protected void ddlClassList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "load();", true);            
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "load();", true);
             ClassSubjectEntry.GetClassSubjectListByFiltering(int.Parse(ddlClassList.SelectedValue.ToString()));
-           
             DataBindForView();
-           
 
         }
 
         protected void ddlClassName_SelectedIndexChanged(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "loadStudentInfo();", true);
-         
-            ddlClassList.SelectedValue = ddlClassName.SelectedValue.ToString();      
+
+            ddlClassList.SelectedValue = ddlClassName.SelectedValue.ToString();
             DataBindForView();
             GroupEntry.GetGroupByClass(rblGroupList, ddlClassList.SelectedValue.ToString());
-            
+            if (ddlClassName.SelectedValue.ToString() == "221")
+            {
+                SubjectEntry.GetSujectList(ddlRelatedSubject, ddlClassName.SelectedValue.ToString());
+            }
+
 
         }
 
@@ -305,7 +326,7 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 {
                     subEntry = new ClassDepedencySubPassMarksEntry();
                 }
-                DataTable dt = CRUD.ReturnTableNull("SELECT ClassID FROM Class_DependencyPassMarks WHERE ClassID='"+ddlClassName.SelectedValue+"'");
+                DataTable dt = CRUD.ReturnTableNull("SELECT ClassID FROM Class_DependencyPassMarks WHERE ClassID='" + ddlClassName.SelectedValue + "'");
                 if (dt.Rows.Count == 0)
                 {
                     DependencyList = subEntry.GetDependencySubEntitiesData(ddlClassName.SelectedValue);
@@ -314,9 +335,9 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 {
                     DependencyList = subEntry.DependencySubEntitiesData(ddlClassName.SelectedValue);
                 }
-                if (DependencyList==null)
+                if (DependencyList == null)
                 {
-                    lblMessage.InnerText = "warning->No Dependency Subject in Class "+ddlClassName.SelectedItem.Text+"";
+                    lblMessage.InnerText = "warning->No Dependency Subject in Class " + ddlClassName.SelectedItem.Text + "";
                     return;
                 }
                 gvSubjectList.DataSource = DependencyList.ToList();
@@ -342,16 +363,16 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                         TextBox passMarks = row.FindControl("txtPassMarks") as TextBox;
                         saveList.Add(new ClassDependencySubPassMarksEntities()
                         {
-                           Class=new ClassEntities()
-                           {
-                               ClassID=int.Parse(ddlMarksClass.SelectedValue)
-                           },
-                           Subject=new SubjectEntities()
-                           {
-                               SubjectId = int.Parse(subId.Value)
-                           },
-                           PassMarks =passMarks.Text==""? 0: int.Parse(passMarks.Text)
-                            
+                            Class = new ClassEntities()
+                            {
+                                ClassID = int.Parse(ddlMarksClass.SelectedValue)
+                            },
+                            Subject = new SubjectEntities()
+                            {
+                                SubjectId = int.Parse(subId.Value)
+                            },
+                            PassMarks = passMarks.Text == "" ? 0 : int.Parse(passMarks.Text)
+
                         });
                         count++;
                     }
@@ -363,14 +384,14 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                         }
                         bool result = clsdeppassEntry.Insert(saveList);
                         if (result)
-                        {                          
+                        {
                             lblMessage.InnerText = "success-> Save successfully";
                             return;
                         }
                         lblMessage.InnerText = "error-> Unable to save";
                         return;
                     }
-                  
+
                 }
             }
             catch { }
@@ -420,10 +441,24 @@ namespace DS.UI.Academic.Examination.ManagedSubject
 
 
                 ddlClassName.SelectedValue = gvClassSubject.DataKeys[rIndex].Values[1].ToString();
+                SubjectEntry.GetSujectList(ddlRelatedSubject, ddlClassName.SelectedValue.ToString());
                 DataTable dt = new DataTable();
                 dt = ClassSubjectEntry.getSubjectIdByClassSubject(gvClassSubject.DataKeys[rIndex].Values[0].ToString());
 
                 ddlSubject.SelectedValue = dt.Rows[0]["SubId"].ToString();
+                if (dt.Rows[0]["RelatedSubId"].ToString() == "0")
+                {
+                    ddlRelatedSubject.SelectedValue = "0";
+                    ViewState["__relatedSubject_CSID__"] = "0";
+                }
+                else
+                {
+                    string relatedSubject_CSID = ClassSubjectEntry.getCSIdByClassSubject(ddlClassName.SelectedValue,dt.Rows[0]["RelatedSubId"].ToString());
+                    ViewState["__relatedSubject_CSID__"] = relatedSubject_CSID;
+                    ddlRelatedSubject.SelectedValue = relatedSubject_CSID + "_" + dt.Rows[0]["RelatedSubId"].ToString();
+                }
+                
+
 
 
 
@@ -442,8 +477,8 @@ namespace DS.UI.Academic.Examination.ManagedSubject
                 chkSubjectType.ClearSelection();
                 if (gvClassSubject.Rows[rIndex].Cells[6].Text == "No")
                     chkSubjectType.SelectedValue = "0";
-                if(gvClassSubject.Rows[rIndex].Cells[7].Text == "Yes")
-                    chkSubjectType.SelectedValue= "1";
+                if (gvClassSubject.Rows[rIndex].Cells[7].Text == "Yes")
+                    chkSubjectType.SelectedValue = "1";
                 btnSave.Text = "Update";
                 ViewState["__CSID__"] = gvClassSubject.DataKeys[rIndex].Values[0].ToString();
             }
@@ -452,51 +487,49 @@ namespace DS.UI.Academic.Examination.ManagedSubject
 
         protected void btnPrint_Click(object sender, EventArgs e)
         {
-          //  ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "loadStudentInfo();", true);
-            DataTable dt =new DataTable();
-        if (class_subjectEntry == null) class_subjectEntry = new ClassSubjectEntry();
-          dt= class_subjectEntry.GetDataTable(ddlClassList.SelectedValue);
-            if(dt.Rows.Count==0)
+            //  ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "loadStudentInfo();", true);
+            DataTable dt = new DataTable();
+            if (class_subjectEntry == null) class_subjectEntry = new ClassSubjectEntry();
+            dt = class_subjectEntry.GetDataTable(ddlClassList.SelectedValue);
+            if (dt.Rows.Count == 0)
             {
                 lblMessage.InnerText = "warning-> No Pattern List available"; return;
             }
             Session["_SubjectPattern_"] = dt;
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "goToNewTab('/UI/Reports/CrystalReport/ReportViewer.aspx?for=SubjectPattern');", true);  //Open New Tab for Sever side code
         }
-        private void Clear() 
-        {            
-            CSId.Value="";
-            txtOrderBy.Text="";
-            txtSubCode.Text="";
-            txtMarks.Text="";
-            ddlCourse.SelectedValue="0";
-            btnSave.Text="Save";
-           // chkIsOptional.Checked=false;
-           
+        private void Clear()
+        {
+            CSId.Value = "";
+            txtOrderBy.Text = "";
+            txtSubCode.Text = "";
+            txtMarks.Text = "";
+            ddlCourse.SelectedValue = "0";
+            btnSave.Text = "Save";
+            ddlRelatedSubject.SelectedValue = "0";
+            // chkIsOptional.Checked=false;
+
         }
 
         protected void chkSubjectType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (chkSubjectType.Items[0].Selected==true)
+            if (chkSubjectType.Items[0].Selected == true)
                 chkSubjectType.Items[1].Selected = false;
             if (chkSubjectType.Items[1].Selected == true)
                 chkSubjectType.Items[0].Selected = false;
-                
+
         }
 
-
-
-        //public void getRelatedSubject() 
+        //private void relatedSubSaveAndUpdate(int ClsSubId) 
         //{
-        //    DataTable dt = new DataTable();
-        //    dt = CRUD.ReturnTableNull("select CS.SubId,vcs.SubName+'('+cs.SubCode+')' as SubName from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '"+ ddlClassName.SelectedValue+ "'  and (cs.IsOptional = 0 or cs.BothType = 1)");
-        //    ddlRealatedSub.DataTextField = "SubName";
-        //    ddlRealatedSub.DataValueField = "SubId";
-        //    ddlRealatedSub.DataSource = dt;
-        //    ddlRealatedSub.DataBind();
-        //    ddlRealatedSub.Items.Insert(0, new ListItem("...Select...", "0"));
+        //if(ddlRelatedSubject.SelectedIndex > 0) 
+        //  {
+        //    string RelatedSubId= ddlRelatedSubject.SelectedValue.ToString();
+        //        if (class_subjectEntry == null) class_subjectEntry = new ClassSubjectEntry();
+        //        class_subjectEntry.RelatedSubIdUpdated(ClsSubId, RelatedSubId);
 
+        //    }
+        
         //}
     }
-    
 }

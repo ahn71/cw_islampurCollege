@@ -456,7 +456,7 @@
                         </div>
                         
 
-                         <div runat="server" id="divHsc_and_HonorsInfos">
+                         <div runat="server" id="divHscInfo1">
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">HSC Information (এইচএসসি তথ্য)</h4>
                         </div>
@@ -491,6 +491,8 @@
                                 </tr>
                             </table>
                         </div>
+                        </div>
+                        <div runat="server" id="divHonorsInfo1">
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">Honours /Preliminary Information</h4>
                         </div>
@@ -525,6 +527,7 @@
                                 </tr>
                             </table>
                         </div>
+
                         </div>
 
                         <div class="title" style="text-align: center;">
@@ -909,7 +912,8 @@
                                 </tr>
                             </table>
                         </div>
-                       <div runat="server" id="divHsc_and_HonorsInfo">
+                       <div runat="server" id="divHscInfo">
+
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">HSC Information (এইচএসসি তথ্য)</h4>
                         </div>
@@ -944,7 +948,8 @@
                                 </tr>
                             </table>
                         </div>
-
+                           </div>
+                        <div runat="server" id="divHonorsInfo">
                         <div class="title" style="text-align: center;">
                             <h4 style="margin: 3px">Honours /Preliminary Information</h4>
                         </div>
@@ -979,6 +984,7 @@
                                 </tr>
                             </table>
                         </div>
+
                      </div>
 
                         <div class="title" style="text-align: center;">

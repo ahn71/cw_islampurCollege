@@ -647,15 +647,65 @@ D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\D
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.AssemblyReference.cache
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.AssemblyReference.cache
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
@@ -664,10 +714,8 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bi
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
-D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.AssemblyReference.cache
-D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache

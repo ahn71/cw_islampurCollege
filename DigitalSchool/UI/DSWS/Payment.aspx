@@ -130,14 +130,14 @@
                                     <div class="col-md-10 col-xs-10">
                                         <h4 class="title-4">Islampur college WEB BASED PAYMENT SYSTEM</h4>
                                         <h2 runat="server" id="hIsOpenPayment" class="title-4" style="color:yellow;font:bold">(Open Payment)</h2>
-                                        <%--<h2 class="title-4 text-warning">(Under Construction!!!)</h2>--%>
+                                        <h2 runat="server" id="hIsTest" class="title-4 text-warning">(Under Testing!!!)</h2>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel panel-default cform-panel">
 
                                 <div class="panel-heading">
-                                    <h4>Please provide your fee corresponding Info </h4>
+                                    <h4>Please provide your fee corresponding Info  </h4>
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-10 col-md-offset-1">

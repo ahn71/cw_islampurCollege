@@ -189,7 +189,6 @@
                                                     </asp:DropDownList>
                                                 </td>
                                             </tr>
-                                       
                                              <tr>
                                                 <td>Course</td>
                                                 <td>
@@ -225,20 +224,18 @@
                                                 </td>
                                             </tr>
 
+                                           <%-- Related Subject--%>
 
-                                             <%--for related subject start--%>
-
-                                      <%--    <tr>
-                                                <td>Subject</td>
+                                             <tr>
+                                                <td>Related Subject</td>
                                                 <td>
-                                                   <asp:DropDownList ID="ddlRealatedSub" runat="server" CssClass="input controlLength form-control" ClientIDMode="Static">
+                                                    <asp:DropDownList ID="ddlRelatedSubject" runat="server" CssClass="input controlLength form-control" ClientIDMode="Static">
                                                     </asp:DropDownList>
                                                 </td>
-                                            </tr>--%>
-
-                                       <%--for related subject start--%>
+                                            </tr>
 
 
+                                           <%-- Related Subject dropown end--%>
 
 
                                             <tr>
@@ -375,6 +372,7 @@
         }
             function load() {
                 $("#ddlSubject").select2();
+                $("#ddlRelatedSubject").select2();
             }
             function goToNewTab(url) {
                 window.open(url);

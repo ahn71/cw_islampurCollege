@@ -168,6 +168,15 @@ namespace DS.UI.Academic.Examination.ManagedSubject
         protected global::System.Web.UI.WebControls.TextBox txtOrderBy;
 
         /// <summary>
+        /// ddlRelatedSubject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlRelatedSubject;
+
+        /// <summary>
         /// chkSubjectType control.
         /// </summary>
         /// <remarks>

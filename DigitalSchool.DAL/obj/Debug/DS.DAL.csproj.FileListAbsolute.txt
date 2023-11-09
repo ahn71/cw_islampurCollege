@@ -1193,10 +1193,75 @@ D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.DAL\obj\Debug\DS.DAL.c
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
 D:\New folder (2)\CWIslampurCollegeUltimate\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll.config
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.xml
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll.config
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.AssemblyReference.cache
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll.config
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.xml
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll.config
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.AssemblyReference.cache
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
+D:\New folder (4)\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csprojResolveAssemblyReference.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll.config
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.DAL.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.SqlServer.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.dll
@@ -1204,7 +1269,9 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlR
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Configuration.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.dll
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.pdb
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll.config
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EntityFramework.xml
@@ -1213,14 +1280,11 @@ D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlR
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.xml
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.xml
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.pdb
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DS.PropertyEntities.dll.config
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csprojResolveAssemblyReference.cache
-D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.dll
 D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.pdb
-D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.AssemblyReference.cache
-D:\Office Project\New folder\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.Migrations.createmoduleasUserModules.resources
+D:\Running projects git hub\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.GenerateResource.cache

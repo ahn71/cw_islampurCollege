@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AccessControls\Module.cs" />
     <Compile Include="Model\Admission\AdmStdFormInfoEntities.cs" />
     <Compile Include="Model\Admission\AdmStdInfoEntities.cs" />
     <Compile Include="Model\Admission\CurrentStdEntities.cs" />

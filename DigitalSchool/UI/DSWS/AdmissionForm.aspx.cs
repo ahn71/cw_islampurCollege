@@ -118,7 +118,7 @@ namespace DS.UI.DSWS
             if (ddlGroup.SelectedValue != "0")
                 ClassSectionEntry.GetSectionList(ddlSection, int.Parse(ViewState["__ClassId__"].ToString()), ddlGroup.SelectedValue);
 
-
+            pnlGroupSubjects.Visible = false;
 
 
         }
@@ -129,10 +129,21 @@ namespace DS.UI.DSWS
             if (ddlGroup.SelectedIndex > 0)
             {
 
-                string groupid = ddlGroup.SelectedValue;
-                GetMandetorySubeject(groupid);
-                GetOptionalSubject(groupid);
-                pnlGroupSubjects.Visible = true;
+                string[]clasID= ddlClass.SelectedValue.Split('_');
+                //check class id is eleven or not
+                if (clasID[0] == "221") 
+                 {
+                    string groupid = ddlGroup.SelectedValue;
+                    GetMandetorySubeject(groupid);
+                    GetOptionalSubject(groupid);
+                    pnlGroupSubjects.Visible = true;
+
+                }
+                else 
+                 {
+                    pnlGroupSubjects.Visible =false;
+
+                }
             }
             else
                 pnlGroupSubjects.Visible = false;
@@ -164,8 +175,9 @@ namespace DS.UI.DSWS
 
             try
             {
-                DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
-                ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
+                //DateTime dateOfBirth = DateTime.Parse(commonTask.ddMMyyyyToyyyyMMdd(txtDateOfBirth.Text.Trim()));
+                //ViewState["__dateOfBirth__"] = dateOfBirth.ToString("yyyy-MM-dd");
+                ViewState["__dateOfBirth__"] = txtDateOfBirth.Text;
             }
             catch (Exception ex)
             {
@@ -191,11 +203,18 @@ namespace DS.UI.DSWS
                 txtTCDate.Focus();
                 return;
             }
-            if (!ValidatationForSubject())
+            if (pnlGroupSubjects.Visible) 
             {
-                return;
+                if (!ValidatationForSubject())
+                {
+                    return;
+                }
             }
+           
             saveStudentAdmission();
+            
+
+            
         }
         private Boolean saveStudentAdmission()
         {
@@ -241,10 +260,18 @@ namespace DS.UI.DSWS
         {
             try
             {
-
-
-
-                entities = new AdmStdFormInfoEntities();
+                List<string> Mansubject = new List<string>();
+               
+                foreach (ListItem item in chkSubjectchoice.Items)
+                {
+                    if (item.Selected)
+                    {
+                        string[] values = item.Value.Split('_');
+                        Mansubject.Add(values[0]);
+                    }
+                }
+                 string MansubIds = string.Join(",", Mansubject.ToArray());
+                        entities = new AdmStdFormInfoEntities();
                 entities.AdmissionDate = TimeZoneBD.getCurrentTimeBD();
 
                 int AdmissionFormNo = StdAdmFormEntry.getAdmissionFormNo(entities.AdmissionDate.Year);
@@ -345,8 +372,18 @@ namespace DS.UI.DSWS
                     entities.NUAdmissionRoll = txtNUAdmissionRoll.Text.Trim();
                 else
                     entities.NUAdmissionRoll = "";
-                entities.ManSubIds = Session["__ManSubIds__"].ToString();
-                entities.OptSubId = ViewState["__OptinalId__"].ToString();
+
+
+                if (pnlGroupSubjects.Visible)// Eleven
+                {
+                    entities.ManSubIds = MansubIds;
+                    entities.OptSubId = btnRadio.SelectedValue.ToString();
+                }
+                else
+                {
+                    entities.ManSubIds = "";
+                    entities.OptSubId = "";
+                }
 
 
 
@@ -468,10 +505,10 @@ namespace DS.UI.DSWS
 
 
         //Get Mandetory Subject
-        private string GetMandetorySubeject(string groupSecId)
+        private string GetMandetorySubeject(string ClsGrpID)
         {
             DataTable dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select (case when cs.RelatedSubId is null then convert(varchar, cs.SubId) else convert(varchar, cs.SubId) + '_' + convert(varchar, cs.RelatedSubId) end )as SubId,vcs.SubName+'('+cs.SubCode+')' as SubName,CAST(CASE WHEN cs.IsOptional = 0 AND cs.BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '221' and cs.GroupId IN(SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '"+ groupSecId + "') and (cs.IsOptional = 0 or cs.BothType = 1)");
+            dt = CRUD.ReturnTableNull("select (case when isnull(cs.RelatedSubId,0) =0 then convert(varchar, cs.SubId) else convert(varchar, cs.SubId) + '_' + convert(varchar, cs.RelatedSubId) end )as SubId,vcs.SubName+'('+cs.SubCode+')' as SubName,CAST(CASE WHEN cs.IsOptional = 0 AND cs.BothType = 0 THEN 1 ELSE 0 END AS bit) as MustTaken from NewSubject vcs left join ClassSubject cs on vcs.subid = cs.subid  where cs.ClassID = '221' and ( cs.GroupId IN(SELECT GroupId  FROM v_Class_Group_Section WHERE ClsGrpID = '" + ClsGrpID + "') or(  IsCommon=1 and cs.BothType = 1)) and (cs.IsOptional = 0 or cs.BothType = 1)");
             chkSubjectchoice.Items.Clear();
 
 
@@ -479,19 +516,28 @@ namespace DS.UI.DSWS
             {
                 foreach (DataRow row in dt.Rows)
                 {
+                    if ((ClsGrpID == "113" || ClsGrpID == "115") && row["SubName"].ToString().Contains("Economics"))// Economics is not for Science/Business Studies
+                        continue;
                     ListItem item = new ListItem();
                     item.Text = row["SubName"].ToString();
                     item.Value = row["SubId"].ToString();
+                  
                     item.Selected = Convert.ToBoolean(row["MustTaken"]);
+                    
+                    
 
 
                     if (item.Selected == true)
                     {
-                        if (ddlGroup.SelectedItem.Text == "Science" || ddlGroup.SelectedItem.Text == "Business Studies")
+                        if (ddlGroup.SelectedValue=="113" || ddlGroup.SelectedValue == "115")
                         {
                             item.Enabled = false;
+                           
                         }
-
+                        else 
+                        {
+                            item.Selected= false;
+                        }
                     }
                     chkSubjectchoice.Items.Add(item);
                 }
@@ -503,16 +549,18 @@ namespace DS.UI.DSWS
         }
 
         //Get Optinal Subject
-        private string GetOptionalSubject(string groupSecId)
+        private string GetOptionalSubject(string ClsGrpID)
         {
             DataTable dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and (GroupId = (SELECT  MAX(GroupId)  FROM v_Class_Group_Section WHERE ClsGrpID = '" + groupSecId + "') or IsCommon=1)  and (IsOptional=1 or BothType=1)");
+            dt = CRUD.ReturnTableNull("select SubId,SubName+'('+SubCode+')' as SubName from v_ClassSubjectList where ClassID='221' and (GroupId = (SELECT  MAX(GroupId)  FROM v_Class_Group_Section WHERE ClsGrpID = '" + ClsGrpID + "') or IsCommon=1)  and (IsOptional=1 or BothType=1)");
 
             btnRadio.Items.Clear();
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
                 {
+                    if (ClsGrpID == "113" && row["SubName"].ToString().Contains("Economics"))// Economics is not for Science
+                        continue;
                     ListItem item = new ListItem();
                     item.Text = row["SubName"].ToString();
                     item.Value = row["SubId"].ToString();
@@ -541,7 +589,7 @@ namespace DS.UI.DSWS
             {
                 if (item.Selected)
                 {
-                    
+
 
                     if (item.Value.Contains('_'))
                     {
@@ -552,62 +600,78 @@ namespace DS.UI.DSWS
                     }
                     else
                     {
+                        subjectDictionary.Add(item.Value, item.Text);
                         Mansubject.Add(item.Value);
-                    }                    
+                    }
                     ManSubscount++;
                 }
             }
-            
-            
-            
-           if (ManSubscount != 3)
-            {
-                lblMessage.InnerText = "warning->You are required to choose three mandatory subjects.";
-                return false;
-            }
-            else if (Optionalvalus == "")
-            {
-                lblMessage.InnerText = "warning-> You are required to choose one optional subjects.";
-                return false;
-            }
-            else 
-            {
 
 
-                if (Mansubject.Contains(Optionalvalus) || MansubjectRelated.Contains(Optionalvalus))
+
+            if (ManSubscount != 3)
+            {
+                lblMessage.InnerText = "error->You are required to choose 3 mandatory subjects.but you have selected "+Mansubject+" subject(s)";
+                return false;
+            }
+            else
+            {
+                List<string> commonList = Mansubject.Intersect(MansubjectRelated).ToList();
+                if (commonList.Any())
                 {
-                    lblMessage.InnerText = "warning-> You cannot select the same ro realated subjects for both mandatory and optional courses";
+                    string subjects = "";
+                    foreach (string s in commonList)
+                    {
+                        subjects += ",'" + subjectDictionary[s] + "'";
+                    }
+                    lblMessage.InnerText = "error-> You can not select both " + subjects.Remove(0, 1) + "  in a same time";
                     return false;
                 }
-                else { 
-                List<string> commonList=Mansubject.Intersect(MansubjectRelated).ToList();
-                    if (commonList.Any())
-                    {
-                        string subjects = "";
-                        foreach (string s in commonList)
-                        {
-                            subjects +=","+ subjectDictionary[s];
-                        }
-                        
-
-
-                        lblMessage.InnerText = "warning-> You can not select both "+ subjects.Remove(0, 1)+ "  in a same time" ;
-                        return false;
-                    }
-                }
             }
+            if (Optionalvalus == "")
+            {
+                lblMessage.InnerText = "error-> You are required to choose one optional subjects.";
+                return false;
+            }
+            else
+            {
 
+
+                if (Mansubject.Contains(Optionalvalus))
+                {
+
+                    lblMessage.InnerText = "error-> You cannot select the same subject('" + subjectDictionary[Optionalvalus] + "')for both mandatory and optional courses";
+                    return false;
+                }
+                else if (MansubjectRelated.Contains(Optionalvalus))
+                {
+
+                    lblMessage.InnerText = "error-> You cannot select the same or related subject('" + btnRadio.SelectedItem.Text + "')for both mandatory and optional courses";
+                    return false;
+                }
+               
+            }
             string MansubIds = string.Join(",", Mansubject.ToArray());
-            ViewState["__OptinalId__"] = Optionalvalus;
-            Session["__ManSubIds__"] = MansubIds;
+            ViewState["OptinalId"] = Optionalvalus;
+            Session["ManSubIds"] = MansubIds;
 
             return true;
 
         }
-       
-      
 
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string hjk = txtDateOfBirth.Text;
+              if (!string.IsNullOrEmpty(hjk)) 
+               { }
+        }
 
+        //protected void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    string hjk = txtDateOfBirth.Text;
+        //    if (!string.IsNullOrEmpty(hjk)) 
+        //    { }
+        //}
     }
 
  }

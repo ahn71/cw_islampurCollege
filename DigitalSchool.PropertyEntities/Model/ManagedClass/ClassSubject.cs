@@ -25,6 +25,9 @@ namespace DS.PropertyEntities.Model.ManagedClass
         public string Mandatory { get; set; }
         public bool IsCommon { get; set; }
 
+        public string RelatedSubId { get; set; }
+        public string RelatedSubId_CSID { get; set; }
+        public string RelatedSubId_CSID_Old { get; set; }
 
         bool disposed = false;
         public void Dispose()
