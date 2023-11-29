@@ -72,22 +72,19 @@
     <div class="col-lg-12">
         <asp:UpdatePanel ID="up2" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
-                 <asp:GridView ID="gvAccountList" runat="server" AutoGenerateColumns="false" DataKeyNames="StudentAccId" 
+                 <asp:GridView ID="gvAccountList" runat="server" AutoGenerateColumns="false" DataKeyNames="UserId,Password" 
                      CssClass="table table-bordered" BackColor="White" OnRowCommand="gvAccountList_RowCommand"
                       AllowPaging="true" PageSize="25" OnPageIndexChanging="gvAccountList_PageIndexChanging"  >
                      <PagerStyle CssClass="gridview" />
             <Columns>
                 
                <asp:BoundField DataField="FullName" HeaderText="Name" />                
-                <asp:BoundField DataField="UserName" HeaderText="User Name" />
-                
-                <asp:BoundField DataField="UserPassword" HeaderText="Password" />
-
-                <asp:BoundField DataField="CreatedOn" HeaderText="CreatedOn" />
-                <asp:BoundField DataField="Status" HeaderText="Status" />
-                
+                <asp:BoundField DataField="UserName" HeaderText="User Name" />                
+                <asp:BoundField DataField="Password" HeaderText="Password" />
+                <asp:BoundField DataField="CreatedAt" HeaderText="CreatedOn" />
+                <asp:BoundField DataField="IsActive" HeaderText="Status" />                
                  <asp:TemplateField HeaderStyle-HorizontalAlign="Center">
-                    <HeaderTemplate >
+                    <HeaderTemplate>
                        Id & Password
                     </HeaderTemplate>
                     <ItemTemplate>
