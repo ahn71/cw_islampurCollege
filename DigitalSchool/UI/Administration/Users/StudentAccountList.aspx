@@ -77,7 +77,12 @@
                       AllowPaging="true" PageSize="25" OnPageIndexChanging="gvAccountList_PageIndexChanging"  >
                      <PagerStyle CssClass="gridview" />
             <Columns>
-                
+                    <asp:TemplateField>
+                        <HeaderTemplate>SL</HeaderTemplate>
+        <ItemTemplate>
+             <%#Container.DataItemIndex+1 %>
+        </ItemTemplate>
+    </asp:TemplateField>
                <asp:BoundField DataField="FullName" HeaderText="Name" />                
                 <asp:BoundField DataField="UserName" HeaderText="User Name" />                
                 <asp:BoundField DataField="Password" HeaderText="Password" />
