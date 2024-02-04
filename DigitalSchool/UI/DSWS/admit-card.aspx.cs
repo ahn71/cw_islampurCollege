@@ -113,8 +113,8 @@ namespace DS.UI.DSWS
                 lblSection.Text = dt.Rows[0]["SectionName"].ToString();
                 lblGuardianMobileNo.Text = dt.Rows[0]["GuardianMobileNo"].ToString();
                 string divInfo = "";
-                if (!dt.Rows[0]["ClassName"].ToString().Contains("Twelve"))
-                {
+                //if (!dt.Rows[0]["ClassName"].ToString().Contains("Twelve"))
+                //{
                     divInfo = @"<h5 style='font-weight:600'>Exam Routine</h5>
 <table class='table table-bordered'>
                     <thead>
@@ -134,7 +134,7 @@ namespace DS.UI.DSWS
                     }
                     divInfo += "</tbody></table>";
 
-                }
+                //}
                 divExamRoutine.Controls.Add(new LiteralControl(divInfo));
             }
             else
