@@ -51,7 +51,7 @@ namespace DS.BLL.ManagedClass
 
 
             sql = string.Format("INSERT INTO [dbo].[ClassSubject] " +
-           "([ClassID], [SubId],[CourseId],[Marks],[SubCode],[Ordering],[IsOptional],[BothType],[GroupId],[IsCommon][RelatedSubId]) VALUES (" +
+           "([ClassID], [SubId],[CourseId],[Marks],[SubCode],[Ordering],[IsOptional],[BothType],[GroupId],[IsCommon],[RelatedSubId]) VALUES (" +
            "'" + _Entities.ClassId + "'," +
            "'" + _Entities.Subject.SubjectId + "'," +
            "'" + _Entities.CourseID + "'," +
