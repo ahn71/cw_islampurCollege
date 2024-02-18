@@ -145,7 +145,8 @@ namespace DS.UI.Academic.Students
                         return;
                     }
                     int count = 0;
-                    string clsName = new String(dlCurrentBatch.SelectedItem.Text.Where(Char.IsLetter).ToArray());
+                    // string clsName =  new String(dlCurrentBatch.SelectedItem.Text.Where(Char.IsLetter).ToArray());
+                    string clsName = dlCurrentBatch.SelectedItem.Text.Remove(dlCurrentBatch.SelectedItem.Text.Length - 4);
                     ClassEntry cls = new ClassEntry();
                     ClassList = cls.GetEntitiesData().FindAll(c => c.ClassName == clsName);
                     BatchPromListAll = new List<BatchPromotionEntities>();
