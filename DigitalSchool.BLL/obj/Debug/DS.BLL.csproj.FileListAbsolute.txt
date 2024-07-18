@@ -1733,3 +1733,36 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll.config
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.DAL.dll.config
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.PropertyEntities.dll.config
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.resources.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.AssemblyReference.cache
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreCompileInputs.cache
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb

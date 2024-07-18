@@ -49,15 +49,15 @@ namespace DS.UI.DSWS
 
                     if (dt != null && dt.Rows.Count > 0)
                     {
-                        lblInvoiceNo.Text = dt.Rows[0]["OrderNo"].ToString();
-                        lblDateOfPayment.Text = dt.Rows[0]["PaymentDate"].ToString();
-                        lblAdmissionNoHead.Text = AdmissionNoHead;
-                        lblAdmissionNo.Text = dt.Rows[0]["AdmissionNo"].ToString();
-                        lblStudentName.Text = dt.Rows[0]["FullName"].ToString();
-                        lblClass.Text = dt.Rows[0]["ClassName"].ToString();
-                        lblGroup.Text = dt.Rows[0]["GroupName"].ToString();
-                        lblClassRoll.Text = dt.Rows[0]["RollNo"].ToString();
-                        lblYear.Text = dt.Rows[0]["Year"].ToString();
+                        lblInvoiceNo2.Text=lblInvoiceNo.Text = dt.Rows[0]["OrderNo"].ToString();
+                        lblDateOfPayment2.Text=lblDateOfPayment.Text = dt.Rows[0]["PaymentDate"].ToString();
+                        lblAdmissionNoHead2.Text=lblAdmissionNoHead.Text = AdmissionNoHead;
+                        lblAdmissionNo2.Text=lblAdmissionNo.Text = dt.Rows[0]["AdmissionNo"].ToString();
+                        lblStudentName2.Text= lblStudentName.Text = dt.Rows[0]["FullName"].ToString();
+                        lblClass2.Text=lblClass.Text = dt.Rows[0]["ClassName"].ToString();
+                        lblGroup2.Text= lblGroup.Text = dt.Rows[0]["GroupName"].ToString();
+                        lblClassRoll2.Text= lblClassRoll.Text = dt.Rows[0]["RollNo"].ToString();
+                        lblYear2.Text=lblYear.Text = dt.Rows[0]["Year"].ToString();
                         string divInfo = @"<div style='margin-bottom: 10px;'><strong>Fee Category:</strong> " + dt.Rows[0]["FeeCatName"].ToString() + "</div>";
                         divInfo += @"<table class='table table-bordered'>
                         <thead>
@@ -93,12 +93,15 @@ namespace DS.UI.DSWS
                         </tfoot>
                     </table>";
                         divParticularCategoryList.Controls.Add(new LiteralControl(divInfo));
+                        divParticularCategoryList2.Controls.Add(new LiteralControl(divInfo));
                     }
                 }
                 
             }
             catch(Exception ex) {  }
         }
+
+
 
     }
 }
