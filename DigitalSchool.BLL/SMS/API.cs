@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -51,7 +52,7 @@ namespace DS.BLL.SMS
             }
             return returnMsg;
         }
-        public  static string SMSSend(string messsage, string number)
+        public  static string Old_SMSSend(string messsage, string number)
         {
 
             String userid = API.userID; //Your Login ID
@@ -93,6 +94,47 @@ namespace DS.BLL.SMS
             dataStream.Close();
             response.Close();
             return responseFromServer;
+
+        }
+
+        public static string SMSSend(string messsage, string numbers)
+        {
+
+            string result = "";
+            WebRequest request = null;
+            HttpWebResponse response = null;
+            try
+            {
+                String api_key = "nGjDnnGOIgJL2QBKrC9V"; //Your api_key
+                String senderid = "8809617612596"; //Your Sender ID
+                String number = numbers; //Recipient Phone Number multiple number must be separated by comma
+                String message = messsage; //do not use single quotation (') in the message to avoid forbidden result
+                String url = "http://bulksmsbd.net/api/smsapi?api_key=" + api_key + "&senderid=" + senderid + "&number=" + number + "&message=" + message;
+                request = WebRequest.Create(url);
+
+                // Send the 'HttpWebRequest' and wait for response.
+                response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                Encoding ec = System.Text.Encoding.GetEncoding("utf-8");
+                StreamReader reader = new System.IO.StreamReader(stream, ec);
+                result = reader.ReadToEnd();
+                Debug.Write("<script>alert('" + result.ToString() + "')</script>");
+                //Console.WriteLine(result);
+                reader.Close();
+                stream.Close();
+                return result;
+            }
+            catch (Exception exp)
+            {
+                Debug.Write("<script>alert('" + exp.ToString() + "')</script>");
+                //Console.WriteLine(exp.ToString());
+                return result;
+            }
+            finally
+            {
+                if (response != null)
+                    response.Close();
+            }
 
         }
     }
