@@ -3,6 +3,7 @@ using DS.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,7 +20,8 @@ namespace DS.UI.DSWS
             {
                 string[] OrderNo = HttpContext.Current.Request.Url.AbsolutePath.ToString().Split('/');
                 loadInvoice(OrderNo[OrderNo.Length-1]);
-                
+                string respocse=API.Old_SMSSend("Testing Messagge","01727417288");
+                Debug.Write(respocse);
 
             }
         }

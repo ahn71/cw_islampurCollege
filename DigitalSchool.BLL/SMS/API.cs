@@ -14,7 +14,7 @@ namespace DS.BLL.SMS
         public static string userID= "01722289239";
         public static string password= "3M5TYWDH";
 
-        public static string MsgStatus(int value)
+        public static string MsgStatus_old(int value)
         {
             string returnMsg = string.Empty;
             switch (value)
@@ -46,6 +46,81 @@ namespace DS.BLL.SMS
                 case 1010:
                     returnMsg = "Max number limit exceeded";
                     break;
+                default:
+                    returnMsg = "";
+                    break;
+            }
+            return returnMsg;
+        }
+        public static string MsgStatus(int value)
+        {
+            string returnMsg = string.Empty;
+            switch (value)
+            {
+                case 202:
+                    returnMsg = "Success";
+                    break;
+                case 1001:
+                    returnMsg = "Invalid Number";
+                    break;
+                case 1002:
+                    returnMsg = "sender id not correct/sender id is disabled";
+                    break;
+                case 1003:
+                    returnMsg = "Please Required all fields/Contact Your System Administrator";
+                    break;
+                case 1005:
+                    returnMsg = "Internal Error";
+                    break;
+                case 1006:
+                    returnMsg = "Balance Validity Not Available";
+                    break;
+                case 1007:
+                    returnMsg = "Balance Insufficient";
+                    break;
+                case 1011:
+                    returnMsg = "User Id not found";
+                    break;
+                case 1012:
+                    returnMsg = "Masking SMS must be sent in Bengali";
+                    break;
+
+
+                case 1013:
+                    returnMsg = "Sender Id has not found Gateway by api key";
+                    break;
+                case 1014:
+                    returnMsg = "Sender Type Name not found using this sender by api key";
+                    break;
+                case 1015:
+                    returnMsg = "Sender Id has not found Any Valid Gateway by api key";
+                    break;
+                case 1016:
+                    returnMsg = "Sender Type Name Active Price Info not found by this sender id";
+                    break;
+
+                case 1017:
+                    returnMsg = "Sender Type Name Price Info not found by this sender id";
+                    break;
+                case 1018:
+                    returnMsg = "The Owner of this (username) Account is disabled";
+                    break;
+                case 1019:
+                    returnMsg = "The (sender type name) Price of this (username) Account is disabled";
+                    break;
+                case 1020:
+                    returnMsg = "The parent of this account is not found.";
+                    break;
+                case 1021:
+                    returnMsg = "The parent active (sender type name) price of this account is not found.";
+                    break;
+                case 1031:
+                    returnMsg = "Your Account Not Verified, Please Contact Administrator.";
+                    break;
+                case 1032:
+                    returnMsg = "ip Not whitelisted";
+                    break;
+
                 default:
                     returnMsg = "";
                     break;

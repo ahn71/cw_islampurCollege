@@ -1018,8 +1018,13 @@ namespace DS.UI.Notification
                                 if (MobileNo.Length == 11 && "017,019,018,016,015,013,014".Contains(MobileNo.Substring(0, 3)))
                                 {                                  
                                  string resopse= API.SMSSend(string.Format(txtMsgBody.Text), row.Cells[3].Text.Trim().ToString());
-                                    string[] r = resopse.Split('|');
-                                    smsEntities.Status =API.MsgStatus(int.Parse(r[0]));
+                                    //string[] r = resopse.Split('|');
+                                    //smsEntities.Status =API.MsgStatus(int.Parse(r[0]));
+
+                                    Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                                    int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                                    Console.WriteLine("responseCode: " + responseCode);
+                                    smsEntities.Status = API.MsgStatus(responseCode);
                                 }
                                 else
                                 {
