@@ -19,6 +19,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace DS.UI.Academic.Students
 {
@@ -139,11 +140,18 @@ namespace DS.UI.Academic.Students
             {
                 
                 string resopse = API.SMSSend(Msg, MobileNo);                
-                string[] r = resopse.Split('|');
+                //string[] r = resopse.Split('|');
                 SMSEntites smsEntities = new SMSEntites();
                 smsEntities.ID = 1;
                 smsEntities.MobileNo = dt.Rows[0]["Mobile"].ToString();
-                smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+
+                //smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+
+                Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                Console.WriteLine("responseCode: " + responseCode);
+                smsEntities.Status = API.MsgStatus(responseCode);
+
                 smsEntities.MessageBody = Msg;
                 smsEntities.Purpose = "AdmissionApproval";
                 smsEntities.SentTime = DateTime.Now;

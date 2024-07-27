@@ -2,6 +2,8 @@
 using DS.BLL.SMS;
 using DS.DAL;
 using DS.PropertyEntities.Model.SMS;
+using Newtonsoft.Json;
+
 //using Newtonsoft.Json;
 //using SigmaERP.util;
 using System;
@@ -203,11 +205,17 @@ namespace DS.api
                                         string resopse = API.SMSSend(Msg, MobileNo);
 
                                         SMSResponse = resopse;
-                                        string[] r = resopse.Split('|');
+                                       // string[] r = resopse.Split('|');
                                         SMSEntites smsEntities = new SMSEntites();
                                         smsEntities.ID = 1;
                                         smsEntities.MobileNo = dt.Rows[0]["Mobile"].ToString();
-                                        smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+                                        // smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+
+                                        Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                                        int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                                        Console.WriteLine("responseCode: " + responseCode);
+                                        smsEntities.Status = API.MsgStatus(responseCode);
+
                                         smsEntities.MessageBody = Msg;
                                         smsEntities.Purpose = "PaymentReceived";
                                         smsEntities.SentTime = DateTime.Now;

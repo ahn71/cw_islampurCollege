@@ -752,8 +752,13 @@ namespace DS.UI.Notification
                                     //int a = int.Parse(MobileNo);
                                     //mblNo += row.Cells[7].Text.Trim().ToString() + ",";
                                     string resopse = API.SMSSend(string.Format(txtMsgBody.Text), row.Cells[7].Text.Trim().ToString());
-                                    string[] r = resopse.Split('|');
-                                    smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+                                    //string[] r = resopse.Split('|');
+                                    //smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+
+                                    Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                                    int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                                    Console.WriteLine("responseCode: " + responseCode);
+                                    smsEntities.Status = API.MsgStatus(responseCode);
                                 }
                                 else
                                 {
@@ -830,8 +835,14 @@ namespace DS.UI.Notification
                                     //int a = int.Parse(MobileNo);
                                     //mblNo += lblMobile.Text.Trim().ToString() + ",";
                                     string resopse = API.SMSSend(string.Format(txtMsgBody.Text), lblMobile.Text.Trim().ToString());
-                                    string[] r = resopse.Split('|');
-                                    smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+                                    //string[] r = resopse.Split('|');
+                                    //smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+
+
+                                    Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                                    int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                                    Console.WriteLine("responseCode: " + responseCode);
+                                    smsEntities.Status = API.MsgStatus(responseCode);
                                 }
                                 else
                                 {
@@ -904,8 +915,13 @@ namespace DS.UI.Notification
                                     //int a = int.Parse(MobileNo);
                                     //mblNo += row.Cells[7].Text.Trim().ToString() + ",";
                                     string resopse = API.SMSSend(string.Format(txtMsgBody.Text), mobileNo);
-                                    string[] r = resopse.Split('|');
-                                    smsEntities.Status =API.MsgStatus(int.Parse(r[0]));
+                                    //string[] r = resopse.Split('|');
+                                    //smsEntities.Status =API.MsgStatus(int.Parse(r[0]));
+
+                                    Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                                    int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                                    Console.WriteLine("responseCode: " + responseCode);
+                                    smsEntities.Status = API.MsgStatus(responseCode);
                                 }
                                 else
                                 {
@@ -959,8 +975,14 @@ namespace DS.UI.Notification
                                     //int a = int.Parse(MobileNo);
                                     //mblNo += row.Cells[6].Text.Trim().ToString() + ",";
                                     string resopse = API.SMSSend(string.Format(txtMsgBody.Text), row.Cells[6].Text.Trim().ToString());
-                                    string[] r = resopse.Split('|');
-                                    smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+                                    //string[] r = resopse.Split('|');
+                                    //smsEntities.Status = API.MsgStatus(int.Parse(r[0]));
+
+
+                                    Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(resopse);
+                                    int responseCode = Convert.ToInt32(responseDictionary["response_code"]);
+                                    Console.WriteLine("responseCode: " + responseCode);
+                                    smsEntities.Status = API.MsgStatus(responseCode);
                                 }
                                 else 
                                 {
