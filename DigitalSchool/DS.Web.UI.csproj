@@ -2643,6 +2643,7 @@
     <Compile Include="ajax.aspx.designer.cs">
       <DependentUpon>ajax.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\StudentInfoDto.cs" />
     <Compile Include="Controller\IPNController.cs" />
     <Compile Include="Controller\PaymentConfirmationController.cs" />
     <Compile Include="Classes\commonTask.cs" />
@@ -2651,6 +2652,7 @@
     <Compile Include="Classes\RemoteServerConnection.cs" />
     <Compile Include="Classes\Routing.cs" />
     <Compile Include="Classes\ServerTimeZone.cs" />
+    <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controls\SideMenuControls.ascx.cs">
       <DependentUpon>SideMenuControls.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
