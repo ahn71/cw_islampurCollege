@@ -915,6 +915,7 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\HtmlRenderer.PdfSharp.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.Charting.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DS.PropertyEntities.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DS.PropertyEntities.dll.config
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\EntityFramework.xml
@@ -923,6 +924,7 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\HtmlRenderer.PdfSharp.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.Charting.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\de\PdfSharp.Charting.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csprojResolveAssemblyReference.cache
