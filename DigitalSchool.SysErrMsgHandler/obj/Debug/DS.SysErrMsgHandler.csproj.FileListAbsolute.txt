@@ -25,3 +25,30 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.CopyComplete
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.SysErrMsgHandler.dll.config
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DS.PropertyEntities.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\EntityFramework.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\EntityFramework.SqlServer.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\HtmlRenderer.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.Charting.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DS.PropertyEntities.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DS.PropertyEntities.dll.config
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\EntityFramework.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\EntityFramework.SqlServer.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\HtmlRenderer.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSharp.Charting.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\de\PdfSharp.resources.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.AssemblyReference.cache
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.CoreCompileInputs.cache
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.CopyComplete
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.pdb
