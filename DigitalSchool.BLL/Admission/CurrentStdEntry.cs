@@ -885,7 +885,7 @@ namespace DS.BLL.Admission
             try
             {
                 dt = new DataTable();
-                sql = string.Format("SELECT  ClassName,SectionName,GroupName, RollNo, FullName, ImageName,ShiftName,StdStatus,FathersName,MothersName,Session,Religion,convert(varchar(10),DateOfBirth,105) as DateOfBirth,BatchId,ClassID,ClsGrpId,StudentId FROM v_CurrentStudentInfo where  BatchName='" + BatchName +
+                sql = string.Format("SELECT  ClassName,SectionName,GroupName, RollNo, FullName, ImageName,ShiftName,StdStatus,FathersName,MothersName,convert(varchar(4),Year)+'-'+convert(varchar(4),Year+1) as Session,Religion,convert(varchar(10),DateOfBirth,105) as DateOfBirth,BatchId,ClassID,ClsGrpId,StudentId FROM v_CurrentStudentInfo where  BatchName='" + BatchName +
                     "' and ( AdmissionNo ='" + AdmissionNo + "' or SSCRoll='" + AdmissionNo + "' or PSCRollNo='" + AdmissionNo + "')");
                 dt = CRUD.ReturnTableNull(sql);
                 return dt;

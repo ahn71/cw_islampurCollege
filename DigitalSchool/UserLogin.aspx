@@ -71,10 +71,10 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
             <div class='box_container2 ulogin-container'>
-             <div class='image_div2 left2'><img src="Images/Osis_left.jpg" />
+            <%-- <div class='image_div2 left2'><img src="Images/Osis_left.jpg" />
 			</div>
 			<div class='image_div2 right2'><img src="Images/Osis_right.jpg" />
-			</div>
+			</div>--%>
                 <div class='middleImg'>
                     
             <h2 class="form-signin-heading">

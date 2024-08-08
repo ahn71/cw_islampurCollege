@@ -86,7 +86,9 @@ namespace DS.BLL.ManageUser
 
             try
             {
-                DataTable dt = CRUD.ReturnTableNull("select *  from v_UserAccount_Student where Status='True'");
+                DataTable dt = CRUD.ReturnTableNull(@"SELECT s.AdmissionNo,s.FullName,s.BatchId,b.BatchName, u.UserId,u.UserName,u.Password,u.CreatedBy,u.CreatedAt,u.UpdatedBy,u.UpdatedAt,u.IsActive
+FROM UsersForPortal u
+INNER JOIN CurrentStudentInfo s ON  ISNUMERIC(u.UserName) = 1 and u.UserName = s.AdmissionNo left join BatchInfo b on s.BatchId=b.BatchId");
                 gv.DataSource = dt;
                 gv.DataBind();
             }

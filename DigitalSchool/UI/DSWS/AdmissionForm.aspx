@@ -60,6 +60,45 @@
         .input-group-addon {
             border: 1px solid #6d86e5;
         }
+        .SubjectManagement {
+            display: flex;
+            gap: 45px;
+        }
+
+        .Headin {
+            font-weight: 900;
+             font-size: 18px;
+             margin-top: 12px;
+            display: block;
+            color:black;
+        }
+        .OpSubject
+        {
+              font-weight: 900;
+              font-size: 15px;
+              margin-top: 12px;
+               display: block;
+               color:black;
+        }
+
+         span#MainContent_lblManSub
+           {
+             font-weight: 900;
+             font-size: 15px;
+             margin-top: 12px;
+            display: block;
+            color:black;
+            }
+         table#chkSubjectchoice 
+         {
+           margin-top: 6px;
+         }
+
+         table#btnRadio
+         {
+             margin-top: 6px;
+         }
+
     </style>
     <script type="text/javascript">
         function previewFile() {
@@ -88,6 +127,71 @@
             setTimeout(function () { newWin.close(); }, 10);
 
         }
+        function validateGroupSubjects() {
+
+            var checked_radio = $("[id*=btnRadio] input:checked");
+            var Optionalvalus = checked_radio.val();
+            var OptionalSubText = "";
+            if (Optionalvalus == undefined)
+                Optionalvalus = "";
+            else
+                OptionalSubText = checked_radio.closest("td").find("label").html();
+
+            var checkboxes = document.querySelectorAll("input[type='checkbox'][id*='chkSubjectchoice']");
+
+            var Mansubject = [];
+            var MansubjectRelated = [];
+            var subjectDictionary = {};
+
+            var ManSubscount = 0;
+
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    if (checkbox.value.includes('_')) {
+                        var values = checkbox.value.split('_');
+                        Mansubject.push(values[0]);
+                        MansubjectRelated.push(values[1]);
+                        subjectDictionary[values[0]] = checkbox.nextElementSibling.textContent;
+                    } else {
+                        subjectDictionary[checkbox.value] = checkbox.nextElementSibling.textContent;
+                        Mansubject.push(checkbox.value);
+                    }
+                    ManSubscount++;
+                }
+            });
+            if (ManSubscount !== 3) {
+                showMessage('You are required to choose 3 mandatory subjects. but you have selected ' + ManSubscount + ' subject(s)', 'error');
+                return false;
+            }
+            else {
+                var commonList = Mansubject.filter(function (s) {
+                    return MansubjectRelated.includes(s);
+                });
+
+                if (commonList.length > 0) {
+                    var subjects = commonList.map(function (s) {
+                        return "'" + subjectDictionary[s] + "'";
+                    }).join(", ");
+                    showMessage("You cannot select both " + subjects + " in the same time", 'error');
+                    return false;
+                }
+            }
+            if (Optionalvalus === "") {
+                showMessage('You are required to choose one optional subject.', 'error');
+                return false;
+            }
+            else {
+                if (Mansubject.includes(Optionalvalus)) {
+                    showMessage("You cannot select the same subject ('" + subjectDictionary[Optionalvalus] + "') for both mandatory and optional courses", 'error');
+                    return false;
+                } else if (MansubjectRelated.includes(Optionalvalus)) {
+                    showMessage("You cannot select the same or related subject ('" + OptionalSubText + "') for both mandatory and optional courses", 'error');
+                    return false;
+                }
+
+            }
+            return true;
+        }
         function validateInputs() {
             try {
                
@@ -111,7 +215,10 @@
                     if (validateText('txtNUAdmissionRoll', 1, 50, 'Enter valid Board Admission Roll') == false) return false;
                 //}
                 
+                if ($('#pnlGroupSubjects').is(':visible')) {
 
+                    if (validateGroupSubjects() === false) return false;
+                }
                 if (validateText('txtFatherName', 1, 100, 'Enter Father\'s Name') == false) return false;
                 if (validateText('txtFatherNameBn', 1, 100, 'Enter Father\'s Name in Bengali') == false) return false;
                 if (validateText('txtFatherMobile', 1, 100, 'Enter Father\'s Mobile') == false) return false;
@@ -208,16 +315,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8" style="color:#ff0000">
-                        <h5 style=" margin-left: 20px; "><strong>ফর্ম পূরণের নির্দেশিকা</strong></h5>
+                    <div class="col-md-8" style="color: #ff0000">
+                        <h5 style="margin-left: 22px; color: #a50505; font-size: 21px;"><strong>ফর্ম পূরণের নির্দেশিকাঃ </strong><span style="font-size: 16px;">( ফর্ম পূরণের পূর্বে নির্দেশিকা টি ভালভাবে পড়ুন )</span></h5>
                         <ul>
-                            
+
                             <li>অনলাইনে ভর্তি ফর্ম পূরণের ক্ষেত্রে লাল তারকা চিহ্নিত ঘর সমূহ সঠিকভাবে পূরণ করুন । </li>
                             <li>ছাত্র/ছাত্রীর ছবি সাইজ ( Width 1.6 inche X Height 2.0 inche ) এবং সর্ব্বোচ্চ ১৫০ কেবি হতে হবে । </li>
                             <li>ফর্ম পূরণের জন্য গুগল ক্রম ব্রাউজার ব্যাবহার করুন । </li>
                             <li>সঠিকভাবে ফর্ম পূরণের পর প্রিন্ট করার পূর্বে ব্রাউজার (গুগল ক্রম) এর প্রিন্ট সেটিং থেকে Paper Size: A4 সিলেক্ট করুন এবং Margin: Default করুন । </li>
                             <li>সঠিকভাবে ফর্ম পূরণের পর প্রিন্ট কপির(অফিস কপি) সাথে প্রয়োজনীয় সকল কাগজপত্র নিয়ে ভর্তি শাখায় যোগাযোগ করুন । </li>
-							<li>সঠিকভাবে ফর্ম পূরণের পর ভর্তি ফি জমাদানের জন্য পেমেন্ট বাটনে ক্লিক করে পেমেন্ট সম্পন্ন করুন এবং ইনভয়েচ এর প্রিন্ট কপি ভর্তি শাখায় জমা দিন ।</li>
+                            <li>সঠিকভাবে ফর্ম পূরণের পর ভর্তি ফি জমাদানের জন্য পেমেন্ট বাটনে ক্লিক করে পেমেন্ট সম্পন্ন করুন এবং ইনভয়েচ এর প্রিন্ট কপি ভর্তি শাখায় জমা দিন ।</li>
+                        </ul>
+                        <br>
+                        <h5 style="margin-left: 22px; color: #a50505; font-size: 17px;"><strong>বিষয় নির্বাচনের নির্দেশিকাঃ *** ( বিষয় নির্বাচনের ক্ষেত্রে শিক্ষার্থীকে অবশ্যই সতর্কতার সাথে পূরণ করার নির্দেশ দেওয়া হল )</strong></h5>
+                        <ul>
+
+                            <li style="list-style: none;"><strong style="color: #157bc5">বিজ্ঞান বিভাগ ও ব্যাবসায় শিক্ষার ক্ষেত্রেঃ</strong> </li>
+                            <li>যেকোন ৩টি আবশ্যিক বিষয় এর মধ্যে ২টি নির্বাচন করা থাকবে ১টি বিষয় শিক্ষার্থীকে নির্বাচন করতে হবে এবং ১টি ঐচ্ছিক বিষয় নির্বাচন করতে হবে । </li>
+                            <li style="list-style: none;"><strong style="color: #157bc5">মানবিক বিভাগের ক্ষেত্রেঃ</strong> </li>
+                            <li>যেকোন ৩টি আবশ্যিক বিষয়ই শিক্ষার্থীকে নির্বাচন করতে হবে এবং ১টি ঐচ্ছিক বিষয় নির্বাচন করতে হবে । </li>
+                            <li>তবে ইসলাম ইতিহাস ও সংস্কৃতি অথবা ইতিহাস এই বিষয় ২টি মধ্যে যেকোন একটি আবশ্যিক বা ঐচ্ছিক বিষয় হিসাবে নেওয়া যাবে । উল্লেখ্য যে, বিষয় ২টি একই সঙ্গে আবশ্যিক বা ঐচ্ছিক হিসেবে নেওয়া যাবে না ।</li>
                         </ul>
                     </div>
                     <div class="col-md-4">
@@ -309,7 +426,7 @@
                                     <div class="row">
                                         <label for="name" class="col-sm-4 control-label">Date of Birth<strong class="required">*</strong></label>
                                         <div class="col-sm-8">
-                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy"></asp:TextBox>
+                                            <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDateOfBirth" class="form-control" placeholder="dd-MM-yyyy" TextMode="Date"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -379,6 +496,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="row form-group">
                                 <div class="col-md-4">
                                     <div class="row">
@@ -406,6 +525,51 @@
                                 </div>
 
                             </div>
+
+
+
+
+                           <%-- rokibul work--%>
+
+                            <div class="subject-selection">
+                                <asp:Panel ClientIDMode="Static" runat="server" ID="pnlGroupSubjects">
+
+                                    <div runat="server" id="divGroupSubjects">
+                                        <div class="row form-group">
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-3" style="padding-right: 0;">
+                                                        <asp:Label runat="server" ID="lblHeading" CssClass="Headin" Text="Choose Subject"></asp:Label></div>
+                                                    <div class="col-md-9" style="padding-left: 0;">
+                                                        <div class="SubjectManagement" style="color: #333;">
+                                                            <div style="background: #dff0fb; padding: 13px;">
+                                                                <div class="checboxSubject">
+                                                                    <asp:Label runat="server" Style="color: #004793;" ID="lblManSub" CssClass="'Man_subject" Text="Mandatory Subject"></asp:Label>
+                                                                    <asp:CheckBoxList ClientIDMode="Static" runat="server" ID="chkSubjectchoice">
+                                                                    </asp:CheckBoxList>
+                                                                </div>
+                                                            </div>
+                                                            <div style="background: #f5e8e8; padding: 13px;">
+                                                                <div runat="server" class="radiobtnList">
+                                                                    <asp:Label runat="server" ID="lblOpSub" Style="color: #a16302;" CssClass="OpSubject" Text="Optional Subject"></asp:Label>
+                                                                    <asp:RadioButtonList ClientIDMode="Static" runat="server" ID="btnRadio">
+                                                                    </asp:RadioButtonList>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                          
+
+
+
+
+
 
                         </div>
                         <br />
@@ -987,6 +1151,14 @@
                         </div>
                     </div>
                 </div>
+
+              
+       
+          
+                  <asp:Button ID="btnSave" Visible="false" runat="server" Text="Save" CssClass="btn-danger" OnClick="btnSave_Click"/>
+                  
+
+
             </div>
         </div>
     </section>

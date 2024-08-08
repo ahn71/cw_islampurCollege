@@ -1,14 +1,18 @@
 ﻿using ComplexScriptingSystem;
 using DS.BLL.Admission;
+using DS.DAL;
+using DS.PropertyEntities.Model.ManagedClass;
 using PdfSharp;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace DS.UI.DSWS
@@ -17,6 +21,8 @@ namespace DS.UI.DSWS
     {
         StdAdmFormEntry stdAdmFormEntry;
         DataTable dt;
+       
+        string ClassName1;
         protected void Page_Load(object sender, EventArgs e)
         {
             try {
@@ -47,6 +53,10 @@ namespace DS.UI.DSWS
                     lblAdmissionFormNo1.Text = lblAdmissionFormNo.Text = dt.Rows[0]["AdmissionFormNo"].ToString().Trim();
                     lblAdmissionDate1.Text = lblAdmissionDate.Text = dt.Rows[0]["AdmissionDate"].ToString().Trim();
                     lblClass1.Text = lblClass.Text= dt.Rows[0]["ClassName"].ToString().Trim();
+
+                    ClassName1= lblClass1.Text.ToString();    
+                       
+
                     lblStudentsName1.Text = lblStudentsName.Text= dt.Rows[0]["FullName"].ToString().Trim();
                     lblStudentsNameBn1.Text = lblStudentsNameBn.Text= dt.Rows[0]["FullNameBn"].ToString().Trim();
                     lblGroup1.Text = lblGroup.Text= dt.Rows[0]["GroupName"].ToString().Trim();
@@ -121,14 +131,42 @@ namespace DS.UI.DSWS
 
                     lblTCCollege1.Text = lblTCCollege.Text= dt.Rows[0]["TCCollege"].ToString().Trim();
                     lblTCDate1.Text = lblTCDate.Text= dt.Rows[0]["TCDate"].ToString().Trim();
+                   
+
+                    string mansubsId = dt.Rows[0]["ManSubId"].ToString().Trim();
+
+
+                   
+
 
                     lblNuAdmissionRoll1.Text= lblNuAdmissionRoll.Text= dt.Rows[0]["NuAdmissionRoll"].ToString().Trim();
-                    if (!lblClass.Text.Trim().Equals("Eleven"))
+                    if (lblClass.Text.Trim().Equals("Eleven"))
+                    {
+                        lblOptSubject1.Text = lblOptSubject.Text = dt.Rows[0]["Subname"].ToString().Trim();
+                        if (mansubsId != "")
+                        {
+                            ShowManSubjectName(mansubsId, dt.Rows[0]["ClassId"].ToString().Trim());
+                        }
+                    }
+                    else
                     {
                         pnlSubjectList.Visible = false;
                         pnlSubjectList1.Visible = false;
                     }
-                        
+                    if (ClassName1.Contains("Eleven"))
+                    {
+                        divHscInfo.Visible = false;
+                        divHonorsInfo.Visible = false;
+                        divHscInfo1.Visible = false;
+                        divHonorsInfo1.Visible = false;
+                    }
+                    else if (ClassName1.Contains("Degree") || ClassName1.Contains("Honours"))
+                    {
+                        divHonorsInfo.Visible = false;
+                        divHonorsInfo1.Visible = false;
+                    }
+
+
 
                 }
                 return true;
@@ -145,5 +183,49 @@ namespace DS.UI.DSWS
             } catch(Exception ex) { }
             
         }
+
+        //Show GetMandatorySubject 
+        private void ShowManSubjectName(string manSubIds,string ClassId) 
+        {
+            DataTable dt = new DataTable();
+
+           
+            dt = CRUD.ReturnTableNull("select ns.SubName+' ('+cs.SubCode+')' as SubName from ClassSubject cs inner join NewSubject ns ON ns.SubId = cs.SubId  where ClassId="+ ClassId + " and cs.SubId IN("+ manSubIds + ")");
+            
+            if( dt!=null && dt.Rows.Count > 0 )
+            {
+                try
+                {
+                    lblManSub1_1.Text = lblManSub1.Text = dt.Rows[0]["SubName"].ToString();
+                }
+                catch (Exception ex) { }
+
+
+                try
+                {
+                    lblManSub2_1.Text = lblManSub2.Text = dt.Rows[1]["SubName"].ToString();
+                }
+                catch (Exception ex) { }
+
+
+                try
+                {
+                    lblManSub3_1.Text = lblManSub3.Text = dt.Rows[2]["SubName"].ToString();
+                }
+                catch (Exception ex) { }
+
+            }
+           
+
+
+
+
+
+
+
+        }
+
+
+      
     }
 }

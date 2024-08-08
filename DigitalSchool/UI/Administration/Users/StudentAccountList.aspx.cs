@@ -35,18 +35,17 @@ namespace DS.UI.Administration.Users
                 {
 
                     int rIndex = Convert.ToInt32(e.CommandArgument.ToString());
-                    Label lbl = (Label)gvAccountList.Rows[rIndex].Cells[5].FindControl("lblUIP");
+                    Label lbl = (Label)gvAccountList.Rows[rIndex].FindControl("lblUIP");
                     if (lbl.Text == "Show")
                     {
-                        gvAccountList.Rows[rIndex].Cells[1].Text = DS.DAL.ComplexScripting.ComplexLetters.getEntangledLetters(gvAccountList.Rows[rIndex].Cells[1].Text);
-                        gvAccountList.Rows[rIndex].Cells[2].Text = DS.DAL.ComplexScripting.ComplexLetters.getEntangledLetters(gvAccountList.Rows[rIndex].Cells[2].Text);
+                     
+                        gvAccountList.Rows[rIndex].Cells[3].Text = DS.DAL.ComplexScripting.ComplexLetters.getEntangledLetters(gvAccountList.Rows[rIndex].Cells[3].Text);
                         lbl.Text = "Hide";
                         lbl.ForeColor = Color.Red;
                     }
                     else
-                    {
-                        gvAccountList.Rows[rIndex].Cells[1].Text = DS.DAL.ComplexScripting.ComplexLetters.getTangledLetters(gvAccountList.Rows[rIndex].Cells[1].Text);
-                        gvAccountList.Rows[rIndex].Cells[2].Text = DS.DAL.ComplexScripting.ComplexLetters.getTangledLetters(gvAccountList.Rows[rIndex].Cells[2].Text);
+                    {                        
+                        gvAccountList.Rows[rIndex].Cells[3].Text = DS.DAL.ComplexScripting.ComplexLetters.getTangledLetters(gvAccountList.Rows[rIndex].Cells[3].Text);
                         lbl.Text = "Show";
                         lbl.ForeColor = Color.Green;
                     }

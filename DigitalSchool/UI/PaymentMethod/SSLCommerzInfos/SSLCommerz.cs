@@ -7,6 +7,8 @@ using System.Text;
 using System.IO;
 using System.Collections.Specialized;
 using System.Web.Script.Serialization;
+using DS.DAL;
+using DS.UI.PaymentMethod.SSLCommerzInfos;
 
 /// <summary>
 /// SSLCommerz SDK
@@ -27,7 +29,36 @@ public class SSLCommerz
     protected string Submit_URL = "gwprocess/v4/api.php";
     protected string Validation_URL = "validator/api/validationserverAPI.php";
     protected string Checking_URL = "validator/api/merchantTransIDvalidationAPI.php";
+    public static List<Store> stores = new List<Store> {
+        new Store{
+            StoreName="islampurcollegeopencollection",
+            StoreID ="islampurcollegeopencollectionlive ",
+            StorePassword="63171929B2D8A30008"
+        },
+        new Store{
+            StoreName="islampurcollegedegreepass",
+            StoreID ="islampurcollegedegreepasslive",
+            StorePassword="631718A0D0C2269445"
+        },
+        new Store{
+            StoreName="islampurcollegehonours",
+            StoreID ="islampurcollegehonourslive",
+            StorePassword="631717E546F1282793"
+        },
+        new Store{
+            StoreName="islampurcollegehsc",
+            StoreID ="islampurcollegehsclive",
+            StorePassword="631716901DF1E97131"
+        }
+        ,
+        new Store{
+            StoreName="islampurcollegeedubd",
+            StoreID ="islampurcollegeedubdlive",
+            StorePassword="62B4545CA772895427"
+        },
 
+      
+    };
     public SSLCommerz(string Store_ID, string Store_Pass, bool Store_Test_Mode = false)
 	{
         
@@ -75,7 +106,7 @@ public class SSLCommerz
 
         return response;
     }
-    public bool OrderValidate(string MerchantTrxID, string MerchantTrxAmount, string MerchantTrxCurrency, HttpRequest req) 
+    public bool OrderValidate(int logID, string MerchantTrxID, string MerchantTrxAmount, string MerchantTrxCurrency, HttpRequest req) 
     {
         bool hash_verified = this.ipn_hash_verify(req);
         if (hash_verified)
@@ -104,21 +135,26 @@ public class SSLCommerz
                 {
                     if(MerchantTrxCurrency == "BDT"){
                         if(MerchantTrxID == resp.tran_id && (Math.Abs(Convert.ToDecimal(MerchantTrxAmount) - Convert.ToDecimal(resp.amount)) < 1) && MerchantTrxCurrency == "BDT"){
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "' Where SL=" + logID);
                             return true;
                         }
                         else{
                             this.error = "Amount not matching";
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "',ErrorMsg='Amount not matching' Where SL=" + logID);
                             return false;
                         }
                     }
                     else{
                         if (MerchantTrxID == resp.tran_id && (Math.Abs(Convert.ToDecimal(MerchantTrxAmount) - Convert.ToDecimal(resp.currency_amount)) < 1) && MerchantTrxCurrency == resp.currency_type)
                         {
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "' Where SL=" + logID);
                             return true;
+
                         }
                         else
                         {
                             this.error = "Currency Amount not matching";
+                            CRUD.ExecuteQuery("Update [dbo].[PaymentInfo_log] set [Response]='" + json + "',ErrorMsg='Currency Amount not matching' Where SL=" + logID);
                             return false;
                         }
 
@@ -147,8 +183,10 @@ public class SSLCommerz
         this.Store_Test_Mode = mode;
         if (mode) 
         {
-            this.Store_ID = "testbox";
-            this.Store_Pass = "qwerty";
+            //this.Store_ID = "testbox";
+            //this.Store_Pass = "qwerty";
+            this.Store_ID = "codew652cbfc82018f";
+            this.Store_Pass = "codew652cbfc82018f@ssl";
             this.SSLCz_URL = "https://sandbox.sslcommerz.com/";
         }
     }

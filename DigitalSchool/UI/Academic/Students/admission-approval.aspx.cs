@@ -6,11 +6,14 @@ using DS.BLL.GeneralSettings;
 using DS.BLL.ManagedClass;
 using DS.BLL.SMS;
 using DS.Classes;
+using DS.DAL;
 using DS.PropertyEntities.Model.Admission;
 using DS.PropertyEntities.Model.SMS;
+using DS.PropertyEntities.Model.DSWS;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -80,6 +83,8 @@ namespace DS.UI.Academic.Students
             {
                 int rIndex = int.Parse(e.CommandArgument.ToString());
                 string sl= gvStudentList.DataKeys[rIndex].Values[0].ToString();
+                string manSubIds= gvStudentList.DataKeys[rIndex].Values[1].ToString();
+                string opSubId= gvStudentList.DataKeys[rIndex].Values[2].ToString();
                 TextBox txtRollNo = (TextBox)gvStudentList.Rows[rIndex].FindControl("txtRollNo");
                 Label lblBatchName = (Label)gvStudentList.Rows[rIndex].FindControl("lblBatchName");
                 int roll;
@@ -93,7 +98,7 @@ namespace DS.UI.Academic.Students
                     return;
                 }
                 TextBox txtNote = (TextBox)gvStudentList.Rows[rIndex].FindControl("txtNote");
-                if (save_into_currentstudent(sl, roll))
+                if (save_into_currentstudent(sl, roll, manSubIds, opSubId))
                 {
                     if (stdAdmFormEntry == null)
                         stdAdmFormEntry = new StdAdmFormEntry();
@@ -148,7 +153,7 @@ namespace DS.UI.Academic.Students
                 smsReport.BulkInsert(smsList);
             }
         }
-        private bool save_into_currentstudent(string sl,int roll)
+        private bool save_into_currentstudent(string sl,int roll,string manSubIds,string opSubId)
         {
             try
             {
@@ -159,10 +164,13 @@ namespace DS.UI.Academic.Students
                         currentStdEntry = new CurrentStdEntry();
                     }
                     currentStdEntry.AddEntities = entities;
-                    int result = currentStdEntry.Insert();
-                    if (result>0)
+                    int studentId = currentStdEntry.Insert();
+                    if (studentId > 0)
                     {
-                        saveImg(result,ViewState["__ImageName__"].ToString(), entities.AdmissionNo+".Jpeg");                       
+                        saveImg(studentId, ViewState["__ImageName__"].ToString(), entities.AdmissionNo+".Jpeg");
+                        if(manSubIds!="" && opSubId!="")
+                        SaveGroupSubjects(studentId, entities.BatchID,manSubIds,opSubId);
+
                     }
                     else
                     {
@@ -295,6 +303,56 @@ namespace DS.UI.Academic.Students
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             load_admmission_student();
+        }
+
+        protected void gvStudentList_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+
+                string manSubIds = gvStudentList.DataKeys[e.Row.RowIndex]["ManSubId"].ToString();
+
+                if (manSubIds != "")
+                {
+                    Label lblMansubid = (Label)e.Row.FindControl("lblMansubid");
+                  
+                    lblMansubid.Text = GroupSubject.getSubsName(manSubIds); 
+                }
+
+
+
+            }
+        }
+
+    
+
+        //Save Data GroupSubjectSetup table and GroupSubjectSetupDetails Table
+        private void SaveGroupSubjects(int StudentId,int BatchId, string manSubIds,string OpSubId) 
+        {
+           
+            int SgSubId = CRUD.GetMaxID("INSERT INTO [dbo].[StudentGroupSubSetup] ([StudentId], [BatchId])VALUES ("+ StudentId + ","+ BatchId + ");SELECT SCOPE_IDENTITY()");
+
+            if (SgSubId > 0)
+            {
+                List<string> _manSubIds = manSubIds.Split(',').ToList();
+                foreach (string subId in _manSubIds)
+                {
+                    CRUD.ExecuteQuery(@"INSERT INTO [dbo].[StudentGroupSubSetupDetails]
+           ([SGSubId]
+           ,[SubId]
+           ,[MSStatus])
+     VALUES
+           ("+ SgSubId + @","+ subId + ",1)");
+                }
+                CRUD.ExecuteQuery(@"INSERT INTO [dbo].[StudentGroupSubSetupDetails]
+           ([SGSubId]
+           ,[SubId]
+           ,[MSStatus])
+     VALUES
+           (" + SgSubId + @"," + OpSubId + ",0)");
+            }
+
+
         }
     }
 }

@@ -535,6 +535,15 @@ namespace DS.UI.DSWS {
         protected global::System.Web.UI.WebControls.Label lblPreGPA;
         
         /// <summary>
+        /// divHscInfo1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHscInfo1;
+        
+        /// <summary>
         /// lblPreSchoolNameHSC control.
         /// </summary>
         /// <remarks>
@@ -587,6 +596,15 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPreGPAHSC;
+        
+        /// <summary>
+        /// divHonorsInfo1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHonorsInfo1;
         
         /// <summary>
         /// lblPreSchoolNameHonours control.
@@ -668,6 +686,42 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSubjectList;
+        
+        /// <summary>
+        /// lblManSub1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManSub1;
+        
+        /// <summary>
+        /// lblManSub2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManSub2;
+        
+        /// <summary>
+        /// lblManSub3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManSub3;
+        
+        /// <summary>
+        /// lblOptSubject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOptSubject;
         
         /// <summary>
         /// imgStudent1 control.
@@ -1183,6 +1237,15 @@ namespace DS.UI.DSWS {
         protected global::System.Web.UI.WebControls.Label lblPreGPA1;
         
         /// <summary>
+        /// divHscInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHscInfo;
+        
+        /// <summary>
         /// lblPreSchoolNameHSC1 control.
         /// </summary>
         /// <remarks>
@@ -1235,6 +1298,15 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPreGPAHSC1;
+        
+        /// <summary>
+        /// divHonorsInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHonorsInfo;
         
         /// <summary>
         /// lblPreSchoolNameHonours1 control.
@@ -1316,6 +1388,42 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSubjectList1;
+        
+        /// <summary>
+        /// lblManSub1_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManSub1_1;
+        
+        /// <summary>
+        /// lblManSub2_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManSub2_1;
+        
+        /// <summary>
+        /// lblManSub3_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManSub3_1;
+        
+        /// <summary>
+        /// lblOptSubject1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOptSubject1;
         
         /// <summary>
         /// aPayNow control.

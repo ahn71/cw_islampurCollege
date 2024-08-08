@@ -36,6 +36,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DigitalSchool.DAL">
+      <HintPath>..\DigitalSchool\Bin\DigitalSchool.DAL.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -67,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AccessControls\Module.cs" />
     <Compile Include="Model\Admission\AdmStdFormInfoEntities.cs" />
     <Compile Include="Model\Admission\AdmStdInfoEntities.cs" />
     <Compile Include="Model\Admission\CurrentStdEntities.cs" />
@@ -89,6 +93,7 @@
     <Compile Include="Model\DSWS\ContactEntities.cs" />
     <Compile Include="Model\DSWS\EventDetailsEntities.cs" />
     <Compile Include="Model\DSWS\EventInfoEntities.cs" />
+    <Compile Include="Model\DSWS\GroupSubject.cs" />
     <Compile Include="Model\DSWS\HRAttendanceEntities.cs" />
     <Compile Include="Model\DSWS\SliderEntities.cs" />
     <Compile Include="Model\DSWS\StdAttEntities.cs" />
