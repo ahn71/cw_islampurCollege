@@ -9,7 +9,11 @@
             @page {
                 size: auto;
                 margin: 0;
+
             }
+          .btn-primary{
+               display:none !important;
+          }
         }
         .border{
             border:1.5px dashed black;
