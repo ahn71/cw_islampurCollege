@@ -140,6 +140,20 @@
                 </div>
             </a>
         </div>
+
+
+
+           <div class="col-md-3">
+       <%--<a runat="server" href="~/UI/Academic/Students/admission-approval.aspx">--%>
+       <a runat="server" id="importStudentInfo">
+           <div class="mini-stat clearfix btn3d btn custom_menu_btn_acedemic">
+               <span>
+                   
+               </span>
+               <span>Import Registration NO</span>
+           </div>
+       </a>
+   </div>
         
         
         <%--<div class="col-md-3">
