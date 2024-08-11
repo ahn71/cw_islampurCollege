@@ -1,0 +1,30 @@
+﻿body {
+}
+.M_popup {
+
+}
+.fontStyle {
+font-family:Arial;
+font-weight:bold;
+
+}
+.vb_area {
+width:360px;
+height:170px;
+border:solid 1px;
+border-top-color:#3B5998;
+background:#ddd;
+overflow:visible;
+position:absolute;
+left:40%;
+top:30%;
+box-shadow: 0 0 10px #616161;
+border: 3px solid #3b5998;
+border-radius: 7px 13px 7px 7px;
+}
+.vb_area h3 {
+    background: none repeat scroll 0 0 #3b5998;
+    color: #fff;
+    font-size: 17px;
+    padding: 5px 5px 2px;
+}

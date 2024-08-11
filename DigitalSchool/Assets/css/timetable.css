@@ -1,0 +1,36 @@
+.custom_table{
+
+}
+.custom_table tr th{
+ text-align:center;
+ color:orange;
+}
+.custom_table tr td:first-child{
+ width:10px;
+}
+.custom_table tr td{
+ width:150px;
+ padding:10px;
+ font-size:13px;
+}
+.box {
+  box-shadow: 0 0 5px #555;
+  padding:5px;
+}
+.box ul{
+ margin:0px;
+ padding:0px;
+ text-align:center;
+}
+.box ul li{
+ list-style:none;
+}
+.box ul li:first-child{
+ list-style:none;
+}
+.box ul li:nth-child(2){
+ color:#f00;
+}
+.box ul li:nth-child(3){
+ color:green;
+}

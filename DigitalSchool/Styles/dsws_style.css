@@ -1,0 +1,424 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+header {
+	width: 100%;
+	background: url(../../Images/dsimages/header-bg.png) repeat-x #ACFED6;
+
+
+}
+
+.wrapper {
+	width: 1100px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.logo {
+  margin: 8px 0;
+}
+
+.info-tel {
+  margin-top: 20px;
+  width: 196px;
+}
+
+.info-tel h3 {
+	color: #49709d;
+	font-weight: normal;
+	margin: 0;
+}
+
+.info-tel p {
+  color: #49709d;
+  font-size: 20px;
+  margin-top: 5px;
+  padding-left: 0;
+}
+
+.info-tel p span {
+  color: #49709d;
+  font-size: 22px;
+}
+
+nav {
+  background: none repeat scroll 0 0 #22a666;
+  box-shadow: 0 2px 3px 0;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+}
+
+section {
+	overflow: hidden;
+}
+
+.slider {
+    padding-right:0px;
+}
+.notice {
+    padding-left:0px;
+}
+.box-pad {
+	width: 100% !important;
+	padding: 0px !important;
+}
+
+.carousel-indicators .active {
+  background-color: #fe4853 !important;
+  height: 12px;
+  margin: 0;
+  width: 12px;
+}
+
+.margin {
+	margin-top: 20px;
+}
+
+.quick-link {
+	float: left;
+    margin-top:15px
+}
+
+.quick-link ul {
+	list-style-type: none;
+	overflow: hidden;
+	margin: 0;
+}
+
+.quick-link li {
+  background: url("../../Images/dsimages/left-icon.png") no-repeat scroll 10px center, #22a666 url("../../Images/dsimages/right-icone.png") no-repeat scroll right center;
+  height: 38px;
+  margin-top: 5px;
+  transition: all 0.5s ease 0s;
+}
+
+.quick-link li:hover {
+    background: url("../../Images/dsimages/left-icon.png") no-repeat scroll 10px center, #FE4853 url("../../Images/dsimages/right-icone2.png") no-repeat scroll right center;
+
+}
+
+.quick-link li.active a {
+   background: url("../../Images/dsimages/left-icon.png") no-repeat scroll 10px center, #FE4853 url("../../Images/dsimages/right-icone2.png") no-repeat scroll right center;
+}
+
+.quick-link li:first-child {
+  margin-top: 0px;
+}
+.quick-link li a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  line-height: 37px;
+  padding-left: 30px;
+  text-decoration: none;
+}
+.quick-link img {
+  padding-left: 10px;
+}
+
+.quick-link li a img {
+  float: right;
+}
+
+.main-content {
+  float: left;
+  min-height: 468px;
+  padding: 15px 0px;
+  width: 590px;
+}
+
+.main-content h2 {
+	margin: 0;
+}
+
+.speach {
+  padding-left: 0px;
+}
+.intro_desc {
+    padding:0px 15px 0 0;
+    text-align:justify;
+}
+.demo {
+  background: #22a666 none repeat scroll 0 0;
+  height: 483px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.head-speach {
+  border: 1px solid #22a666;
+  min-height: 230px;
+  padding: 0 10px;
+}
+
+.head-speach h4 {
+  border-bottom: 1px solid;
+  color: #22a666;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.head-speach img {
+  border: 2px solid #717272;
+  float: left;
+  margin-right: 7px;
+  margin-top: 2px;
+  width: 65px;
+}
+
+.head-speach p {
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.head-speach h6 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 3px !important;
+}
+
+.box-margin {
+  margin-top: 8px;
+}
+
+.footer-slider {
+}
+
+.footer-slider > h3 {
+  background: #22a666 none repeat scroll 0 0;
+  color: white;
+  line-height: 37px;
+  margin: 0;
+  text-align: center;
+}
+
+.event {
+}
+
+.event h3 {
+  background: #22a666 none repeat scroll 0 0;
+  color: white;
+  line-height: 33px;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-bg {
+  background: #80e0b2;
+}
+
+.footer-menu {
+
+}
+
+.footer-menu ul {
+  list-style: outside none none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.footer-menu li {
+  line-height: 25px;
+  text-decoration:none;
+}
+
+.footer-menu li a {
+  color: #707070;
+}
+
+.footer-menu li a:hover {
+  color: #EC5055;
+}
+
+.social {
+  margin-top: 100px;
+}
+.social ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.social li {
+  float: left;
+}
+
+.social li a {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  color: #80e0b2;
+  display: block;
+  font-size: 22px;
+  margin-left: 22px;
+  padding: 6px 8px;
+  text-align: center;
+  transition: all 0.5s ease 0s;
+  width: 46px;
+}
+
+.social li a:hover {
+    background: #49709d none repeat scroll 0 0;
+    border: 1px solid #49709d;
+    color: #80e0b2;
+}
+
+.map {
+  margin-top: 22px;
+}
+.bellow-footer-bg {
+  background: #474d54;
+}
+
+.bellow-footer-bg p {
+  color: white;
+  line-height: 20px;
+  margin: 0;
+  padding-bottom: 15px;
+  padding-top: 14px;
+  text-align: center;
+}
+
+.bellow-footer-bg span {
+  color: #8f8e8e;
+}
+
+.bellow-footer-bg span a {
+  color: #8f8e8e;
+  transition: all 0.5s ease 0s; 
+}
+
+.bellow-footer-bg span a:hover {
+  color: #FE4853; 
+}
+.calender {
+  background: none repeat scroll 0 0 #62cf9b;
+  float: right;
+  height: 408px;
+}
+
+.calender h3 {
+  border-bottom: 2px dashed #22a666;
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0;
+  padding: 5px 0 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.auto_text_slide {
+  height: 300px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.auto_text_slide ul {
+  display: block;
+}
+
+.auto_text_slide li {
+  border-bottom: 1px dashed #22a666;
+  padding: 8px 0;
+}
+
+.auto_text_slide a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.auto_text_slide a:hover {
+    color: #fe4853;
+    text-decoration: none;
+}
+.container {
+    max-width:1120px;
+}
+.right_container {
+    margin-top:15px;
+}
+.caption {
+    text-align:center;
+}
+.caption p{
+    margin: 0px -4px;
+}
+
+
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  width: 90%;
+  max-width: 768px;
+  margin: 2em auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.cd-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* image replacement properties */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: rgba(232, 98, 86, 0.8) url('../Images/cd-top-arrow.svg') no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px;
+  }
+}

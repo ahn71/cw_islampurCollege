@@ -1,0 +1,150 @@
+/*** DEFAULT COLORS/STYLES ***/
+/* Root menu */
+.tgMenu {
+    background: #333333;
+    color:white;
+    width:100%;
+}
+/* Root links */
+.tgMenu a,
+.tgMenu a:link,
+.tgMenu a:visited {
+    text-decoration: none;
+    color:white;
+    padding: 5px 9px;
+}
+/* Root link hover */
+.tgMenu a:hover,
+.tgMenu li.tgMenu-hover > a {
+    color: white;
+}
+/* Root menu item hover */
+.tgMenu li:hover,
+.tgMenu li.tgMenu-hover {
+    background: #202020;
+}
+/* Submenus */
+.tgMenu ul {
+    border: 1px solid #c4c7c8;
+    background: #333333;
+}
+/* Submenu item hover */
+.tgMenu ul li:hover,
+.tgMenu ul li.tgMenu-hover {
+    background:#202020;
+}
+
+/* Optional submenu drop shadow */
+.tgMenu-shadow {
+    -webkit-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+/*** ESSENTIAL STYLES ***/
+.tgMenu {
+    white-space: nowrap;
+    display: inline-block;
+    /* IE7 inline-block fix */
+    *display: inline;
+    *zoom: 1;
+}
+.tgMenu,
+.tgMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.tgMenu ul {
+    display: none;
+    position: absolute;
+    z-index: 1000000;
+    min-width:190px;
+}
+.tgMenu ul ul {
+    top: 0;
+    left: 100%;
+    min-width:190px;
+}
+.tgMenu li {
+    margin: 0;
+    padding: 5px 0px;
+    display: inline-block;
+    border-bottom:1px solid #737373;
+    /* IE7 inline-block and padding fix */
+    *display: inline;
+    *zoom: 1;
+    *vertical-align: bottom;
+}
+.tgMenu li a {
+    display: block;
+}
+.tgMenu ul li {
+    position: relative;
+    display: block;
+    border-bottom:1px solid #737373;
+}
+
+/* Optional submenu arrows */
+span.tgMenu-sub-indicator {
+    position:absolute;
+    top:15px;
+    right:5px;
+    display: inline-block;
+    vertical-align: middle;
+    /* Image Replacement */
+    background-color: transparent;
+    background-image: url('/images/menu/arrows.png');
+    background-repeat: no-repeat;
+    background-position: 0 -100px;
+    width: 10px;
+    height: 10px;
+    border: 0;
+    overflow: hidden;
+}
+span.tgMenu-sub-indicator:before {
+    /* Image replacement */
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+/* Arrow hovers */
+.tgMenu li:hover > a > span.tgMenu-sub-indicator,
+.tgMenu li.tgMenu-hover > a > span.tgMenu-sub-indicator {
+    background-position: -10px -100px;
+}
+/* Point arrows to the right for anchors in subs */
+.tgMenu ul span.tgMenu-sub-indicator {
+    background-position: 0 0;
+}
+.tgMenu ul li:hover > a > span.tgMenu-sub-indicator,
+.tgMenu ul li.tgMenu-hover > a > span.tgMenu-sub-indicator {
+    background-position: -10px 0;
+}
+
+/* Vertical-style menu with default width */
+
+.tgMenu-vertical li {
+    display: block;
+    position: relative;
+    /* IE7 fix */
+    *float: left;
+    *width: 100%;
+}
+.tgMenu-vertical span.tgMenu-sub-indicator {
+    background-position: 0 0;
+}
+.tgMenu-vertical li:hover > a > span.tgMenu-sub-indicator,
+.tgMenu-vertical li.tgMenu-hover > a > span.tgMenu-sub-indicator {
+    background-position: -10px 0;
+}
+
+.menuImage {
+    float: left;
+    height: 24px;
+    margin-right: 10px;
+    width: 24px;
+}
