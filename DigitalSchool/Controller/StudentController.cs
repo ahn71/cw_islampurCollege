@@ -9,11 +9,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Services.Description;
 
 namespace DS.Controller
 {
-
+    [EnableCors(origins: "https://websupportbd.com,https://islampurcollege.edu.bd,https://localhost:44343,http://tripxpart.test", headers: "*", methods: "*")]
     public class StudentController : ApiController
     {
         DataTable dt = new DataTable();

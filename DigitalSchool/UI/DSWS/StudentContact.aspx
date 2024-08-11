@@ -138,7 +138,7 @@
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <div class="form-group row">
-                                                                        <label for="" class="col-md-12">SSC Roll/Admission No</label>
+                                                                        <label for="" class="col-md-12">SSC Roll/Admission No/Registration No</label>
                                                                         <div class="col-md-12">
                                                                             <asp:TextBox runat="server" ID="txtAdmNo" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                                                         </div>

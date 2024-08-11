@@ -88,9 +88,10 @@ namespace DS.UI.DSWS
 <tr><td>Class</td><td>:</td><td>" + dt.Rows[0]["ClassName"].ToString() + @"</td><td>Group</td><td>:</td><td>" + dt.Rows[0]["GroupName"].ToString() + @"</td></tr>
 <tr><td>Shift</td><td>:</td><td>" + dt.Rows[0]["ShiftName"].ToString() + @"</td><td>Section</td><td>:</td><td>" + dt.Rows[0]["SectionName"].ToString() + @"</td></tr>
 <tr><td>Date of Birth</td><td>:</td><td>" + dt.Rows[0]["DateOfBirth"].ToString() + @"</td><td>Religion</td><td>:</td><td>" + dt.Rows[0]["Religion"].ToString() + @"</td></tr>
+<tr><td>AdmissionNo</td><td>:</td><td>" + dt.Rows[0]["AdmissionNo"].ToString() + @"</td><td>RegistrationNo</td><td>:</td><td>" + dt.Rows[0]["RegistrationNo"].ToString() + @"</td></tr>
 <tr><td>Subject</td><td>:</td><td colspan = '4'>
     <ul style= 'list-style: none; padding-left: 0;'>
-        "+ subjects + @"
+        " + subjects + @"
     </ul>
 </td></tr>
 </tbody>
