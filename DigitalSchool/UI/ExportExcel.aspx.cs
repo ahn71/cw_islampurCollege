@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static DS.UI.ExportExcel;
 
 namespace DS.UI
 {
@@ -28,7 +29,7 @@ namespace DS.UI
                     exlFileUpload.SaveAs(filePath);
 
                     List<ExcelData> excelDataList = ReadExcelFile(filePath);
-                    UpdateDatabase(excelDataList);
+                   
 
                   
                 }
@@ -53,33 +54,47 @@ namespace DS.UI
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                 int rowCount = worksheet.Dimension.Rows;
+                int colCount = worksheet.Dimension.Columns;
+                var headerColumnIndex = new Dictionary<string, int>();
 
+               
+                for (int col = 1; col <= colCount; col++)
+                {
+                    var headerText = worksheet.Cells[1, col].Text.Trim();
+                    if (!string.IsNullOrEmpty(headerText))
+                    {
+                        headerColumnIndex[headerText] = col;
+                    }
+                }
+
+             
                 for (int row = 2; row <= rowCount; row++)
                 {
-                    var studentId = int.Parse(worksheet.Cells[row, 1].Text);
-                    var registrationNumber = worksheet.Cells[row, 2].Text;
+                   
+                    var studentIdText = worksheet.Cells[row, headerColumnIndex["StudentId"]].Text.Trim();
+                    var registrationNumberText = worksheet.Cells[row, headerColumnIndex["RegistrationNo"]].GetValue<string>();
 
-                    excelDataList.Add(new ExcelData
+                    if (string.IsNullOrEmpty(studentIdText) && string.IsNullOrEmpty(registrationNumberText))
                     {
-                        StudentId = studentId,
-                        RegistrationNumber = registrationNumber
-                    });
+                        break; 
+                    }
+
+                    if (!string.IsNullOrEmpty(studentIdText))
+                    {
+                        var studentId = int.Parse(studentIdText);
+                        var registrationNumber = registrationNumberText;
+                        string query = "UPDATE currentStudentInfo SET RegistrationNo =" + registrationNumber + " WHERE StudentId = " + studentId + "";
+                        CRUD.ExecuteNonQuery(query);
+                    }
                 }
             }
 
             return excelDataList;
         }
 
-        private void UpdateDatabase(List<ExcelData> excelDataList)
-        {
-            foreach (var excelData in excelDataList)
-            {
-                string query = "UPDATE currentStudentInfo SET RegistrationNo =" + excelData.RegistrationNumber + " WHERE StudentId = " + excelData.StudentId + "";
-                CRUD.ExecuteNonQuery(query);
-            }
 
 
-        }
+
 
         public class ExcelData
         {

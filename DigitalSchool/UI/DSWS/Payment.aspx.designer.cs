@@ -328,6 +328,15 @@ namespace DS.UI.DSWS {
         protected global::System.Web.UI.WebControls.TextBox txtStudentMobileNo;
         
         /// <summary>
+        /// ddlCatagory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ddlCatagory;
+        
+        /// <summary>
         /// ddlFeeCategories control.
         /// </summary>
         /// <remarks>
@@ -389,5 +398,23 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hPreviousDue;
+        
+        /// <summary>
+        /// subscriptionMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subscriptionMessage;
+        
+        /// <summary>
+        /// btnSubsreicption control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnSubsreicption;
     }
 }

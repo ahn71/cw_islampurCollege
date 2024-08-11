@@ -1347,7 +1347,6 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.x
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.AssemblyReference.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.Migrations.createmoduleasUserModules.resources
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.GenerateResource.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CoreCompileInputs.cache
@@ -1369,3 +1368,4 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Buffers.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Memory.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Numerics.Vectors.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csprojResolveAssemblyReference.cache

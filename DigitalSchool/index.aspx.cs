@@ -27,7 +27,7 @@ namespace DS
         {
             if (!IsPostBack)
             {
-                
+
                 LoadInitial();
                 LoadPresidentAndPrincipalSpeech();
                 LoadSecialDescription();
@@ -36,7 +36,7 @@ namespace DS
                 loadAlbumDetails();
                 loadEvent();
             }
-            
+
         }
         private void LoadInitial()
         {
@@ -93,7 +93,7 @@ namespace DS
                     EntrySD = new AddSpecialDescriptionEntry();
                 }
                 entitiesSD = EntrySD.getSecialDescriptionByType("হোম");
-                Session["__BackgroundTitle__"]= h1HomeSupject.InnerText = entitiesSD[0].Subject;
+                Session["__BackgroundTitle__"] = h1HomeSupject.InnerText = entitiesSD[0].Subject;
                 divInfo = entitiesSD[0].Details + "<a href='about/background'>...বিস্তারিত</a>";
                 pHomeDetails.Controls.Add(new LiteralControl(divInfo));
                 Session["__BackgroundImgUrl__"] = @"/Images/dsimages/" + entitiesSD[0].Image;

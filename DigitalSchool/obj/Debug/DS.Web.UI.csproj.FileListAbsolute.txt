@@ -3235,7 +3235,6 @@ D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.WebHost.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool\bin\DigitalSchool.DAL.pdb
 D:\CW Project\cw_islampurCollege\DigitalSchool\bin\de\PdfSharp.resources.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool\bin\de\PdfSharp.Charting.resources.dll
-D:\CW Project\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csproj.AssemblyReference.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csproj.CoreCompileInputs.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csproj.CopyComplete
 D:\CW Project\cw_islampurCollege\DigitalSchool\obj\Debug\DS.dll
@@ -3255,3 +3254,12 @@ D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Buffers.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Memory.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Numerics.Vectors.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\Newtonsoft.Json.Bson.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Threading.Tasks.Extensions.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Web.Cors.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.Cors.dll
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\Newtonsoft.Json.Bson.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\Newtonsoft.Json.Bson.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Threading.Tasks.Extensions.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool\bin\System.Web.Http.Cors.xml
+D:\CW Project\cw_islampurCollege\DigitalSchool\obj\Debug\DS.Web.UI.csprojResolveAssemblyReference.cache

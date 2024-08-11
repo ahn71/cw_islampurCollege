@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
@@ -59,8 +60,11 @@ namespace DS
     {
         public static void Register(HttpConfiguration configuration)
         {
+            configuration.EnableCors();
             configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}",
               new { id = RouteParameter.Optional });
+           
         }
+     
     }
 }

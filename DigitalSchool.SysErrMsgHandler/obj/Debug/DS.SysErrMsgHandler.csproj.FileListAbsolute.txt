@@ -47,8 +47,8 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\PdfSha
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\DigitalSchool.DAL.pdb
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\de\PdfSharp.resources.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.AssemblyReference.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.CoreCompileInputs.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csproj.CopyComplete
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DigitalSchool.SysErrMsgHandler.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.SysErrMsgHandler\obj\Debug\DS.SysErrMsgHandler.csprojResolveAssemblyReference.cache

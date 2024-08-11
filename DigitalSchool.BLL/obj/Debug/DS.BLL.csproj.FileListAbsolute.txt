@@ -1761,8 +1761,8 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.x
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.pdb
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.resources.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.AssemblyReference.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreCompileInputs.cache
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
+D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csprojResolveAssemblyReference.cache

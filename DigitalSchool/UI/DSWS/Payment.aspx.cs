@@ -7,10 +7,18 @@ using DS.BLL.ManagedBatch;
 using DS.BLL.ManagedClass;
 using DS.Classes;
 using DS.DAL;
+using Newtonsoft.Json.Linq;
+using PdfSharp.Pdf.Content.Objects;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -24,11 +32,19 @@ namespace DS.UI.DSWS
         Class_ClasswiseMarksheet_TotalResultProcess_Entry resut;
         string query = "";
 
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMessage.InnerText = "";
             if (!IsPostBack)
+
             {
+
+
+                ViewState["__AdmsnNo__"] = "";
+
+
                 hIsTest.Visible = false;
                 ViewState["__IsLivePayment__"] = "True";
                 try
@@ -39,15 +55,15 @@ namespace DS.UI.DSWS
                         hIsTest.Visible = true;
                         ViewState["__IsLivePayment__"] = "False";
                     }
-                       
+
                 }
-                catch (Exception ex){ }
+                catch (Exception ex) { }
 
 
                 string[] path = HttpContext.Current.Request.Url.AbsolutePath.ToString().Split('/');
                 ViewState["__OpenPayment__"] = "False";
                 hIsOpenPayment.Visible = false;
-                
+
                 if (path[path.Length - 1] == "open-payment")
                 {
                     hIsOpenPayment.Visible = true;
@@ -58,8 +74,8 @@ namespace DS.UI.DSWS
                     pnlPayment.Visible = true;
                     btnPayment.Visible = false;
                     commonTask.loadClasses(ddlClassForOpen);
-                    commonTask.LoadBatchwiseFeeCat("openPayment", "","", ddlFeeCategories);
-                    
+                    commonTask.LoadBatchwiseFeeCat("openPayment", "", "", ddlFeeCategories);
+
                 }
                 else
                 {
@@ -87,20 +103,13 @@ namespace DS.UI.DSWS
 
                     }
                 }
-                    
+
 
                 // BatchEntry.GetDropdownlist(ddlBatch, "True");
-                
+
             }
 
         }
-
-        
-
-
-       
-
-     
 
         protected void btnFind_Click(object sender, EventArgs e)
         {
@@ -110,14 +119,16 @@ namespace DS.UI.DSWS
             else
             if (varifiEmp(ddlBatch.SelectedValue + ddlYear.SelectedValue))
             {
-               commonTask.LoadBatchwiseFeeCat("regular", ddlBatch.SelectedValue + ddlYear.SelectedValue, ViewState["__ClsGrpId__"].ToString(), ddlFeeCategories);
+                commonTask.LoadBatchwiseFeeCat("regular", ddlBatch.SelectedValue + ddlYear.SelectedValue, ViewState["__ClsGrpId__"].ToString(), ddlFeeCategories);
                 pnlPayment.Visible = true;
                 setPyementMedia();
 
 
             }
+
             else
                 pnlPayment.Visible = false;
+            api_intigration();
         }
         private void setPyementMedia()
         {
@@ -131,37 +142,41 @@ namespace DS.UI.DSWS
             //}
             //else
             //{
-                rblPaywith.SelectedValue = "ssl";
-                btnPayment.Visible = false;
-                btnPaymentSSL.Visible = true;
-           // }
+            rblPaywith.SelectedValue = "ssl";
+            btnPayment.Visible = false;
+            btnPaymentSSL.Visible = true;
+            // }
         }
 
-       
+
 
         protected void ddlFeeCategories_SelectedIndexChanged(object sender, EventArgs e)
-        {    
-            
+        {
+
             loadParticularDetails();
         }
         private bool varifiEmp(string BatchName)
         {
             dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select AdmissionNo,BatchID, StudentId,FullName,FathersName,RollNo,GroupName,ImageName,ClsGrpId,Mobile from v_CurrentStudentInfo where BatchName='" + BatchName + "' and (AdmissionNo="+txtRollNo.Text.Trim()+ " Or PSCRollNo=" + txtRollNo.Text.Trim()+")" );
+            dt = CRUD.ReturnTableNull("select AdmissionNo,BatchID, StudentId,FullName,FathersName,RollNo,ClassID,GroupName,ImageName,ClsGrpId,Mobile from v_CurrentStudentInfo where BatchName='" + BatchName + "' and (AdmissionNo=" + txtRollNo.Text.Trim() + " Or PSCRollNo=" + txtRollNo.Text.Trim() + " or RegistrationNo='" + txtRollNo.Text.Trim() + "')");
             if (dt != null && dt.Rows.Count > 0)
             {
                 string imgName = (dt.Rows[0]["ImageName"].ToString() == "") ? "" : dt.Rows[0]["ImageName"].ToString();
                 string imageInfo = "<img class='img-responsive' style='width:80px;height:100px;' src='../../Images/profileImages/" + imgName + "' alt='...' />";
-                divImage .Controls.Add(new LiteralControl(imageInfo));
+                divImage.Controls.Add(new LiteralControl(imageInfo));
                 ViewState["__BatchID__"] = dt.Rows[0]["BatchID"].ToString();
                 ViewState["__StudentId__"] = dt.Rows[0]["StudentId"].ToString();
 
                 ViewState["__AdmissionNo__"] = dt.Rows[0]["AdmissionNo"].ToString();
 
+                ViewState["__AdmsnNo__"] = ViewState["__AdmissionNo__"].ToString();
+
+                ViewState["__ClassID__"] = dt.Rows[0]["ClassID"].ToString();
+
                 ViewState["__StudentAdmissionNo__"] = dt.Rows[0]["AdmissionNo"].ToString();
                 ViewState["__StudentMobile__"] = dt.Rows[0]["Mobile"].ToString();
                 ViewState["__StudentName__"] = dt.Rows[0]["FullName"].ToString();
-                ViewState["__StudentEmail__"] = "";               
+                ViewState["__StudentEmail__"] = "";
 
                 lblStudentName.Text = dt.Rows[0]["FullName"].ToString();
                 lblFathersName.Text = dt.Rows[0]["FathersName"].ToString();
@@ -170,7 +185,7 @@ namespace DS.UI.DSWS
                 ViewState["__ClsGrpId__"] = dt.Rows[0]["ClsGrpId"].ToString();
                 lblYear.Text = ddlYear.SelectedValue;
                 lblClass.Text = ddlBatch.SelectedItem.Text;
-                lblAdmissionNo.Text=txtRollNo.Text;
+                lblAdmissionNo.Text = txtRollNo.Text;
                 lblMsg.Text = "Verified!";
                 return true;
             }
@@ -180,22 +195,23 @@ namespace DS.UI.DSWS
         private bool varifiAdmissionStudent()
         {
             dt = new DataTable();
-            dt = CRUD.ReturnTableNull("select AdmissionFormNo, FullName,FathersName,c.ClassName, AdmissionYear,adm.ClsGrpID,g.GroupName,ImageName,adm.Mobile from Student_AdmissionFormInfo adm left join Classes c on adm.ClassID=c.ClassID left join Tbl_Class_Group cg on adm.ClsGrpID=cg.ClsGrpID left join Tbl_Group g on cg.GroupID=g.GroupID Where AdmissionFormNo=" + txtRollNo.Text.Trim());
+            dt = CRUD.ReturnTableNull("select AdmissionFormNo, FullName,FathersName,c.ClassName, AdmissionYear,adm.ClsGrpID,g.GroupName,ImageName,adm.Mobile,adm.ClassID from Student_AdmissionFormInfo adm left join Classes c on adm.ClassID=c.ClassID left join Tbl_Class_Group cg on adm.ClsGrpID=cg.ClsGrpID left join Tbl_Group g on cg.GroupID=g.GroupID Where AdmissionFormNo=" + txtRollNo.Text.Trim());
             if (dt != null && dt.Rows.Count > 0)
             {
-                
+
                 string imgName = (dt.Rows[0]["ImageName"].ToString() == "") ? "" : dt.Rows[0]["ImageName"].ToString();
                 string imageInfo = "<img class='img-responsive' style='width:80px;height:100px;' src='../../Images/studentAdmissionImages/" + imgName + "' alt='...' />";
-                divImage.Controls.Add(new LiteralControl(imageInfo));                
+                divImage.Controls.Add(new LiteralControl(imageInfo));
 
                 ViewState["__AdmissionFormNo__"] = dt.Rows[0]["AdmissionFormNo"].ToString();
+                ViewState["__AdmsnNo__"] = ViewState["__AdmissionFormNo__"].ToString();
 
                 ViewState["__StudentAdmissionNo__"] = ViewState["__AdmissionFormNo__"].ToString();
                 ViewState["__StudentMobile__"] = dt.Rows[0]["Mobile"].ToString();
                 ViewState["__StudentName__"] = dt.Rows[0]["FullName"].ToString();
-                ViewState["__StudentEmail__"] ="";
-                
+                ViewState["__StudentEmail__"] = "";
 
+                ViewState["__ClassID__"] = dt.Rows[0]["ClassID"].ToString();
 
                 lblStudentName.Text = dt.Rows[0]["FullName"].ToString();
                 lblFathersName.Text = dt.Rows[0]["FathersName"].ToString();
@@ -205,14 +221,14 @@ namespace DS.UI.DSWS
                 lblYear.Text = dt.Rows[0]["AdmissionYear"].ToString();
                 lblClass.Text = dt.Rows[0]["ClassName"].ToString();
                 lblAdmissionNo.Text = dt.Rows[0]["AdmissionFormNo"].ToString();
-                lblMsg.Text = "Verified!";                
+                lblMsg.Text = "Verified!";
                 pnlPayment.Visible = true;
                 setPyementMedia();
                 ddlFeeCategories.Enabled = false;
                 dt = new DataTable();
                 dt = CRUD.ReturnTableNull("select cat.FeeCatId,cat.BatchId from FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId where  PaymentFor='admission' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' and BatchId in(select BatchId from BatchInfo where BatchName='" + lblClass.Text + lblYear.Text + "') and (ClsGrpId=" + ViewState["__ClsGrpId__"].ToString() + " or ClsGrpId=0)");
-                
-                if (dt!=null && dt.Rows.Count > 0)
+
+                if (dt != null && dt.Rows.Count > 0)
                 {
                     ViewState["__BatchID__"] = dt.Rows[0]["BatchId"].ToString();
                     commonTask.LoadBatchwiseFeeCat("admission", lblClass.Text + lblYear.Text, ViewState["__ClsGrpId__"].ToString(), ddlFeeCategories);
@@ -231,8 +247,8 @@ namespace DS.UI.DSWS
         {
             try
             {
-                
-                hPreviousDue.Visible = false;                
+
+                hPreviousDue.Visible = false;
                 dt = CRUD.ReturnTableNull("Select PName, Amount, isnull(StoreNameKey,'islampurcollegeedubd') as StoreNameKey from v_FeesCatDetails where FeeCatId='" + ddlFeeCategories.SelectedValue + "' ");
                 ViewState["__ParticularDetails__"] = dt;
                 int totalRows = dt.Rows.Count;
@@ -280,7 +296,7 @@ namespace DS.UI.DSWS
 
                     ViewState["__OnlineChargePer_"] = Math.Round(100 * Classes.commonTask.OnlineChargPer_Nagad, 2);
                 }
-                    
+
 
 
                 ViewState["__TotalAmount_"] = Math.Round(total + double.Parse(ViewState["__OnlineCharge_"].ToString()), 0);
@@ -291,8 +307,8 @@ namespace DS.UI.DSWS
                 divInfo += "<tfoot>";
                 divInfo += "<tr class='bg-info' id='r_0'><th class='text-right'>Sub Total</th><th class='numeric text-right'>" + total + "</th>";
                 divInfo += "<tr id='r_0'><th class='text-right'>Discount</th><th class='numeric text-right'>" + ViewState["__Discount__"].ToString() + "</th>";
-                if(rblPaywith.SelectedValue != "ssl")
-                    divInfo += "<tr id='r_0'><th class='text-right'>Online Charge ("+ ViewState["__OnlineChargePer_"].ToString() + " %)	</th><th class='numeric text-right'>" + ViewState["__OnlineCharge_"].ToString() + "</th>";
+                if (rblPaywith.SelectedValue != "ssl")
+                    divInfo += "<tr id='r_0'><th class='text-right'>Online Charge (" + ViewState["__OnlineChargePer_"].ToString() + " %)	</th><th class='numeric text-right'>" + ViewState["__OnlineCharge_"].ToString() + "</th>";
 
                 divInfo += "<tr class='bg-info' id='r_0'><th class='text-right'>Total</th><th class='numeric text-right'>" + ViewState["__TotalAmount_"].ToString() + "</th>";
                 divInfo += "</tfoot>";
@@ -312,13 +328,13 @@ namespace DS.UI.DSWS
             if (ViewState["__OpenPayment__"].ToString() == "True")
                 return false;
             string OrderNo = "";
-            if(ckbIsAdmission.Checked)
-                OrderNo=commonTask.IsPaidReturnOrderNoByAdmissionFormNo(ddlFeeCategories.SelectedValue, ViewState["__AdmissionFormNo__"].ToString());
+            if (ckbIsAdmission.Checked)
+                OrderNo = commonTask.IsPaidReturnOrderNoByAdmissionFormNo(ddlFeeCategories.SelectedValue, ViewState["__AdmissionFormNo__"].ToString());
             else
-                OrderNo=commonTask.IsPaidReturnOrderNo(ddlFeeCategories.SelectedValue, ViewState["__StudentId__"].ToString());
+                OrderNo = commonTask.IsPaidReturnOrderNo(ddlFeeCategories.SelectedValue, ViewState["__StudentId__"].ToString());
             if (OrderNo == "")
-            {                
-                hAlreadyPaid.Visible = false;                
+            {
+                hAlreadyPaid.Visible = false;
                 return false;
             }
             else
@@ -332,40 +348,40 @@ namespace DS.UI.DSWS
         }
         private bool IsExpired()
         {
-            
-                dt = new DataTable();
-                dt = CRUD.ReturnTableNull("select convert(varchar(10), DateOfStart,120) as DateOfStart,convert(varchar(10), DateOfEnd,120) as DateOfEnd from DateOfPayment where FeeCatId="+ddlFeeCategories.SelectedValue);
-                if (dt!=null && dt.Rows.Count > 0)
+
+            dt = new DataTable();
+            dt = CRUD.ReturnTableNull("select convert(varchar(10), DateOfStart,120) as DateOfStart,convert(varchar(10), DateOfEnd,120) as DateOfEnd from DateOfPayment where FeeCatId=" + ddlFeeCategories.SelectedValue);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                DateTime DateOfEnd = DateTime.Parse(dt.Rows[0]["DateOfEnd"].ToString());
+                DateTime dateTimeNow = DateTime.Parse(ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd"));
+                if (DateOfEnd < dateTimeNow)
                 {
-                    DateTime DateOfEnd = DateTime.Parse(dt.Rows[0]["DateOfEnd"].ToString());
-                    DateTime dateTimeNow = DateTime.Parse(ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd"));
-                    if (DateOfEnd < dateTimeNow)
-                    {
-                        hPreviousDue.InnerText = "This Payment is Expired on " + DateOfEnd.ToString("dd-MM-yyyy") + "!";
-                        hPreviousDue.Visible = true;
-                        hAlreadyPaid.Visible = false;
-                        btnPayment.Visible = false;
-                        btnPaymentSSL.Visible = false;
-                        return true ;
-                    }
-                    else
-                    {                        
-                        return false;
-                    }                                 
-                    
+                    hPreviousDue.InnerText = "This Payment is Expired on " + DateOfEnd.ToString("dd-MM-yyyy") + "!";
+                    hPreviousDue.Visible = true;
+                    hAlreadyPaid.Visible = false;
+                    btnPayment.Visible = false;
+                    btnPaymentSSL.Visible = false;
+                    return true;
                 }
                 else
-                    return true;
-               
-            
+                {
+                    return false;
+                }
+
+            }
+            else
+                return true;
+
+
         }
         private bool hasPreviousDue()
         {
             return false;// Validation is ignored. Date: 29-08-2022
-            
+
             if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
                 return false;
-           
+
             // Recommended students are allowed  
             //switch (ViewState["__AdmissionNo__"].ToString())
             //{
@@ -394,9 +410,9 @@ namespace DS.UI.DSWS
 
             //}
 
-            if (ViewState["__AdmissionNo__"].ToString()=="")
-            dt = new DataTable();
-            dt = commonTask.getFeeCatIdBatchwiseFeeCat(ddlBatch.SelectedValue + ddlYear.SelectedValue, ViewState["__ClsGrpId__"].ToString(),ddlFeeCategories.SelectedValue);
+            if (ViewState["__AdmissionNo__"].ToString() == "")
+                dt = new DataTable();
+            dt = commonTask.getFeeCatIdBatchwiseFeeCat(ddlBatch.SelectedValue + ddlYear.SelectedValue, ViewState["__ClsGrpId__"].ToString(), ddlFeeCategories.SelectedValue);
             string dueCat = "";
             if (dt.Rows.Count == 0)
                 return false;
@@ -405,20 +421,20 @@ namespace DS.UI.DSWS
                 string OrderNo = commonTask.IsPaidReturnOrderNo(dt.Rows[i]["FeeCatId"].ToString(), ViewState["__StudentId__"].ToString());
                 if (OrderNo == "")
                 {
-                    dueCat +=", " +dt.Rows[i]["FeeCatName"].ToString();
+                    dueCat += ", " + dt.Rows[i]["FeeCatName"].ToString();
                 }
-                    
+
             }
             if (dueCat == "")
             {
                 hPreviousDue.Visible = false;
                 return false;
             }
-                
+
             else
             {
                 //hPreviousDue.InnerText = "Please, pay your previous due("+ dueCat.Remove(0,1) + ") first!";
-                hPreviousDue.InnerText = "এই ফি প্রদা‌নের জন্য পূর্ব‌ের ব‌কেয়া(" + dueCat.Remove(0, 1) + ") প‌রিশ‌োধ করুন! (You can not pay this bill before making the payment for due amount of " + dueCat.Remove(0,1) + "!)";
+                hPreviousDue.InnerText = "এই ফি প্রদা‌নের জন্য পূর্ব‌ের ব‌কেয়া(" + dueCat.Remove(0, 1) + ") প‌রিশ‌োধ করুন! (You can not pay this bill before making the payment for due amount of " + dueCat.Remove(0, 1) + "!)";
                 hPreviousDue.Visible = true;
                 hAlreadyPaid.Visible = false;
                 return true;
@@ -430,16 +446,16 @@ namespace DS.UI.DSWS
             if (!IsPaid() && !hasPreviousDue() && !IsExpired())
                 SaveInvoice("nagad");
         }
-        private bool SaveInvoiceDetails(string OrderID,string OrderNo,string Particular,string Amount)
+        private bool SaveInvoiceDetails(string OrderID, string OrderNo, string Particular, string Amount)
         {
-           return CRUD.ExecuteQuery(@"INSERT INTO [dbo].[PaymentInfoDetails]
+            return CRUD.ExecuteQuery(@"INSERT INTO [dbo].[PaymentInfoDetails]
            ([OrderID]
            ,[OrderNo]
            ,[Particular]
            ,[ParticularAmount]
            ,[Status])
             VALUES
-           (" + OrderID + ",'"+ OrderNo + "','"+ Particular + "',"+ Amount + ",1)");
+           (" + OrderID + ",'" + OrderNo + "','" + Particular + "'," + Amount + ",1)");
 
         }
         private int SaveOpenStudentInfo()
@@ -488,14 +504,14 @@ namespace DS.UI.DSWS
                     txtClassRoll.Focus();
                     return 0;
                 }
-                
-                if (txtStudentName.Text.Trim().Length ==0)
+
+                if (txtStudentName.Text.Trim().Length == 0)
                 {
                     lblMessage.InnerText = "warning-> Please, Enter Full Name!";
                     txtStudentName.Focus();
                     return 0;
                 }
-                if (txtFathersName .Text.Trim().Length == 0)
+                if (txtFathersName.Text.Trim().Length == 0)
                 {
                     lblMessage.InnerText = "warning-> Please, Enter Father's Name!";
                     txtFathersName.Focus();
@@ -528,27 +544,30 @@ namespace DS.UI.DSWS
            ,[FathersName]
            ,[FeeCatId])
      VALUES
-           ('" + txtStudentMobileNo.Text.Trim()+"',N'"+ txtStudentName.Text.Trim()+"',"+ddlClassForOpen.SelectedValue+","+ddlGroupForOpen.SelectedValue+ ",N'" + txtRegNo.Text.Trim() + "',N'" + txtClassRoll.Text.Trim()+"',"+ Year.ToString()+",N'"+txtFathersName.Text.Trim()+"',"+ddlFeeCategories.SelectedValue+"); SELECT SCOPE_IDENTITY()";
-                int result= CRUD.GetMaxID(query);
-                if(result==0)
+           ('" + txtStudentMobileNo.Text.Trim() + "',N'" + txtStudentName.Text.Trim() + "'," + ddlClassForOpen.SelectedValue + "," + ddlGroupForOpen.SelectedValue + ",N'" + txtRegNo.Text.Trim() + "',N'" + txtClassRoll.Text.Trim() + "'," + Year.ToString() + ",N'" + txtFathersName.Text.Trim() + "'," + ddlFeeCategories.SelectedValue + "); SELECT SCOPE_IDENTITY()";
+                int result = CRUD.GetMaxID(query);
+                if (result == 0)
                     lblMessage.InnerText = "warning-> Student's Info May Be Wrong!";
                 return result;
-            } catch (Exception ex) {
-                lblMessage.InnerText = "error-> "+ ex.Message;
-                return 0; }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.InnerText = "error-> " + ex.Message;
+                return 0;
+            }
         }
         private void SaveInvoice(string PaymentType)
         {
             try
             {
-                
+
 
                 int OpenStudentId = 0;
                 if (ViewState["__OpenPayment__"].ToString() == "True")
                 {
-                    OpenStudentId= SaveOpenStudentInfo();
-                    if (OpenStudentId == 0)return;                         
-                    
+                    OpenStudentId = SaveOpenStudentInfo();
+                    if (OpenStudentId == 0) return;
+
                 }
                 string store_name = ViewState["__StoreNameKey__"].ToString();
                 string student_name = ViewState["__StudentName__"].ToString();
@@ -567,7 +586,7 @@ namespace DS.UI.DSWS
            ,[CreatedAt]          
            ,[OrderSL],[PaymentType],[OpenStudentId],[StoreNameKey])
      VALUES
-           ('" + ddlFeeCategories.SelectedValue + "','" + OrderNo + "','" + ViewState["__Amount_"].ToString() + "','" + ViewState["__Discount__"].ToString() + "','" + ViewState["__OnlineCharge_"].ToString() + "','" + ViewState["__OnlineChargePer_"].ToString() + "','" + ViewState["__TotalAmount_"].ToString() + "',0,1,'" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss") + "'," + OrderSL + ",'" + PaymentType + "'," + OpenStudentId + ",'"+store_name+"'); SELECT SCOPE_IDENTITY()";
+           ('" + ddlFeeCategories.SelectedValue + "','" + OrderNo + "','" + ViewState["__Amount_"].ToString() + "','" + ViewState["__Discount__"].ToString() + "','" + ViewState["__OnlineCharge_"].ToString() + "','" + ViewState["__OnlineChargePer_"].ToString() + "','" + ViewState["__TotalAmount_"].ToString() + "',0,1,'" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss") + "'," + OrderSL + ",'" + PaymentType + "'," + OpenStudentId + ",'" + store_name + "'); SELECT SCOPE_IDENTITY()";
                 else if (ckbIsAdmission.Checked)
                     query = @"INSERT INTO [dbo].[PaymentInfo]
             ([BatchID],[FeeCatId],[OrderNo]
@@ -577,7 +596,7 @@ namespace DS.UI.DSWS
            ,[CreatedAt]          
            ,[OrderSL],[PaymentType],[AdmissionFormNo],[StoreNameKey])
      VALUES
-           ('" + ViewState["__BatchID__"].ToString() + "','" + ddlFeeCategories.SelectedValue + "','" + OrderNo + "','" + ViewState["__Amount_"].ToString() + "','" + ViewState["__Discount__"].ToString() + "','" + ViewState["__OnlineCharge_"].ToString() + "','" + ViewState["__OnlineChargePer_"].ToString() + "','" + ViewState["__TotalAmount_"].ToString() + "',0,1,'" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss") + "'," + OrderSL + ",'" + PaymentType + "',"+ ViewState["__AdmissionFormNo__"].ToString()+ ",'"+store_name+"'); SELECT SCOPE_IDENTITY()";
+           ('" + ViewState["__BatchID__"].ToString() + "','" + ddlFeeCategories.SelectedValue + "','" + OrderNo + "','" + ViewState["__Amount_"].ToString() + "','" + ViewState["__Discount__"].ToString() + "','" + ViewState["__OnlineCharge_"].ToString() + "','" + ViewState["__OnlineChargePer_"].ToString() + "','" + ViewState["__TotalAmount_"].ToString() + "',0,1,'" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss") + "'," + OrderSL + ",'" + PaymentType + "'," + ViewState["__AdmissionFormNo__"].ToString() + ",'" + store_name + "'); SELECT SCOPE_IDENTITY()";
                 else
                     query = @"INSERT INTO [dbo].[PaymentInfo]
             ([StudentId],[BatchID],[FeeCatId],[OrderNo]
@@ -587,16 +606,16 @@ namespace DS.UI.DSWS
            ,[CreatedAt]          
            ,[OrderSL],[PaymentType],[StoreNameKey])
      VALUES
-           ('" + ViewState["__StudentId__"].ToString() + "','" + ViewState["__BatchID__"].ToString() + "','" + ddlFeeCategories.SelectedValue + "','" + OrderNo + "','" + ViewState["__Amount_"].ToString() + "','" + ViewState["__Discount__"].ToString() + "','" + ViewState["__OnlineCharge_"].ToString() + "','"+ ViewState["__OnlineChargePer_"] .ToString()+ "','" + ViewState["__TotalAmount_"].ToString() + "',0,1,'" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss") + "'," + OrderSL + ",'" + PaymentType + "','"+ store_name + "'); SELECT SCOPE_IDENTITY()";
-                int OrderID=   CRUD.GetMaxID(query);
+           ('" + ViewState["__StudentId__"].ToString() + "','" + ViewState["__BatchID__"].ToString() + "','" + ddlFeeCategories.SelectedValue + "','" + OrderNo + "','" + ViewState["__Amount_"].ToString() + "','" + ViewState["__Discount__"].ToString() + "','" + ViewState["__OnlineCharge_"].ToString() + "','" + ViewState["__OnlineChargePer_"].ToString() + "','" + ViewState["__TotalAmount_"].ToString() + "',0,1,'" + TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss") + "'," + OrderSL + ",'" + PaymentType + "','" + store_name + "'); SELECT SCOPE_IDENTITY()";
+                int OrderID = CRUD.GetMaxID(query);
                 if (OrderID > 0)
                 {
                     dt = new DataTable();
                     dt = (DataTable)ViewState["__ParticularDetails__"];
                     if (dt != null && dt.Rows.Count > 0)
                     {
-                        for(int i=0;i< dt.Rows.Count;i++)
-                         SaveInvoiceDetails(OrderID.ToString(), OrderNo, dt.Rows[i]["PName"].ToString(), dt.Rows[i]["Amount"].ToString());
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                            SaveInvoiceDetails(OrderID.ToString(), OrderNo, dt.Rows[i]["PName"].ToString(), dt.Rows[i]["Amount"].ToString());
                     }
 
                     //Response.Redirect("https://blaisetyre.cwprojects.xyz/?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
@@ -610,31 +629,31 @@ namespace DS.UI.DSWS
                     //}
                     //else if (ViewState["__IsLivePayment__"].ToString() == "False")
                     //{
-                        string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/";
-                        Response.Redirect(baseUrl + "UI/PaymentMethod/SSLCommerzInfos/Default.aspx?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
+                    string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/";
+                    Response.Redirect(baseUrl + "UI/PaymentMethod/SSLCommerzInfos/Default.aspx?amount=" + ViewState["__TotalAmount_"].ToString() + "&invoice=" + OrderNo + "&payment_type=" + PaymentType + "&store_name=" + store_name + "&student_name=" + student_name + "&student_mobile=" + student_mobile + "&student_email=" + student_email + "&student_id=" + student_id + "");
                     //}
-                      
-                    
+
+
 
                 }
             }
-            catch (Exception ex){ }
+            catch (Exception ex) { }
         }
-        
+
         private string generateInvoiceNo()
         {
             try
             {
                 DateTime today = TimeZoneBD.getCurrentTimeBD();
                 dt = new DataTable();
-                dt = CRUD.ReturnTableNull("select ISNULL( max(OrderSL),0) as OrderSL  from PaymentInfo where  convert(varchar(10),CreatedAt,120) ='"+ today.ToString("yyyy-MM-dd")+"'");
+                dt = CRUD.ReturnTableNull("select ISNULL( max(OrderSL),0) as OrderSL  from PaymentInfo where  convert(varchar(10),CreatedAt,120) ='" + today.ToString("yyyy-MM-dd") + "'");
                 string OrderSL = (int.Parse(dt.Rows[0]["OrderSL"].ToString()) + 1).ToString();
 
                 if (OrderSL.Length < 4)
                 {
                     if (OrderSL.Length == 3)
                         OrderSL = "0" + OrderSL;
-                    else if(OrderSL.Length == 2)
+                    else if (OrderSL.Length == 2)
                         OrderSL = "00" + OrderSL;
                     else if (OrderSL.Length == 1)
                         OrderSL = "000" + OrderSL;
@@ -649,11 +668,20 @@ namespace DS.UI.DSWS
             }
         }
 
-       
+
         protected void btnPaymentSSL_Click(object sender, EventArgs e)
         {
-            if (!IsPaid() && !hasPreviousDue())
-                SaveInvoice("ssl");
+            if (ViewState["__status__"].ToString() == "failed")
+            {
+                subscriptionMessage.Visible = true;
+                btnSubsreicption.Visible = true;
+            }
+            else
+            {
+                if (!IsPaid() && !hasPreviousDue())
+                    SaveInvoice("ssl");
+            }
+              
         }
 
         protected void ckbIsAdmission_CheckedChanged(object sender, EventArgs e)
@@ -683,7 +711,74 @@ namespace DS.UI.DSWS
 
         protected void ddlClassForOpen_SelectedIndexChanged(object sender, EventArgs e)
         {
-            commonTask.loadGroupsByClass(ddlGroupForOpen,ddlClassForOpen.SelectedValue);
+            commonTask.loadGroupsByClass(ddlGroupForOpen, ddlClassForOpen.SelectedValue);
         }
+        public string getResponse(string url)
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            //string urlTest = "https://www.websupportbd.com/subscription/api/payments/?admission_no=102031&class_id=250";
+            //string ppp= "https://www.websupportbd.com/subscription/api/payments/?admission_no=20220632&class_id=232"
+
+            WebRequest webrequest = WebRequest.Create(url);
+            webrequest.Method = "GET";
+
+            HttpWebResponse httpWebResponse = null;
+            try
+            {
+                httpWebResponse = (HttpWebResponse)webrequest.GetResponse();
+
+                using (Stream stream = httpWebResponse.GetResponseStream())
+                {
+                    StreamReader sr = new StreamReader(stream);
+                    string response = sr.ReadToEnd();
+                    sr.Close();
+                    return response;
+                }
+
+            }
+            catch (WebException ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                return "Api Error";
+            }
+        }
+        public void api_intigration()
+        {
+            ViewState["__status__"] = "";
+            string ffff = ViewState["__ClassID__"].ToString();
+            string url = "https://www.websupportbd.com/subscription/api/payments/?admission_no=" + ViewState["__AdmsnNo__"].ToString() + "&class_id=" + ViewState["__ClassID__"].ToString();
+            var respose=getResponse(url);
+        
+                JArray jsonArray = JArray.Parse(respose);
+                if (jsonArray.Count > 0)
+                {
+                    JObject firstItem = (JObject)jsonArray[0];
+                    if(firstItem["status"]?.ToString()== "404")
+                    {
+                        ViewState["__status__"] = "failed";
+                        ddlCatagory.Visible = false;
+                        btnPaymentSSL.Visible = false;
+                        subscriptionMessage.Visible = true;
+                        btnSubsreicption.Visible = true;
+                }
+                    else
+                    {
+                        string admissionNo = firstItem["admission_no"]?.ToString();
+                        string studentName = firstItem["student_name"]?.ToString();
+                        string studentPhone = firstItem["student_phone"]?.ToString();
+                        string totalAmount = firstItem["total_amount"]?.ToString();
+                        ViewState["__status__"] = firstItem["status"]?.ToString();
+                    }
+
+                   
+
+                
+                }
+
+
+        }
+
     }
 }

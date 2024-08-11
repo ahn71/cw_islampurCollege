@@ -69,6 +69,11 @@
             display: inline-block;
             margin-top: 15px;
         }
+        .linkbt{
+            text-decoration:underline;
+            font-size:20px;
+            color:blue;
+        }
     </style>
     <script type="text/javascript">
         function searchAgain() {
@@ -148,6 +153,7 @@
                                                 <asp:CheckBox  runat="server" ClientIDMode="Static" AutoPostBack="true" ID="ckbIsAdmission" Text="_ Admission Fee?" OnCheckedChanged="ckbIsAdmission_CheckedChanged" />
                                               
                                             </div>
+                                          
                                         </div>
                                         <asp:Panel runat="server" ClientIDMode="Static" ID="pnlYearClassArea"> 
                                         <div class="form-group row">
@@ -167,7 +173,7 @@
                                         </div>
                                             </asp:Panel>
                                         <div class="form-group row">
-                                            <label class="col-md-3 control-label" runat="server" id="lblAdmissionOrRollCaption">Admission Form No/SSC/HSC Roll</label>
+                                            <label class="col-md-3 control-label" runat="server" id="lblAdmissionOrRollCaption">Admission Form No/SSC/HSC Roll/Registration No</label>
                                             <div class="col-md-9">
                                                 <asp:TextBox ID="txtRollNo" placeholder="Enter your admission no" runat="server" CssClass="form-control"
                                                     ClientIDMode="Static">
@@ -320,7 +326,7 @@
                                                        
                                                     </div>
                                                     
-                                                    <div class="form-group row">
+                                                    <div class="form-group row" runat="server" id="ddlCatagory">
                                                         <label class="col-md-12">Fee Category<strong style="color:red">*</strong></label>
                                                         <div class="col-md-12">
                                                             <asp:DropDownList ID="ddlFeeCategories" runat="server" ClientIDMode="Static"
@@ -356,9 +362,13 @@
                                                             Pay Now                                           
                                                         </asp:LinkButton>
 
+
                                                         <h1 runat="server" visible="false" style="color:green;" id="hAlreadyPaid"> Already Paid!</h1>
 
                                                         <h1 runat="server" visible="false" style="color:red;" id="hPreviousDue"></h1>
+                                                         <h3 runat="server" id="subscriptionMessage" visible="false" class="text-danger">এই ক্লাসের জন্য আপনার সফটওয়্যার এর সাবস্ক্রিপশন করা নেই</h3>
+                                                         <a runat="server" id="btnSubsreicption" visible="false" class="linkbt" href="https://websupportbd.com/subscription" target="_blank">সাবস্ক্রিপশন করতে এখানে ক্লিক করুন</a>
+
                                                     </div>
                                                 </div>
                                             </div>
