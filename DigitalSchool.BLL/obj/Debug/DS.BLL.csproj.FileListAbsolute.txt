@@ -1725,7 +1725,6 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRe
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.xml
-D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.Charting.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csprojResolveAssemblyReference.cache

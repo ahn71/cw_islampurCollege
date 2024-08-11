@@ -1317,7 +1317,6 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRe
 D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\HtmlRenderer.PdfSharp.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\PdfSharp.Charting.xml
-D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\de\PdfSharp.Charting.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csproj.CopyComplete
@@ -1369,3 +1368,18 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Memory.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Numerics.Vectors.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\CW Project\cw_islampurCollege\DigitalSchool.DAL\obj\Debug\DS.DAL.csprojResolveAssemblyReference.cache
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EPPlus.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EPPlus.Interfaces.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EPPlus.System.Drawing.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Buffers.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Memory.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\EPPlus.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Buffers.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Memory.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
