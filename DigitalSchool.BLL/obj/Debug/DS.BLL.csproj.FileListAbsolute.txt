@@ -1733,6 +1733,8 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreC
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb
+D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreCompileInputs.cache
+D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csprojResolveAssemblyReference.cache
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll.config
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DS.BLL.pdb
@@ -1758,10 +1760,9 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRe
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\HtmlRenderer.PdfSharp.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\PdfSharp.Charting.xml
+D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csprojResolveAssemblyReference.cache
-D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CoreCompileInputs.cache
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.csproj.CopyComplete
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.BLL\obj\Debug\DS.BLL.pdb

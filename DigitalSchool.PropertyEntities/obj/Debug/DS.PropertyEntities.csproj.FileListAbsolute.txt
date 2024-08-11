@@ -743,6 +743,8 @@ D:\CW Project\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.Pro
 D:\CW Project\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\CW Project\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\CW Project\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
+D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
+D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll.config
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DS.PropertyEntities.pdb
@@ -752,6 +754,7 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.PdfSharp.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.dll
+D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\DigitalSchool.DAL.pdb
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\EntityFramework.SqlServer.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\HtmlRenderer.pdb
@@ -760,8 +763,6 @@ D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\PdfSharp.Charting.xml
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.resources.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\bin\Debug\de\PdfSharp.Charting.resources.dll
-D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csprojResolveAssemblyReference.cache
-D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CoreCompileInputs.cache
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.csproj.CopyComplete
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.dll
 D:\Running projects github\cw_islampurCollege\DigitalSchool.PropertyEntities\obj\Debug\DS.PropertyEntities.pdb
