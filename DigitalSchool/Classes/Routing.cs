@@ -148,6 +148,11 @@ namespace DS.Classes
         public static string StudentAdmissionApprovalRouteUrl = "student/admission-approval";
         private static string StudentAdmissionApprovalRoutePhysicalFile = "~/UI/Academic/Students/admission-approval.aspx";
 
+
+        private static string StudentRegistrationNoRouteName = "StudentRegistrationNoRoute";
+        public static string StudentRegistrationNoRouteNameRouteUrl = "student/import-registration-no";
+        private static string StudentRegistrationNoRouteNameRoutePhysicalFile = "~/UI/ExportExcel.aspx";
+
         private static string StudentSectionChangeRouteName = "StudentSectionChangeRoute";
         public static string StudentSectionChangeRouteUrl = "student/section-change";
         private static string StudentSectionChangeRoutePhysicalFile = "~/UI/Academic/Students/StdSectionChange.aspx";
@@ -294,6 +299,10 @@ namespace DS.Classes
             routes.MapPageRoute(StudentProfileRouteName, StudentProfileRouteUrl, StudentProfileRoutePhysicalFile);
             routes.MapPageRoute(StudentActivationRouteName, StudentActivationRouteUrl, StudentActivationRoutePhysicalFile);
             routes.MapPageRoute(StudentAdmissionApprovalRouteName, StudentAdmissionApprovalRouteUrl, StudentAdmissionApprovalRoutePhysicalFile);
+
+            routes.MapPageRoute(StudentRegistrationNoRouteName, StudentRegistrationNoRouteNameRouteUrl, StudentRegistrationNoRouteNameRoutePhysicalFile);
+
+
             routes.MapPageRoute(StudentSectionChangeRouteName, StudentSectionChangeRouteUrl, StudentSectionChangeRoutePhysicalFile);
             routes.MapPageRoute(StudentPromotionRouteName, StudentPromotionRouteUrl, StudentPromotionRoutePhysicalFile);
             // student <-

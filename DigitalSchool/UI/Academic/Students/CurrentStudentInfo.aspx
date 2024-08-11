@@ -191,6 +191,7 @@
         </ItemTemplate>
     </asp:TemplateField>
                <asp:BoundField DataField="AdmissionNo" HeaderText="Admission No" />
+               <asp:BoundField DataField="RegistrationNo" HeaderText="Registration No" />
                <asp:BoundField DataField="FullName" HeaderText="Full Name" />
                 <asp:BoundField DataField="ClassName" HeaderText="Class" />
                

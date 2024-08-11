@@ -25,6 +25,7 @@ namespace DS.UI.Academics.Students
                     aStudentSectionChange.HRef = "~/" + Classes.Routing.StudentSectionChangeRouteUrl;
                     aStudentPromotionRoute.HRef = "~/" + Classes.Routing.StudentPromotionRouteUrl;
                     aStudentAdmissionApproval.HRef = "~/" + Classes.Routing.StudentAdmissionApprovalRouteUrl;
+                    importStudentInfo.HRef = "~/" + Classes.Routing.StudentRegistrationNoRouteNameRouteUrl;
 
                     //---url bind end---
 

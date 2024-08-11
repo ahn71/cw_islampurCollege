@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DS.UI.Academics.Students {
-    
-    
-    public partial class StdHome {
-        
+namespace DS.UI.Academics.Students
+{
+
+
+    public partial class StdHome
+    {
+
         /// <summary>
         /// uplMessage control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel uplMessage;
-        
+
         /// <summary>
         /// lblMessage control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMessage;
-        
+
         /// <summary>
         /// aDashboard control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aDashboard;
-        
+
         /// <summary>
         /// aAcademicHome control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aAcademicHome;
-        
+
         /// <summary>
         /// aStudentAdd control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aStudentAdd;
-        
+
         /// <summary>
         /// aStudentList control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aStudentList;
-        
+
         /// <summary>
         /// aStudentActivation control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aStudentActivation;
-        
+
         /// <summary>
         /// aStudentSectionChange control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aStudentSectionChange;
-        
+
         /// <summary>
         /// aStudentPromotionRoute control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aStudentPromotionRoute;
-        
+
         /// <summary>
         /// aStudentAdmissionApproval control.
         /// </summary>
@@ -101,5 +103,14 @@ namespace DS.UI.Academics.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aStudentAdmissionApproval;
+
+        /// <summary>
+        /// importStudentInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor importStudentInfo;
     }
 }
