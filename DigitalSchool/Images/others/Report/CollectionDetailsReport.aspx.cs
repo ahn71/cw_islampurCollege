@@ -1,0 +1,27 @@
+﻿using adviitRuntimeScripting;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace DS.Report
+{
+    public partial class CollectionDetailsReport : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                lblYear.Text =Session["__reportType__"] + DateTime.Now.Year.ToString();
+                lblClass.Text = Session["__batchName__"].ToString();
+                divCollectionDetails.Controls.Add(new LiteralControl(Session["__allCDR__"].ToString())); 
+            }
+            catch { }
+        }
+
+    }
+
+}

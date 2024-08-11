@@ -1,0 +1,63 @@
+/* Medium Layout: 1280px. */
+@media only screen and (max-width: 1200px) { 
+  
+
+}
+
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+    
+    
+}
+
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 600px) {
+    .header-area {
+        height: 80px;
+    }
+    .top-contact-info ul li {
+        float: left;
+    }
+    .top-contact-info ul li a {
+        padding: 2px 10px;
+        margin-top: 0px;
+   }
+    .logo img {
+        margin-top: 2px;
+        width: 80px;
+    }
+    .header-text {
+        text-align: left;
+    }
+    .header-text h1 {
+        font-size: 25px;
+        font-family: 'CharukolaUltraLight', sans-serif;
+        font-weight: bold;
+    }
+    .header-text h4 {
+        font-size: 12px;
+    }
+    .college-code-and-time {
+        display: none;
+    }
+    .result-top-box {
+        width: 95%;
+    }
+    .result-top-box .img-responsive{
+        width: 100%;
+        margin:0 auto;
+    }
+    .cform-panel {
+        width: 95%;
+    }
+    .result-top-box .title-4 {
+        padding-top: 0px;
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+}

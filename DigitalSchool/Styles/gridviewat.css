@@ -1,0 +1,779 @@
+﻿.search-box {
+    height:auto;
+    width:350px;
+    border: 1px solid #D5D5D5;
+    margin:0 auto;
+    padding-bottom:05px;
+    padding-top:05px;
+}
+
+.search-box tbody tr td {
+    width:40px;
+    padding:03px;
+    font-size:11px;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 3px 3px 3px 24px;
+}
+
+.search-box tbody tr td select{
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #D5D5D5;
+    padding: 3px;
+    width:200px;
+}
+.search-box tbody tr td input[type='text'] {
+    background: url("/Images/action/search-white.png") no-repeat scroll right center #FCFCFC;
+    border: 1px solid  #D5D5D5;
+    border-radius: 2px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.15) inset;
+    color: black;
+    font: normal 12px Arial,Helvetica,Sans-serif;
+    padding: 3px 15px 3px 6px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.7s ease 0s;
+    width:201px;
+}
+
+.search-box tbody tr td input[type='submit'] {
+    border: medium none;
+    height: 36px;
+    right: 0;
+    top: 0;
+    width: 36px;
+    margin-left: -5px;
+    background:url('/Images/action/searchSmall.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+
+}
+
+.student-details {
+    margin-top:20px;
+    height:auto;
+}
+
+.gridview{
+   background-color:#fff;
+   padding:2px; 
+  
+}
+.gridview td {
+    height:auto;
+    padding-left:05px;
+
+}
+
+.gridview th {
+    height:30px;
+    text-align:left;
+}
+
+.gridview th {
+
+    background:url('/Images/datatables/grd_head.png');
+}
+
+#gvAdmissionDetails {
+    margin-right:10px;
+}
+ 
+
+#gvAdmissionDetails td {
+     font-size:11px;
+     padding-left:5px;
+     padding-top:05px;
+     padding-bottom:5px;
+}
+
+#gvAdmissionDetails th {
+    color: #fff;   
+    height:30px;
+    padding-left:5px;
+    font-size:11px;
+    border: 1px solid #D5D5D5;
+    /*background: #424242  url('/Images/datatables/grd_head.png') repeat top;*/ 
+    background: #424242 url(grd_head.png) repeat-x top;   
+}
+
+
+.gridview a{
+  margin:auto 1%;
+    border-radius:50%;
+      background-color:#444;
+      padding:5px 10px 5px 10px;
+      color:#fff;
+      text-decoration:none;
+      -o-box-shadow:1px 1px 1px #111;
+      -moz-box-shadow:1px 1px 1px #111;
+      -webkit-box-shadow:1px 1px 1px #111;
+      box-shadow:1px 1px 1px #111;
+     
+}
+.gridview a:hover{
+    background-color:#1e8d12;
+    color:#fff;
+}
+.gridview span{
+    background-color:#ae2676;
+    color:#fff;
+     -o-box-shadow:1px 1px 1px #111;
+      -moz-box-shadow:1px 1px 1px #111;
+      -webkit-box-shadow:1px 1px 1px #111;
+      box-shadow:1px 1px 1px #111;
+
+    border-radius:50%;
+    padding:5px 10px 5px 10px;
+}
+
+
+
+.showimg {
+    background:url('/Images/datatables/view.png');
+}
+
+.display {
+    text-align: left;
+    width: 577px;
+}
+.display thead {
+  border-bottom: 0 none;
+  border-left: 2px solid #424242;
+  border-top: 0 none;
+  padding: 24px 0;
+}
+.display thead th {
+        background: #23282C;
+        /*outline: 0.5px solid;*/
+        border-right: 1px solid #D5D5D5;
+        color: #FFFFFF;
+        font-size: 12px;
+        height: 29px;
+        padding: 5px;
+}
+
+.display tbody tr td {
+  font-size: 12px;
+  padding: 5px;
+}
+.ac_transcript thead{
+ border-bottom: 0 none;
+  border-left: 0px ;
+  border-top: 1px solid #424242;
+  padding: 24px 0;
+}
+.ac_transcript tr th:last-child{
+    border-right:0px;
+}
+.ac_transcript {
+  line-height: 14px;
+  padding: 4px;
+  font-size: 12px
+}
+@media print {
+.ac_transcript {
+  line-height: 14px;
+  padding: 4px;
+  font-size: 12px
+}
+#tblStinfo tr td {
+    font-size: 12px;
+}
+}
+
+
+.datatables_wrappe h5 {
+    margin:10px 0 5px;
+}
+
+
+.display thead numeric control {
+    height:20px;
+    width:20px;
+}
+
+.editImg {
+    height:20px;
+    width:20px;
+}
+
+.editImg:hover {
+   cursor:pointer;
+}
+.numeric_control {
+    width:25px !important;
+}
+
+.ddlBox {
+    height:26px;
+    width:261px;
+}
+
+
+/*---------------------------------------Entry Page -------------------------------------*/
+
+.buttonBox {
+    width:100%;
+    text-align:center;
+    padding: 10px;
+}
+.buttonBox-Discount {
+    width: 134%;
+    text-align:right;
+    padding: 10px;
+    margin-left: 2px;
+}
+.buttonBox-SubQPattern {
+    margin-left: 20px;
+    padding: 10px;
+    text-align: right;
+}
+.AddBox {
+    width:44%;
+    text-align:center;
+}
+.AddBox-SubQpattern {
+    text-align: center;
+    width: 204px;
+}
+
+.main-div
+{
+    width:100%;
+    height:auto;
+}
+.leftSide-div
+{
+    float:left;
+    width:50%;
+    /*height:560px;*/
+    overflow: hidden;
+     margin-top: 40px;
+    /*border-right:1px solid gray;*/
+}
+.rightSide-div
+{
+    float:left;
+    width:48%;
+    /*height:560px;*/
+}
+.rightSide-div-Discount
+{
+    float:right;
+    width:49%;
+    height:159px;
+}
+/*.tgPanel
+{
+    border:1px solid #D5D5D5;
+    height: 238px;
+    width:400px;
+    margin: 100px auto;
+}
+
+.tgPanelHead
+{
+    font-size:18px;
+    padding-top:05px;
+    height:24px;
+    width:95%;
+    text-align:center;
+    background: url("/Images/leftNavBg.png") repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    margin-bottom:05px;
+    font-family:Calibri;
+    color:black;
+}*/
+
+
+.btnStyle
+{
+    background: url("/Images/greyishBtn.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #4F5A68;
+    color: #FFFFFF;
+    padding:02px;
+    font-size:10px;
+}
+
+.input {
+    padding:05px;
+    border:1px solid #D5D5D5;
+}
+
+.tbl-controlPanel {
+    margin: 10px auto;
+    font-family: Calibri;
+    font-size: 15px;
+    padding: 5px;
+    width: 400px;
+}
+.tbl-controlPanel tr td{
+padding:3px 0;
+}
+.col_td {
+    width:100px;
+}
+.tbl-controlPanel-Discount {
+  font-family: Calibri;
+  font-size: 15px;
+  padding: 12px 0 0;
+  width: 474px;
+  margin: 10px auto;
+}
+
+
+.DiscountList {
+    text-align: center;
+    color:white;
+    font-size:14px;
+    font-family:anson,sans-serif,Arial;
+    background: #9E4B9E;
+    padding: 2px 10px;
+    margin-top: 40px;
+}
+.tbl-controlPanel-Discount tr td {
+    padding-left:5px;
+}
+.tbl-controlPanel-Discount tr {
+    height:40px;
+}
+.greenBtn-discount {
+    background-color: #60B044;
+    background-image: linear-gradient(#8ADD6D, #60B044);
+    background-repeat: repeat-x;
+    border: 1px solid #5CA941;
+    border-radius: 3px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 15px !important;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+    width: 90px;
+}
+.leftSide-div-promotion
+{
+    border-bottom: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    float: left;
+    margin-top: 12px;
+    min-height: 529px;
+    overflow: auto;
+    border-bottom:1px solid #808080;
+    width: 19%;
+}
+.leftRight-div-promotion {
+    float:left;
+    width:12%;
+    margin-top: 12px;
+    min-height: 529px;
+    overflow: auto;
+    border-bottom:1px solid #808080;
+     margin-top: 12px;
+    border-right:1px solid gray;
+}
+.RightLeft-div-promotion {
+    float:left;
+    width:22%;
+   margin-top: 12px;
+    min-height: 529px;
+    overflow: auto;
+    border-bottom:1px solid #808080;
+     margin-top: 12px;
+    border-right:1px solid gray;
+}
+.rightSide-div-promotion
+{
+    float:left;
+    width:22%;
+    margin-top: 12px;
+    min-height: 529px;
+    overflow: auto;
+    border-bottom:1px solid #808080;
+     margin-top: 12px;
+    border-right:1px solid gray;
+}
+.right-div-promotion {
+     float:left;
+    width:22%;
+    margin-top: 12px;
+    min-height: 529px;
+    overflow: auto;
+    border-bottom:1px solid #808080;
+    border-right:1px solid gray;
+}
+.tgPanel-promotion
+{
+    /*width:96%;*/
+    height:auto;
+    background-color:white;
+    -moz-box-shadow:5px rgba(35, 35, 35,0.6);
+    border:1px solid #DDD9D9;
+}
+.tgPanelHead-promotion
+{
+    color:white;
+    font-size:14px;
+    font-family:anson,sans-serif,Arial;
+     background: #23282c;
+    padding: 2px 10px;
+    text-align:left;
+}
+.depertment_button {
+    margin:20px auto;
+    text-align:center;
+}
+.depertment_button:last-child {
+    margin-top:200px;
+    text-align:center;
+}
+.promotion_button {
+background-color: #3399ff;
+background-image: linear-gradient(#3399ff, #3399ff);
+background-repeat: repeat-x;
+border: 1px solid #3399ff;
+border-radius: 3px;
+color: #FFFFFF;
+display: inline-block;
+font-size: 13px;
+font-weight: bold;
+padding: 8px 15px !important;
+position: relative;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+vertical-align: middle;
+width: 110px !important;
+height: 41px !important;
+overflow: hidden;
+}
+.promotion_button:hover {
+    background-position: 0 -25px;
+}
+.promotion_button:active {
+    background-position: 0 -50px;
+}
+.tgPanelHead-promotion
+{
+    color:white;
+    font-size:14px;
+    font-family:anson,sans-serif,Arial;
+     background: #23282c;
+    padding: 2px 10px;
+    /*width:98.2%;*/
+    text-align:center;
+}
+.width_fix {
+    width:282px;
+}
+.width_fix_Sub {
+    width:292px;
+    height:28px;
+}
+.search-div {
+    width:100%;
+}
+.searchBoxDropdown {
+    width:176px;
+    height:26px;
+    padding:4px;   
+}
+
+#gvDisplayTotalFinalResult tr th {
+    border-bottom: 1px solid #D5D5D5;
+    border-left: 1px solid #D5D5D5;
+    color: #FFFFFF;
+    font-size: 11px;
+    max-height: 60px !important;
+    min-height: 40px;
+    padding: 5px 0;
+    text-align: center;
+    background: url("/images/master/blackBar.png") repeat scroll 0 0 #23282C;
+}
+
+#gvDisplayTotalFinalResult {
+    width:350%;
+}
+
+#gvPassListOfStudent caption {
+    text-align:left;
+}
+
+#gvPassListOfStudent tr th {
+    border:1px solid black;
+    color: #FFFFFF;
+    font-size: 11px;
+    max-height: 60px !important;
+    min-height: 40px;
+    padding: 5px 0;
+    text-align: center;
+    background: url("/images/master/blackBar.png") repeat scroll 0 0 #23282C;
+}
+#gvPassListOfStudent tr td:nth-child(1) {
+    text-align: left;
+     width: 245px;
+}
+#gvPassListOfStudent tr td:nth-child(2) {
+    text-align: center;
+     width: 140px;
+}
+#gvPassListOfStudent tr td:nth-child(3) {
+    text-align: center;
+     width: 120px;
+}
+#gvPassListOfStudent tr th:nth-child(1) {
+    padding:05px;
+    text-align: left;
+}
+
+#gvPassListOfStudent tr td {
+    padding:05px;
+    text-align: center;
+}
+
+
+#gvFailListOfStudent {
+    width:100%;
+}
+
+#gvFailListOfStudent caption {
+   text-align:left;
+}
+
+#gvFailListOfStudent tr th {
+    border:1px solid black;
+    color: #FFFFFF;
+    font-size: 11px;
+    max-height: 60px !important;
+    min-height: 40px;
+    padding: 5px 0;
+    text-align: center;
+    background: url("/images/master/blackBar.png") repeat scroll 0 0 #23282C;
+}
+#gvFailListOfStudent tr td:nth-child(1) {
+     width: 245px;
+    text-align: left;
+}
+#gvFailListOfStudent tr td:nth-child(2) {
+    text-align: center;
+     width: 140px;
+}
+#gvFailListOfStudent tr td:nth-child(3) {
+    text-align: center;
+     width: 120px;
+}
+#gvFailListOfStudent tr th:nth-child(1) {
+    padding:05px;
+    text-align: left;
+}
+#gvFailListOfStudent tr td {
+    padding:05px;
+    text-align: center;
+}
+
+#gvFailListOfStudent { 
+    width:auto;
+}
+ 
+
+#gvDay input[type='image'] {
+  height:20px;
+  width:20px;
+}
+
+#gvDay tbody tr td {
+   border: 1px solid #D5D5D5;
+   padding:05px;
+}
+#gvDay tbody tr th {
+    text-align:left!important;
+}
+#gvDay tbody tr td:first-child {
+    width:80px!important;
+    cursor:pointer;
+}
+#gvDay tbody tr td:nth-child(2) {
+    width:81px!important;
+    cursor:pointer;
+    text-align:center;
+}
+#gvDay tbody tr td:nth-child(3) {
+    width:81px!important;
+    cursor:pointer;
+    text-align:center;
+}
+#gvDay tbody tr th:nth-child(2) {
+    width:81px!important;
+    cursor:pointer;
+    text-align:center!important;
+}
+#gvDay tbody tr th:nth-child(3) {
+    width:81px!important;
+    cursor:pointer;
+    text-align:center!important;
+}
+#gvDay tbody tr td:nth-child(4) {
+    width:150px!important;
+    cursor:pointer;
+}
+#gvDay tbody tr td:nth-child(5) {
+    width:70px!important;
+    cursor:pointer;
+}
+
+#gvDay tbody tr th:nth-child(6) {
+    display:none;
+}
+#gvDay tbody tr td:nth-child(6) {
+    display:none;
+}
+
+#gvDay tbody tr td:nth-child(6) {
+    width:25px!important;
+    cursor:pointer;
+}
+
+#gvDay tbody tr td image {
+    width:25px!important;
+    height:20px;
+    cursor:pointer;
+}
+
+#gvDay tbody tr th {
+    background: url("/Images/datatables/grd_head.png") repeat-x scroll center top #424242;
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 29px;
+    padding: 5px;
+}
+
+/*Routine Css*/
+
+.displayRoutine {
+    text-align: left;
+    width: 850px;
+    border:1px solid gray;
+    margin:0 auto;
+}
+.displayRoutine thead {
+  border-bottom: 0 none;
+  border-left: 2px solid #424242;
+  border-top: 0 none;
+  padding: 24px 0;
+}
+.displayRoutine thead th {
+    background: url("/Images/grd_head.png") repeat-x scroll center top #E5E5E5;
+    color: #000000;
+    font-size: 12px;
+    height: 29px;
+    padding: 5px;
+    border: 1px solid #808080;
+    text-align: center;
+    font-family: monospace;
+}
+.displayRoutine thead th:first-child {
+    width:55px;
+}
+.displayRoutine thead th:nth-child(2) {
+    width:100px;
+}
+.displayRoutine thead th:nth-child(3) {
+    width:100px;
+}
+.displayRoutine thead th:nth-child(4) {
+    width:100px;
+}
+.displayRoutine thead th:nth-child(5) {
+    width:100px;
+}
+.displayRoutine thead th:nth-child(6) {
+    width:100px;
+}
+.displayRoutine tbody tr td {
+    padding:05px;
+    font-size:12px;
+    /*outline: 0.5px solid;*/
+}
+
+.displayRoutine thead numeric control {
+    height:20px;
+    width:20px;
+}
+
+.reportHeader {
+    height:80px;
+    text-align:center;
+    font-size:18px;
+}
+.reporttitel {
+    height:40px;
+    text-align:left;
+    font-size:18px;
+    margin-left:375px;
+}
+.reportHeader h3 {
+   margin-bottom: 0;
+}
+
+/*--------Exam Routine---------*/
+
+#gvExamRoutine input[type='image'] {
+  height:20px;
+  width:20px;
+}
+
+#gvExamRoutine tbody tr td {
+   border: 1px solid #D5D5D5;
+   padding:05px;
+}
+#gvExamRoutine tbody tr th {
+    text-align:left!important;
+}
+#gvExamRoutine tbody tr td:first-child {
+    width:55px!important;
+    cursor:pointer;
+}
+#gvExamRoutine tbody tr td:nth-child(2) {
+    width:80px!important;
+    cursor:pointer;
+    text-align:center;
+}
+#gvExamRoutine tbody tr td:nth-child(3) {
+    width:80px!important;
+    cursor:pointer;
+    text-align:center;
+}
+#gvExamRoutine tbody tr th:nth-child(2) {
+    width:80px!important;
+    cursor:pointer;
+    text-align:center!important;
+}
+#gvExamRoutine tbody tr th:nth-child(3) {
+    width:80px!important;
+    cursor:pointer;
+    text-align:center!important;
+}
+#gvExamRoutine tbody tr td:nth-child(4) {
+    width:80px!important;
+    cursor:pointer;
+}
+#gvExamRoutine tbody tr td:nth-child(5) {
+    width:150px!important;
+    cursor:pointer;
+}
+
+
+#gvExamRoutine tbody tr td image {
+    width:25px!important;
+    height:20px;
+    cursor:pointer;
+}
+
+#gvExamRoutine tbody tr th {
+    background: url("/Images/datatables/grd_head.png") repeat-x scroll center top #424242;
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 29px;
+    padding: 5px;
+}

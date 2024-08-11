@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{555D571B-064B-4554-8A49-E853624DB74C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DS.BLL</RootNamespace>
+    <AssemblyName>DS.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admission\AdmStdInfoEntry.cs" />
+    <Compile Include="Admission\CurrentStdEntry.cs" />
+    <Compile Include="Attendace\AbsentStudents.cs" />
+    <Compile Include="Attendace\AttendanceFineEntry.cs" />
+    <Compile Include="Attendace\EmpSheetInfoEntry.cs" />
+    <Compile Include="Attendace\ForAttendanceReport.cs" />
+    <Compile Include="Attendace\ForLeaveReport.cs" />
+    <Compile Include="Attendace\SheetInfoEntry.cs" />
+    <Compile Include="Attendace\StudentAbsentDetailsEntry.cs" />
+    <Compile Include="ControlPanel\PrivilegeOperation.cs" />
+    <Compile Include="ControlPanel\StudentUserAccountEntry.cs" />
+    <Compile Include="ControlPanel\UserAccountEntry.cs" />
+    <Compile Include="ControlPanel\UserTypeInfoEntry.cs" />
+    <Compile Include="DSWS\AddNoticeEntry.cs" />
+    <Compile Include="DSWS\AddPresidentSpeechEntry.cs" />
+    <Compile Include="DSWS\AddSpecialDescriptionEntry.cs" />
+    <Compile Include="Examinition\Class_ClasswiseMarksheet_TotalResultProcess_Entry.cs" />
+    <Compile Include="Examinition\ExamDependencyInfoEntry.cs" />
+    <Compile Include="Examinition\ExamInfoEntry.cs" />
+    <Compile Include="Examinition\ExamTypeEntry.cs" />
+    <Compile Include="Examinition\Exam_Final_Result_Stock_Of_All_Batch_Entry.cs" />
+    <Compile Include="Examinition\QuestionPatternEntry.cs" />
+    <Compile Include="Examinition\SubQuestionPatternEntry.cs" />
+    <Compile Include="Finance\AdmFeesCategoresEntry.cs" />
+    <Compile Include="Finance\DiscountEntry.cs" />
+    <Compile Include="Finance\FeesCollectionEntry.cs" />
+    <Compile Include="Finance\StudentFine.cs" />
+    <Compile Include="Finance\TransactionEntry.cs" />
+    <Compile Include="GeneralSettings\BoardEntry.cs" />
+    <Compile Include="GeneralSettings\DistrictEntry.cs" />
+    <Compile Include="GeneralSettings\ShiftEntry.cs" />
+    <Compile Include="GeneralSettings\ThanaEntry.cs" />
+    <Compile Include="HR\DepartmentEntry.cs" />
+    <Compile Include="HR\DesignationEntry.cs" />
+    <Compile Include="HR\EmpDepartmentEntry.cs" />
+    <Compile Include="HR\EmployeeEntry.cs" />
+    <Compile Include="HR\SubjectTeacherEntry.cs" />
+    <Compile Include="ManagedBatch\BatchEntry.cs" />
+    <Compile Include="ManagedBatch\BatchPromotionEntry.cs" />
+    <Compile Include="ManagedClass\ClassDepedencySubPassMarksEntry.cs" />
+    <Compile Include="ManagedClass\ClassEntry.cs" />
+    <Compile Include="ManagedClass\ClassGroupEntry.cs" />
+    <Compile Include="ManagedClass\ClassSectionEntry.cs" />
+    <Compile Include="ManagedClass\ClassSubjectEntry.cs" />
+    <Compile Include="ManagedClass\GroupEntry.cs" />
+    <Compile Include="ManagedClass\SectionEntry.cs" />
+    <Compile Include="ManagedSubject\CourseEntry.cs" />
+    <Compile Include="ManagedSubject\OptionalSubjectEntry.cs" />
+    <Compile Include="ManagedSubject\SubjectEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolInfo\SchoolInfoEntry.cs" />
+    <Compile Include="SMS\FailedStudent.cs" />
+    <Compile Include="SMS\PhnBookEntry.cs" />
+    <Compile Include="SMS\PhnGrpEntry.cs" />
+    <Compile Include="SMS\SMSBodyTitleEntry.cs" />
+    <Compile Include="SMS\SMSReportEntry.cs" />
+    <Compile Include="SMS\Students.cs" />
+    <Compile Include="StudentGuide\StudentGuideEntry.cs" />
+    <Compile Include="Timetable\BuildingNameEntry.cs" />
+    <Compile Include="Timetable\ClassRoutine.cs" />
+    <Compile Include="Timetable\ClsTimeSetNameEntry.cs" />
+    <Compile Include="Timetable\ClsTimeSpecificationEntry.cs" />
+    <Compile Include="Timetable\ForClassRoutineReport.cs" />
+    <Compile Include="Timetable\RoomEntry.cs" />
+    <Compile Include="Timetable\SessionEntry.cs" />
+    <Compile Include="Timetable\SubTeacherName.cs" />
+    <Compile Include="Timetable\Tbl_ExamTime_SpecificationEntry.cs" />
+    <Compile Include="Timetable\tbl_Exam_TimeSettings_Details_Entry.cs" />
+    <Compile Include="Timetable\tbl_Exam_TimeSettings_InfoEntry.cs" />
+    <Compile Include="Timetable\Tbl_Exam_Time_SetNameEntry.cs" />
+    <Compile Include="Timetable\WeeklyDays.cs" />
+    <Compile Include="WebControlLogic\DynamicDropdownListData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalSchool.DAL\DS.DAL.csproj">
+      <Project>{b745318c-ea66-4822-bcc1-c50e969b5cde}</Project>
+      <Name>DS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalSchool.PropertyEntities\DS.PropertyEntities.csproj">
+      <Project>{54bf2941-b8e2-40a2-930b-5684f2ef1fbd}</Project>
+      <Name>DS.PropertyEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalSchool.SysErrMsgHandler\DS.SysErrMsgHandler.csproj">
+      <Project>{4d67612a-c02a-458d-9a71-c72f47153ec4}</Project>
+      <Name>DS.SysErrMsgHandler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

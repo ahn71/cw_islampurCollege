@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54BF2941-B8E2-40A2-930B-5684F2EF1FBD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DS.PropertyEntities</RootNamespace>
+    <AssemblyName>DS.PropertyEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DigitalSchool.DAL">
+      <HintPath>..\DigitalSchool\Bin\DigitalSchool.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net40-client\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net40-client\HtmlRenderer.PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AccessControls\Module.cs" />
+    <Compile Include="Model\Admission\AdmStdFormInfoEntities.cs" />
+    <Compile Include="Model\Admission\AdmStdInfoEntities.cs" />
+    <Compile Include="Model\Admission\CurrentStdEntities.cs" />
+    <Compile Include="Model\Attendance\AbsentStudentsEntities.cs" />
+    <Compile Include="Model\Attendance\AttendanceFineEntities.cs" />
+    <Compile Include="Model\Attendance\SheetInfoEntities.cs" />
+    <Compile Include="Model\Attendance\StudentAbsentDetails.cs" />
+    <Compile Include="Model\ControlPanel\PageInfo.cs" />
+    <Compile Include="Model\ControlPanel\StudentUserAccountEntities.cs" />
+    <Compile Include="Model\ControlPanel\UserAccount.cs" />
+    <Compile Include="Model\ControlPanel\UserTypeInfo.cs" />
+    <Compile Include="Model\ControlPanel\v_UserTypeInfo_ModulePrivilege.cs" />
+    <Compile Include="Model\ControlPanel\v_UserTypePageInfo.cs" />
+    <Compile Include="Model\DSWS\AddNoticeEntities.cs" />
+    <Compile Include="Model\DSWS\AddPageContentEntities.cs" />
+    <Compile Include="Model\DSWS\AddPresidentEntities.cs" />
+    <Compile Include="Model\DSWS\AddSecialDescriptionEntities.cs" />
+    <Compile Include="Model\DSWS\AlbumDetailsEntities.cs" />
+    <Compile Include="Model\DSWS\AlbumInfoEntities.cs" />
+    <Compile Include="Model\DSWS\ContactEntities.cs" />
+    <Compile Include="Model\DSWS\EventDetailsEntities.cs" />
+    <Compile Include="Model\DSWS\EventInfoEntities.cs" />
+    <Compile Include="Model\DSWS\GroupSubject.cs" />
+    <Compile Include="Model\DSWS\HRAttendanceEntities.cs" />
+    <Compile Include="Model\DSWS\SliderEntities.cs" />
+    <Compile Include="Model\DSWS\StdAttEntities.cs" />
+    <Compile Include="Model\DSWS\VisitorCounterEntities.cs" />
+    <Compile Include="Model\Examinition\Class_ClasswiseMarksheet_TotalResultProcess.cs" />
+    <Compile Include="Model\Examinition\ExamDependencyInfoEntity.cs" />
+    <Compile Include="Model\Examinition\ExamInfoEntity.cs" />
+    <Compile Include="Model\Examinition\ExamResultFailSubject.cs" />
+    <Compile Include="Model\Examinition\ExamTypeEntities.cs" />
+    <Compile Include="Model\Examinition\Exam_Final_Result_Stock_Of_All_Batch.cs" />
+    <Compile Include="Model\Examinition\QuestionPatternEntities.cs" />
+    <Compile Include="Model\Examinition\SubQuestionPatternEntities.cs" />
+    <Compile Include="Model\Examinition\Tbl_Exam_MonthlyTestDetailsEntities.cs" />
+    <Compile Include="Model\Examinition\Tbl_Exam_MontlyTestEntities.cs" />
+    <Compile Include="Model\Finance\AccountsettingEntities.cs" />
+    <Compile Include="Model\Finance\AdmFeesCategoriesEntities.cs" />
+    <Compile Include="Model\Finance\ExpensesEntities.cs" />
+    <Compile Include="Model\Finance\FeesCollectionEntities.cs" />
+    <Compile Include="Model\Finance\IncomeEntities.cs" />
+    <Compile Include="Model\Finance\StudentFineEntities.cs" />
+    <Compile Include="Model\Finance\TitleEntities.cs" />
+    <Compile Include="Model\Finance\TransactionEntities.cs" />
+    <Compile Include="Model\GeneralSettings\BoardEntities.cs" />
+    <Compile Include="Model\GeneralSettings\OffdayEntities.cs" />
+    <Compile Include="Model\HR\DepartmentEntities.cs" />
+    <Compile Include="Model\GeneralSettings\DistrictEntities.cs" />
+    <Compile Include="Model\GeneralSettings\ShiftEntities.cs" />
+    <Compile Include="Model\GeneralSettings\ThanaEntities.cs" />
+    <Compile Include="Model\HR\DesignationEntities.cs" />
+    <Compile Include="Model\HR\EmpDepartment.cs" />
+    <Compile Include="Model\HR\Employee.cs" />
+    <Compile Include="Model\HR\SubjectTeacher.cs" />
+    <Compile Include="Model\ManagedBatch\BatchEntities.cs" />
+    <Compile Include="Model\ManagedBatch\BatchPromotionEntities.cs" />
+    <Compile Include="Model\ManagedClass\BusInformationEntities.cs" />
+    <Compile Include="Model\ManagedClass\ClassDependencySubPassMarksEntities.cs" />
+    <Compile Include="Model\ManagedClass\ClassEntities.cs" />
+    <Compile Include="Model\ManagedClass\ClassGroupEntities.cs" />
+    <Compile Include="Model\ManagedClass\ClassSectionEntities.cs" />
+    <Compile Include="Model\ManagedClass\ClassSubject.cs" />
+    <Compile Include="Model\ManagedClass\GroupEntities.cs" />
+    <Compile Include="Model\ManagedClass\LocationEntities.cs" />
+    <Compile Include="Model\ManagedClass\PlaceInformationEntities.cs" />
+    <Compile Include="Model\ManagedClass\SectionChangeEntities.cs" />
+    <Compile Include="Model\ManagedClass\SectionEntities.cs" />
+    <Compile Include="Model\ManagedClass\stdtypeEntities.cs" />
+    <Compile Include="Model\ManagedSubject\CourseEntity.cs" />
+    <Compile Include="Model\ManagedSubject\OptionalSubjectEntities.cs" />
+    <Compile Include="Model\ManagedSubject\StdGroupSubSetupDetailsEntities.cs" />
+    <Compile Include="Model\ManagedSubject\StdGroupSubSetupEntities.cs" />
+    <Compile Include="Model\ManagedSubject\SubjectEntities.cs" />
+    <Compile Include="Model\MessageEntity.cs" />
+    <Compile Include="Model\SchoolInfo\SchoolInfoEntities.cs" />
+    <Compile Include="Model\SMS\ExamInfo.cs" />
+    <Compile Include="Model\SMS\FailedStdEntities.cs" />
+    <Compile Include="Model\SMS\PhoneBook.cs" />
+    <Compile Include="Model\SMS\PhoneGroup.cs" />
+    <Compile Include="Model\SMS\SMSBodyTitleEntities.cs" />
+    <Compile Include="Model\SMS\SMSEntites.cs" />
+    <Compile Include="Model\SMS\StdEntities.cs" />
+    <Compile Include="Model\StudentGuide\StudentGuideEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\CategoryEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\CommitteeMemberEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\NumberSheetEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\NumberPatternDetailsEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\NumberPatternEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\SessionEntities.cs" />
+    <Compile Include="Model\TeacherEvaluation\SubCategoryEntities.cs" />
+    <Compile Include="Model\Timetable\BuildingNameEntities.cs" />
+    <Compile Include="Model\Timetable\ClassRoutineEntities.cs" />
+    <Compile Include="Model\Timetable\ClassTimeSpecificationEntities.cs" />
+    <Compile Include="Model\Timetable\ClassTimeWithSetName.cs" />
+    <Compile Include="Model\Timetable\ClsTimeSetNameEntities.cs" />
+    <Compile Include="Model\Timetable\RoomEntities.cs" />
+    <Compile Include="Model\Timetable\SessionEntities.cs" />
+    <Compile Include="Model\Timetable\SubTeacherName.cs" />
+    <Compile Include="Model\Timetable\Tbl_ExamTime_Specification.cs" />
+    <Compile Include="Model\Timetable\tbl_Exam_TimeSettings_Details.cs" />
+    <Compile Include="Model\Timetable\tbl_Exam_TimeSettings_Info.cs" />
+    <Compile Include="Model\Timetable\Tbl_Exam_Time_SetName.cs" />
+    <Compile Include="Model\Timetable\WeeklyDaysEntities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

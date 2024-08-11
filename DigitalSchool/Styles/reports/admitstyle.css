@@ -1,0 +1,176 @@
+*{
+	margin:0; 
+	padding:0; 
+	outline:none;
+}
+img,fieldset{
+	border:0; background:none;
+}
+label{
+	font-size:14px;
+	margin-left: 1px;
+	border-bottom:1px solid #3664af;
+}
+a{
+	text-decoration:none; color:#FFF;
+}
+.clear{
+ clear:both;
+}
+body{
+	color:#466eae;
+    font-family: Calibri,Garamond,"Times New Roman";
+    font-size: 14px;
+	padding:0px;
+    margin: 0px;
+	background-position: top 51px;
+}
+#main-content{
+	width:100%;
+	height:auto;
+}
+.content{
+
+    border: 5px solid #013399 !important;
+    margin: auto;
+    padding: 3px !important;
+    position: relative;
+    width: 326px !important;
+    overflow:hidden;
+    padding-bottom: 3px !important;
+}
+.content-box{
+  border: 2px solid #013399;
+    overflow: hidden;
+    padding: 3px;
+ }
+
+/*.print-box{
+ float: right;
+    position: fixed;
+    right: 0;
+    top: 270px;
+ }*/
+
+.box h3 {
+    font-size:15px;
+}
+
+.Image-cont{
+	margin: 0 auto;
+    position: absolute;
+    top: 65px;
+	left:105px;
+	}
+.left-box{
+	border:0px solid #9F3;
+	width:22px;
+	float:left;
+	height:253px;
+}
+.right-box{
+	border:0px solid #9F3;
+	width:289px;
+	float:right;
+	height:253px;
+	margin-right: 2px;
+}
+.box{
+	width:289px;
+	height:auto;
+	float:right;
+	margin:auto; 
+	overflow: hidden;
+}
+.box-footer{
+	width:289px;
+	height:auto;
+	float:right;
+	margin:auto; 
+	margin-top:30px;
+}
+.sign-teacherAdmit{
+	float:left;
+}
+.sign-headmasterAdmit{
+	float:right;  
+}
+.sign-teacher{
+	float:left;
+    margin-top: 31px;
+}
+.sign-headmaster{
+	float:right;
+    margin-top: 31px;
+}
+
+.box img{
+	float: left;
+	/*padding: 5px 0 8px 0;*/
+}
+
+.signatureAdmit {
+	height: 36px;
+    margin-top: -16px;
+    padding: 0;
+    width: auto;
+}
+.signature {
+	height: 36px;
+    margin-top: -13px;
+    padding: 0;
+    width: auto;
+}
+
+.box h4{
+	padding-bottom:5px;
+}
+.box h1{
+    float: right;
+    font-size: 14px;
+    padding-top: 20px;
+    width: 203px;	
+}
+.box p{
+    float: right;
+    font-size: 14px;
+    width: 194px;
+}
+.box h2,h3,h4,h5{
+	font-size:15px;
+}
+.labelh3{
+	width: 180px;	
+}
+.labelh4{
+	width: 190px;	
+	margin-right: 5px;
+	border-bottom:dotted!important;
+}
+.labelh5{
+	width: 240px;	
+}
+.labelh2{
+	width: 240px;	
+}
+
+.left-level{
+	float:left;
+	width:140px;
+}
+.right-level{
+	float:right;
+	width:auto;
+}
+
+
+.admitCardBox table {
+    margin:0 auto;
+}
+
+.buttonStyle {
+    border:1px solid green;
+}
+.buttonStyle:hover {
+    cursor:pointer;
+}

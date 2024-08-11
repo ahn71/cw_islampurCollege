@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot\DigitalSchool" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Default.aspx" publishTime="01/25/2014 12:48:57" />
+    <file relUrl="Account/Web.config" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Images/master/logout.png" publishTime="01/16/2014 18:01:21" />
+    <file relUrl="Admin/AddDistrict.aspx" publishTime="01/25/2014 15:56:09" />
+    <file relUrl="Scripts/adviitJS.js" publishTime="01/26/2014 13:05:13" />
+    <file relUrl="Admin/AdminPanel.Master" publishTime="01/26/2014 18:30:34" />
+    <file relUrl="Admin/AdminLogin.aspx" publishTime="01/25/2014 13:11:21" />
+    <file relUrl="Web.config" publishTime="01/26/2014 18:32:25" />
+    <file relUrl="Images/topNav.jpg" publishTime="01/16/2014 14:35:11" />
+    <file relUrl="bin/DigitalSchool.pdb" publishTime="01/26/2014 18:31:54" />
+    <file relUrl="Images/master/profile.png" publishTime="01/16/2014 17:59:57" />
+    <file relUrl="Admin/Register.aspx" publishTime="01/26/2014 14:59:54" />
+    <file relUrl="Images/admin/greyishBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/admin/numDataBg.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Global.asax" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Images/admin/redBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/admin/greenBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/admin/cms1.jpg" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Login.aspx" publishTime="01/26/2014 13:42:58" />
+    <file relUrl="Images/admin/handle.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="11/20/2012 08:02:39" />
+    <file relUrl="Images/admin/TrialUser.jpg" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Images/admin/seaBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Styles/Calander.css" publishTime="01/26/2014 12:26:51" />
+    <file relUrl="Images/admin/blueBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Images/admin/bodyBg.jpg" publishTime="01/21/2014 15:20:37" />
+    <file relUrl="Styles/admin/adminMaster.css" publishTime="01/26/2014 18:24:06" />
+    <file relUrl="Scripts/jquery-2.0.0.min.js" publishTime="01/23/2014 16:05:51" />
+    <file relUrl="Images/master/tasks.png" publishTime="01/16/2014 17:59:57" />
+    <file relUrl="Images/admin/contractUs.jpg" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Styles/AdminssionStyle.css" publishTime="01/26/2014 12:51:09" />
+    <file relUrl="Scripts/jquery-1.10.2.min.js" publishTime="01/23/2014 12:57:10" />
+    <file relUrl="bin/AdviitRuntimeScripting.dll" publishTime="01/26/2014 13:53:46" />
+    <file relUrl="Site.Master" publishTime="01/26/2014 18:02:47" />
+    <file relUrl="Scripts/master.js" publishTime="01/25/2014 16:41:33" />
+    <file relUrl="Scripts/custom.js" publishTime="01/25/2014 16:35:25" />
+    <file relUrl="Images/admin/LinkImg.jpg" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Admin/ShowUserInfo.aspx" publishTime="01/21/2014 14:58:06" />
+    <file relUrl="Images/master/messages.png" publishTime="01/16/2014 17:59:57" />
+    <file relUrl="bin/DigitalSchool.dll" publishTime="01/26/2014 18:31:54" />
+    <file relUrl="Images/master/settings.png" publishTime="01/16/2014 18:01:21" />
+    <file relUrl="Styles/admin/adminLogin.css" publishTime="01/26/2014 18:16:01" />
+    <file relUrl="Images/admin/spinnerUpDown.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/leftNavBg.png" publishTime="01/16/2014 15:38:01" />
+    <file relUrl="Images/admin/pagination.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/home/addNewUser.jpg" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Account/ChangePassword.aspx" publishTime="01/16/2014 14:22:28" />
+    <file relUrl="Account/Register.aspx" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Images/loginLogo.png" publishTime="01/16/2014 17:31:08" />
+    <file relUrl="Images/userPic.png" publishTime="01/16/2014 18:04:31" />
+    <file relUrl="Images/user.png" publishTime="01/16/2014 18:03:48" />
+    <file relUrl="Styles/master.css" publishTime="01/26/2014 17:26:50" />
+    <file relUrl="Admin/Default.aspx" publishTime="01/25/2014 13:15:00" />
+    <file relUrl="Images/bodyBg.jpg" publishTime="01/16/2014 14:55:03" />
+    <file relUrl="Forms/AdmissionForm.aspx" publishTime="01/26/2014 13:40:21" />
+    <file relUrl="Account/Login.aspx" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Images/hori hor para logo.png" publishTime="01/16/2014 17:37:37" />
+    <file relUrl="Images/master/close2.png" publishTime="01/25/2014 12:12:52" />
+    <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="01/16/2014 14:22:29" />
+    <file relUrl="Images/admin/subMenu.jpg" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Images/home/menu_management.png" publishTime="01/21/2014 12:22:38" />
+    <file relUrl="Styles/Login.css" publishTime="01/23/2014 13:29:35" />
+    <file relUrl="Images/admin/basicBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/admin/blackBtn.png" publishTime="01/21/2014 16:06:55" />
+    <file relUrl="Images/darkBg.jpg" publishTime="01/16/2014 15:25:52" />
+    <file relUrl="Images/greyishBtn.png" publishTime="01/18/2014 11:09:32" />
+  </publishProfile>
+</publishData>

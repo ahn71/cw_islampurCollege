@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Dashboard.aspx" title="Dashboard">
+    <siteMapNode url="~/UI/Academic/AcademicHome.aspx" title="Academic Module">
+      <siteMapNode url="~/UI/Academic/Students/StdHome.aspx"  title="Students Module">
+        <siteMapNode url="~/UI/Academic/Students/StdAdmission.aspx" title="Student Admission Form"/>
+        <siteMapNode url="~/UI/Academic/Students/AdmissionDetails.aspx" title="Student Details"/>
+        <siteMapNode url="~/UI/Academic/Students/CurrentStudentInfo.aspx" title="All Current Student Info"/>
+        <siteMapNode url="~/UI/Academic/Students/StudentAssignByBatch.aspx" title="Batch Promotion"/>
+        <siteMapNode url="~/UI/Academic/Students/StudentAssign.aspx" title="Failed Student Promotion"/>
+        <siteMapNode url="~/UI/Academic/Students/SeparationClassNine.aspx" title="Separation Class Nine-Ten"/>
+        <siteMapNode url="~/UI/Academic/Students/SetRollSubjectClassNine.aspx" title="Set Roll Subject Class Nine-Ten"/>
+        <siteMapNode url="" title="Separation Class Eleven-Twelve"/>
+        <siteMapNode url="" title="Set Roll Subject Class Eleven-Twelve"/>
+        <siteMapNode url="~/UI/Academic/Students/IndividualBatchAssign.aspx" title="Batch Assign"/>
+      </siteMapNode>
+      <siteMapNode url="~/UI/Academic/Attendance/AttendanceHome.aspx"  title="Attendance Module">
+        <siteMapNode url="~/UI/Academic/Attendance/StudentStdAttnHome.aspx"  title="Student">
+          <siteMapNode url="~/UI/Academic/Attendance/Student/Machine/MachineHome.aspx"  title="Machine">
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Machine/import_data.aspx"  title="Attendance Import"/>
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Machine/manually_certain_attendance_count.aspx"  title="Certain Attendance"/>
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Machine/Machine_AttendanceDetails.aspx"  title="Attendance Details"/>
+          </siteMapNode>
+          <siteMapNode url="~/UI/Academic/Attendance/Student/Manually/ManuallyHome.aspx"  title="Manually">
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Manually/StudentAttendance.aspx"  title="Attendance Count"/>
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Manually/AbsentDetails.aspx"  title="Attendance Details"/>
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Manually/OffDaysSet.aspx"  title="Off Days Settings"/>
+            <siteMapNode url="~/UI/Academic/Attendance/Student/Manually/AttendanceSheetGenerate.aspx"  title="Sheet Generator"/>
+          </siteMapNode>
+        </siteMapNode>
+        <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/StafforFacultyHome.aspx"  title="Staff or faculty">
+          <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Machine/MachineHome.aspx"  title="Machine">
+            <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Machine/emp_import_data.aspx"  title="Attendance Import"/>
+            <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Machine/manually_certain_emp_attendance_count.aspx"  title="Certain Attendance"/>
+            <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Machine/Machine_Staff_Atten_Details.aspx"  title="Attendance Details"/>
+          </siteMapNode>
+          <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Manually/ManuallyHome.aspx"  title="Manually">
+            <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Manually/FacultyAttendance.aspx"  title="Attendance Count"/>
+            <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Manually/FacultyStaffAbsentDetails.aspx"  title="Attendance Details"/>
+            <siteMapNode url="~/UI/Academic/Attendance/StafforFaculty/Manually/FacultyAttendanceSheetGenarate.aspx"  title="Sheet Generator"/>
+          </siteMapNode>
+        </siteMapNode>
+        <siteMapNode url="~/UI/Academic/Attendance/Leave/LeaveHome.aspx"  title="Leave">
+          <siteMapNode url="~/UI/Academic/Attendance/Leave/application.aspx" title="Application"/>
+          <siteMapNode url="~/UI/Academic/Attendance/Leave/leave_configuration.aspx" title="Configuration"/>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="~/UI/Academic/Examination/ExamHome.aspx"  title="Examination Module">
+        <siteMapNode url="~/UI/Academic/Examination/AddExam.aspx"  title="Exam Type"/>
+        <siteMapNode url="~/UI/Academic/Examination/ExamInfo.aspx"  title="Exam Info"/>
+        <siteMapNode url="~/UI/Academic/Examination/Grading.aspx"  title="Grading"/>
+        <siteMapNode url="~/UI/Academic/Examination/MarksEntry.aspx"  title="Marks Entry"/>
+      </siteMapNode>
+      <siteMapNode url=""  title="Timetable Module">
+      </siteMapNode>      
+    </siteMapNode>
+    <siteMapNode title="Administration">
+      <siteMapNode url="~/UI/Administration/Finance/FinanceHome.aspx" title="Finance">
+        <siteMapNode url="~/UI/Administration/Finance/FeeManaged/FeeHome.aspx" title="Fee Managed">
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/AddParticular.aspx" title="Particulars"></siteMapNode>
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/FeesCategoriesInfo.aspx" title="Fee Category"></siteMapNode>
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/ParticularCategories.aspx" title="Fee Particulars"></siteMapNode>
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/DateOfPayment.aspx" title="Set Fee Date"></siteMapNode>
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/DiscountSet.aspx" title="Discount"></siteMapNode>
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/FeesCollection.aspx" title="Collection"></siteMapNode>
+          <siteMapNode url="~/UI/Administration/Finance/FeeManaged/CollectionDetails.aspx" title="Collection Details"></siteMapNode>
+        </siteMapNode>
+        <siteMapNode url="~/UI/Administration/Finance/FineManaged/FineHome.aspx" title="Fine Managed">
+          <siteMapNode url="~/UI/Administration/Finance/FineManaged/StudentFineCollection.aspx" title="Student Fine Collection"></siteMapNode>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="~/UI/Administration/HR/hrHome.aspx" title="Human Resource">
+        <siteMapNode url="~/UI/Administration/HR/Employee/EmpHome.aspx" title="Employee">
+          <siteMapNode url="~/UI/Administration/HR/Employee/AddDepartment.aspx" title="Add Department"/>
+          <siteMapNode url="~/UI/Administration/HR/Employee/AddDesignation.aspx" title="Add Designation"/>
+          <siteMapNode url="~/UI/Administration/HR/Employee/EmployeeInformation.aspx" title="Employee Registration Form"/>
+          <siteMapNode url="~/UI/Administration/HR/Employee/TeacherPartialInfo.aspx" title="Employee Details"/>
+        </siteMapNode>
+        <siteMapNode url="~/UI/Administration/HR/Payroll/PayrollHome.aspx" title="Payroll">
+          <siteMapNode url="~/UI/Administration/HR/Payroll/SalarySetDetails.aspx" title="Salary Set Details"/>
+          <siteMapNode url="~/UI/Administration/HR/Payroll/SalaryAllowanceType.aspx" title="Salary Allowance Type"/>
+          <siteMapNode url="~/UI/Administration/HR/Payroll/SalaryDetailsInfo.aspx" title="View Salary Details Info"/>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="" title="Inventory">
+      </siteMapNode>
+      <siteMapNode url="~/UI/Administration/Settings/SettingsHome.aspx" title="Settings">
+        <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/AcdSettingsHome.aspx" title="Academic Settings">
+          <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedBatch/BatchManagedHome.aspx" title="Batch Managed">
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedBatch/CreateBatch.aspx" title="Create Batch"/>
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedBatch/AssignBatch.aspx" title="Assign Batch To Students"/>
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedBatch/StudentAssignByBatch.aspx" title="Batch Promotion"/>
+          </siteMapNode>
+          <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedSubject/SubjectManageHome.aspx" title="Subject Managed">
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedSubject/NewSubject.aspx" title="New Subject"/>
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedSubject/ClassSubjectSetup.aspx" title="Class Subject Setup"/>
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedSubject/QuestionPattern.aspx" title="Question Pattern"/>
+            <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/ManagedSubject/SubjectQuestionPattern.aspx" title="Subject Question Pattern"/>
+          </siteMapNode>
+          <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/AddClass.aspx" title="Add Class"/>
+          <siteMapNode url="~/UI/Administration/Settings/AcademicSettings/AddSection.aspx" title="Add Section"/>
+        </siteMapNode>
+        <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/GeneralSettingsHome.aspx" title="General Settings">
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/ShiftConfiguration.aspx" title="Shift Configuration"/>
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/AddDistrict.aspx" title="Add District"/>
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/AddThana.aspx" title="Add Thana/Upazila"/>
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/AddBoard.aspx" title="Add Board"/>
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/AttendanceSettings.aspx" title="Attendance Settings"/>
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/OffDaysSet.aspx" title="Off Days Settings"/>
+          <siteMapNode url="~/UI/Administration/Settings/GeneralSettings/SchoolSetup.aspx" title="School Setup"/>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="~/UI/Administration/Users/UsersHome.aspx" title="Users">
+        <siteMapNode url="~/UI/Administration/Users/UserRegister.aspx" title="Add New User"/>
+        <siteMapNode url="~/UI/Administration/Users/UserPrivilege.aspx" title="User Privilege"/>
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/UI/Notification/NotificationHome.aspx" title="Notification">
+      <siteMapNode url="" title="SMS">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="" title="Reports">      
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
