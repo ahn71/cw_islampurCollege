@@ -1,5 +1,6 @@
 
 /.vs
+/DigitalSchool/bin
 /DigitalSchool.BLL/bin
 /DigitalSchool.DAL/bin
 /DigitalSchool.PropertyEntities/bin
