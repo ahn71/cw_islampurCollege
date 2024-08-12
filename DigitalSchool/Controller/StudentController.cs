@@ -18,6 +18,7 @@ namespace DS.Controller
     public class StudentController : ApiController
     {
         DataTable dt = new DataTable();
+        string ImagebaseUrl = "https://islampurcollege.edu.bd/Images/profileImages/";
 
         public IEnumerable<String> Get()
         {
@@ -25,31 +26,60 @@ namespace DS.Controller
         }
         public IHttpActionResult Get(int id)
         {
-            var studentInfos = getStudentInfeos(id);
-            return Ok(new {StatusCode="200",Message="Success", Data=studentInfos });
+            dt = commonTask.getStudentInfo(id);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow studentRow = dt.Rows[0];
+                var currentStudentInfo=getCurrentStudentIfo(studentRow);
+                return Ok(new { StatusCode = "200", Message = "Success", Data = currentStudentInfo });
+            }
+            else
+            {
+                dt = commonTask.getStudentInfo(id);
+                DataRow studentRow = dt.Rows[0];
+                var admissionStudentInfos = getAdmissionStudentInfo(studentRow);
+                return Ok(new { StatusCode = "200", Message = "Success", Data = admissionStudentInfos });
+            }
+           
+            
         }
-
-        public StudentInfoDto getStudentInfeos(int admissionNo)
+        public StudentInfoDto getAdmissionStudentInfo(DataRow dataRows)
         {
-            string ImagebaseUrl = "https://islampurcollege.edu.bd/Images/profileImages/";
-     
-            dt = commonTask.getStudentInfo(admissionNo);
-            DataRow studentRow = dt.Rows[0];
+            DataRow studentRow = dataRows;
+
             StudentInfoDto studentDto = new StudentInfoDto
             {
                 AdmissionFormNo = Convert.ToInt32(studentRow["AdmissionFormNo"]),
                 FullName = studentRow["FullName"].ToString(),
                 FathersName = studentRow["FathersName"].ToString(),
-                ClassId= Convert.ToInt32(studentRow["classId"]),
+                ClassId = Convert.ToInt32(studentRow["classId"]),
                 ClassName = studentRow["ClassName"].ToString(),
                 AdmissionYear = studentRow["AdmissionYear"] != DBNull.Value ? Convert.ToInt32(studentRow["AdmissionYear"]) : (int?)null,
                 GroupName = studentRow["GroupName"].ToString(),
-                ImageName = ImagebaseUrl+studentRow["ImageName"].ToString(),
+                ImageName = ImagebaseUrl + studentRow["ImageName"].ToString(),
                 Mobile = studentRow["Mobile"].ToString()
             };
-
             return studentDto;
         }
+
+        public StudentInfoDto getCurrentStudentIfo(DataRow dataRows)
+        {
+            DataRow studentRow = dataRows;
+            StudentInfoDto studentDto = new StudentInfoDto
+            {
+                AdmissionFormNo = Convert.ToInt32(studentRow["AdmissionNo"]),
+                FullName = studentRow["FullName"].ToString(),
+                FathersName = studentRow["FathersName"].ToString(),
+                ClassId = Convert.ToInt32(studentRow["ClassID"]),
+                ClassName = studentRow["BatchName"].ToString(),
+                AdmissionYear = studentRow["Year"] != DBNull.Value ? Convert.ToInt32(studentRow["Year"]) : (int?)null,
+                GroupName = studentRow["GroupName"].ToString(),
+                ImageName = ImagebaseUrl + studentRow["ImageName"].ToString(),
+                Mobile = studentRow["Mobile"].ToString()
+            };
+            return studentDto;
+        }
+ 
 
     }
 }

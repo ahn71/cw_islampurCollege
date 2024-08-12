@@ -762,14 +762,17 @@ namespace DS.UI.DSWS
                         btnPaymentSSL.Visible = false;
                         subscriptionMessage.Visible = true;
                         btnSubsreicption.Visible = true;
-                }
+                   }
                     else
                     {
                         string admissionNo = firstItem["admission_no"]?.ToString();
                         string studentName = firstItem["student_name"]?.ToString();
                         string studentPhone = firstItem["student_phone"]?.ToString();
                         string totalAmount = firstItem["total_amount"]?.ToString();
-                        ViewState["__status__"] = firstItem["status"]?.ToString();
+                        ddlCatagory.Visible = true;
+                        btnPaymentSSL.Visible = true;
+                        subscriptionMessage.Visible = false;
+                        btnSubsreicption.Visible = false;
                     }
 
                    

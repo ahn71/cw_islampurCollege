@@ -783,9 +783,18 @@ FROM UserAccount where UserId  in (select distinct MemberId from TE_NumberSheet 
 
         public static DataTable getStudentInfo(int admissionNo)
         {
-            string query = "select AdmissionFormNo, FullName,FathersName,adm.classId,c.ClassName, AdmissionYear,adm.ClsGrpID,g.GroupName,ImageName,adm.Mobile from Student_AdmissionFormInfo adm left join Classes c on adm.ClassID=c.ClassID left join Tbl_Class_Group cg on adm.ClsGrpID=cg.ClsGrpID left join Tbl_Group g on cg.GroupID=g.GroupID Where AdmissionFormNo=" + admissionNo + " and adm.classId is not null ";
+            string query = "select AdmissionNo,FullName,FathersName,BatchID,BatchName,ClassID, StudentId,RollNo,GroupName,ImageName,ClsGrpId,Mobile,Year from v_CurrentStudentInfo where  AdmissionNo=" + admissionNo;
             dt = CRUD.ReturnTableNull(query);
            return dt;
+        }
+
+        public static DataTable getAdmissionStudetnInfo(int admissionNo)
+        {
+            string query= "elect AdmissionFormNo, FullName, FathersName, adm.classId,c.ClassName, AdmissionYear" +
+                ",adm.ClsGrpID,g.GroupName,ImageName,adm.Mobilefrom Student_AdmissionFormInfo adm left join Classes c on adm.ClassID = c.ClassID " +
+                "left join Tbl_Class_Group cg on adm.ClsGrpID = cg.ClsGrpID left join Tbl_Group g on cg.GroupID = g.GroupID Where AdmissionFormNo ="+ admissionNo + " and adm.classId is not null";
+            dt = CRUD.ReturnTableNull(query);
+            return dt;
         }
     }
 }

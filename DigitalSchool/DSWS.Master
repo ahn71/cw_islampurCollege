@@ -170,9 +170,9 @@
                         </div>
                         <div class="col-md-7 col-xs-8">
                             <div class="header-text row">
-                                <h1 runat="server" id="headerInstitueName1">সরকারি ইসলামপুর কলেজ</h1>
+                                <h1 runat="server" id="headerInstitueName1">ইসলামপুর সরকারি কলেজ</h1>
                                 <h5>ইসলামপুর, জামালপুর</h5>
-                                <h4><span runat="server" id="headerInstitueSlogan">শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ</span></h4>
+                                <h4><span runat="server" id="headerInstitueSlogan">শিক্ষাই জাতির মেরুদন্ড</span></h4>
                             </div>
                         </div>
                         <div class="col-md-3">
