@@ -254,7 +254,9 @@
         </ItemTemplate>
     </asp:TemplateField>
 
-               <asp:BoundField DataField="AdmissionNo" HeaderText="Admission No/Reg No" />
+               <asp:BoundField DataField="AdmissionNo" HeaderText="Admission No" />
+              <asp:BoundField DataField="RegistrationNo" HeaderText="Registration No" />
+
                <asp:BoundField DataField="FullName" HeaderText="Full Name" />
                <asp:BoundField DataField="BatchName" HeaderText="Batch" />             
                 <asp:BoundField DataField="GroupName" HeaderText="Group" />               

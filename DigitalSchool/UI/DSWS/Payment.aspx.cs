@@ -40,11 +40,7 @@ namespace DS.UI.DSWS
             if (!IsPostBack)
 
             {
-
-
-                ViewState["__AdmsnNo__"] = "";
-
-
+               ViewState["__AdmsnNo__"] = "";
                 hIsTest.Visible = false;
                 ViewState["__IsLivePayment__"] = "True";
                 try
@@ -671,17 +667,23 @@ namespace DS.UI.DSWS
 
         protected void btnPaymentSSL_Click(object sender, EventArgs e)
         {
-            if (ViewState["__status__"].ToString() == "failed")
+            api_intigration();
+            if(ViewState["__status__"].ToString() == "failed")
             {
-                subscriptionMessage.Visible = true;
-                btnSubsreicption.Visible = true;
+                ViewState["__status__"] = "failed";
+                        ddlCatagory.Visible = false;
+                        btnPaymentSSL.Visible = false;
+                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+                        btnSubsreicption.Attributes["target"] = "_blank";
+                        subscriptionMessage.Visible = true;
+                        btnSubsreicption.Visible = true;
             }
             else
             {
                 if (!IsPaid() && !hasPreviousDue())
                     SaveInvoice("ssl");
             }
-              
+            
         }
 
         protected void ckbIsAdmission_CheckedChanged(object sender, EventArgs e)
@@ -744,7 +746,7 @@ namespace DS.UI.DSWS
                 return "Api Error";
             }
         }
-        public void api_intigration()
+        public void  api_intigration()
         {
             ViewState["__status__"] = "";
             string ffff = ViewState["__ClassID__"].ToString();
@@ -760,9 +762,13 @@ namespace DS.UI.DSWS
                         ViewState["__status__"] = "failed";
                         ddlCatagory.Visible = false;
                         btnPaymentSSL.Visible = false;
+                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+                        btnSubsreicption.Attributes["target"] = "_blank";
                         subscriptionMessage.Visible = true;
                         btnSubsreicption.Visible = true;
-                   }
+                      
+                  
+                    }
                     else
                     {
                         string admissionNo = firstItem["admission_no"]?.ToString();
@@ -773,13 +779,14 @@ namespace DS.UI.DSWS
                         btnPaymentSSL.Visible = true;
                         subscriptionMessage.Visible = false;
                         btnSubsreicption.Visible = false;
+                        
                     }
 
-                   
 
-                
+
+               
                 }
-
+            
 
         }
 

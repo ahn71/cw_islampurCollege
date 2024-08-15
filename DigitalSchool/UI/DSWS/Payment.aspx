@@ -367,7 +367,7 @@
 
                                                         <h1 runat="server" visible="false" style="color:red;" id="hPreviousDue"></h1>
                                                          <h3 runat="server" id="subscriptionMessage" visible="false" class="text-danger">এই ক্লাসের জন্য আপনার সফটওয়্যার এর সাবস্ক্রিপশন করা নেই</h3>
-                                                         <a runat="server" id="btnSubsreicption" visible="false" class="linkbt" href="https://websupportbd.com/subscription" target="_blank">সাবস্ক্রিপশন করতে এখানে ক্লিক করুন</a>
+                                                         <a runat="server" id="btnSubsreicption" visible="false" class="linkbt">সাবস্ক্রিপশন করতে এখানে ক্লিক করুন</a>
 
                                                     </div>
                                                 </div>

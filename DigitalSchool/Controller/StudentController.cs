@@ -35,7 +35,7 @@ namespace DS.Controller
             }
             else
             {
-                dt = commonTask.getStudentInfo(id);
+                dt = commonTask.getAdmissionStudetnInfo(id);
                 DataRow studentRow = dt.Rows[0];
                 var admissionStudentInfos = getAdmissionStudentInfo(studentRow);
                 return Ok(new { StatusCode = "200", Message = "Success", Data = admissionStudentInfos });
