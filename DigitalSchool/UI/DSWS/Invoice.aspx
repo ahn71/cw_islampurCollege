@@ -39,8 +39,7 @@
                             <%--<img style="height: 100px;" src="" alt="">--%>
                         </td>
                         <td style="padding-left: 10px;">
-                            <h2 style="margin: 0;font-size: 24px;text-transform: uppercase;font-weight: 600;color: #000;">Govt. Islampur
-                                College</h2>
+                            <h2 style="margin: 0;font-size: 24px;text-transform: uppercase;font-weight: 600;color: #000;">Islampur Govt. College</h2>
                             <p style="margin-bottom: 0;font-size: 18px;">Islampur, Jamalpur</p>
                         </td>
                         <td style="text-align: right">
@@ -51,6 +50,8 @@
                             <p><strong>Date of Payment:</strong> <asp:Label runat="server" ID="lblDateOfPayment"
                                                     ClientIDMode="Static"></asp:Label></p>
                              <p runat="server" id="pOpenPayment" visible="false" style="color: #34900f;font-size: 24px; font-weight: 600">Open Payment</p> 
+                             <p style="margin-bottom:2px"><strong>Admission No:</strong> <asp:Label runat="server" ID="lblAdmissionNo"
+                                                    ClientIDMode="Static"></asp:Label></p>
 
                         </td>
                     </tr>
@@ -64,7 +65,7 @@
                             <th style="width: 120px;"><asp:Label runat="server" ID="lblAdmissionNoHead"
                                                     ClientIDMode="Static"></asp:Label></th>
                             <td style="width: 5px;">:</td>
-                            <td><asp:Label runat="server" ID="lblAdmissionNo"
+                            <td><asp:Label runat="server" ID="lblRegistraionNo"
                                                     ClientIDMode="Static"></asp:Label></td>
                             <th style="width: 60px;">Name</th>
                             <td style="width: 5px;">:</td>
@@ -167,6 +168,8 @@
                            <p><strong>Date of Payment:</strong> <asp:Label runat="server" ID="lblDateOfPayment2"
                                                    ClientIDMode="Static"></asp:Label></p>
                             <p runat="server" id="p1" visible="false" style="color: #34900f;font-size: 24px; font-weight: 600">Open Payment</p> 
+                               <p style="margin-bottom:2px"><strong>Admission No:</strong> <asp:Label runat="server" ID="lblAdmissionNo2"
+                                                    ClientIDMode="Static"></asp:Label></p>
 
                        </td>
                    </tr>
@@ -180,7 +183,7 @@
                            <th style="width: 120px;"><asp:Label runat="server" ID="lblAdmissionNoHead2"
                                                    ClientIDMode="Static"></asp:Label></th>
                            <td style="width: 5px;">:</td>
-                           <td><asp:Label runat="server" ID="lblAdmissionNo2"
+                           <td><asp:Label runat="server" ID="lblRegistrationNo2"
                                                    ClientIDMode="Static"></asp:Label></td>
                            <th style="width: 60px;">Name</th>
                            <td style="width: 5px;">:</td>

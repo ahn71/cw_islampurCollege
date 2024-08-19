@@ -111,7 +111,11 @@ namespace DS.UI.DSWS
         {
             hAlreadyPaid.Visible = false;
             if (ckbIsAdmission.Checked)
+            {
                 varifiAdmissionStudent();
+                api_intigration();
+            }
+                
             else
             if (varifiEmp(ddlBatch.SelectedValue + ddlYear.SelectedValue))
             {
@@ -119,12 +123,12 @@ namespace DS.UI.DSWS
                 pnlPayment.Visible = true;
                 setPyementMedia();
 
-
+                api_intigration();
             }
 
             else
                 pnlPayment.Visible = false;
-            api_intigration();
+          //  api_intigration();
         }
         private void setPyementMedia()
         {
@@ -667,22 +671,27 @@ namespace DS.UI.DSWS
 
         protected void btnPaymentSSL_Click(object sender, EventArgs e)
         {
-            api_intigration();
-            if(ViewState["__status__"].ToString() == "failed")
-            {
-                ViewState["__status__"] = "failed";
-                        ddlCatagory.Visible = false;
-                        btnPaymentSSL.Visible = false;
-                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
-                        btnSubsreicption.Attributes["target"] = "_blank";
-                        subscriptionMessage.Visible = true;
-                        btnSubsreicption.Visible = true;
-            }
-            else
-            {
+            //if (ckbIsAdmission.Checked)
+            //{
+            //    api_intigration();
+
+            //    if (ViewState["__status__"].ToString() == "failed")
+            //    {
+            //        ViewState["__status__"] = "failed";
+            //        ddlCatagory.Visible = false;
+            //        btnPaymentSSL.Visible = false;
+            //        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+            //        btnSubsreicption.Attributes["target"] = "_blank";
+            //        subscriptionMessage.Visible = true;
+            //        btnSubsreicption.Visible = true;
+            //    }
+            //}
+
+            //else
+            //{
                 if (!IsPaid() && !hasPreviousDue())
                     SaveInvoice("ssl");
-            }
+            //}
             
         }
 

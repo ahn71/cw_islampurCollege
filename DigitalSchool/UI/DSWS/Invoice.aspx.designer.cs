@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DS.UI.DSWS
-{
-
-
-    public partial class Invoice
-    {
-
+namespace DS.UI.DSWS {
+    
+    
+    public partial class Invoice {
+        
         /// <summary>
         /// lblInvoiceNo control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInvoiceNo;
-
+        
         /// <summary>
         /// lblDateOfPayment control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDateOfPayment;
-
+        
         /// <summary>
         /// pOpenPayment control.
         /// </summary>
@@ -40,16 +38,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pOpenPayment;
-
-        /// <summary>
-        /// lblAdmissionNoHead control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdmissionNoHead;
-
+        
         /// <summary>
         /// lblAdmissionNo control.
         /// </summary>
@@ -58,7 +47,25 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAdmissionNo;
-
+        
+        /// <summary>
+        /// lblAdmissionNoHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdmissionNoHead;
+        
+        /// <summary>
+        /// lblRegistraionNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistraionNo;
+        
         /// <summary>
         /// lblStudentName control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStudentName;
-
+        
         /// <summary>
         /// lblClass control.
         /// </summary>
@@ -76,7 +83,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClass;
-
+        
         /// <summary>
         /// lblGroup control.
         /// </summary>
@@ -85,7 +92,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGroup;
-
+        
         /// <summary>
         /// lblYear control.
         /// </summary>
@@ -94,7 +101,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblYear;
-
+        
         /// <summary>
         /// lblClassRoll control.
         /// </summary>
@@ -103,7 +110,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClassRoll;
-
+        
         /// <summary>
         /// divParticularCategoryList control.
         /// </summary>
@@ -112,7 +119,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divParticularCategoryList;
-
+        
         /// <summary>
         /// lblInvoiceNo2 control.
         /// </summary>
@@ -121,7 +128,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInvoiceNo2;
-
+        
         /// <summary>
         /// lblDateOfPayment2 control.
         /// </summary>
@@ -130,7 +137,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDateOfPayment2;
-
+        
         /// <summary>
         /// p1 control.
         /// </summary>
@@ -139,16 +146,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl p1;
-
-        /// <summary>
-        /// lblAdmissionNoHead2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdmissionNoHead2;
-
+        
         /// <summary>
         /// lblAdmissionNo2 control.
         /// </summary>
@@ -157,7 +155,25 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAdmissionNo2;
-
+        
+        /// <summary>
+        /// lblAdmissionNoHead2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdmissionNoHead2;
+        
+        /// <summary>
+        /// lblRegistrationNo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistrationNo2;
+        
         /// <summary>
         /// lblStudentName2 control.
         /// </summary>
@@ -166,7 +182,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStudentName2;
-
+        
         /// <summary>
         /// lblClass2 control.
         /// </summary>
@@ -175,7 +191,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClass2;
-
+        
         /// <summary>
         /// lblGroup2 control.
         /// </summary>
@@ -184,7 +200,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGroup2;
-
+        
         /// <summary>
         /// lblYear2 control.
         /// </summary>
@@ -193,7 +209,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblYear2;
-
+        
         /// <summary>
         /// lblClassRoll2 control.
         /// </summary>
@@ -202,7 +218,7 @@ namespace DS.UI.DSWS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClassRoll2;
-
+        
         /// <summary>
         /// divParticularCategoryList2 control.
         /// </summary>
