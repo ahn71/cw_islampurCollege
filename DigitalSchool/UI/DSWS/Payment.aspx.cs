@@ -237,6 +237,7 @@ namespace DS.UI.DSWS
                 }
                 else
                     divParticularCategoryList.Controls.Add(new LiteralControl("<div class='noData'>Admission Category Not Found!</div><div class='dataTables_wrapper'><div class='head'></div></div>"));
+                api_intigration();
                 return true;
             }
             lblMsg.Text = "Invalid!";

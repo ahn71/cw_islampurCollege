@@ -12,7 +12,7 @@ namespace DS.BLL.DSWS
         {
             try {
                 HttpContext.Current.Session["__InstituteTitle__"] = "ইসলামপুর কলেজ";
-                HttpContext.Current.Session["__InstituteSlogan__"] = "শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ";
+                HttpContext.Current.Session["__InstituteSlogan__"] = "শিক্ষাই জাতির মেরুদন্ড";
                 HttpContext.Current.Session["__InstituePhone__"] = " +88 01962464700";
                 HttpContext.Current.Session["__InstitueEmail__"] = "islampurcollege@yahoo.com";
                 HttpContext.Current.Session["__InstitueWeb__"] = "http://islampurcollege.edu.bd";

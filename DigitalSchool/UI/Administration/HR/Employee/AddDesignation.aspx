@@ -30,7 +30,8 @@
         <ContentTemplate>
             <p class="message" id="lblMessage" clientidmode="Static" runat="server"></p>
         </ContentTemplate>
-    </asp:UpdatePanel>    
+    </asp:UpdatePanel>  
+   
     <div class="row">
         <div class="col-md-12">
             <!--breadcrumbs start -->
@@ -49,6 +50,7 @@
             <!--breadcrumbs end -->
         </div>
     </div>
+   
     <div class="">
         <div class="row">
             <div class="col-md-2"></div>
@@ -80,7 +82,8 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
-            <div class="col-md-6">
+             <asp:Panel runat="server" ID="Panel1" DefaultButton="btnSave" >
+                       <div class="col-md-6">
                 <div class="tgPanel">
                     <div class="tgPanelHead">Add Designation</div>
                     <table class="tbl-controlPanel">
@@ -102,6 +105,8 @@
                     </table>                    
                 </div>
             </div>
+             </asp:Panel>
+      
         </div>
     </div>
 </asp:Content>
