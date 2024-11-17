@@ -80,7 +80,8 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
-            <div class="col-md-6">
+            <asp:Panel runat="server" ID="pnlDepartment" DefaultButton="btnsave">
+                    <div class="col-md-6">
                 <div class="tgPanel">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
@@ -118,6 +119,8 @@
                 </asp:UpdatePanel>
             </div>
             </div>
+            </asp:Panel>
+        
         </div>        
     </div>    
 </asp:Content>

@@ -40,11 +40,7 @@ namespace DS.UI.DSWS
             if (!IsPostBack)
 
             {
-
-
-                ViewState["__AdmsnNo__"] = "";
-
-
+               ViewState["__AdmsnNo__"] = "";
                 hIsTest.Visible = false;
                 ViewState["__IsLivePayment__"] = "True";
                 try
@@ -115,7 +111,11 @@ namespace DS.UI.DSWS
         {
             hAlreadyPaid.Visible = false;
             if (ckbIsAdmission.Checked)
+            {
                 varifiAdmissionStudent();
+                api_intigration();
+            }
+                
             else
             if (varifiEmp(ddlBatch.SelectedValue + ddlYear.SelectedValue))
             {
@@ -123,12 +123,12 @@ namespace DS.UI.DSWS
                 pnlPayment.Visible = true;
                 setPyementMedia();
 
-
+                api_intigration();
             }
 
             else
                 pnlPayment.Visible = false;
-            api_intigration();
+          //  api_intigration();
         }
         private void setPyementMedia()
         {
@@ -237,6 +237,7 @@ namespace DS.UI.DSWS
                 }
                 else
                     divParticularCategoryList.Controls.Add(new LiteralControl("<div class='noData'>Admission Category Not Found!</div><div class='dataTables_wrapper'><div class='head'></div></div>"));
+                api_intigration();
                 return true;
             }
             lblMsg.Text = "Invalid!";
@@ -671,17 +672,28 @@ namespace DS.UI.DSWS
 
         protected void btnPaymentSSL_Click(object sender, EventArgs e)
         {
-            if (ViewState["__status__"].ToString() == "failed")
-            {
-                subscriptionMessage.Visible = true;
-                btnSubsreicption.Visible = true;
-            }
-            else
-            {
+            //if (ckbIsAdmission.Checked)
+            //{
+            //    api_intigration();
+
+            //    if (ViewState["__status__"].ToString() == "failed")
+            //    {
+            //        ViewState["__status__"] = "failed";
+            //        ddlCatagory.Visible = false;
+            //        btnPaymentSSL.Visible = false;
+            //        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+            //        btnSubsreicption.Attributes["target"] = "_blank";
+            //        subscriptionMessage.Visible = true;
+            //        btnSubsreicption.Visible = true;
+            //    }
+            //}
+
+            //else
+            //{
                 if (!IsPaid() && !hasPreviousDue())
                     SaveInvoice("ssl");
-            }
-              
+            //}
+            
         }
 
         protected void ckbIsAdmission_CheckedChanged(object sender, EventArgs e)
@@ -744,7 +756,7 @@ namespace DS.UI.DSWS
                 return "Api Error";
             }
         }
-        public void api_intigration()
+        public void  api_intigration()
         {
             ViewState["__status__"] = "";
             string ffff = ViewState["__ClassID__"].ToString();
@@ -760,23 +772,31 @@ namespace DS.UI.DSWS
                         ViewState["__status__"] = "failed";
                         ddlCatagory.Visible = false;
                         btnPaymentSSL.Visible = false;
+                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+                        btnSubsreicption.Attributes["target"] = "_blank";
                         subscriptionMessage.Visible = true;
                         btnSubsreicption.Visible = true;
-                }
+                      
+                  
+                    }
                     else
                     {
                         string admissionNo = firstItem["admission_no"]?.ToString();
                         string studentName = firstItem["student_name"]?.ToString();
                         string studentPhone = firstItem["student_phone"]?.ToString();
                         string totalAmount = firstItem["total_amount"]?.ToString();
-                        ViewState["__status__"] = firstItem["status"]?.ToString();
+                        ddlCatagory.Visible = true;
+                        btnPaymentSSL.Visible = true;
+                        subscriptionMessage.Visible = false;
+                        btnSubsreicption.Visible = false;
+                        
                     }
 
-                   
 
-                
+
+               
                 }
-
+            
 
         }
 

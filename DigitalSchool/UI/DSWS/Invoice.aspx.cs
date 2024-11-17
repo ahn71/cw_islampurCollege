@@ -32,7 +32,7 @@ namespace DS.UI.DSWS
                 dt = CRUD.ReturnTableNull("select StudentId,AdmissionFormNo,OpenStudentId from PaymentInfo where OrderNo='" + OrderNo + "' and IsPaid=1");
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    string AdmissionNoHead = "Admission No";
+                    string AdmissionNoHead = "Registraion No";
                     if (dt.Rows[0]["OpenStudentId"].ToString() != "")// Open Payment
                     {
                         AdmissionNoHead = "Reg. No";
@@ -48,15 +48,21 @@ namespace DS.UI.DSWS
                     else // Regular Payment
                     {
                         dt = new DataTable();
-                        dt = CRUD.ReturnTableNull("select AdmissionNo,FullName,ClassName,GroupName,Year,RollNo, p.OrderNo,fee.FeeCatName,pd.Particular,pd.ParticularAmount,convert(varchar(10),p.CreatedAt,105) as PaymentDate,P.Amount,P.Discount,P.OnlineCharge,P.TotalAmount,p.PaymentType from PaymentInfo p left join v_CurrentStudentInfo ci on p.StudentId=ci.StudentId and p.BatchID=ci.BatchID left join FeesCategoryInfo fee on p.FeeCatId=fee.FeeCatId left join PaymentInfoDetails pd on p.OrderID=pd.OrderID where  p.OrderNo='" + OrderNo + "' order by pd.SL");
+                        dt = CRUD.ReturnTableNull("select RegistrationNo, AdmissionNo,FullName,ClassName,GroupName,Year,RollNo, p.OrderNo,fee.FeeCatName,pd.Particular,pd.ParticularAmount,convert(varchar(10),p.CreatedAt,105) as PaymentDate,P.Amount,P.Discount,P.OnlineCharge,P.TotalAmount,p.PaymentType from PaymentInfo p left join v_CurrentStudentInfo ci on p.StudentId=ci.StudentId and p.BatchID=ci.BatchID left join FeesCategoryInfo fee on p.FeeCatId=fee.FeeCatId left join PaymentInfoDetails pd on p.OrderID=pd.OrderID where  p.OrderNo='" + OrderNo + "' order by pd.SL");
                     }
 
                     if (dt != null && dt.Rows.Count > 0)
                     {
+                       
+
                         lblInvoiceNo2.Text=lblInvoiceNo.Text = dt.Rows[0]["OrderNo"].ToString();
                         lblDateOfPayment2.Text=lblDateOfPayment.Text = dt.Rows[0]["PaymentDate"].ToString();
                         lblAdmissionNoHead2.Text=lblAdmissionNoHead.Text = AdmissionNoHead;
                         lblAdmissionNo2.Text=lblAdmissionNo.Text = dt.Rows[0]["AdmissionNo"].ToString();
+                        if(dt.Columns.Contains("RegistrationNo"))
+                            lblRegistraionNo.Text = lblRegistrationNo2.Text = string.IsNullOrEmpty(dt.Rows[0]["RegistrationNo"].ToString()) ? "Not Assign" : dt.Rows[0]["RegistrationNo"].ToString();
+                        else
+                            lblRegistraionNo.Text = lblRegistrationNo2.Text = "Not Assign";
                         lblStudentName2.Text= lblStudentName.Text = dt.Rows[0]["FullName"].ToString();
                         lblClass2.Text=lblClass.Text = dt.Rows[0]["ClassName"].ToString();
                         lblGroup2.Text= lblGroup.Text = dt.Rows[0]["GroupName"].ToString();

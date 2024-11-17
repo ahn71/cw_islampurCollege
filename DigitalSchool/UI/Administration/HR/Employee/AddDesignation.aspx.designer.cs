@@ -58,6 +58,15 @@ namespace DS.UI.Administration.HR.Employee {
         protected global::System.Web.UI.WebControls.HiddenField lblDesignationId;
         
         /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
         /// txtDes_Name control.
         /// </summary>
         /// <remarks>

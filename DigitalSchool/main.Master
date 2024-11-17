@@ -401,6 +401,26 @@
             }
         }
 </script>
+    <script>
+        document.addEventListener('keydown', function (e) {
+    var key = e.which || e.keyCode;
+    var element = e.target || e.srcElement;
+
+    // Check if the key pressed is Enter (key code 13) and the element is a textbox
+    if (key === 13 && (element.tagName.toLowerCase() === 'input' && element.type === 'text')) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Get the closest save button within the form or panel
+        var saveButton = element.closest('form, .tgPanel').querySelector('[id$="btnSave"]');
+
+        if (saveButton) {
+            // Trigger the save button click
+            saveButton.click();
+        }
+    }
+});
+
+    </script>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
         
      
