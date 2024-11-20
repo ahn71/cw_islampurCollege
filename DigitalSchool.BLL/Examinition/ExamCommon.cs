@@ -93,6 +93,7 @@ select st.ExamName,st.GroupName,st.ClsGrpID,  convert(varchar, st.SubID)+'_'+con
         }
         public static DataTable getAdmitCard(string BatchId, string ClassID, string ExamID,string ClsSecID, string RollNo)
         {
+           
             if (ClsSecID != "0")
                 ClsSecID = " and ee.ClsSecID=" + ClsSecID;
             else
@@ -112,7 +113,7 @@ select st.* from st inner join  gs on st.SubID=gs.SubId and st.CourseID=gs.Cours
             sqlCmd = @"with gs as
 (
 select 0 as StudentID, SubId,CourseId from ClassSubject where ClassID=" + ClassID + @" and IsCommon=1 and IsOptional=0 union all 
-select StudentID, SubId,CourseId from v_StudentGroupSubSetupDetails 
+select StudentID, SubId,CourseId from v_StudentGroupSubSetupDetails where BatchId=" + BatchId + @" 
 )
 , 
 st as (
