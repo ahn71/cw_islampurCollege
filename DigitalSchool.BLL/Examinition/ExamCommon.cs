@@ -55,16 +55,16 @@ namespace DS.BLL.Examinition
 //select ee.ExamID,ee.BatchID,ee.ClsGrpID,ee.ClsSecID,er.SubID,er.CourseID,convert(varchar(10), er.ExamDate,105) as ExamDate,er.ExamDate as ExamDate1,er.ExamDay,er.StartTime,er.EndTime,csi.StudentId,csi.FullName,csi.RollNo,csi.GroupName,csi.SectionName,csi.GuardianMobileNo,CONVERT(varchar(15),er.StartTime,100) as ExamStartTime, CONVERT(varchar(15),er.EndTime ,100) as ExamEndTime,csi.ClassName, case when  er.CourseID=0 then cs.SubName else cs.SubName +' '+ cs.CourseName end as Subject,ei.ExName+'-'+convert(varchar(4),Year(er.ExamDate)) as ExamName,FathersName,MothersName,cs.SubCode,BatchName  from ExamExaminee ee inner join  Exam_ExamRoutine er on ee.ExamID=er.ExamID inner join v_CurrentStudentInfo csi on csi.StudentId=ee.StudentID and csi.BatchID=ee.BatchID  inner join ExamInfo ei on ee.ExamID=ei.ExInSl  inner join v_ClassSubjectList cs  on er.SubID=cs.SubId and er.CourseID=cs.CourseId and cs.ClassID=" + ClassID + @"  where  ee.ExamID = " + ExamID + ClsSecID +SubID+ @")
 
 //select convert(varchar, st.SubID)+'_'+convert(varchar,st.CourseID) as SubCourseID,st.* from st inner join  gs on st.SubID=gs.SubId and( st.studentid=gs.studentid or gs.studentid=0 ) order by RollNo, year(ExamDate1),month(ExamDate1),ExamDate1";
-            sqlCmd = @"with gs as
+sqlCmd = @"with gs as
 (
 select 0 as StudentID, SubId,CourseId from ClassSubject where ClassID=" + ClassID + @" and IsCommon=1 and IsOptional=0 union all 
 select StudentID, SubId,CourseId from v_StudentGroupSubSetupDetails Where BatchId=" + BatchId + @"
 )
 , 
 st as (
-select ee.ExamID,ee.BatchID,ee.ClsGrpID,ee.ClsSecID,er.SubID,er.CourseID,convert(varchar(10), er.ExamDate,105) as ExamDate,er.ExamDate as ExamDate1,er.ExamDay,er.StartTime,er.EndTime,csi.StudentId,csi.FullName,csi.RollNo,csi.GroupName,csi.SectionName,csi.GuardianMobileNo,CONVERT(varchar(15),er.StartTime,100) as ExamStartTime, CONVERT(varchar(15),er.EndTime ,100) as ExamEndTime,csi.ClassName, case when  er.CourseID=0 then cs.SubName else cs.SubName +' '+ cs.CourseName end as Subject,ei.ExName+'-'+convert(varchar(4),Year(er.ExamDate)) as ExamName,FathersName,MothersName,cs.SubCode,BatchName  from ExamExaminee ee inner join  Exam_ExamRoutine er on ee.ExamID=er.ExamID inner join v_CurrentStudentInfo csi on csi.StudentId=ee.StudentID and csi.BatchID=ee.BatchID  inner join ExamInfo ei on ee.ExamID=ei.ExInSl  inner join v_ClassSubjectList cs  on er.SubID=cs.SubId and er.CourseID=cs.CourseId and cs.ClassID=" + ClassID + @"  where  ee.ExamID = " + ExamID + ClsSecID + SubID + @")
-
-  select convert(varchar, st.SubID)+'_'+convert(varchar,st.CourseID) as SubCourseID,st.* from st  order by RollNo, year(ExamDate1),month(ExamDate1),ExamDate1";
+select ee.ExamID,ee.BatchID,ee.ClsGrpID,ee.ClsSecID,er.SubID,er.CourseID,convert(varchar(10), er.ExamDate,105) as ExamDate,er.ExamDate as ExamDate1,er.ExamDay,er.StartTime,er.EndTime,csi.StudentId,csi.FullName,csi.RollNo,csi.GroupName,csi.SectionName,csi.GuardianMobileNo,CONVERT(varchar(15),er.StartTime,100) as ExamStartTime, CONVERT(varchar(15),er.EndTime ,100) as ExamEndTime,csi.ClassName, case when  er.CourseID=0 then cs.SubName else cs.SubName +' '+ cs.CourseName end as Subject,ei.ExName+'-'+convert(varchar(4),Year(er.ExamDate)) as ExamName,FathersName,MothersName,cs.SubCode,BatchName  from ExamExaminee ee inner join  Exam_ExamRoutine er on ee.ExamID=er.ExamID inner join v_CurrentStudentInfo csi on csi.StudentId=ee.StudentID and csi.BatchID=ee.BatchID  inner join ExamInfo ei on ee.ExamID=ei.ExInSl  inner join v_ClassSubjectList cs  on er.SubID=cs.SubId and er.CourseID=cs.CourseId and cs.ClassID=" + ClassID + @"  where  ee.ExamID = " + ExamID + ClsSecID + SubID + @"), st1 as (
+  select distinct convert(varchar, st.SubID)+'_'+convert(varchar,st.CourseID) as SubCourseID,st.* from st inner join  gs on st.SubID=gs.SubId and( st.studentid=gs.studentid or gs.studentid=0 ) )
+  select * from st1 order by RollNo, year(ExamDate1),month(ExamDate1),ExamDate1";
 
             return CRUD.ReturnTableNull(sqlCmd);
         }
