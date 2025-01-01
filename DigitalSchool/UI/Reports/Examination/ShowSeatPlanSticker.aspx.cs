@@ -44,7 +44,7 @@ namespace DS.UI.Reports.Examination
                                         src='https://islampurcollege.edu.bd/Images/Logo/256333333333333333333.jpg'>
                                 </td>
                                 <td colspan='2' style='text-align: left;'>
-                                    <h1 style='font-size: 18px;margin: 0;'>Govt. Islampur College</h1>
+                                    <h1 style='font-size: 18px;margin: 0;'>Islampur Govt. College</h1>
                                     <p style='margin: 0;'>Islampur, Jamalpur</p>
                                 </td>
                             </tr>

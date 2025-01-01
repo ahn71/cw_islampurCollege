@@ -242,7 +242,7 @@
                                       <div id="PrintFeeCollection">
 										  <div class="hide-view text-center">
 											  <p><img style="height:60px" src="http://islampurcollege.edu.bd/websitedesign/assets/images/logo.png"></p>
-											  <h3>Govt. Islampur College</h3>
+											  <h3>Islampur Govt. College</h3>
 											  <h5>Fee Collection Report</h5>
 										  </div>
                                           <asp:GridView ID="gvFeeCollections" runat="server" AutoGenerateColumns="False" 

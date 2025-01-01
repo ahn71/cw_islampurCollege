@@ -195,7 +195,7 @@ namespace DS.api
                                     string MobileNo = dt.Rows[0]["Mobile"].ToString();
                                     string CategoryName = dt.Rows[0]["FeeCatName"].ToString();
                                     MobileNo = MobileNo.Replace("+88", "");
-                                    string Msg = string.Format("Govt. Islampur College received the payment for '" + CategoryName + "'. Your Invoice No : '" + OrderNo + "'. Download Invoice to click : http://islampurcollege.edu.bd/payment/invoice/" + OrderNo + ". Thank you");
+                                    string Msg = string.Format("Islampur Govt. College received the payment for '" + CategoryName + "'. Your Invoice No : '" + OrderNo + "'. Download Invoice to click : http://islampurcollege.edu.bd/payment/invoice/" + OrderNo + ". Thank you");
                                     //string Msg = string.Format("Islampur College received the payment for '" + CategoryName + "'. Your Invoice No : '" + OrderNo + "'.Thank you.");
                                     if (MobileNo.Length == 11 && "017,019,018,016,015,013,014".Contains(MobileNo.Substring(0, 3)))
                                     {

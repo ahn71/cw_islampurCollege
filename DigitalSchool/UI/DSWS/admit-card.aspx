@@ -200,7 +200,7 @@
                                 src="../../websitedesign/assets/images/logo.png" alt="">
                         </td>
                         <td style="text-align: center">
-                            <h2 style="margin: 0;text-transform: uppercase; font-weight:700;">Govt. Islampur College</h2>
+                            <h2 style="margin: 0;text-transform: uppercase; font-weight:700;">Islampur Govt. College</h2>
                             <p style="margin-bottom: 0;">Islampur, Jamalpur</p>
                             <div><h4 style="font-size: 18px;margin: 0;" runat="server" id="hExamName"></h4></div>
                             <div style="margin-top: 18px"><h5 style="font-size: 20px"><u>Admit Card</u></h5></div>

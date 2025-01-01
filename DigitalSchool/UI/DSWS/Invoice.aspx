@@ -165,8 +165,7 @@
                            <%--<img style="height: 100px;" src="" alt="">--%>
                        </td>
                        <td style="padding-left: 10px;">
-                           <h2 style="margin: 0;font-size: 24px;text-transform: uppercase;font-weight: 600;color: #000;">Govt. Islampur
-                               College</h2>
+                           <h2 style="margin: 0;font-size: 24px;text-transform: uppercase;font-weight: 600;color: #000;">Islampur Govt. College</h2>
                            <p style="margin-bottom: 0;font-size: 18px;">Islampur, Jamalpur</p>
                        </td>
                        <td style="text-align: right">
