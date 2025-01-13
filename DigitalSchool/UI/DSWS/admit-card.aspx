@@ -189,7 +189,7 @@
     <main style="width: 800px; margin: 0 auto; padding: 10px;background-color: #fff;" id="printtable">
         
         <div class="admit-card" runat="server" visible="false" id="divStudentAdmit" >
-            <header class="payment-header" style="margin: 5px 0;padding: 5px;">
+            <header class="payment-header" style="margin: 5px 0;padding: 5px;border: 1px solid #959494;background: #f9f6f6;">
                 <!-- <div class="text-center">
                     <h3 style="font-size: 24px">Payment Information</h3>
                 </div> -->
@@ -199,11 +199,11 @@
                             <img style="width: 120px;"
                                 src="../../websitedesign/assets/images/logo.png" alt="">
                         </td>
-                        <td style="text-align: center">
+                        <td >
+							<div style="text-align: left;margin-left: 20px;">
                             <h2 style="margin: 0;text-transform: uppercase; font-weight:700;">Islampur Govt. College</h2>
                             <p style="margin-bottom: 0;">Islampur, Jamalpur</p>
-                            <div><h4 style="font-size: 18px;margin: 0;" runat="server" id="hExamName"></h4></div>
-                            <div style="margin-top: 18px"><h5 style="font-size: 20px"><u>Admit Card</u></h5></div>
+							</div>
                         </td>
                         <td style="text-align: right">
 
@@ -213,7 +213,10 @@
             </header>
             
             <section>
-                
+                <div style="text-align: center">
+					<div><h4 style="font-size: 18px;margin: 0;padding-top:10px" runat="server" id="hExamName"></h4></div>
+					<div style="margin-top: 0px"><h5 style="font-size: 18px">Admit Card</h5></div>
+				</div>
             <table style="width: 100%;">
                 <tr>
                     <td>
@@ -275,20 +278,20 @@
             <section>
                 <table style="width: 100%;">
                     <tr>
-                        <td style="text-align: center">
-                            <p><img style="height: 60px;"  src="../../websitedesign/assets/images/principal.png" alt=""></p>
-                            <strong>Seal and Signature of Principal</strong>
+                        <td style="text-align: center;width: 50%;">
+                           <!-- <p><img style="height: 60px;" src="../../websitedesign/assets/images/examController.png" alt=""></p>
+                            <strong>Controller of Examination</strong> -->
                         </td>
-                        <td style="text-align: center">
-                            <p><img style="height: 60px;" src="../../websitedesign/assets/images/examController.png" alt=""></p>
-                            <strong>Controller of Examination</strong>
+						<td style="text-align: center">
+                            <p><img style="height: 45px;"  src="../../websitedesign/assets/images/principal1.png" alt=""></p>
+                            <strong>Seal and Signature of Principal</strong>
                         </td>
                     </tr>
                 </table>
             </section>
             <hr>
-            <section>
-                <h4 style="text-align:center">পরীক্ষার্থীদের জন্য নির্দেশনাবলী</h4>
+            <section style="border: 1px solid #ff0000">
+                <h4 style="text-align:center;color: #ff0000!important">পরীক্ষার্থীদের জন্য নির্দেশনাবলী</h4>
                 <ul style="list-style: bengali;">
                     <li>প্রবেশপত্রে  কোন প্রকার ভুলত্রুুটি পরিলক্ষিত হলে তা পরীক্ষা শুরুর পূর্বেই সংশ্লিষ্ট শাখা  থেকে সংশোধন করে নিতে 
                     হবে। ভুল বা অসম্পূর্ণ প্রবেশপত্র দ্বারা কোনক্রমে পরীক্ষায় অংশ গ্রহণ করা যাবে না। এক্ষেত্রে পরীক্ষার্থী নিজে আবেদন 
