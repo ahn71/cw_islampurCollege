@@ -140,7 +140,7 @@ namespace DS.Controller
                                             string MobileNo = dt.Rows[0]["Mobile"].ToString();
                                             string CategoryName = dt.Rows[0]["FeeCatName"].ToString();
                                             MobileNo = MobileNo.Replace("+88", "");
-                                            string Msg = string.Format("Govt. Islampur College received the payment for '" + CategoryName + "'. Your Invoice No : '" + tran_id + "'. Download Invoice to click : http://islampurcollege.edu.bd/payment/invoice/" + tran_id + ". Thank you");
+                                            string Msg = string.Format("Islampur Govt. College received the payment for '" + CategoryName + "'. Your Invoice No : '" + tran_id + "'. Download Invoice to click : http://islampurcollege.edu.bd/payment/invoice/" + tran_id + ". Thank you");
                                             //string Msg = string.Format("Islampur College received the payment for '" + CategoryName + "'. Your Invoice No : '" + OrderNo + "'.Thank you.");
                                             if (MobileNo.Length == 11 && "017,019,018,016,015,013,014".Contains(MobileNo.Substring(0, 3)))
                                             {

@@ -5,6 +5,9 @@
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
     <style>
+        .logo{
+            height: 100px;
+        }
         @media print {
             @page {
                 size: auto;
@@ -14,6 +17,12 @@
           .btn-primary{
                display:none !important;
           }
+          td{
+              font-size: 12px;
+          }
+             .logo{
+            height: 60px !important;
+        }
         }
         .border{
             border:1.5px dashed black;
@@ -35,7 +44,7 @@
                 <table style="width: 100%">
                     <tr>
                         <td style="width: 120px">
-                            <img style="height: 100px;" src="../../websitedesign/assets/images/logo.png" />
+                            <img class="logo" src="../../websitedesign/assets/images/logo.png" />
                             <%--<img style="height: 100px;" src="" alt="">--%>
                         </td>
                         <td style="padding-left: 10px;">
@@ -43,7 +52,7 @@
                             <p style="margin-bottom: 0;font-size: 18px;">Islampur, Jamalpur</p>
                         </td>
                         <td style="text-align: right">
-                            <h3 style="color: #2040fa;font-size: 18px;">Invoice No: <asp:Label runat="server" ID="lblInvoiceNo"
+                            <h3 style="color: #2040fa;font-size: 16px;">Invoice No: <asp:Label runat="server" ID="lblInvoiceNo"
                                                     ClientIDMode="Static"></asp:Label> (<span
                                     style="color: #153df1;">PAID</span>)
                             </h3>
@@ -152,16 +161,15 @@
                <table style="width: 100%">
                    <tr>
                        <td style="width: 120px">
-                           <img style="height: 100px;" src="../../websitedesign/assets/images/logo.png" />
+                           <img  class="logo" src="../../websitedesign/assets/images/logo.png" />
                            <%--<img style="height: 100px;" src="" alt="">--%>
                        </td>
                        <td style="padding-left: 10px;">
-                           <h2 style="margin: 0;font-size: 24px;text-transform: uppercase;font-weight: 600;color: #000;">Govt. Islampur
-                               College</h2>
+                           <h2 style="margin: 0;font-size: 24px;text-transform: uppercase;font-weight: 600;color: #000;">Islampur Govt. College</h2>
                            <p style="margin-bottom: 0;font-size: 18px;">Islampur, Jamalpur</p>
                        </td>
                        <td style="text-align: right">
-                           <h3 style="color: #2040fa;font-size: 18px;">Invoice No: <asp:Label runat="server" ID="lblInvoiceNo2"
+                           <h3 style="color: #2040fa;font-size: 16px;">Invoice No: <asp:Label runat="server" ID="lblInvoiceNo2"
                                                    ClientIDMode="Static"></asp:Label> (<span
                                    style="color: #153df1;">PAID</span>)
                            </h3>

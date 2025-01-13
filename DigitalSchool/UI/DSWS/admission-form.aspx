@@ -159,7 +159,7 @@
                                         </p>
                                     </td>
                                     <td style="text-align: center;">
-                                        <h1 style="margin: 0 0 4px; font-size: 24px; font-weight: 700;">Govt. Islampur College</h1>
+                                        <h1 style="margin: 0 0 4px; font-size: 24px; font-weight: 700;">Islampur Govt. College</h1>
                                         <h5 style="margin: 0; font-size: 16px;">Islampur, Jamalpur</h5>
                                         <h5 style="margin: 0; font-size: 14px; font-weight: 500;">EIIN: 109857  | Mobile :  +88 01768595800</h5>
                                     </td>
@@ -622,7 +622,7 @@
                                         </p>
                                     </td>
                                     <td style="text-align: center;">
-                                        <h1 style="margin: 0 0 4px; font-size: 24px; font-weight: 700;">Govt. Islampur College</h1>
+                                        <h1 style="margin: 0 0 4px; font-size: 24px; font-weight: 700;">Islampur Govt. College</h1>
                                         <h5 style="margin: 0; font-size: 16px;">Islampur, Jamalpur</h5>
                                         <h5 style="margin: 0; font-size: 14px; font-weight: 500;">EIIN: 109857  | Mobile :  +88 01768595800</h5>
                                     </td>

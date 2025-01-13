@@ -92,13 +92,13 @@ namespace DS.UI.Administration.Finance.FeeManaged
             try
             {
                 lblMessage.InnerText = "";
-                DataTable dt = new DataTable();
-                sqlDB.fillDataTable("Select FeeCatId, PId from ParticularsCategory where FeeCatId=" + dlCategory.SelectedValue + " and PId=" + dlParticular.SelectedValue + " and StdTypeId='"+ddlStudentType.SelectedValue+"' ", dt);
-                if (dt.Rows.Count > 0)
-                {
-                    lblMessage.InnerText = "warning-> Already add this particulars";
-                    return;
-                }
+                //DataTable dt = new DataTable();
+                //sqlDB.fillDataTable("Select FeeCatId, PId from ParticularsCategory where FeeCatId=" + dlCategory.SelectedValue + " and PId=" + dlParticular.SelectedValue + " and StdTypeId='"+ddlStudentType.SelectedValue+"' ", dt);
+                //if (dt.Rows.Count > 0)
+                //{
+                //    lblMessage.InnerText = "warning-> Already add this particulars";
+                //    return;
+                //}
                 if (txtAmount.Text.Length == 0)
                 {
                     lblMessage.InnerText = "warning->Add Amount";

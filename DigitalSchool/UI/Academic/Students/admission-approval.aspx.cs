@@ -134,7 +134,7 @@ namespace DS.UI.Academic.Students
         {
             string MobileNo = ViewState["__Mobile__"].ToString();           
             MobileNo = MobileNo.Replace("+88", "");
-            string Msg = string.Format("Congratulations on your admission to Govt. Islampur College! You've been accepted for the "+ BatchName + " and your class roll is "+ ViewState["__Roll__"] .ToString()+ " and admission no is "+ ViewState["__AdmissionNo__"].ToString());
+            string Msg = string.Format("Congratulations on your admission to Islampur Govt. College! You've been accepted for the " + BatchName + " and your class roll is "+ ViewState["__Roll__"] .ToString()+ " and admission no is "+ ViewState["__AdmissionNo__"].ToString());
             //string Msg = string.Format("Islampur College received the payment for '" + CategoryName + "'. Your Invoice No : '" + OrderNo + "'.Thank you.");
             if (MobileNo.Length == 11 && "017,019,018,016,015,013,014".Contains(MobileNo.Substring(0, 3)))
             {
