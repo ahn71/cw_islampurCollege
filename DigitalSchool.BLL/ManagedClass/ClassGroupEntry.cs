@@ -177,6 +177,22 @@ namespace DS.BLL.ManagedClass
 
             
         }
+        public static void n_GetDropDownWithAll(DropDownList dl, int classId) // For GroupId Replease by ClsGrpId
+        {
+            ClassGroupEntry clsGrp = new ClassGroupEntry();
+            if (classId == -1)// -1 as all
+                grouplist = clsGrp.GetEntitiesData();
+            else
+                grouplist = clsGrp.GetEntitiesData().FindAll(c => c.ClassID == classId);
+
+            dl.DataTextField = "GroupName";
+            dl.DataValueField = "ClsGrpID";
+            dl.DataSource = grouplist;
+            dl.DataBind();
+            dl.Items.Insert(0, new ListItem("All", "00"));
+
+
+        }
         public string LoadclsGroupId(string clsID,string groupId)
         {
             DataTable dt = new DataTable();

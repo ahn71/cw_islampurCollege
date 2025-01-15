@@ -7,7 +7,7 @@
       <Diagram DiagramId="a905668acb8f4220a92eaf0b604c7e9e" Name="Diagram1">
         <EntityTypeShape EntityType="cw_islampurCollegeModel.WSQuickLink" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cw_islampurCollegeModel.WSNoticeAttach" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="cw_islampurCollegeModel.WSSlider" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="cw_islampurCollegeModel.WSSlider" Width="1.5" PointX="1.25" PointY="3.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

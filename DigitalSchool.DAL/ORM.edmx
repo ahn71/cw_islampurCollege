@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="cw_islampurCollegeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cw_islampurCollege.dbo.WSNotice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WSNotice">
+          <Key>
+            <PropertyRef Name="NSL" />
+          </Key>
+          <Property Name="NSL" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSubject" Type="nvarchar" MaxLength="50" />
+          <Property Name="NDetails" Type="nvarchar" MaxLength="2000" />
+          <Property Name="NEntryDate" Type="datetime" />
+          <Property Name="NPublishedDate" Type="datetime" />
+          <Property Name="NOrdering" Type="bigint" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="FileName" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="WSNoticeAttach">
           <Key>
             <PropertyRef Name="NSL" />
@@ -14,21 +30,12 @@
           <Property Name="Title" Type="nvarchar" MaxLength="500" />
           <Property Name="Status" Type="bit" />
           <Property Name="PublishdDate" Type="date" />
-          <Property Name="NDetails" Type="nvarchar(max)" />
+          <Property Name="NDetails" Type="nvarchar" MaxLength="2000" />
           <Property Name="NEntryDate" Type="datetime" />
           <Property Name="pinTop" Type="bit" />
           <Property Name="IsImportantNews" Type="bit" />
-        </EntityType>
-        <EntityType Name="WSQuickLink">
-          <Key>
-            <PropertyRef Name="SL" />
-          </Key>
-          <Property Name="SL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="150" />
-          <Property Name="Url" Type="nvarchar" MaxLength="150" />
-          <Property Name="Ordering" Type="int" />
-          <Property Name="IsActive" Type="bit" />
-          <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="GroupId" Type="int" />
         </EntityType>
         <EntityType Name="WSSlider">
           <Key>
@@ -41,8 +48,20 @@
         </EntityType>
         <EntityContainer Name="cw_islampurCollegeModelStoreContainer">
           <EntitySet Name="WSNoticeAttach" EntityType="Self.WSNoticeAttach" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="WSQuickLink" EntityType="Self.WSQuickLink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WSSlider" EntityType="Self.WSSlider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WSNotice" EntityType="Self.WSNotice" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WSNotice].[NSL] AS [NSL], 
+    [WSNotice].[NSubject] AS [NSubject], 
+    [WSNotice].[NDetails] AS [NDetails], 
+    [WSNotice].[NEntryDate] AS [NEntryDate], 
+    [WSNotice].[NPublishedDate] AS [NPublishedDate], 
+    [WSNotice].[NOrdering] AS [NOrdering], 
+    [WSNotice].[IsActive] AS [IsActive], 
+    [WSNotice].[Type] AS [Type], 
+    [WSNotice].[FileName] AS [FileName]
+    FROM [dbo].[WSNotice] AS [WSNotice]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -73,10 +92,12 @@
           <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="PublishdDate" Type="DateTime" Precision="0" />
-          <Property Name="NDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDetails" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="NEntryDate" Type="DateTime" Precision="3" />
           <Property Name="pinTop" Type="Boolean" />
           <Property Name="IsImportantNews" Type="Boolean" />
+          <Property Name="ClassID" Type="Int32" />
+          <Property Name="GroupId" Type="Int32" />
         </EntityType>
         <EntityType Name="WSSlider">
           <Key>
@@ -93,21 +114,11 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="cw_islampurCollegeModelStoreContainer" CdmEntityContainer="cw_islampurCollegeDB">
-          <EntitySetMapping Name="WSQuickLinks">
-            <EntityTypeMapping TypeName="cw_islampurCollegeModel.WSQuickLink">
-              <MappingFragment StoreEntitySet="WSQuickLink">
-                <ScalarProperty Name="SL" ColumnName="SL" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Ordering" ColumnName="Ordering" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="WSNoticeAttaches">
             <EntityTypeMapping TypeName="cw_islampurCollegeModel.WSNoticeAttach">
               <MappingFragment StoreEntitySet="WSNoticeAttach">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
                 <ScalarProperty Name="IsImportantNews" ColumnName="IsImportantNews" />
                 <ScalarProperty Name="pinTop" ColumnName="pinTop" />
                 <ScalarProperty Name="NEntryDate" ColumnName="NEntryDate" />

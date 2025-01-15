@@ -402,17 +402,14 @@
         }
 </script>
     <script>
-        document.addEventListener('keydown', function (e) {
-    var key = e.which || e.keyCode;
-    var element = e.target || e.srcElement;
-    if (key === 13 && (element.tagName.toLowerCase() === 'input' && element.type === 'text')) {
-        e.preventDefault(); 
-        var saveButton = element.closest('form, .tgPanel').querySelector('[id$="btnSave"]');
-        if (saveButton) {
-            saveButton.click();
-        }
-    }
-});
+      document.addEventListener("DOMContentLoaded", function () {
+            // Use event delegation for dynamically added elements
+            document.addEventListener("keydown", function (event) {
+                if (event.target.matches("input[type='text']") && event.key === "Enter") {
+                    event.preventDefault(); // Prevent default form submission
+                }
+            });
+        });
 
     </script>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server">

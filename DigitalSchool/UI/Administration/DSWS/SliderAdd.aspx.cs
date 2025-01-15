@@ -50,7 +50,8 @@ namespace DS.UI.Administration.DSWS
                 WSSlider slider = list.Find(s => s.SL == SL);
                 imgProfile.ImageUrl = slider.Location;               
                 txtOrdering.Text = slider.Ordering.ToString();
-                chkChosen.Checked = slider.Chosen;
+                chkChosen.Checked = chkChosen.Checked = slider.Chosen ?? false;
+
                 ViewState["__imgPath__"] = slider.Location;
 
                 btnSaveAD.Text = "Update";

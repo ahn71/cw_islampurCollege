@@ -53,8 +53,9 @@ namespace DS.UI.Administration.DSWS
                 txtTitle.Text = quickLink.Title;
                 txtUrl.Text = quickLink.Url;
                 txtOrdering.Text = quickLink.Ordering.ToString();
-                ckbIsActive.Checked = quickLink.IsActive;
+                ckbIsActive.Checked = quickLink.IsActive??false;
                 btnSave.Text = "Update";
+
 
 
 
