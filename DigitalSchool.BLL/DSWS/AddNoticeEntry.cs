@@ -315,13 +315,13 @@ namespace DS.BLL.DSWS
         }
         public DataTable getNoticeAttach()
        {
-           sql = "select NSL, case when NDetails is null then  FileName else convert(varchar, NSL)+'_'+FileName end as FileName,CONCAT(wn.Title, '(', cls.ClassName, ')') AS Title,Status,format( PublishdDate,'dd-MMM-yyyy') PublishdDate,NDetails,pinTop,IsNull(IsImportantNews,0) as IsImportantNews from  WSNoticeAttach  wn  left join Classes cls on wn.ClassId=cls.ClassID " +
+           sql = "select NSL, case when NDetails is null then  FileName else convert(varchar, NSL)+'_'+FileName end as FileName,wn.Title,Status,cls.ClassName,Isnull(tg.GroupName,'') as GroupName,format( PublishdDate,'dd-MMM-yyyy') PublishdDate,NDetails,pinTop,IsNull(IsImportantNews,0) as IsImportantNews from  WSNoticeAttach  wn  left join Classes cls on wn.ClassId=cls.ClassID left join TBL_Group tg on wn.GroupId=tg.GroupId " +
                " where Status=1 order by pinTop desc, year(PublishdDate) desc, month(PublishdDate) desc,day(PublishdDate) desc";
            dt = new DataTable();
            List<AddNoticeEntities> ListEntities = new List<AddNoticeEntities>();
            dt = CRUD.ReturnTableNull(sql);
            return dt;
-
+            
        }
 
     }
