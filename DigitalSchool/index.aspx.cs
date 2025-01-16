@@ -136,7 +136,7 @@ namespace DS
                             href = "Images/dsimages/Notice/" + dt.Rows[i]["FileName"].ToString() + "";
                         divInfo += " <tr>" +
                                                       "<td class='text-center'>" + dt.Rows[i]["PublishdDate"].ToString() + "</td>" +
-                                                      "<td><a href = '" + href + "' target='_blank' >" + dt.Rows[i]["Title"].ToString() + "</a><span class='badge badge-primary'>" + dt.Rows[i]["ClassName"].ToString() + "</span><span class='badge badge-primary'>" + dt.Rows[i]["GroupName"].ToString() + "</span></td>" +
+                                                      "<td><a href = '" + href + "' target='_blank' >" + dt.Rows[i]["Title"].ToString() + "</a><div class='devider' style='border-bottom: 1px solid #c7c6c6;'></div><span class='badge badge-primary' style='background: #268adf;'>" + dt.Rows[i]["ClassName"].ToString() + "</span><span class='badge badge-primary' style='background: #04a510;margin-left: 10px;'>" + dt.Rows[i]["GroupName"].ToString() + "</span></td>" +
 
                                                     "</tr>";
                         if (dt.Rows[i]["IsImportantNews"].ToString().Equals("True"))
