@@ -177,7 +177,8 @@ namespace DS.BLL.ManagedClass
 
             
         }
-        public static void n_GetDropDownWithAll(DropDownList dl, int classId) // For GroupId Replease by ClsGrpId
+        public static void n_GetDropDownWithAll(DropDownList dl, int classId)
+            // For GroupId Replease by ClsGrpId
         {
             ClassGroupEntry clsGrp = new ClassGroupEntry();
             if (classId == -1)// -1 as all
@@ -186,7 +187,7 @@ namespace DS.BLL.ManagedClass
                 grouplist = clsGrp.GetEntitiesData().FindAll(c => c.ClassID == classId);
 
             dl.DataTextField = "GroupName";
-            dl.DataValueField = "ClsGrpID";
+            dl.DataValueField = "GroupID";
             dl.DataSource = grouplist;
             dl.DataBind();
             dl.Items.Insert(0, new ListItem("All", "00"));
