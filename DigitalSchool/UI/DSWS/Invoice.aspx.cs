@@ -20,8 +20,8 @@ namespace DS.UI.DSWS
             {
                 string[] OrderNo = HttpContext.Current.Request.Url.AbsolutePath.ToString().Split('/');
                 loadInvoice(OrderNo[OrderNo.Length-1]);
-                string respocse=API.Old_SMSSend("Testing Messagge","01727417288");
-                Debug.Write(respocse);
+                //string respocse=API.Old_SMSSend("Testing Messagge","01727417288");
+                //Debug.Write(respocse);
 
             }
         }

@@ -378,38 +378,38 @@ namespace DS.UI.DSWS
         }
         private bool hasPreviousDue()
         {
-            return false;// Validation is ignored. Date: 29-08-2022
+            //return false;// Validation is ignored. Date: 29-08-2022
 
             if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
                 return false;
 
             // Recommended students are allowed  
-            //switch (ViewState["__AdmissionNo__"].ToString())
-            //{
-            //    case "20200031":
-            //        return false;
-            //    case "20200150":
-            //        return false;
-            //    case "20210062":
-            //        return false;
-            //    case "20220584":
-            //        return false;
-            //    case "20200337":
-            //        return false;
-            //    case "20200343":
-            //        return false;
-            //    case "20200285":
-            //        return false;
-            //    case "20200291":
-            //        return false;
-            //    case "20220385":
-            //        return false;
-            //    case "20200267":
-            //        return false;
-            //    default:
-            //        break;
+            switch (ViewState["__AdmissionNo__"].ToString())
+            {
+                case "20230616":
+                    return false;
+                case "20240056":
+                    return false;
+                case "20232054":
+                    return false;
+                //case "20220584":
+                //    return false;
+                //case "20200337":
+                //    return false;
+                //case "20200343":
+                //    return false;
+                //case "20200285":
+                //    return false;
+                //case "20200291":
+                //    return false;
+                //case "20220385":
+                //    return false;
+                //case "20200267":
+                    //return false;
+                default:
+                    break;
 
-            //}
+            }
 
             if (ViewState["__AdmissionNo__"].ToString() == "")
                 dt = new DataTable();
