@@ -392,10 +392,10 @@ namespace DS.UI.DSWS
                     return false;
                 case "20232054":
                     return false;
-                //case "20220584":
-                //    return false;
-                //case "20200337":
-                //    return false;
+                case "20231475":
+                    return false;
+                case "20231898":
+                    return false;
                 //case "20200343":
                 //    return false;
                 //case "20200285":
@@ -405,7 +405,7 @@ namespace DS.UI.DSWS
                 //case "20220385":
                 //    return false;
                 //case "20200267":
-                    //return false;
+                //return false;
                 default:
                     break;
 
