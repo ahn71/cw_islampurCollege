@@ -16,7 +16,7 @@ namespace DS.DAL
     {
         public int SL { get; set; }
         public string Location { get; set; }
-        public bool Chosen { get; set; }
-        public int Ordering { get; set; }
+        public Nullable<bool> Chosen { get; set; }
+        public Nullable<int> Ordering { get; set; }
     }
 }

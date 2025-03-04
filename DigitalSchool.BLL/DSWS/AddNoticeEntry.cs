@@ -97,11 +97,11 @@ namespace DS.BLL.DSWS
                 return false;
             }
         }
-        public int InsertNoticeWithAttachment(string FileName,string Title,string Status,string PublishdDate,string NDetails,string NEntryDate,string pinTop,string IsImportantNews)
+        public int InsertNoticeWithAttachment(string FileName,string Title,string Status,string PublishdDate,string NDetails,string NEntryDate,string pinTop,string IsImportantNews,string groupId,string classId)
         {
             sql = string.Format("INSERT INTO [dbo].[WSNoticeAttach] " +
-                "([FileName],[Title],[Status],[PublishdDate],[NDetails],[NEntryDate],[pinTop],[IsImportantNews]) VALUES (N'" + FileName
-                +"',N'"+Title+"','"+Status+"','"+PublishdDate+"',N'"+NDetails+"','"+NEntryDate+"',"+pinTop+ ",'"+ IsImportantNews + "'); SELECT SCOPE_IDENTITY()");
+                "([FileName],[Title],[Status],[PublishdDate],[NDetails],[NEntryDate],[pinTop],[IsImportantNews],[ClassID],[GroupId]) VALUES (N'" + FileName
+                +"',N'"+Title+"','"+Status+"','"+PublishdDate+"',N'"+NDetails+"','"+NEntryDate+"',"+pinTop+ ",'"+ IsImportantNews + "','"+ classId + "','"+ groupId + "'); SELECT SCOPE_IDENTITY()");
             int result = CRUD.GetMaxID(sql);
             return result;
         }
@@ -114,12 +114,12 @@ namespace DS.BLL.DSWS
                 " WHERE [NSL] = '" + _Entities.NSL + "'");
             return result = CRUD.ExecuteQuery(sql);
         }
-        public bool UpdateNoticeWithAttachment(string NSL, string FileName, string Title, string Status, string PublishdDate, string NDetails, string NEntryDate,string IsImportantNews)
+        public bool UpdateNoticeWithAttachment(string NSL, string FileName, string Title, string Status, string PublishdDate, string NDetails, string NEntryDate,string IsImportantNews,string classId,string groupId)
         {
             sql = string.Format("UPDATE [dbo].[WSNoticeAttach] SET " +
                 "[FileName] = N'" + FileName + "',[Title] = N'" + Title + "'," +
                 "[Status]='" + Status + "'," +
-                "[PublishdDate]='" + PublishdDate + "',[NDetails]=N'" + NDetails + "',[NEntryDate]='" + NEntryDate + "',[IsImportantNews]='"+ IsImportantNews + "' " +
+                "[PublishdDate]='" + PublishdDate + "',[NDetails]=N'" + NDetails + "',[NEntryDate]='" + NEntryDate + "',[IsImportantNews]='"+ IsImportantNews + "',[ClassID]='" + classId + "',[GroupId]='"+groupId+"' " +
                 " WHERE [NSL] = '" + NSL + "'");
             return result = CRUD.ExecuteQuery(sql);
         }
@@ -232,7 +232,7 @@ namespace DS.BLL.DSWS
         }
         public DataTable getNoticeWithAttachmentData(string NSL)
         {
-            sql = " select NSL, case when NDetails is null then  FileName else convert(varchar, NSL)+'_'+FileName end as FileName,FileName as onlyFileName,Title NSubject,Status,format( PublishdDate,'dd-MM-yyyy') PublishdDate,NDetails,pinTop,status IsActive,format(NEntryDate,'dd-MM-yyyy HH:mm:ss') NEntryDate,case when pinTop=1 then 'Pined' else 'Pin' end as pinText,IsNull(IsImportantNews,0) as IsImportantNews   from WSNoticeAttach  Where NSL="+ NSL;
+            sql = " select NSL, case when NDetails is null then  FileName else convert(varchar, NSL)+'_'+FileName end as FileName,FileName as onlyFileName,Title NSubject,Status,format( PublishdDate,'dd-MM-yyyy') PublishdDate,NDetails,pinTop,status IsActive,format(NEntryDate,'dd-MM-yyyy HH:mm:ss') NEntryDate,case when pinTop=1 then 'Pined' else 'Pin' end as pinText,IsNull(IsImportantNews,0) as IsImportantNews, isnull(ClassID,0) as ClassID,isnull(GroupId,0)as ClsGrpID from WSNoticeAttach  Where NSL=" + NSL;
             dt = new DataTable();
             dt = CRUD.ReturnTableNull(sql);
             return dt;
@@ -315,13 +315,13 @@ namespace DS.BLL.DSWS
         }
         public DataTable getNoticeAttach()
        {
-           sql = "select NSL, case when NDetails is null then  FileName else convert(varchar, NSL)+'_'+FileName end as FileName,Title,Status,format( PublishdDate,'dd-MMM-yyyy') PublishdDate,NDetails,pinTop,IsNull(IsImportantNews,0) as IsImportantNews from WSNoticeAttach " +
+           sql = "select NSL, case when NDetails is null then  FileName else convert(varchar, NSL)+'_'+FileName end as FileName,wn.Title,Status,cls.ClassName,Isnull(tg.GroupName,'') as GroupName,format( PublishdDate,'dd-MMM-yyyy') PublishdDate,NDetails,pinTop,IsNull(IsImportantNews,0) as IsImportantNews from  WSNoticeAttach  wn  left join Classes cls on wn.ClassId=cls.ClassID left join TBL_Group tg on wn.GroupId=tg.GroupId " +
                " where Status=1 order by pinTop desc, year(PublishdDate) desc, month(PublishdDate) desc,day(PublishdDate) desc";
            dt = new DataTable();
            List<AddNoticeEntities> ListEntities = new List<AddNoticeEntities>();
            dt = CRUD.ReturnTableNull(sql);
            return dt;
-
+            
        }
 
     }

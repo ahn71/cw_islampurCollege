@@ -79,6 +79,14 @@
                                         <div class="col-sm-8">
                                             <asp:TextBox ID="txtNSubject" runat="server" ClientIDMode="Static" class="input controlLength form-control"></asp:TextBox>
                                         </div>
+                                         <label class="col-sm-4" style="margin-top:5px;">Class</label>
+                                        <div class="col-sm-8" style="margin-top:5px;">
+                                            <asp:DropDownList runat="server" ID="ddlClass" CssClass="form-control" OnSelectedIndexChanged="ddlClass_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        </div>
+                                         <label class="col-sm-4" style="margin-top:5px;">Group</label>
+                                        <div class="col-sm-8" style="margin-top:5px;">
+                                           <asp:DropDownList runat="server" ID="ddlGoup" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
+                                        </div>
                                     </div>
                                     <div class="row tbl-controlPanel">
                                         <label class="col-sm-4">Details</label>
@@ -106,6 +114,7 @@
                                     <div runat="server" class="row tbl-controlPanel">
                                         <label class="col-sm-4">Attach File</label>
                                         <div class="col-sm-8">
+                                             <asp:HyperLink ID="hlAttachedFile" runat="server" NavigateUrl="#" Target="_blank" Text="No file attached" Visible="false"></asp:HyperLink>
                                             <asp:FileUpload ID="fileAttachment" runat="server" />
 
                                         </div>

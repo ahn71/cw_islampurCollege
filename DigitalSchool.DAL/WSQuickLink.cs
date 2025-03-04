@@ -17,8 +17,8 @@ namespace DS.DAL
         public int SL { get; set; }
         public string Url { get; set; }
         public string Title { get; set; }
-        public int Ordering { get; set; }
-        public bool IsActive { get; set; }
+        public Nullable<int> Ordering { get; set; }
+        public Nullable<bool> IsActive { get; set; }
         public string Remark { get; set; }
     }
 }

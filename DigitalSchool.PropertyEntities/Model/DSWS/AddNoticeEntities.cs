@@ -19,5 +19,7 @@ namespace DS.PropertyEntities.Model.DSWS
      public string NSummary { get; set; }
      public string Type { get; set; }
      public string FileName { get; set; }
+     public int ClassId { get; set; }
+     public int GroupID { get; set; }
     }
 }

@@ -13,6 +13,7 @@ using DS.BLL;
 using DS.Classes;
 using DS.DAL;
 using DS.BLL.ControlPanel;
+using DS.BLL.ManagedClass;
 
 namespace DS.UI.Administration.DSWS
 {
@@ -40,7 +41,7 @@ namespace DS.UI.Administration.DSWS
                     liAddEdit.InnerText = "Edit";
                     loadEditData();
                 }
-
+                ClassEntry.GetEntitiesDataWithAll(ddlClass);
             }
         }
         private void loadEditData()
@@ -67,6 +68,16 @@ namespace DS.UI.Administration.DSWS
                         chkIsImportantNews.Checked = true;
                     else
                         chkIsImportantNews.Checked = false;
+                    ddlClass.SelectedValue= dt.Rows[0]["ClassID"].ToString();
+
+                    ClassGroupEntry.n_GetDropDownWithAll(ddlGoup, int.Parse(dt.Rows[0]["ClassID"].ToString()));
+                    ddlGoup.SelectedValue= dt.Rows[0]["ClsGrpID"].ToString();
+                    if (!string.IsNullOrEmpty(ViewState["__FileName__"].ToString()))
+                    {
+                        hlAttachedFile.Visible = true;
+                        hlAttachedFile.Text = ViewState["__FileName__"].ToString();
+                        hlAttachedFile.NavigateUrl = "/Images/dsimages/Notice/"+id+"_"+ViewState["__FileName__"]+"";
+                    }
                     ViewState["__NSL__"] = id;
                     btnSubmit.Text = "Update";
                 }
@@ -105,7 +116,12 @@ namespace DS.UI.Administration.DSWS
                 NDetails = txtNDetails.Text.Trim(),
                 NEntryDate = TimeZoneBD.getCurrentTimeBD(),
                 pinTop = false,
-                IsImportantNews= chkIsImportantNews.Checked
+                IsImportantNews = chkIsImportantNews.Checked,
+                ClassID = int.Parse(ddlClass.SelectedValue.ToString()),
+                GroupId= int.Parse(ddlGoup.SelectedValue.ToString()),
+               
+                
+                
             };
             return entities;
         }
@@ -117,16 +133,17 @@ namespace DS.UI.Administration.DSWS
                 Entry = new AddNoticeEntry();
             }
             Entry.AddwSNoticeAttach = getCotrolValue_orm();
-           int result  =Entry.save();
-            if (result != 0)
-            {
-                if (fileAttachment.HasFile)
-                {
-                  string   FileName = Path.GetFileName(fileAttachment.PostedFile.FileName);
-                    saveFileToFolder(result.ToString() + "_" + FileName);
-                }
-                Response.Redirect("~/"+Routing.NoticeListRouteUrl);
-            }
+            save();
+            //int result  =save();
+            //if (result != 0)
+            //{
+            //    if (fileAttachment.HasFile)
+            //    {
+            //      string   FileName = Path.GetFileName(fileAttachment.PostedFile.FileName);
+            //        saveFileToFolder(result.ToString() + "_" + FileName);
+            //    }
+            //    Response.Redirect("~/"+Routing.NoticeListRouteUrl);
+            //}
 
         }
         private void save()
@@ -141,7 +158,7 @@ namespace DS.UI.Administration.DSWS
                 FileName= Path.GetFileName(fileAttachment.PostedFile.FileName);
             string[] pDate = txtPublishdate.Text.Trim().Split('-');
             string PublishDate= pDate[2]+"-"+ pDate[1]+"-"+pDate[0];
-            int result = Entry.InsertNoticeWithAttachment(FileName, txtNSubject.Text.Trim(), chkIsActive.Checked.ToString(), PublishDate, txtNDetails.Text.Trim(),TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss"), "0",chkIsImportantNews.Checked.ToString());
+            int result = Entry.InsertNoticeWithAttachment(FileName, txtNSubject.Text.Trim(), chkIsActive.Checked.ToString(), PublishDate, txtNDetails.Text.Trim(),TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss"), "0",chkIsImportantNews.Checked.ToString(),ddlGoup.SelectedValue.ToString(),ddlClass.SelectedValue.ToString());
             if (result != 0)
             {
                 if (fileAttachment.HasFile)
@@ -178,16 +195,17 @@ namespace DS.UI.Administration.DSWS
                 Entry = new AddNoticeEntry();
             }
             Entry.AddwSNoticeAttach = getCotrolValue_orm();
-            bool result = Entry.update();
-            if (result)
-            {
-                if (fileAttachment.HasFile)
-                {
-                    string FileName = Path.GetFileName(fileAttachment.PostedFile.FileName);
-                    saveFileToFolder(result.ToString() + "_" + FileName);
-                }
-                Response.Redirect("~/" + Routing.NoticeListRouteUrl);
-            }
+            Update();
+            //bool result = Entry.update();
+            //if (result)
+            //{
+            //    if (fileAttachment.HasFile)
+            //    {
+            //        string FileName = Path.GetFileName(fileAttachment.PostedFile.FileName);
+            //        saveFileToFolder(result.ToString() + "_" + FileName);
+            //    }
+            //    Response.Redirect("~/" + Routing.NoticeListRouteUrl);
+            //}
 
         }
         private void Update()
@@ -202,7 +220,7 @@ namespace DS.UI.Administration.DSWS
                 FileName = Path.GetFileName(fileAttachment.PostedFile.FileName);
             string[] pDate = txtPublishdate.Text.Trim().Split('-');
             string PublishDate = pDate[2] + "-" + pDate[1] + "-" + pDate[0];
-            if (Entry.UpdateNoticeWithAttachment(ViewState["__NSL__"].ToString(), FileName, txtNSubject.Text.Trim(), chkIsActive.Checked.ToString(), PublishDate, txtNDetails.Text.Trim(), TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss"), chkIsImportantNews.Checked.ToString())) {
+            if (Entry.UpdateNoticeWithAttachment(ViewState["__NSL__"].ToString(), FileName, txtNSubject.Text.Trim(), chkIsActive.Checked.ToString(), PublishDate, txtNDetails.Text.Trim(), TimeZoneBD.getCurrentTimeBD().ToString("yyyy-MM-dd HH:mm:ss"), chkIsImportantNews.Checked.ToString(),ddlClass.SelectedValue.ToString(),ddlGoup.SelectedValue.ToString())) {
                 if (fileAttachment.HasFile)
                 {
 
@@ -292,6 +310,11 @@ namespace DS.UI.Administration.DSWS
         protected void btnClear_Click(object sender, EventArgs e)
         {
             AllCleal();
+        }
+
+        protected void ddlClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassGroupEntry.n_GetDropDownWithAll(ddlGoup, int.Parse(ddlClass.SelectedValue.ToString()));
         }
     }
 }

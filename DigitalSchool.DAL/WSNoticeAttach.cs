@@ -23,5 +23,7 @@ namespace DS.DAL
         public Nullable<System.DateTime> NEntryDate { get; set; }
         public Nullable<bool> pinTop { get; set; }
         public Nullable<bool> IsImportantNews { get; set; }
+        public Nullable<int> ClassID { get; set; }
+        public Nullable<int> GroupId { get; set; }
     }
 }
