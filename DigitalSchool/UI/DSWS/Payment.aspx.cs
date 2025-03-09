@@ -378,7 +378,7 @@ namespace DS.UI.DSWS
         }
         private bool hasPreviousDue()
         {
-            //return false;// Validation is ignored. Date: 29-08-2022
+            return false;// Validation is ignored. Date: 29-08-2022  //rokibul ignore it 06-03-2025
 
             if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
                 return false;
@@ -396,16 +396,21 @@ namespace DS.UI.DSWS
                     return false;
                 case "20231898":
                     return false;
-                //case "20200343":
-                //    return false;
-                //case "20200285":
-                //    return false;
-                //case "20200291":
-                //    return false;
-                //case "20220385":
-                //    return false;
-                //case "20200267":
-                //return false;
+                case "20240520":
+                    return false;
+
+
+                case "20231908":
+                    return false;
+                case "20232359":
+                    return false;
+                case "20231432":
+                    return false;
+                case "20231992":
+                    return false;
+                case "20231685":
+                    return false;
+
                 default:
                     break;
 
