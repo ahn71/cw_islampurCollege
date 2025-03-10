@@ -92,7 +92,12 @@ namespace DS.Classes
                 dt = new DataTable();
                 //sqlDB.fillDataTable("select StudentId,SubId,CourseId,sum(Marks) as Marks,sum(case when IsPassed=1 then 0 else 1 end) as IsFailed from Class_"+ ClassName + "MarksSheet where Marks is not null and isPassed is not null and BatchId='" + BatchID + "' and ExamID ='" + ExamID + "' " + ShiftID + " " + RollNo + "  group by StudentId,SubId,CourseId order by StudentId", dt);
              
-                string query = "select StudentId,m.SubId,m.CourseId,sum(m.Marks) as Marks,sum(case when IsPassed=1 then 0 else 1 end) as IsFailed,cs.Marks as FullMarks from Class_" + ClassName + "MarksSheet m inner join BatchInfo b on m.BatchId=b.BatchId inner join ClassSubject cs on b.ClassID=cs.ClassID and m.Subid=cs.SubId and m.CourseId=cs.Courseid where  m.BatchId='" + BatchID + "' and ExamID ='" + ExamID + "' " + ShiftID + " " + RollNo + "  group by StudentId,m.SubId,m.CourseId,cs.Marks order by StudentId";
+                //string query = "select StudentId,m.SubId,m.CourseId,sum(m.Marks) as Marks,sum(case when IsPassed=1 then 0 else 1 end) as IsFailed,cs.Marks as FullMarks from Class_" + ClassName + "MarksSheet m inner join BatchInfo b on m.BatchId=b.BatchId inner join ClassSubject cs on b.ClassID=cs.ClassID and m.Subid=cs.SubId and m.CourseId=cs.Courseid where  m.BatchId='" + BatchID + "' and ExamID ='" + ExamID + "' " + ShiftID + " " + RollNo + "  group by StudentId,m.SubId,m.CourseId,cs.Marks order by StudentId";
+
+
+                string query = @"SELECT  m.StudentId,m.SubId,m.CourseId,SUM(m.Marks) AS Marks,SUM(CASE WHEN m.IsPassed = 1 THEN 0 ELSE 1 END) AS IsFailed,cs.Marks AS FullMarks FROM (SELECT DISTINCT StudentId, SubId, CourseId, Marks, IsPassed, BatchId, ExamID, ShiftID, RollNo FROM Class_" + ClassName + "MarksSheet) m INNER JOIN BatchInfo b ON m.BatchId = b.BatchId INNER JOIN ClassSubject cs ON b.ClassID = cs.ClassID AND m.SubId = cs.SubId AND m.CourseId = cs.CourseId WHERE m.BatchId = '" + BatchID + "'AND m.ExamID = '"+ ExamID + "' " + ShiftID + " " + RollNo + " GROUP BY  m.StudentId, m.SubId, m.CourseId, cs.Marks ORDER BY m.StudentId;";
+
+
                 sqlDB.fillDataTable(query, dt);
                 return dt;
             }
