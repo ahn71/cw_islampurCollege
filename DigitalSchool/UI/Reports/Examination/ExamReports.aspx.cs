@@ -582,7 +582,7 @@ namespace DS.UI.Reports.Examination
                 {
                     clsTotalResultEntry = new Class_ClasswiseMarksheet_TotalResultProcess_Entry();
                 }
-                dt = clsTotalResultEntry.getMeritList(BatchID[0], ddlShift.SelectedValue, ddlGroup.SelectedValue, ddlSectionName.SelectedValue, txtRollNo.Text.Trim());
+                dt = clsTotalResultEntry.getMeritList(BatchID[0], ddlShift.SelectedValue, ddlGroup.SelectedValue, ddlSectionName.SelectedValue,ddlExamId.SelectedValue, txtRollNo.Text.Trim());
                 if (dt == null || dt.Rows.Count == 0)
                 {
                     lblMessage.InnerText = "warning-> Data not found.";
@@ -676,6 +676,12 @@ namespace DS.UI.Reports.Examination
             getTotalPassedInfor();
             getPassedResult();
             getFailedResult();
+            if (Session["resultSatatus"].ToString() == "")
+            {
+                lblMessage.InnerText = "warning-> Result not found!";
+                return;
+            }
+                
             string url = "ShowResult.aspx";
             string script = "window.open('" + url + "', '_blank');";
             ScriptManager.RegisterStartupScript(this, GetType(), "OpenNewTab", script, true);
@@ -773,7 +779,7 @@ namespace DS.UI.Reports.Examination
                 string query = " SELECT COUNT(StudentID) AS Examinee,SUM(CASE WHEN IsPassed = 'True' THEN 1 ELSE 0 END) AS Appeared,  SUM(CASE WHEN IsPassed = 'True' THEN 1 ELSE 0 END) AS Passed, CAST(SUM(CASE WHEN IsPassed = 'True' THEN 1 ELSE 0 END) AS DECIMAL) / COUNT(StudentID) * 100 AS PassPercentage,SUM(CASE WHEN GPA = 5 THEN 1 ELSE 0 END) AS GPA5  FROM Exam_ResultSheet rs where rs.ExamID ='" + examId + "' and rs.ClsGrpID ='" + ClasGrpID + "'  group by rs.BatchID";
 
 
-
+                Session["resultSatatus"] = "";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())

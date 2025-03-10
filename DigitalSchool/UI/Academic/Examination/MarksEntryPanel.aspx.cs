@@ -1254,7 +1254,7 @@ from Exam_ResultSheet where ExamID ="+ ExamID;
                 if (!ddlGroup.Visible)
                     sqlCmd = "select ee.StudentId,RollNo,ee.ClsSecId,ConfigId from ExamExaminee ee inner join CurrentStudentInfo csi on ee.StudentID=csi.StudentId and ee.BatchID=csi.BatchID  where ee.BatchId='"+ BatchID + "' and ee.ExamID="+ ExamID + " order by StudentId";
                 else
-                    sqlCmd = "select ee.StudentId,RollNo,ee.ClsSecId,ConfigId from ExamExaminee ee inner join CurrentStudentInfo csi on ee.StudentID=csi.StudentId and ee.BatchID=csi.BatchID where  ee.BatchID='" + BatchID + "' and ee.ClsGrpID=" + ClsGrpID + " and ee.ClsSecID=" + ClsSecID + " and ee.StudentId  not in(select Distinct StudentId from " + getMarkSheetName + " where  BatchID='" + BatchID + "' and ClsGrpID=" + ClsGrpID + " and ClsSecID=" + ClsSecID + "  and ExamID='" + ExamID + "') order by StudentId";
+                    sqlCmd = "select ee.StudentId,RollNo,ee.ClsSecId,ConfigId from ExamExaminee ee inner join CurrentStudentInfo csi on ee.StudentID=csi.StudentId and ee.BatchID=csi.BatchID and ee.ExamID='" + ExamID + "' where  ee.BatchID='" + BatchID + "' and ee.ClsGrpID=" + ClsGrpID + " and ee.ClsSecID=" + ClsSecID + " and ee.StudentId  not in(select Distinct StudentId from " + getMarkSheetName + " where  BatchID='" + BatchID + "' and ClsGrpID=" + ClsGrpID + " and ClsSecID=" + ClsSecID + "  and ExamID='" + ExamID + "') order by StudentId";
                 dtCS = new DataTable();
                 dtCS = CRUD.ReturnTableNull(sqlCmd);
                 if (dtCS != null && dtCS.Rows.Count > 0)

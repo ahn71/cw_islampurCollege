@@ -768,14 +768,14 @@ ms as(select  distinct  ExId,ExInId,StudentId,RollNo,BatchId,ClsSecId,ShiftId, S
             CRUD.ExecuteQuery(sql);
         }
 
-        public DataTable getMeritList(string BatchID,string ShiftID,string ClsGrpID,string ClsSecID,string RollNo)
+        public DataTable getMeritList(string BatchID,string ShiftID,string ClsGrpID,string ClsSecID,string ExamId, string RollNo)
         {
             try
             {
                 ClsSecID = (ClsSecID == "0") ? "" : " and ml.ClsSecID = " + ClsSecID;
                 if (RollNo != "")
                     RollNo = " and rs.RollNo = " + RollNo;
-                sql = "select rs.StudentID,rs.RollNo,csi.FullName,ml.BatchID,csi.BatchName,ml.ShiftID,csi.ShiftName,ml.BatchRank,ml.ShiftRank,ml.ClsGrpID,cgs.GroupName,ml.ClsSecID,cgs.SectionName,rs.GPA,rs.TotalMarks,ml.GrpRank,ml.SecRank,csi.ClassName,ei.ExName+' - '+convert(varchar(4),year(ei.ExStartDate)) as ExamName,csi.BatchName from Exam_ResultMeritList ml inner join Exam_ResultSheet rs on ml.ResultID = rs.SL inner join v_CurrentStudentInfo csi on rs.StudentID = csi.StudentId and rs.BatchID = csi.BatchID inner join v_Class_Group_Section cgs on ml.ClsGrpID = cgs.ClsGrpID and ml.ClsSecID = cgs.ClsSecID inner join ExamInfo ei on rs.ExamID=ei.ExInSl  where ml.BatchID = " + BatchID + " and ml.ShiftID = "+ ShiftID + " and ml.ClsGrpID = "+ ClsGrpID + ClsSecID+ RollNo+ " order by GrpRank,SecRank,RollNo";
+                sql = "select rs.StudentID,rs.RollNo,csi.FullName,ml.BatchID,csi.BatchName,ml.ShiftID,csi.ShiftName,ml.BatchRank,ml.ShiftRank,ml.ClsGrpID,cgs.GroupName,ml.ClsSecID,cgs.SectionName,rs.GPA,rs.TotalMarks,ml.GrpRank,ml.SecRank,csi.ClassName,ei.ExName+' - '+convert(varchar(4),year(ei.ExStartDate)) as ExamName,csi.BatchName from Exam_ResultMeritList ml inner join Exam_ResultSheet rs on ml.ResultID = rs.SL inner join v_CurrentStudentInfo csi on rs.StudentID = csi.StudentId and rs.BatchID = csi.BatchID inner join v_Class_Group_Section cgs on ml.ClsGrpID = cgs.ClsGrpID and ml.ClsSecID = cgs.ClsSecID inner join ExamInfo ei on rs.ExamID=ei.ExInSl  where ml.BatchID = " + BatchID + " and ml.ShiftID = "+ ShiftID + " and ml.ClsGrpID = "+ ClsGrpID + ClsSecID+ RollNo+ " and ml.ExamId="+ ExamId + " order by GrpRank,SecRank,RollNo";
                 dt = new DataTable();
                 return dt = CRUD.ReturnTableNull(sql);
             }
