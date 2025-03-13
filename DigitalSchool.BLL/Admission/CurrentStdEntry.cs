@@ -408,13 +408,27 @@ namespace DS.BLL.Admission
             try
             {
                 dt = new DataTable();
-                sql = string.Format("SELECT AdmissionNo,convert(varchar,RegistrationNo) as RegistrationNo, BatchId,StudentId,ShiftName,ClassName,GroupName,SectionName,FullName,"
+                sql = string.Format("SELECT AdmissionNo,convert(varchar,RegistrationNo) as RegistrationNo,ClsGrpID, BatchId,StudentId,ShiftName,ClassName,GroupName,SectionName,FullName,"
                 + "RollNo,Gender,GuardianMobileNo,ClsSecId,Format(CreateOn,'dd-MM-yyyy HH:mm:ss') as CreateOn ,CreateBy,FirstName from v_CurrentStudentInfo " + condition + " ORDER BY ShiftName,ClassName,GroupName,SectionName,RollNo");
                 dt = CRUD.ReturnTableNull(sql);
                 return dt;
             }
             catch { return dt = null; }
         }
+
+
+        public DataTable GetCurrentStudentwithResult(string condition,string examId)
+        {
+            try
+            {
+                dt = new DataTable();
+                sql = string.Format("select AdmissionNo,FullName,rslt.Grade,rslt.NumberOfFailSubjectTotal,csi.StudentId,csi.BatchId,csi.ClsSecId,csi.ClsGrpID,csi.BatchName,csi.RollNo,csi.ClassName,csi.SectionName  from CurrentStudentInfo csi left join Exam_ResultSheet rslt on csi.StudentId=rslt.StudentID  and csi.BatchID=rslt.BatchID and csi.ClsGrpID=rslt.ClsGrpID and rslt.ExamID='" + examId + "' "+ condition + "");
+                dt = CRUD.ReturnTableNull(sql);
+                return dt;
+            }
+            catch { return dt = null; }
+        }
+
         public DataTable GetCurrentStudentProfile(string condition)
         {
             try
