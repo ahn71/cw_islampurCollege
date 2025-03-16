@@ -97,8 +97,15 @@ namespace DS.UI.Administration.Finance
                 if (currentstdEntry == null)
                     currentstdEntry = new CurrentStdEntry();
                 dt = currentstdEntry.GetCurrentStudentwithResult(conditions, ddlExam.SelectedValue.ToString());
-                gvstudentList.DataSource = dt;
-                gvstudentList.DataBind();
+                if (dt.Rows.Count > 0)
+                {
+                    gvstudentList.DataSource = dt;
+                    gvstudentList.DataBind();
+                }
+                else
+                {
+                    lblMessage.InnerText = "warning-> Data not Found.";
+                }
             }
             catch(Exception ex) { }
         }
@@ -238,15 +245,15 @@ namespace DS.UI.Administration.Finance
 
 
 
-                            string AdmissionNo = row.Cells[0].Text.Trim();
-                            string AdmissionNo1 = row.Cells[1].Text.Trim();
+                
+                            string AdmissionNo = row.Cells[1].Text.Trim();
 
 
 
                             TextBox txRemarks = (TextBox)row.FindControl("txRemarks");  //Remarks
                             string remarks = txRemarks != null ? txRemarks.Text.Trim() : string.Empty;
 
-                            bool isSucced = accountsettingEntry.InsertStudentPaymentRestriction(BatchId, ClsGrpID, ClsSecId, StudentId, AdmissionNo1, categoryId, "block", remarks);
+                            bool isSucced = accountsettingEntry.InsertStudentPaymentRestriction(BatchId, ClsGrpID, ClsSecId, StudentId, AdmissionNo, "block", categoryId, remarks);
                             //int sn = saveNewIncrementData(empId);
 
                             lblMessage.InnerText = "success-> Data Saved Successfully.";

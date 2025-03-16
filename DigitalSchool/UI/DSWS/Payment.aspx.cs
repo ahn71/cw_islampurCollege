@@ -378,73 +378,88 @@ namespace DS.UI.DSWS
         }
         private bool hasPreviousDue()
         {
-            return false;// Validation is ignored. Date: 29-08-2022  //rokibul ignore it 06-03-2025
 
-            if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
-                return false;
-
-            // Recommended students are allowed  
-            switch (ViewState["__AdmissionNo__"].ToString())
+            if (IsBlock(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
             {
-                case "20230616":
-                    return false;
-                case "20240056":
-                    return false;
-                case "20232054":
-                    return false;
-                case "20231475":
-                    return false;
-                case "20231898":
-                    return false;
-                case "20240520":
-                    return false;
-
-
-                case "20231908":
-                    return false;
-                case "20232359":
-                    return false;
-                case "20231432":
-                    return false;
-                case "20231992":
-                    return false;
-                case "20231685":
-                    return false;
-
-                default:
-                    break;
-
+                lblMessage.InnerText = "Payment for this category is blocked for this student.";
+                return true;
             }
-
-            if (ViewState["__AdmissionNo__"].ToString() == "")
-                dt = new DataTable();
-            dt = commonTask.getFeeCatIdBatchwiseFeeCat(ddlBatch.SelectedValue + ddlYear.SelectedValue, ViewState["__ClsGrpId__"].ToString(), ddlFeeCategories.SelectedValue);
-            string dueCat = "";
-            if (dt.Rows.Count == 0)
-                return false;
-            for (int i = 0; i < dt.Rows.Count; i++)
+            else if (IsAllow(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
             {
-                string OrderNo = commonTask.IsPaidReturnOrderNo(dt.Rows[i]["FeeCatId"].ToString(), ViewState["__StudentId__"].ToString());
-                if (OrderNo == "")
+                return false;
+            }
+            /*     return false;*/// Validation is ignored. Date: 29-08-2022  //rokibul ignore it 06-03-2025
+
+            //if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
+            //    return false;
+
+            //// Recommended students are allowed  
+            //switch (ViewState["__AdmissionNo__"].ToString())
+            //{
+            //    case "20230616":
+            //        return false;
+            //    case "20240056":
+            //        return false;
+            //    case "20232054":
+            //        return false;
+            //    case "20231475":
+            //        return false;
+            //    case "20231898":
+            //        return false;
+            //    case "20240520":
+            //        return false;
+
+
+            //    case "20231908":
+            //        return false;
+            //    case "20232359":
+            //        return false;
+            //    case "20231432":
+            //        return false;
+            //    case "20231992":
+            //        return false;
+            //    case "20231685":
+            //        return false;
+
+            //    default:
+            //        break;
+
+            //}
+            else
+            {
+                if (ViewState["__AdmissionNo__"].ToString() == "")
+                    dt = new DataTable();
+                dt = commonTask.getFeeCatIdBatchwiseFeeCat(ddlBatch.SelectedValue + ddlYear.SelectedValue, ViewState["__ClsGrpId__"].ToString(), ddlFeeCategories.SelectedValue);
+                string dueCat = "";
+                if (dt.Rows.Count == 0)
+                    return false;
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    dueCat += ", " + dt.Rows[i]["FeeCatName"].ToString();
+                    string OrderNo = commonTask.IsPaidReturnOrderNo(dt.Rows[i]["FeeCatId"].ToString(), ViewState["__StudentId__"].ToString());
+                    if (OrderNo == "")
+                    {
+                        dueCat += ", " + dt.Rows[i]["FeeCatName"].ToString();
+                    }
+
+                }
+                if (dueCat == "")
+                {
+                    hPreviousDue.Visible = false;
+                    return false;
+                }
+
+                else
+                {
+                    //hPreviousDue.InnerText = "Please, pay your previous due("+ dueCat.Remove(0,1) + ") first!";
+                    hPreviousDue.InnerText = "এই ফি প্রদা‌নের জন্য পূর্ব‌ের ব‌কেয়া(" + dueCat.Remove(0, 1) + ") প‌রিশ‌োধ করুন! (You can not pay this bill before making the payment for due amount of " + dueCat.Remove(0, 1) + "!)";
+                    hPreviousDue.Visible = true;
+                    hAlreadyPaid.Visible = false;
+                    return true;
                 }
 
             }
-            if (dueCat == "")
-            {
-                hPreviousDue.Visible = false;
-                return false;
-            }
 
-            else
-            {
-                //hPreviousDue.InnerText = "Please, pay your previous due("+ dueCat.Remove(0,1) + ") first!";
-                hPreviousDue.InnerText = "এই ফি প্রদা‌নের জন্য পূর্ব‌ের ব‌কেয়া(" + dueCat.Remove(0, 1) + ") প‌রিশ‌োধ করুন! (You can not pay this bill before making the payment for due amount of " + dueCat.Remove(0, 1) + "!)";
-                hPreviousDue.Visible = true;
-                hAlreadyPaid.Visible = false;
-                return true;
-            }
+           
         }
 
         protected void btnPayment_Click(object sender, EventArgs e)
@@ -805,5 +820,51 @@ namespace DS.UI.DSWS
 
         }
 
+        private  bool IsBlock(string admissionId,string categoryId)
+        {
+            try
+            {
+                string query = "select * from PaymentStudentPaymentRestriction where AdmissionNo='"+ admissionId + "' and Type='block' and CategoryId='" + categoryId + "'";
+                dt = new DataTable();
+                dt = CRUD.ReturnTableNull(query);
+                if (dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+          
+        }
+        private bool IsAllow(string admissionId, string categoryId)
+        {
+            try
+            {
+                string query = "select * from PaymentStudentPaymentRestriction where AdmissionNo='" + admissionId + "' and Type='allow' and CategoryId='"+ categoryId + "'";
+                dt = new DataTable();
+                dt = CRUD.ReturnTableNull(query);
+                if (dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+        }
     }
 }
