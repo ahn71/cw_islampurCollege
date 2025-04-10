@@ -113,7 +113,7 @@ namespace DS.UI.DSWS
             if (ckbIsAdmission.Checked)
             {
                 varifiAdmissionStudent();
-                api_intigration();
+                api_intigration(ViewState["__AdmsnNo__"].ToString(), ViewState["__ClassID__"].ToString(), ViewState["__StudentName__"].ToString(), ViewState["__StudentMobile__"].ToString(),false);
             }
                 
             else
@@ -123,7 +123,7 @@ namespace DS.UI.DSWS
                 pnlPayment.Visible = true;
                 setPyementMedia();
 
-                api_intigration();
+                api_intigration(ViewState["__AdmsnNo__"].ToString(), ViewState["__ClassID__"].ToString(), ViewState["__StudentName__"].ToString(), ViewState["__StudentMobile__"].ToString(),false);
             }
 
             else
@@ -237,7 +237,7 @@ namespace DS.UI.DSWS
                 }
                 else
                     divParticularCategoryList.Controls.Add(new LiteralControl("<div class='noData'>Admission Category Not Found!</div><div class='dataTables_wrapper'><div class='head'></div></div>"));
-                api_intigration();
+                api_intigration(ViewState["__AdmsnNo__"].ToString(), ViewState["__ClassID__"].ToString(), ViewState["__StudentName__"].ToString(), ViewState["__StudentMobile__"].ToString(),false);
                 return true;
             }
             lblMsg.Text = "Invalid!";
@@ -378,6 +378,8 @@ namespace DS.UI.DSWS
         }
         private bool hasPreviousDue()
         {
+            if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
+               return false;
 
             if (IsBlock(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
             {
@@ -694,8 +696,9 @@ namespace DS.UI.DSWS
         {
             //if (ckbIsAdmission.Checked)
             //{
-            //    api_intigration();
-
+           bool isSubscriptioDue=api_intigration(txtRegNo.Text.Trim(), ddlClassForOpen.SelectedValue.ToString(),txtStudentName.Text.Trim().ToString(),txtStudentMobileNo.Text.Trim().ToString(),true);
+            if (isSubscriptioDue)
+                return;
             //    if (ViewState["__status__"].ToString() == "failed")
             //    {
             //        ViewState["__status__"] = "failed";
@@ -776,11 +779,11 @@ namespace DS.UI.DSWS
                 return "Api Error";
             }
         }
-        public void  api_intigration()
+        public bool  api_intigration(string regNo,string classId,string name,string mobileNo,bool isOpenPayment)
         {
             ViewState["__status__"] = "";
-            string ffff = ViewState["__ClassID__"].ToString();
-            string url = "https://www.websupportbd.com/subscription/api/payments/?admission_no=" + ViewState["__AdmsnNo__"].ToString() + "&class_id=" + ViewState["__ClassID__"].ToString();
+            //string ffff = ViewState["__ClassID__"].ToString();
+            string url = "https://www.websupportbd.com/subscription/api/payments/?admission_no=" + regNo.ToString() + "&class_id=" + classId.ToString();
             var respose=getResponse(url);
         
                 JArray jsonArray = JArray.Parse(respose);
@@ -789,16 +792,24 @@ namespace DS.UI.DSWS
                     JObject firstItem = (JObject)jsonArray[0];
                     if(firstItem["status"]?.ToString()== "404")
                     {
-                        ViewState["__status__"] = "failed";
+                    ViewState["__status__"] = "failed";
                         ddlCatagory.Visible = false;
                         btnPaymentSSL.Visible = false;
-                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
-                        btnSubsreicption.Attributes["target"] = "_blank";
-                        subscriptionMessage.Visible = true;
-                        btnSubsreicption.Visible = true;
-                      
-                  
+                    if (isOpenPayment)
+                    {
+                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription-open/?reg_no="+regNo+"&class_id="+ classId + "&class_name="+ddlClassForOpen.SelectedItem.Text.ToString()+"&student_name="+ name + "&student_mobile="+ mobileNo + "";
                     }
+                    else
+                    {
+                        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+                    }
+                    btnSubsreicption.Attributes["target"] = "_blank";
+                    subscriptionMessage.Visible = true;
+                    btnSubsreicption.Visible = true;
+
+                    return true;
+
+                }
                     else
                     {
                         string admissionNo = firstItem["admission_no"]?.ToString();
@@ -809,16 +820,15 @@ namespace DS.UI.DSWS
                         btnPaymentSSL.Visible = true;
                         subscriptionMessage.Visible = false;
                         btnSubsreicption.Visible = false;
-                        
+                    return false;
                     }
 
 
-
+                    
                
                 }
-            
-
-        }
+            return false;
+         }
 
         private  bool IsBlock(string admissionId,string categoryId)
         {
