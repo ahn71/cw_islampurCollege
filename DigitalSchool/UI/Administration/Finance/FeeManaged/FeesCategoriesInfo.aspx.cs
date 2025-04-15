@@ -164,16 +164,30 @@ namespace DS.UI.Administration.Finance.FeeManaged
             try
             {
                 string[] batchClsID = dlBatchName.SelectedValue.Split('_');
-                SqlCommand cmd = new SqlCommand("Insert into FeesCategoryInfo( BatchId, DateOfCreation, FeeFine, FeeCatName,ExInSl,PaymentFor,ClsGrpId,StoreNameKey) values " +
-                                                "(@BatchId, @DateOfCreation, @FeeFine, @FeeCatName,@ExInSl,@PaymentFor,@ClsGrpId,@StoreNameKey); SELECT SCOPE_IDENTITY();", DbConnection.Connection);
-                cmd.Parameters.AddWithValue("@BatchId", batchClsID[0]);
+                SqlCommand cmd = new SqlCommand("Insert into FeesCategoryInfo( BatchId, DateOfCreation, FeeFine, FeeCatName,ExInSl,PaymentFor,ClsGrpId,StoreNameKey,Note) values " +
+                                                "(@BatchId, @DateOfCreation, @FeeFine, @FeeCatName,@ExInSl,@PaymentFor,@ClsGrpId,@StoreNameKey,@Note); SELECT SCOPE_IDENTITY();", DbConnection.Connection);
+                if (ddlPaymentFor.SelectedValue == "openPayment")
+                {
+                    cmd.Parameters.AddWithValue("@BatchId", ddlClassForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
+                    cmd.Parameters.AddWithValue("@ClsGrpId", ddlgroupForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
+                }
+
+                else
+                {
+                    cmd.Parameters.AddWithValue("@BatchId", batchClsID[0]);
+                    cmd.Parameters.AddWithValue("@ClsGrpId", ddlGroup.SelectedValue);
+
+                }
+                   
                 cmd.Parameters.AddWithValue("@DateOfCreation", DateTime.Now);
                 cmd.Parameters.AddWithValue("@FeeFine", txtFeesFine.Text.Trim());
                 cmd.Parameters.AddWithValue("@FeeCatName", txtFeesCatName.Text.Trim());
                 cmd.Parameters.AddWithValue("@ExInSl", ddlExam.SelectedValue);
                 cmd.Parameters.AddWithValue("@PaymentFor",ddlPaymentFor.SelectedValue);
-                cmd.Parameters.AddWithValue("@ClsGrpId",ddlGroup.SelectedValue);
+             
+
                 cmd.Parameters.AddWithValue("@StoreNameKey",ddlPaymentStore.SelectedValue);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text.Trim().ToString());
                 int FeeCatId = Convert.ToInt32(cmd.ExecuteScalar());
                 if (FeeCatId > 0)
                 {
@@ -252,16 +266,30 @@ namespace DS.UI.Administration.Finance.FeeManaged
             {
                 string[] batchClsID = dlBatchName.SelectedValue.Split('_');
                 SqlCommand cmd = new SqlCommand(" update FeesCategoryInfo  Set FeeFine=@FeeFine, " +
-                                                "FeeCatName=@FeeCatName,ExInSl=@ExInSl,PaymentFor=@PaymentFor,ClsGrpId=@ClsGrpId,StoreNameKey=@StoreNameKey where FeeCatId=@FeeCatId ", DbConnection.Connection);
+                                                "FeeCatName=@FeeCatName,ExInSl=@ExInSl,PaymentFor=@PaymentFor,ClsGrpId=@ClsGrpId,StoreNameKey=@StoreNameKey,Note=@Note where FeeCatId=@FeeCatId ", DbConnection.Connection);
 
+
+                if (ddlPaymentFor.SelectedValue == "openPayment")
+                {
+                   // cmd.Parameters.AddWithValue("@BatchId", ddlClassForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
+                    cmd.Parameters.AddWithValue("@ClsGrpId", ddlgroupForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
+                }
+
+                else
+                {
+                   // cmd.Parameters.AddWithValue("@BatchId", batchClsID[0]);
+                    cmd.Parameters.AddWithValue("@ClsGrpId", ddlGroup.SelectedValue);
+
+                }
                 cmd.Parameters.AddWithValue("@FeeCatId", lblFeesCateId.Value.ToString());
                // cmd.Parameters.AddWithValue("@BatchId", batchClsID[0]);
                 cmd.Parameters.AddWithValue("@FeeFine", txtFeesFine.Text.Trim());
                 cmd.Parameters.AddWithValue("@FeeCatName", txtFeesCatName.Text.Trim());
                 cmd.Parameters.AddWithValue("@PaymentFor",ddlPaymentFor.SelectedValue);
-                cmd.Parameters.AddWithValue("@ClsGrpId",ddlGroup.SelectedValue);
+                //cmd.Parameters.AddWithValue("@ClsGrpId",ddlGroup.SelectedValue);
                 cmd.Parameters.AddWithValue("@ExInSl",ddlExam.SelectedValue);               
                 cmd.Parameters.AddWithValue("@StoreNameKey", ddlPaymentStore .SelectedValue);             
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text.Trim().ToString());             
                 cmd.ExecuteNonQuery();
                 //int FeeCatId = Convert.ToInt32(cmd.ExecuteScalar());
                 //if (FeeCatId > 0)
@@ -325,14 +353,22 @@ namespace DS.UI.Administration.Finance.FeeManaged
             {
                 pnlAcademicInfo.Visible = false;
                 hfAcademicInfo.Value = "0";
+                pnlClassGroupForOpen.Visible = true;
+                commonTask.loadClasses(ddlClassForOpen);
             }
             else
             {
                 pnlAcademicInfo.Visible = true;
                 hfAcademicInfo.Value = "1";
+                pnlClassGroupForOpen.Visible = false;
             }
                
             loadFeesCategoryInfo();
+        }
+
+        protected void ddlClassForOpen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            commonTask.loadGroupsByClass(ddlgroupForOpen, ddlClassForOpen.SelectedValue);
         }
 
         //protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)

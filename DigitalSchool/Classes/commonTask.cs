@@ -683,7 +683,15 @@ FROM UserAccount where UserId  in (select distinct MemberId from TE_NumberSheet 
 
             dt = new DataTable();
             if(PaymentFor== "openPayment")
-                dt = CRUD.ReturnTableNull("SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='"+ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd")+"' order by dp.DateOfEnd ");
+            {
+                //dt = CRUD.ReturnTableNull("SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' order by dp.DateOfEnd ");
+
+                dt = CRUD.ReturnTableNull("SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "'  and  (cat.BatchId='0' and ClsGrpId='0') or(cat.BatchId='" + batchName + "' and Isnull(ClsGrpId,0)='0') or (cat.BatchId='" + batchName + "' and Isnull(ClsGrpId,0)='"+ ClsGrpID + "') order by dp.DateOfEnd ");
+               
+
+                string jj = "SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' order by dp.DateOfEnd ";
+            }
+                
             else if (PaymentFor == "admission")
                 dt = CRUD.ReturnTableNull("SELECT ct.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo ct inner join DateOfPayment dp on ct.FeeCatId=dp.FeeCatId where IsNull(ct.PaymentFor,'regular')='" + PaymentFor + "' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' and ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ClsGrpId=" + ClsGrpID + " or ClsGrpId=0)  order by dp.DateOfEnd ");
             else 

@@ -70,7 +70,7 @@ namespace DS.UI.DSWS
                     pnlPayment.Visible = true;
                     btnPayment.Visible = false;
                     commonTask.loadClasses(ddlClassForOpen);
-                    commonTask.LoadBatchwiseFeeCat("openPayment", "", "", ddlFeeCategories);
+                    commonTask.LoadBatchwiseFeeCat("openPayment", "0", "0", ddlFeeCategories);
 
                 }
                 else
@@ -696,9 +696,19 @@ namespace DS.UI.DSWS
         {
             //if (ckbIsAdmission.Checked)
             //{
-           bool isSubscriptioDue=api_intigration(txtRegNo.Text.Trim(), ddlClassForOpen.SelectedValue.ToString(),txtStudentName.Text.Trim().ToString(),txtStudentMobileNo.Text.Trim().ToString(),true);
-            if (isSubscriptioDue)
-                return;
+
+            string[] path = HttpContext.Current.Request.Url.AbsolutePath.ToString().Split('/');
+            ViewState["__OpenPayment__"] = "False";
+            hIsOpenPayment.Visible = false;
+
+            if (path[path.Length - 1] == "open-payment")
+            {
+                ViewState["__OpenPayment__"] = "True";
+                bool isSubscriptioDue = api_intigration(txtRegNo.Text.Trim(), ddlClassForOpen.SelectedValue.ToString(), txtStudentName.Text.Trim().ToString(), txtStudentMobileNo.Text.Trim().ToString(), true);
+                if (isSubscriptioDue)
+                    return;
+            }
+
             //    if (ViewState["__status__"].ToString() == "failed")
             //    {
             //        ViewState["__status__"] = "failed";
@@ -747,6 +757,7 @@ namespace DS.UI.DSWS
         protected void ddlClassForOpen_SelectedIndexChanged(object sender, EventArgs e)
         {
             commonTask.loadGroupsByClass(ddlGroupForOpen, ddlClassForOpen.SelectedValue);
+            commonTask.LoadBatchwiseFeeCat("openPayment", ddlClassForOpen.SelectedValue, "0", ddlFeeCategories);
         }
         public string getResponse(string url)
         {
@@ -784,6 +795,11 @@ namespace DS.UI.DSWS
             ViewState["__status__"] = "";
             //string ffff = ViewState["__ClassID__"].ToString();
             string url = "https://www.websupportbd.com/subscription/api/payments/?admission_no=" + regNo.ToString() + "&class_id=" + classId.ToString();
+            if (isOpenPayment) {
+                 url = "https://www.websupportbd.com/subscription-open/api/payments/?admission_no=" + regNo.ToString() + "&class_id=" + classId.ToString();
+            }
+          
+
             var respose=getResponse(url);
         
                 JArray jsonArray = JArray.Parse(respose);
@@ -875,6 +891,11 @@ namespace DS.UI.DSWS
                 return false;
             }
 
+        }
+
+        protected void ddlGroupForOpen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            commonTask.LoadBatchwiseFeeCat("openPayment", ddlClassForOpen.SelectedValue, ddlGroupForOpen.SelectedValue , ddlFeeCategories);
         }
     }
 }

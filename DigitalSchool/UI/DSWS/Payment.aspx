@@ -285,7 +285,7 @@
                                                         <label class="col-md-12">Group Name <strong style="color:red">*</strong> </label>
                                                         <div class="col-md-12">
                                                              <asp:DropDownList ID="ddlGroupForOpen" runat="server" ClientIDMode="Static"
-                                                                CssClass="form-control">
+                                                                CssClass="form-control" OnSelectedIndexChanged="ddlGroupForOpen_SelectedIndexChanged" AutoPostBack="true">
                                                                   </asp:DropDownList>
                                                         </div>
                                                     </div>
