@@ -111,6 +111,22 @@ namespace DS.Classes
 
             }            
         }
+        public static void loadAllGroups(DropDownList ddl)
+        {
+            try
+            {
+                sqlDB.fillDataTable("select ClsGrpID,g.GroupName from Tbl_Class_Group cg inner join Tbl_Group g on cg.GroupID=g.GroupID ", dt = new DataTable());
+                ddl.DataValueField = "ClsGrpID";
+                ddl.DataTextField = "GroupName";
+                ddl.DataSource = dt;
+                ddl.DataBind();
+                ddl.Items.Insert(0, new ListItem("...Select...", "0"));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         public static void loadGroupsByClass(DropDownList ddl,string ClassId)
         {
             try
@@ -689,7 +705,7 @@ FROM UserAccount where UserId  in (select distinct MemberId from TE_NumberSheet 
                 dt = CRUD.ReturnTableNull("SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "'  and  (cat.BatchId='0' and ClsGrpId='0') or(cat.BatchId='" + batchName + "' and Isnull(ClsGrpId,0)='0') or (cat.BatchId='" + batchName + "' and Isnull(ClsGrpId,0)='"+ ClsGrpID + "') order by dp.DateOfEnd ");
                
 
-                string jj = "SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' order by dp.DateOfEnd ";
+                string jj = "SELECT cat.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo cat left join DateOfPayment dp on cat.FeeCatId=dp.FeeCatId  Where  cat.PaymentFor='openPayment' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "'  and  (cat.BatchId='0' and ClsGrpId='0') or(cat.BatchId='" + batchName + "' and Isnull(ClsGrpId,0)='0') or (cat.BatchId='" + batchName + "' and Isnull(ClsGrpId,0)='" + ClsGrpID + "') order by dp.DateOfEnd ";
             }
                 
             else if (PaymentFor == "admission")
@@ -704,7 +720,9 @@ FROM UserAccount where UserId  in (select distinct MemberId from TE_NumberSheet 
         }
         public static DataTable getFeeCatIdBatchwiseFeeCat(string batchName, string ClsGrpID,string FeeCatId)
         {
-           return CRUD.ReturnTableNull("SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ex.ClsGrpID=" + ClsGrpID + " or ISNULL(ex.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " order by FeeCatId ASC");            
+            string jj = "SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ex.ClsGrpID=" + ClsGrpID + " or ISNULL(ex.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " order by FeeCatId ASC";
+
+           return CRUD.ReturnTableNull("SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ct.ClsGrpID=" + ClsGrpID + " or ISNULL(ct.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " order by FeeCatId ASC");            
         }
         public static string IsPaidReturnOrderNo(string FeeCatId, string StudentId)
         {

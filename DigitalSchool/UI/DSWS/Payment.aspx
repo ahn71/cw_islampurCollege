@@ -278,7 +278,8 @@
                                                         <div class="form-group row">
                                                         <label class="col-md-12">Session <strong style="color:red">*</strong> </label>
                                                         <div class="col-md-12">
-                                                            <asp:TextBox runat="server" ID="txtYear" CssClass="form-control" MaxLength="4"></asp:TextBox>
+<%--                                                            <asp:TextBox runat="server" ID="txtYear" CssClass="form-control" MaxLength="4"></asp:TextBox>]--%>
+                                                            <asp:DropDownList runat="server" ID="ddlSesson" CssClass="form-control" MaxLength="4"></asp:DropDownList>
                                                         </div>
                                                     </div>
                                                         <div class="form-group row">
@@ -334,7 +335,7 @@
                                                             </asp:DropDownList>
                                                         </div>
                                                     </div>                                                   
-
+                                                    <asp:Label runat="server" ID="lblNote" style="font-weight:bold; color:red;"></asp:Label>
                                                     <div runat="server" id="divParticularCategoryList">
                                                     </div>
                                                 </div>
@@ -368,8 +369,14 @@
                                                         <h1 runat="server" visible="false" style="color:red;" id="hPreviousDue"></h1>
                                                          <h3 runat="server" id="subscriptionMessage" visible="false" class="text-danger">এই ক্লাসের জন্য আপনার সফটওয়্যার এর সাবস্ক্রিপশন করা নেই</h3>
                                                          <a runat="server" id="btnSubsreicption" visible="false" class="linkbt">সাবস্ক্রিপশন করতে এখানে ক্লিক করুন</a>
-
-                                                    </div>
+                                                        <div runat="server" id="dvagainPayButton" visible="false">
+                                                             <hr>
+                                                        <p> যদি সাবস্ক্রিপশন পেমেন্ট করা হয়ে থাকে নিচের লিঙ্ক এ ক্লিক করে পেমেন্ট সম্পন্ন করুন  </p>
+                                                            <asp:Button runat="server" ID="btnPayAfterSubscription" class="btn btn-primary" href="" OnClick="btnPayAfterSubscription_Click" Text="Pay Now" target="_blank" />
+                                                         
+                                                        </div>
+                                                       
+                                                       </div>
                                                 </div>
                                             </div>
                                         </asp:Panel>

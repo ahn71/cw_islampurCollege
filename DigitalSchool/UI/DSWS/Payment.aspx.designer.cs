@@ -265,13 +265,13 @@ namespace DS.UI.DSWS {
         protected global::System.Web.UI.WebControls.DropDownList ddlClassForOpen;
         
         /// <summary>
-        /// txtYear control.
+        /// ddlSesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtYear;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSesson;
         
         /// <summary>
         /// ddlGroupForOpen control.
@@ -346,6 +346,15 @@ namespace DS.UI.DSWS {
         protected global::System.Web.UI.WebControls.DropDownList ddlFeeCategories;
         
         /// <summary>
+        /// lblNote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote;
+        
+        /// <summary>
         /// divParticularCategoryList control.
         /// </summary>
         /// <remarks>
@@ -416,5 +425,23 @@ namespace DS.UI.DSWS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor btnSubsreicption;
+        
+        /// <summary>
+        /// dvagainPayButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvagainPayButton;
+        
+        /// <summary>
+        /// btnPayAfterSubscription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPayAfterSubscription;
     }
 }

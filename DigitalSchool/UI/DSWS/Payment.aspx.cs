@@ -40,6 +40,8 @@ namespace DS.UI.DSWS
             if (!IsPostBack)
 
             {
+                BatchEntry.GetSeassonDropdownlist(ddlSesson);
+                lblNote.Text = "";
                ViewState["__AdmsnNo__"] = "";
                 hIsTest.Visible = false;
                 ViewState["__IsLivePayment__"] = "True";
@@ -70,7 +72,7 @@ namespace DS.UI.DSWS
                     pnlPayment.Visible = true;
                     btnPayment.Visible = false;
                     commonTask.loadClasses(ddlClassForOpen);
-                    commonTask.LoadBatchwiseFeeCat("openPayment", "0", "0", ddlFeeCategories);
+                    commonTask.LoadBatchwiseFeeCat("openPayment", ddlClassForOpen.SelectedValue, ddlGroupForOpen.SelectedValue, ddlFeeCategories);
 
                 }
                 else
@@ -154,6 +156,8 @@ namespace DS.UI.DSWS
         {
 
             loadParticularDetails();
+           string Note= getNotebyCatId(ddlFeeCategories.SelectedValue.ToString());
+            lblNote.Text = Note;
         }
         private bool varifiEmp(string BatchName)
         {
@@ -251,6 +255,8 @@ namespace DS.UI.DSWS
 
                 hPreviousDue.Visible = false;
                 dt = CRUD.ReturnTableNull("Select PName, Amount, isnull(StoreNameKey,'islampurcollegeedubd') as StoreNameKey from v_FeesCatDetails where FeeCatId='" + ddlFeeCategories.SelectedValue + "' ");
+
+                string jj = "Select PName, Amount, isnull(StoreNameKey,'islampurcollegeedubd') as StoreNameKey from v_FeesCatDetails where FeeCatId='" + ddlFeeCategories.SelectedValue + "'";
                 ViewState["__ParticularDetails__"] = dt;
                 int totalRows = dt.Rows.Count;
                 string divInfo = "";
@@ -491,7 +497,7 @@ namespace DS.UI.DSWS
                     ddlClassForOpen.Focus();
                     return 0;
                 }
-                if (txtYear.Text.Trim().Length != 4)
+                if (ddlSesson.SelectedValue.Length != 4)
                 {
                     lblMessage.InnerText = "warning-> Please, Enter valid Session!";
                     lblYear.Focus();
@@ -501,7 +507,7 @@ namespace DS.UI.DSWS
                 int Year = 0;
                 try
                 {
-                    Year = int.Parse(txtYear.Text.Trim());
+                    Year = int.Parse(ddlSesson.SelectedValue);
                 }
                 catch (Exception ex)
                 {
@@ -822,7 +828,7 @@ namespace DS.UI.DSWS
                     btnSubsreicption.Attributes["target"] = "_blank";
                     subscriptionMessage.Visible = true;
                     btnSubsreicption.Visible = true;
-
+                    dvagainPayButton.Visible = true;
                     return true;
 
                 }
@@ -836,6 +842,7 @@ namespace DS.UI.DSWS
                         btnPaymentSSL.Visible = true;
                         subscriptionMessage.Visible = false;
                         btnSubsreicption.Visible = false;
+                        dvagainPayButton.Visible = false;
                     return false;
                     }
 
@@ -896,6 +903,56 @@ namespace DS.UI.DSWS
         protected void ddlGroupForOpen_SelectedIndexChanged(object sender, EventArgs e)
         {
             commonTask.LoadBatchwiseFeeCat("openPayment", ddlClassForOpen.SelectedValue, ddlGroupForOpen.SelectedValue , ddlFeeCategories);
+        }
+
+        private string getNotebyCatId(string feeCatId)
+        {
+            string query = "select Note from FeesCategoryInfo where FeeCatId=" + feeCatId;
+            dt = new DataTable();
+            dt = CRUD.ReturnTableNull(query);
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["Note"].ToString();
+            }
+            else
+            {
+                return "There are no note of this Category";
+            }
+        }
+
+        protected void btnPayAfterSubscription_Click(object sender, EventArgs e)
+        {
+            string[] path = HttpContext.Current.Request.Url.AbsolutePath.ToString().Split('/');
+            ViewState["__OpenPayment__"] = "False";
+            hIsOpenPayment.Visible = false;
+
+            if (path[path.Length - 1] == "open-payment")
+            {
+                ViewState["__OpenPayment__"] = "True";
+                bool isSubscriptioDue = api_intigration(txtRegNo.Text.Trim(), ddlClassForOpen.SelectedValue.ToString(), txtStudentName.Text.Trim().ToString(), txtStudentMobileNo.Text.Trim().ToString(), true);
+                if (isSubscriptioDue)
+                    return;
+                else
+                    dvagainPayButton.Visible = false;
+            }
+
+            //    if (ViewState["__status__"].ToString() == "failed")
+            //    {
+            //        ViewState["__status__"] = "failed";
+            //        ddlCatagory.Visible = false;
+            //        btnPaymentSSL.Visible = false;
+            //        btnSubsreicption.Attributes["href"] = "https://websupportbd.com/subscription/?url_adm_no=" + ViewState["__AdmsnNo__"].ToString();
+            //        btnSubsreicption.Attributes["target"] = "_blank";
+            //        subscriptionMessage.Visible = true;
+            //        btnSubsreicption.Visible = true;
+            //    }
+            //}
+
+            //else
+            //{
+            if (!IsPaid() && !hasPreviousDue())
+                SaveInvoice("ssl");
+            btnPayAfterSubscription.Attributes["target"] = "_blank";
         }
     }
 }

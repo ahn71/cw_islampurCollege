@@ -33,6 +33,7 @@ namespace DS.UI.Administration.Finance.FeeManaged
                 BatchEntry.GetDropdownlist(dlBatchName, "True");
                 ClassGroupEntry.GetDropDownWithAll(ddlGroup, -1);//-1 as All
                 ExamInfoEntry.GetExamIdListWithExInSl(ddlExam, "All");
+                //commonTask.loadAllGroups(ddlgroupForOpen);
                 //loadFeesCategoryInfo();
                 //stdtypeEntry.GetEntitiesData(ddlStudentType);
             }
@@ -43,22 +44,36 @@ namespace DS.UI.Administration.Finance.FeeManaged
             {
                 divFeesCategoryList.Controls.Add(new LiteralControl(""));
                 string condition = "";
-                if (ddlPaymentFor.SelectedIndex > 0)
+                if(ddlPaymentFor.SelectedValue== "openPayment")
                 {
-                    condition+=" Where IsNull(fc.PaymentFor,'regular')='" + ddlPaymentFor.SelectedValue + "'";
-                }                 
-                if (dlBatchName.SelectedIndex>0)
-                {
-                    string[] batchClsID = dlBatchName.SelectedValue.Split('_');
-                    if(condition=="")
-                        condition += " Where FC.BatchId='" + batchClsID[0] + "'";
-                    else
-                        condition += " and FC.BatchId='" + batchClsID[0] + "'";
+                    if (ddlClassForOpen.SelectedIndex > 0)
+                    {                       
+                            condition += " and FC.BatchId='" + ddlClassForOpen.SelectedValue  + "'";
+                    }
+                    sqlCmd = @"with dft as (select StoreNameKey, StoreTitle from PaymentStores where StoreNameKey = 'islampurcollegeedubd')
+                 Select FC.FeeCatId,Classes.ClassName,Classes.ClassName as BatchName,ISNULL(FC.BatchId, 0) as BatchId,ISNULL(Classes.ClassID, 0) as ClassID, convert(varchar(10), FC.DateOfCreation, 105) as DateOfCreation, FC.FeeFine, FC.FeeCatName, DP.DateOfPaymentId, convert(varchar(10), DP.DateOfStart, 105) as 'Start Date', convert(varchar(10), DP.DateOfEnd, 105) as 'End Date', DP.IsActive,ex.ExInId,IsNull(ex.ExInSl, 0) as ExInSl,IsNull(fc.PaymentFor, 'regular') as PaymentFor,IsNull(fc.ClsGrpId, 0) as ClsGrpId,IsNull(FC.StoreNameKey, dft.StoreNameKey) as StoreNameKey,IsNull(str.StoreTitle, dft.StoreTitle) as StoreTitle from FeesCategoryInfo FC INNER JOIN DateOfPayment DP ON(FC.FeeCatId = DP.FeeCatId) Left JOIN Classes ON Classes.ClassId = FC.BatchId left join ExamInfo ex on fc.ExInSl = ex.ExInSl left join PaymentStores as str on FC.StoreNameKey = str.StoreNameKey cross join dft  Where IsNull(fc.PaymentFor,'regular')='openPayment' "+ condition + " order by FC.FeeCatId desc";
+
                 }
-                              
-               sqlCmd = @"with dft as (select StoreNameKey, StoreTitle from PaymentStores where StoreNameKey = 'islampurcollegeedubd')
-                 Select FC.FeeCatId,BatchInfo.BatchName,IsNull(BatchInfo.BatchId, 0) as BatchId,ISNULL(BatchInfo.ClassID, 0) as ClassID, convert(varchar(10), FC.DateOfCreation, 105) as DateOfCreation, FC.FeeFine, FC.FeeCatName, DP.DateOfPaymentId, convert(varchar(10), DP.DateOfStart, 105) as 'Start Date', convert(varchar(10), DP.DateOfEnd, 105) as 'End Date', DP.IsActive,ex.ExInId,IsNull(ex.ExInSl, 0) as ExInSl,IsNull(fc.PaymentFor, 'regular') as PaymentFor,IsNull(fc.ClsGrpId, 0) as ClsGrpId,IsNull(FC.StoreNameKey, dft.StoreNameKey) as StoreNameKey,IsNull(str.StoreTitle, dft.StoreTitle) as StoreTitle from FeesCategoryInfo FC INNER JOIN DateOfPayment DP ON(FC.FeeCatId = DP.FeeCatId) Left JOIN BatchInfo ON BatchInfo.BatchId = FC.BatchId left join ExamInfo ex on fc.ExInSl = ex.ExInSl left join PaymentStores as str on FC.StoreNameKey = str.StoreNameKey cross join dft " + condition + " order by FC.FeeCatId desc";                                 
-            
+                else
+                {
+                    if (ddlPaymentFor.SelectedIndex > 0)
+                    {
+                        condition += " Where IsNull(fc.PaymentFor,'regular')='" + ddlPaymentFor.SelectedValue + "'";
+                    }
+                    if (dlBatchName.SelectedIndex > 0)
+                    {
+                        string[] batchClsID = dlBatchName.SelectedValue.Split('_');
+                        if (condition == "")
+                            condition += " Where FC.BatchId='" + batchClsID[0] + "'";
+                        else
+                            condition += " and FC.BatchId='" + batchClsID[0] + "'";
+                    }
+
+                    sqlCmd = @"with dft as (select StoreNameKey, StoreTitle from PaymentStores where StoreNameKey = 'islampurcollegeedubd')
+                 Select FC.FeeCatId,BatchInfo.BatchName,IsNull(BatchInfo.BatchId, 0) as BatchId,ISNULL(BatchInfo.ClassID, 0) as ClassID, convert(varchar(10), FC.DateOfCreation, 105) as DateOfCreation, FC.FeeFine, FC.FeeCatName, DP.DateOfPaymentId, convert(varchar(10), DP.DateOfStart, 105) as 'Start Date', convert(varchar(10), DP.DateOfEnd, 105) as 'End Date', DP.IsActive,ex.ExInId,IsNull(ex.ExInSl, 0) as ExInSl,IsNull(fc.PaymentFor, 'regular') as PaymentFor,IsNull(fc.ClsGrpId, 0) as ClsGrpId,IsNull(FC.StoreNameKey, dft.StoreNameKey) as StoreNameKey,IsNull(str.StoreTitle, dft.StoreTitle) as StoreTitle from FeesCategoryInfo FC INNER JOIN DateOfPayment DP ON(FC.FeeCatId = DP.FeeCatId) Left JOIN BatchInfo ON BatchInfo.BatchId = FC.BatchId left join ExamInfo ex on fc.ExInSl = ex.ExInSl left join PaymentStores as str on FC.StoreNameKey = str.StoreNameKey cross join dft " + condition + " order by FC.FeeCatId desc";
+
+                }
+
 
                 DataTable dt = new DataTable();
                 sqlDB.fillDataTable(sqlCmd, dt);
@@ -96,8 +111,19 @@ namespace DS.UI.Administration.Finance.FeeManaged
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
                     PaymentFor = dt.Rows[x]["PaymentFor"].ToString();
-                    BatchId = dt.Rows[x]["BatchId"].ToString();
-                    ClassId = dt.Rows[x]["ClassID"].ToString();
+                    if (PaymentFor == "openPayment")
+                    {
+                        BatchId ="0";
+                        ClassId = dt.Rows[x]["ClassID"].ToString();
+                    }
+                    else
+                    {
+                        BatchId = dt.Rows[x]["BatchId"].ToString();
+
+                        ClassId = dt.Rows[x]["ClassID"].ToString();
+                    }
+
+                      
                     ExInSl = dt.Rows[x]["ExInSl"].ToString();
                     id = dt.Rows[x]["FeeCatId"].ToString();
                     ClsGrpId = dt.Rows[x]["ClsGrpId"].ToString();
@@ -271,6 +297,7 @@ namespace DS.UI.Administration.Finance.FeeManaged
 
                 if (ddlPaymentFor.SelectedValue == "openPayment")
                 {
+                    string kk = ddlgroupForOpen.SelectedValue.ToString();
                    // cmd.Parameters.AddWithValue("@BatchId", ddlClassForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
                     cmd.Parameters.AddWithValue("@ClsGrpId", ddlgroupForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
                 }
@@ -355,6 +382,7 @@ namespace DS.UI.Administration.Finance.FeeManaged
                 hfAcademicInfo.Value = "0";
                 pnlClassGroupForOpen.Visible = true;
                 commonTask.loadClasses(ddlClassForOpen);
+                commonTask.loadAllGroups(ddlgroupForOpen);
             }
             else
             {
@@ -370,6 +398,8 @@ namespace DS.UI.Administration.Finance.FeeManaged
         {
             commonTask.loadGroupsByClass(ddlgroupForOpen, ddlClassForOpen.SelectedValue);
         }
+
+
 
         //protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
         //{
