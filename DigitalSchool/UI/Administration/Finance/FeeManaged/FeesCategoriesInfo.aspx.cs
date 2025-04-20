@@ -292,20 +292,20 @@ namespace DS.UI.Administration.Finance.FeeManaged
             {
                 string[] batchClsID = dlBatchName.SelectedValue.Split('_');
                 SqlCommand cmd = new SqlCommand(" update FeesCategoryInfo  Set FeeFine=@FeeFine, " +
-                                                "FeeCatName=@FeeCatName,ExInSl=@ExInSl,PaymentFor=@PaymentFor,ClsGrpId=@ClsGrpId,StoreNameKey=@StoreNameKey,Note=@Note where FeeCatId=@FeeCatId ", DbConnection.Connection);
+                                                "FeeCatName=@FeeCatName,ExInSl=@ExInSl,PaymentFor=@PaymentFor,StoreNameKey=@StoreNameKey,Note=@Note where FeeCatId=@FeeCatId ", DbConnection.Connection);
 
 
                 if (ddlPaymentFor.SelectedValue == "openPayment")
                 {
                     string kk = ddlgroupForOpen.SelectedValue.ToString();
                    // cmd.Parameters.AddWithValue("@BatchId", ddlClassForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
-                    cmd.Parameters.AddWithValue("@ClsGrpId", ddlgroupForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
+                    //cmd.Parameters.AddWithValue("@ClsGrpId", ddlgroupForOpen.SelectedValue);  //for open payment ClassId insert on BatchId column 
                 }
 
                 else
                 {
                    // cmd.Parameters.AddWithValue("@BatchId", batchClsID[0]);
-                    cmd.Parameters.AddWithValue("@ClsGrpId", ddlGroup.SelectedValue);
+                    //cmd.Parameters.AddWithValue("@ClsGrpId", ddlGroup.SelectedValue);
 
                 }
                 cmd.Parameters.AddWithValue("@FeeCatId", lblFeesCateId.Value.ToString());
