@@ -387,15 +387,18 @@ namespace DS.UI.DSWS
             if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
                return false;
 
-            if (IsBlock(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
+
+            if (IsAllow(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
+            {
+                return false;
+            }
+
+            else if (IsBlock(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
             {
                 lblMessage.InnerText = "Payment for this category is blocked for this student.";
                 return true;
             }
-            else if (IsAllow(ViewState["__AdmissionNo__"].ToString(), ddlFeeCategories.SelectedValue))
-            {
-                return false;
-            }
+          
             /*     return false;*/// Validation is ignored. Date: 29-08-2022  //rokibul ignore it 06-03-2025
 
             //if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)

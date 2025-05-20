@@ -710,9 +710,15 @@ FROM UserAccount where UserId  in (select distinct MemberId from TE_NumberSheet 
                 
             else if (PaymentFor == "admission")
                 dt = CRUD.ReturnTableNull("SELECT ct.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo ct inner join DateOfPayment dp on ct.FeeCatId=dp.FeeCatId where IsNull(ct.PaymentFor,'regular')='" + PaymentFor + "' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' and ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ClsGrpId=" + ClsGrpID + " or ClsGrpId=0)  order by dp.DateOfEnd ");
-            else 
-                dt = CRUD.ReturnTableNull("SELECT ct.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo ct inner join DateOfPayment dp on ct.FeeCatId=dp.FeeCatId  left join ExamInfo ex on ct.ExInSl=ex.ExInSl where IsNull(ct.PaymentFor,'regular')='"+ PaymentFor + "' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' and ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ct.ClsGrpID=" + ClsGrpID + " or ISNULL(ct.ClsGrpID,0)=0) order by dp.DateOfEnd ");
-            dl.DataSource = dt;
+            else
+            {
+
+                dt = CRUD.ReturnTableNull("SELECT ct.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo ct inner join DateOfPayment dp on ct.FeeCatId=dp.FeeCatId  left join ExamInfo ex on ct.ExInSl=ex.ExInSl where IsNull(ct.PaymentFor,'regular')='" + PaymentFor + "' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' and ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ct.ClsGrpID=" + ClsGrpID + " or ISNULL(ct.ClsGrpID,0)=0) order by dp.DateOfEnd ");
+                dl.DataSource = dt;
+
+                string jjj = "SELECT ct.FeeCatId,FeeCatName +' [ Last Date : '+ convert(varchar(10),dp.DateOfEnd,105)+' ]' as FeeCatName FROM FeesCategoryInfo ct inner join DateOfPayment dp on ct.FeeCatId=dp.FeeCatId  left join ExamInfo ex on ct.ExInSl=ex.ExInSl where IsNull(ct.PaymentFor,'regular')='" + PaymentFor + "' and DateOfEnd>='" + ServerTimeZone.GetBangladeshNowDate("yyyy-MM-dd") + "' and ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ct.ClsGrpID=" + ClsGrpID + " or ISNULL(ct.ClsGrpID,0)=0) order by dp.DateOfEnd ";
+            }
+                
             dl.DataTextField = "FeeCatName";
             dl.DataValueField = "FeeCatId";
             dl.DataBind();
@@ -720,9 +726,9 @@ FROM UserAccount where UserId  in (select distinct MemberId from TE_NumberSheet 
         }
         public static DataTable getFeeCatIdBatchwiseFeeCat(string batchName, string ClsGrpID,string FeeCatId)
         {
-            string jj = "SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ex.ClsGrpID=" + ClsGrpID + " or ISNULL(ex.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " order by FeeCatId ASC";
+            string jj = "SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ex.ClsGrpID=" + ClsGrpID + " or ISNULL(ex.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " and ct.PaymentFor='regular' order by FeeCatId ASC";
 
-           return CRUD.ReturnTableNull("SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ct.ClsGrpID=" + ClsGrpID + " or ISNULL(ct.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " order by FeeCatId ASC");            
+           return CRUD.ReturnTableNull("SELECT FeeCatId,FeeCatName FROM FeesCategoryInfo ct left join ExamInfo ex on ct.ExInSl=ex.ExInSl where ct.BatchId in(select BatchId from BatchInfo where BatchName='" + batchName + "') and (ct.ClsGrpID=" + ClsGrpID + " or ISNULL(ct.ClsGrpID,0)=0) and ISNULL(IsDemo,0)<>1 and FeeCatId<" + FeeCatId + " and ct.PaymentFor='regular' order by FeeCatId ASC");            
         }
         public static string IsPaidReturnOrderNo(string FeeCatId, string StudentId)
         {
