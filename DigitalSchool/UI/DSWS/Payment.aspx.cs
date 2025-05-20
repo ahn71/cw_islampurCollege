@@ -380,8 +380,6 @@ namespace DS.UI.DSWS
         {
             return false;// Validation is ignored. Date: 29-08-2022  //rokibul ignore it 06-03-2025
 
-            if (ViewState["__OpenPayment__"].ToString() == "True" || ckbIsAdmission.Checked)
-                return false;
 
             // Recommended students are allowed  
             switch (ViewState["__AdmissionNo__"].ToString())
