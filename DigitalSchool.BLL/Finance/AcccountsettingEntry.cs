@@ -73,8 +73,8 @@ namespace DS.BLL.Finance
 
         public bool InsertStudentPaymentRestriction(string batchId, string clsGroupId, string sectionID, string studentId, string admissionNo, string type, string categoryId, string remarks)
         {
-            string query = $@"INSERT INTO PaymentStudentPaymentRestriction (BatchId, ClsGroupId, SectionId, StudentId, CategoryId, Type, Remark, CreateAt,AdmissionNo) 
-                            VALUES  ({batchId}, {clsGroupId}, {sectionID}, {studentId}, {categoryId}, '{type}', '{remarks}',{admissionNo} GETDATE())";
+            string query = $@"INSERT INTO PaymentStudentPaymentRestriction (BatchId, ClsGroupId, SectionId, StudentId, CategoryId, Type, Remark,AdmissionNo, CreateAt) 
+                            VALUES  ({batchId}, {clsGroupId}, {sectionID}, {studentId}, {categoryId}, '{type}', '{remarks}',{admissionNo},GETDATE())";
 
             bool isSucced = CRUD.ExecuteNonQuery(query);
             return isSucced;

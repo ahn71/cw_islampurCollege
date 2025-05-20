@@ -62,7 +62,7 @@
            <asp:DropDownList runat="server" ID="ddlExam" CssClass="form-control"></asp:DropDownList>
        </div>
              <div class="col-lg-2">
-           <label style="opacity:0;">Section</label>
+           <label style="opacity:0; display:block" class="d-block">Section</label>
            <asp:Button runat="server" ID="btnSearch"  OnClick="btnSearch_Click" Text="SEARCH" CssClass="btn btn-success" />
        </div>
     

@@ -85,6 +85,33 @@ namespace DS.UI.Administration.Finance.FeeManaged {
         protected global::System.Web.UI.WebControls.DropDownList ddlPaymentFor;
         
         /// <summary>
+        /// pnlClassGroupForOpen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlClassGroupForOpen;
+        
+        /// <summary>
+        /// ddlClassForOpen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlClassForOpen;
+        
+        /// <summary>
+        /// ddlgroupForOpen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlgroupForOpen;
+        
+        /// <summary>
         /// pnlAcademicInfo control.
         /// </summary>
         /// <remarks>
@@ -182,6 +209,15 @@ namespace DS.UI.Administration.Finance.FeeManaged {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFeesFine;
+        
+        /// <summary>
+        /// txtNote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNote;
         
         /// <summary>
         /// btnSave control.

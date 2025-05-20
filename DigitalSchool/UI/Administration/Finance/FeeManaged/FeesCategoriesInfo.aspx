@@ -130,8 +130,24 @@
                                                 </asp:DropDownList>
 			                                    </div>
 		                                    </div>
+                                            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlClassGroupForOpen" Visible="false">
+                                                  <div class="form-group row">
+                                                 <label  class="col-sm-4">Class Name</label>
+                                                     <div class="col-sm-8">
+                                             <asp:DropDownList runat="server" ID="ddlClassForOpen" ClientIDMode="Static" CssClass="input controlLength form-control" OnSelectedIndexChanged="ddlClassForOpen_SelectedIndexChanged" AutoPostBack="true">
 
-                                             
+                                             </asp:DropDownList>
+                                                  </div>
+
+                                             <label class="col-sm-4"  style="margin-top:15px;">Group Name</label>
+                                                  <div class="col-sm-8" style="margin-top:15px;">
+                                             <asp:DropDownList runat="server" ClientIDMode="Static" ID="ddlgroupForOpen" CssClass="input controlLength form-control">
+
+                                             </asp:DropDownList>
+                                                      </div>
+                                                      </div>
+                                            </asp:Panel>
+                                            
 
                                             <asp:Panel runat="server" ClientIDMode="Static" ID="pnlAcademicInfo">
 		                                    <div class="form-group row">
@@ -192,6 +208,14 @@
                                                     <asp:TextBox ID="txtFeesFine" runat="server" ClientIDMode="Static" Text="0" CssClass="input controlLength form-control"></asp:TextBox>
 			                                    </div>
 		                                    </div>
+
+                                               <div class="form-group row">
+			                                    <label class="col-sm-4">Note</label>
+			                                    <div class="col-sm-8">
+                                                    <asp:TextBox ID="txtNote" runat="server" ClientIDMode="Static"  TextMode="MultiLine" Rows="5" CssClass="input controlLength form-control"></asp:TextBox>
+			                                    </div>
+		                                    </div>
+
                                             <div class="form-group row">
 			                                    <label class="col-sm-4"></label>
 			                                    <div class="col-sm-8">
@@ -252,8 +276,15 @@
             var BatchID = BatchId + '_' + ClassId;
             $("#dlBatchName").prop("disabled", true);
             $('#hfAcademicInfo').val('0');
+            if (PaymentFor == "openPayment") {
+                console.log("batchId: " + ClassId)
+                $('#ddlClassForOpen option[value=' + ClassId + ']').attr('selected', 'selected');
+                $('#ddlgroupForOpen option[value=' + ClsGrpId + ']').attr('selected', 'selected');
+            } else {
+                $('#ddlGroup option[value='+ClsGrpId+']').attr('selected','selected');  
+            }
            //  $('#dlBatchName option[value='+BatchID+']').attr('selected','selected');        
-             $('#ddlGroup option[value='+ClsGrpId+']').attr('selected','selected');        
+                   
              $('#ddlExam option[value='+ExInSl+']').attr('selected','selected');        
              $('#ddlPaymentStore option[value='+StoreNameKey+']').attr('selected','selected');        
             

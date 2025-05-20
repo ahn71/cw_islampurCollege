@@ -90,6 +90,16 @@ namespace DS.BLL.ManagedBatch
             dt = CRUD.ReturnTableNull(sql);
             return dt;
         }
+
+        public DataTable GetSessonData()
+        {
+
+            sql = string.Format("select distinct Year from BatchInfo order by Year Desc");
+            DataTable dt = new DataTable();
+
+            dt = CRUD.ReturnTableNull(sql);
+            return dt;
+        }
         public static void GetDropdownlist(DropDownList dl)
         {
             BatchEntry batch = new BatchEntry();
@@ -135,6 +145,16 @@ namespace DS.BLL.ManagedBatch
             DataTable dt = batch.GetEntitiesData(BatchClassId);           
             dl.DataValueField = "BatchId";
             dl.DataTextField = "BatchName";
+            dl.DataSource = dt;
+            dl.DataBind();
+            dl.Items.Insert(0, new ListItem("...Select...", "0"));
+        }
+        public static void GetSeassonDropdownlist(DropDownList dl)
+        {
+            BatchEntry batch = new BatchEntry();
+            DataTable dt = batch.GetSessonData();
+            dl.DataValueField = "Year";
+            dl.DataTextField = "Year";
             dl.DataSource = dt;
             dl.DataBind();
             dl.Items.Insert(0, new ListItem("...Select...", "0"));

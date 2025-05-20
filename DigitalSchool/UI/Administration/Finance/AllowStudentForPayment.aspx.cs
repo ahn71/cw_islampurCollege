@@ -97,8 +97,16 @@ namespace DS.UI.Administration.Finance
                 if (currentstdEntry == null)
                     currentstdEntry = new CurrentStdEntry();
                 dt = currentstdEntry.GetCurrentStudent(conditions);
-                gvstudentList.DataSource = dt;
-                gvstudentList.DataBind();
+                if (dt.Rows.Count > 0)
+                {
+                    gvstudentList.DataSource = dt;
+                    gvstudentList.DataBind();
+                }
+                else
+                {
+                    lblMessage.InnerText = "warning-> Data not Found.";
+                }
+               
             }
             catch { }
         }
@@ -203,10 +211,10 @@ namespace DS.UI.Administration.Finance
                             TextBox txRemarks = (TextBox)row.FindControl("txRemarks");  //Remarks
                             string remarks = txRemarks != null ? txRemarks.Text.Trim() : string.Empty;
 
-                            bool isSucced = accountsettingEntry.InsertStudentPaymentRestriction(BatchId, ClsGrpID, ClsSecId, StudentId, AdmissionNo, categoryId, "allow", remarks);
+                            bool isSucced = accountsettingEntry.InsertStudentPaymentRestriction(BatchId, ClsGrpID, ClsSecId, StudentId, AdmissionNo, "allow", categoryId, remarks);
                             //int sn = saveNewIncrementData(empId);
-                      
-                               
+
+
 
 
                         }
@@ -302,10 +310,27 @@ namespace DS.UI.Administration.Finance
                     TextBox txRemarks = (TextBox)row.FindControl("txRemarks");
                     CheckBox chkStatus = (CheckBox)row.FindControl("chkStatus");
                     string remarks = txRemarks.Text.Trim();
+                    if (ddlCategory.SelectedValue != null && ddlCategory.SelectedValue != "0")
+                    {
+                        if (chkStatus.Checked)
+                        {
+                            string categoryId = ddlCategory.SelectedValue.ToString();
+                            bool isSucced = accountsettingEntry.InsertStudentPaymentRestriction(BatchId, ClsGrpID, ClsSecId, StudentId, AdmissionNo, "allow", categoryId, remarks);
+                            lblMessage.InnerText = "success-> Data Saved Successfully.";
 
-                    string categoryId = ddlCategory.SelectedValue.ToString();
-                    bool isSucced = accountsettingEntry.InsertStudentPaymentRestriction(BatchId, ClsGrpID, ClsSecId, StudentId, AdmissionNo, categoryId, "allow", remarks);
-                    lblMessage.InnerText = "success-> Data Saved Successfully.";
+                        }
+                        else
+                        {
+                            lblMessage.InnerText = "success-> This student does not select";
+                        }
+                        
+                    }
+                    else
+                    {
+                        lblMessage.InnerText = "warning-> please, select any category.";
+                        ddlCategory.Focus();
+                    }
+                  
                 }
                 catch (Exception ex)
                 {

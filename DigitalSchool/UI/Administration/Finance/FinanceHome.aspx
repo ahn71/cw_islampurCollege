@@ -59,7 +59,35 @@
                     <span>Accounts</span>
                 </div>
             </a>
-        </div>            
+        </div>   
+        
+
+  
+
+            <div class="col-md-3">
+             <a id="A3" runat="server" href="AllowStudentForPayment.aspx">
+                <div class="mini-stat sub_mini_stat clearfix btn3d btn custom_menu_btn_administration">
+                    <span>
+                        <img width="45" src="../../../../Images/moduleicon/Finance/fine menagment.ico" alt="finemenagment" />
+                    </span>
+                    <span>Allow Student For Payment</span>
+                </div>
+            </a>
+        </div>   
+
+
+        
+            <div class="col-md-3">
+             <a id="A4" runat="server" href="BlockStudentForPayment.aspx">
+                <div class="mini-stat sub_mini_stat clearfix btn3d btn custom_menu_btn_administration">
+                    <span>
+                        <img width="45" src="../../../../Images/moduleicon/Finance/fine menagment.ico" alt="finemenagment" />
+                    </span>
+                    <span>Block Student For Payment</span>
+                </div>
+            </a>
+        </div>   
+
     </div>    
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContent" runat="server">
