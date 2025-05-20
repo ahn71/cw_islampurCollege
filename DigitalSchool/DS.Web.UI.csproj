@@ -2140,6 +2140,8 @@
     <Content Include="UI\Administration\DSWS\QuickLink.aspx" />
     <Content Include="UI\Administration\DSWS\SliderAdd.aspx" />
     <Content Include="UI\Administration\DSWS\website-general-settings.aspx" />
+    <Content Include="UI\Administration\Finance\AllowStudentForPayment.aspx" />
+    <Content Include="UI\Administration\Finance\BlockStudentForPayment.aspx" />
     <Content Include="UI\Administration\HR\Employee\EmpActivation.aspx" />
     <Content Include="UI\Administration\HR\TeacherEvaluation\EvaCategory.aspx" />
     <Content Include="UI\Administration\HR\TeacherEvaluation\EvaHome.aspx" />
@@ -4463,6 +4465,20 @@
     </Compile>
     <Compile Include="UI\Administration\Finance\Accounts\ReportViewer.aspx.designer.cs">
       <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administration\Finance\AllowStudentForPayment.aspx.cs">
+      <DependentUpon>AllowStudentForPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Administration\Finance\AllowStudentForPayment.aspx.designer.cs">
+      <DependentUpon>AllowStudentForPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administration\Finance\BlockStudentForPayment.aspx.cs">
+      <DependentUpon>BlockStudentForPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Administration\Finance\BlockStudentForPayment.aspx.designer.cs">
+      <DependentUpon>BlockStudentForPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Administration\Finance\FeeManaged\AddParticular.aspx.cs">
       <DependentUpon>AddParticular.aspx</DependentUpon>
