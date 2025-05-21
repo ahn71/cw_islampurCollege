@@ -55,9 +55,20 @@ public class SSLCommerz
             StoreName="islampurcollegeedubd",
             StoreID ="islampurcollegeedubdlive",
             StorePassword="62B4545CA772895427"
+        },  
+        // new 2 store added in bellow 
+        new Store{
+            StoreName="islampurcollegesbl",
+            StoreID ="islampurcollegesbl2live",
+            StorePassword="680622FBCEF2911896"
+        },
+        new Store{
+            StoreName="islampurcollegeedubd001",
+            StoreID ="islampurcollegeedubd001live",
+            StorePassword="67ADAC3D4A06542153"
         },
 
-      
+
     };
     public SSLCommerz(string Store_ID, string Store_Pass, bool Store_Test_Mode = false)
 	{

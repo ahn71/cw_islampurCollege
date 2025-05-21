@@ -254,6 +254,7 @@ namespace DS.UI.DSWS
             {
 
                 hPreviousDue.Visible = false;
+                dt = new DataTable();
                 dt = CRUD.ReturnTableNull("Select PName, Amount, isnull(StoreNameKey,'islampurcollegeedubd') as StoreNameKey from v_FeesCatDetails where FeeCatId='" + ddlFeeCategories.SelectedValue + "' ");
 
                 string jj = "Select PName, Amount, isnull(StoreNameKey,'islampurcollegeedubd') as StoreNameKey from v_FeesCatDetails where FeeCatId='" + ddlFeeCategories.SelectedValue + "'";

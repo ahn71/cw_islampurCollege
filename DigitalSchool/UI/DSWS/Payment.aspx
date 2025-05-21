@@ -330,8 +330,7 @@
                                                     <div class="form-group row" runat="server" id="ddlCatagory">
                                                         <label class="col-md-12">Fee Category<strong style="color:red">*</strong></label>
                                                         <div class="col-md-12">
-                                                            <asp:DropDownList ID="ddlFeeCategories" runat="server" ClientIDMode="Static"
-                                                                CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlFeeCategories_SelectedIndexChanged">
+                                                            <asp:DropDownList ID="ddlFeeCategories" runat="server" ClientIDMode="Static" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlFeeCategories_SelectedIndexChanged">
                                                             </asp:DropDownList>
                                                         </div>
                                                     </div>                                                   
