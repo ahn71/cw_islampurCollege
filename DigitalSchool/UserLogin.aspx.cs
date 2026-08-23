@@ -107,6 +107,13 @@ namespace DS
                 else SQLOperation.selectBySetCommandInDatatable("select EName as FullName,EID,UserId,UserType,Username,UserTypeId from v_useraccount  where " +
                                      " UserName='" + ComplexLetters.getTangledLetters(txtUsername.Text.Trim()) + "' and UserPassword='" + ComplexLetters.getTangledLetters(txtPassword.Text.Trim()) + "' AND IsAdviser='True' AND Status=1", dt, DS.DAL.DbConnection.Connection);
 
+
+
+                string jjj = "select EName as FullName,EID,UserId,UserType,Username,UserTypeId from v_useraccount  where " +
+                                     " UserName='" + ComplexLetters.getTangledLetters(txtUsername.Text.Trim()) + "' and UserPassword='" + ComplexLetters.getTangledLetters(txtPassword.Text.Trim()) + "' AND IsAdviser='True' AND Status=1";
+
+                string pass =ComplexLetters.getEntangledLetters("CZNDQLJwFFQ=");
+
                 if (dt.Rows.Count == 0)
                 {
                     lblMessage.InnerText = "warning->Username or Password Invalid";
