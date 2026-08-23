@@ -192,9 +192,9 @@
             </header>
             <!--header end-->
             <!--sidebar start-->
-         <%--   <aside>
+            <aside>
                 <uc1:SideMenuControls runat="server" id="SideMenuControls" />
-            </aside>--%>
+            </aside>
             <!--sidebar end-->
             <!--main content start-->
             <section id="main-content">

@@ -14,7 +14,7 @@ namespace DS.Controls
         protected void Page_Load(object sender, EventArgs e)
         {
             
-                if (Session["__UserTypeId__"].ToString() != null)
+                if (Session["__UserTypeId__"] != null)
                 {
                     DataTable dt = CRUD.ReturnTableNull("select AcademicModule,AdministrationModule,NotificationModule,ReportsModule from UserTypeInfo_ModulePrivilege where UserTypeId=" + Session["__UserTypeId__"].ToString().ToString() + "");
                     if (dt.Rows.Count > 0)
